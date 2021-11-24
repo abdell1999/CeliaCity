@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pointofinterest;
 use Illuminate\Http\Request;
 
 class PointofinterestController extends Controller
