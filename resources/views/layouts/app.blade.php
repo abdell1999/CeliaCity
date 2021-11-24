@@ -53,15 +53,18 @@
                         <li><a class="dropdown-item text-white" href="#">Separated link</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="login.html"><i
-                            class="far fa-user-circle"></i><span>Login</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>Register</span></a>
-                </li>
+
             </ul>
+
+
             <div class="text-center d-none d-md-inline">
-                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+                <form  action="{{ route('logout') }}" method="POST" >
+                    @csrf
+                    <input type="submit" class="btn btn-danger" value="Cerrar Sesión">
+                </form>
             </div>
         </div>
+
     </nav>
 
 @endif
