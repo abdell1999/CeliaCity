@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -20,10 +22,10 @@ class UserSeeder extends Seeder
             'email' => 'emaildeprueba@gmail.com',
             'password' => Hash::make('123456'),
             'phone' => '123456789',
-            'movilphone' => '666 777 888',
-            'borndate' => '24/11/2021',
+            'movilphone' => '666777888',
+            'borndate' => '2021/11/24',
             'photo' => 'https://cdn.pixabay.com/photo/2020/07/14/13/06/icon-5404123_960_720.png',
-            'addres' => 'Calle del quinto pino',
+            'address' => 'Calle del quinto pino',
             'rol' => '0',
             'created_at' => now(),
             'updated_at' => now()
