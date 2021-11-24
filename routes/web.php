@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PointofinterestController;
-use App\Http\Controllers\CategorieController;
+
 
 /*
 |--------------------------------------------------------------------------
