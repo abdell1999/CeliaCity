@@ -22,8 +22,7 @@ class CreateCommentsTable extends Migration
             $table->string('text');
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_point')->references('id')->on('pointofinterest');
+      
         });
     }
 
