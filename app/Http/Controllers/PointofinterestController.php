@@ -7,60 +7,76 @@ use Illuminate\Http\Request;
 class PointofinterestController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the pointofinterest.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $data['pointofinterests'] = Pointofinterest::all();
+
+        return view('pointofinterests.index', $data);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new pointofinterest.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('pointofinterests.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created pointofinterest in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'ubication' => 'required',
+            'movilephone' => 'required',
+            'text'  =>   'required'
+
+        ]);
+      
+        $pointofinterest = new Pointofinterest();
+        $pointofinterest->name = $data['name'];
+        $pointofinterest->ubication = $data['ubication'];
+        $pointofinterest->movilephone = $data['movilephone'];
+        $pointofinterest->text = $data['text'];
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified pointofinterest.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $data['pointofinterests'] = Pointofinterest::find($id);
+        return view('pointofinterests.show',$data);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified pointofinterest.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $data['pointofinterests'] = Pointofinterest::find($id);
+        return view('pointofinterests.edit',$data);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified pointofinterest in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -68,17 +84,33 @@ class PointofinterestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'ubication' => 'required',
+            'movilephone' => 'required',
+            'text'  =>   'required'
+
+        ]);
+      
+        $pointofinterests =$pointofinterests::find($id);
+        $pointofinterests->name = $data['name'];
+        $pointofinterests->ubication = $data['ubication'];
+        $pointofinterests->movilephone = $data['movilephone'];
+        $pointofinterests->text = $data['text'];
+        $pointofinterests->save();
+        return redirect()->route('$pointofinterests.index');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified pointofinterest from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $pointofinterest = $Pointofinterest::find($id);
+        $pointofinterest->delete();
+        return redirect()->route('$pointofinterests.index');
     }
 }
