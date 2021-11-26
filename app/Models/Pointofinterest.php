@@ -13,6 +13,6 @@ class Pointofinterest extends Model
         'name',
         'ubication',
         'movilephone',
-        'text',
+        'text'
     ];
 }

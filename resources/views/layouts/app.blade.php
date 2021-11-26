@@ -48,7 +48,7 @@
                             class="fas fa-columns"></i><span>Cruds</span></a>
                     <ul class="dropdown-menu bg-primary">
                         <li><a class="dropdown-item text-white" href="#">Usuarios</a></li>
-                        <li><a class="dropdown-item text-white" href="#">Categoria</a></li>
+                        <li><a class="dropdown-item text-white" href="{{ route('categorie.index') }}">Categoria</a></li>
                         <li><a class="dropdown-item text-white" href="#">Punto de Interes</a></li>
                         <li><a class="dropdown-item text-white" href="#">Separated link</a></li>
                     </ul>

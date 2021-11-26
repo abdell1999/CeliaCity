@@ -37,7 +37,6 @@
                         </form>
                         <div class="text-center"><a class="small" href="forgot-password.html">¿Has olvidado tu contraseña?</a></div>
                         <div class="text-center"><a class="small" href="login.html">¿Tienes cuenta? Inicia sesión!</a></div>
-                    </form>
                     </div>
                 </div>
             </div>
