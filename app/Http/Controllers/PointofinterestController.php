@@ -95,13 +95,13 @@ class PointofinterestController extends Controller
 
         ]);
       
-        $pointofinterests =$pointofinterests::find($id);
+        $pointofinterests = pointofinterests::find($id);
         $pointofinterests->name = $data['name'];
         $pointofinterests->ubication = $data['ubication'];
         $pointofinterests->movilephone = $data['movilephone'];
         $pointofinterests->text = $data['text'];
         $pointofinterests->save();
-        return redirect()->route('$pointofinterests.index');
+        return redirect()->route('pointofinterests.index');
     }
 
     /**
@@ -112,8 +112,8 @@ class PointofinterestController extends Controller
      */
     public function destroy($id)
     {
-        $pointofinterest = $Pointofinterest::find($id);
+        $pointofinterest = Pointofinterest::find($id);
         $pointofinterest->delete();
-        return redirect()->route('$pointofinterests.index');
+        return redirect()->route('pointofinterests.index');
     }
 }
