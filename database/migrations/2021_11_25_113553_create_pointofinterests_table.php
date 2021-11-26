@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePointofinterestTable extends Migration
+class CreatePointofinterestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePointofinterestTable extends Migration
      */
     public function up()
     {
-        Schema::create('pointofinterest', function (Blueprint $table) {
+        Schema::create('pointofinterests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('ubication');
@@ -30,6 +30,6 @@ class CreatePointofinterestTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pointofinterest');
+        Schema::dropIfExists('pointofinterests');
     }
 }
