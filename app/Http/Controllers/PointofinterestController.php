@@ -50,6 +50,8 @@ class PointofinterestController extends Controller
         $pointofinterest->ubication = $data['ubication'];
         $pointofinterest->movilephone = $data['movilephone'];
         $pointofinterest->text = $data['text'];
+        $pointofinterest->save();
+        return redirect()->route('pointofinterests.index');
     }
 
     /**
