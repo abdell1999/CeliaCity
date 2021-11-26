@@ -13,14 +13,23 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * A continuación se especifican las columnas de la tabla users que pueden rellenarse,
+     *
      *
      * @var string[]
      */
     protected $fillable = [
         'name',
+        'surname1',
+        'surname2',
         'email',
         'password',
+        'phone',
+        'movilphone',
+        'borndate',
+        'photo',
+        'address',
+        'rol'
     ];
 
     /**
