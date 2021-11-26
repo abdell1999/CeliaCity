@@ -95,7 +95,7 @@ class PointofinterestController extends Controller
 
         ]);
       
-        $pointofinterests = pointofinterests::find($id);
+        $pointofinterests = Pointofinterest::find($id);
         $pointofinterests->name = $data['name'];
         $pointofinterests->ubication = $data['ubication'];
         $pointofinterests->movilephone = $data['movilephone'];
