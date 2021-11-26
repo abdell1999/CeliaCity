@@ -33,9 +33,9 @@
                         @method('DELETE')
                         <input type="submit" class="btn btn-danger w-20 d-block" value="Eliminar">
                     </form>
-                    <a href="{{ route('pointofinterests.edit', $pointofinterests->id) }}" class="btn btn-dark mr-1">Editar</a>
+                    <a href="{{ route('pointofinterests.edit', $pointofinterest->id) }}" class="btn btn-dark mr-1">Editar</a>
                     <br>
-                    <a href="{{ route('pointofinterests.show', $pointofinterests->id) }}" class="btn btn-success mr-1">Ver</a>
+                    <a href="{{ route('pointofinterests.show', $pointofinterest->id) }}" class="btn btn-success mr-1">Ver</a>
                 </td>
 
 
