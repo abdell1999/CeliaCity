@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class PointofinterestController extends Controller
 {
+
+
+    public function __construct(){
+        $this->middleware("auth")->except("show");
+    }
+
+
     /**
      * Display a listing of the pointofinterest.
      *
@@ -44,7 +51,7 @@ class PointofinterestController extends Controller
             'text'  =>   'required'
 
         ]);
-      
+
         $pointofinterest = new Pointofinterest();
         $pointofinterest->name = $data['name'];
         $pointofinterest->ubication = $data['ubication'];
@@ -94,8 +101,8 @@ class PointofinterestController extends Controller
             'text'  =>   'required'
 
         ]);
-      
-        $pointofinterests = pointofinterests::find($id);
+
+        $pointofinterests = Pointofinterest::find($id);
         $pointofinterests->name = $data['name'];
         $pointofinterests->ubication = $data['ubication'];
         $pointofinterests->movilephone = $data['movilephone'];

@@ -13,8 +13,7 @@
                         <div class="text-center">
                             <h4 class="text-dark mb-4">Registrarse</h4>
                         </div>
-                        <form action="{{ route('register') }}">
-                        <form class="user" >
+                        <form class="user">
                             <div class="row mb-3">
                                 <div class="col-sm-4 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="name" placeholder="Nombre" name="name"></div>
                                 <div class="col-sm-4"><input class="form-control form-control-user" type="text" id="surname1" placeholder="Primer Apellido" name="surname1"></div>
