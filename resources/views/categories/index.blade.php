@@ -3,7 +3,7 @@
 @section('content')
 <h1>Categorias</h1>
 
-<a href=" {{ route('categorie.create') }} ">Nueva Categoria</a>
+<a href=" {{ route('categories.create') }} ">Nueva Categoria</a>
 
 <div class="col-md10 mx-auto bg-white p-3">
     <table class="table">
