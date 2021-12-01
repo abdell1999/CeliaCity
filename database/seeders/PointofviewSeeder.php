@@ -15,10 +15,10 @@ class PointofviewSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pointofviews')->insert([
+        DB::table('pointofinterests')->insert([
             'name' => 'IES Celia Viñas',
             'ubication' => 'Centro de Almería',
-            'movilphone' => 'Esto es primer comentario',
+            'movilephone' => 'Esto es primer comentario',
             'text' => 'Aquí es donde nosotros estudiamos',
             'created_at' => now(),
             'updated_at' => now()

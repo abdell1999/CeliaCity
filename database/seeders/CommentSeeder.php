@@ -19,8 +19,8 @@ class CommentSeeder extends Seeder
             'date' => '2021/12/21',
             'valoration' => '10',
             'text' => 'Esto es primer comentario',
-            'idUser' => '1',
-            'idPoint' => '1',
+            'id_user' => '1',
+            'id_pointofinterest' => '1',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -29,8 +29,8 @@ class CommentSeeder extends Seeder
             'date' => '2021/12/21',
             'valoration' => '5',
             'text' => 'Este es el segundo',
-            'idUser' => '1',
-            'idPoint' => '1',
+            'id_user' => '1',
+            'id_pointofinterest' => '1',
             'created_at' => now(),
             'updated_at' => now()
         ]);
