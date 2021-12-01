@@ -14,6 +14,7 @@
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
     integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
 
 <!-- Styles -->
-<link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.9/tailwind.css' integrity='sha512-vRllZkbyjzSjGDGk8Xfx8B+98TKNnDH2uu1NFpUKTEviN5fyjHa5+BE2jtlkrgONgT928Whsi9Zh4rYxIlBBRA==' crossorigin='anonymous'/>
