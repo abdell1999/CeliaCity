@@ -7,6 +7,7 @@
                 <i class="fas fa-moon text-blue-400 pr-3"></i> Celia City
             </a>
         </div>
+        @auth
         <div class="w-1/2 pr-0">
             <div class="flex relative inline-block float-right">
 
@@ -36,6 +37,8 @@
                         </ul>
                     </div>
                 </div>
+        @endauth
+
 
 
                 <div class="block lg:hidden pr-4">
