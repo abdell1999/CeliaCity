@@ -13,8 +13,8 @@
                 <div class="relative text-sm text-gray-100">
                     <button id="userButton" class="flex items-center focus:outline-none mr-3">
                         <!--Foto de usuario -->
-                        <img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of User">
-                        <span class="hidden md:inline-block text-gray-100">Hola, @NombreUsuario</span>
+                        <img class="w-8 h-8 rounded-full mr-4" src="{{ url(Auth::user()->photo) }}" alt="Avatar of User">
+                        <span class="hidden md:inline-block text-gray-100">Hola, {{ Auth::user()->name; }}</span>
                         <i class="fas fa-sort-down pl-2"></i>
                     </button>
                     <div id="userMenu"
