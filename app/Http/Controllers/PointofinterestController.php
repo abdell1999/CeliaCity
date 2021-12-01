@@ -101,11 +101,7 @@ class PointofinterestController extends Controller
             'text'  =>   'required'
 
         ]);
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 1f539b9254a6febdcff21d87baa30ede35f69edb
         $pointofinterests = Pointofinterest::find($id);
         $pointofinterests->name = $data['name'];
         $pointofinterests->ubication = $data['ubication'];
