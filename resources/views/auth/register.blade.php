@@ -185,7 +185,7 @@
                         <div class="form-group row">
                             <label for="photo" class="col-md-4 col-form-label text-md-right">Foto de perfil:</label>
                             <div class="col-md-6">
-                            <input type="text" class="form-control" name="photo">
+                            <input type="file" class="form-control" name="photo">
                             @error('photo')
                             <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{ $message }}</strong>

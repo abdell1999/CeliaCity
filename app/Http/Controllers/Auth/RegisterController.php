@@ -60,7 +60,7 @@ class RegisterController extends Controller
             'movilphone' => ['required', 'min:9', 'max:9'],
             'borndate' => ['required'],
             'address' => ['required'],
-            'photo' => ['required'],
+            'photo' => ['image'],
 
         ]);
 
@@ -86,7 +86,7 @@ class RegisterController extends Controller
             'movilphone' => $data['movilphone'],
             'borndate' => $data['borndate'],
             'address' => $data['address'],
-            'photo' => $data['photo'],
+            'photo' => "/storage/" . $data['photo']->store('users', 'public'),
             'rol' => 0,
         ]);
     }
