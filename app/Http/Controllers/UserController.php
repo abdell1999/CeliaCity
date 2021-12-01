@@ -40,7 +40,6 @@ class UserController extends Controller
             'name' => 'required',
             'surname1' => 'required',
             'email'  =>   'required',
-            'email_verified_at'  =>   'required',
             'password'  =>   'required',
             'phone' =>   'required max:9 min:9',
             'movilephone'  =>   'required max:9 min:9',
@@ -57,7 +56,6 @@ class UserController extends Controller
         $User->surname1 = $data['surname1'];
         $User->surname2 = $data['surname2'];
         $User->email = $data['email'];
-        $User->email_verified_at = $data['email_verified_at'];
         $User->password = $data['password'];
         $User->phone = $data['phone'];
         $User->movilephone = $data['movilephone'];
@@ -108,7 +106,6 @@ class UserController extends Controller
             'name' => 'required',
             'surname1' => 'required',
             'email'  =>   'required',
-            'email_verified_at'  =>   'required',
             'password'  =>   'required',
             'phone' =>   'required max:9 min:9',
             'movilephone'  =>   'required max:9 min:9',
@@ -124,7 +121,6 @@ class UserController extends Controller
         $User->surname1 = $data['surname1'];
         $User->surname2 = $data['surname2'];
         $User->email = $data['email'];
-        $User->email_verified_at = $data['email_verified_at'];
         $User->password = $data['password'];
         $User->phone = $data['phone'];
         $User->movilephone = $data['movilephone'];

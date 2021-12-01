@@ -3,7 +3,7 @@
 @section('content')
 <h1>Punto de interes</h1>
 
-<a href=" {{ route('users.create') }} ">Nuevo punto de interes</a>
+<a href=" {{ route('users.create') }} ">Nuevo usuario</a>
 
 <div class="col-md10 mx-auto bg-white p-3">
     <table class="table">
@@ -13,7 +13,6 @@
                 <th scole="col">Apellido 1</th>
                 <th scole="col">Apellido 2</th>
                 <th scole="col">email</th>
-                <th scole="col">email verificado</th>
                 <th scole="col">password</th>
                 <th scole="col">telefono fijo</th>
                 <th scole="col">telefono móvil</th>
@@ -33,7 +32,6 @@
                 <td> {{$user->surname1}} </td>
                 <td> {{$user->surname2}} </td>
                 <td> {{$user->email}} </td>
-                <td> {{$user->email_verified_at}} </td>
                 <td> {{$user->password}} </td>
                 <td> {{$user->phone}} </td>
                 <td> {{$user->movilephone}} </td>
