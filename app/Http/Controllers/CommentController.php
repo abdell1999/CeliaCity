@@ -14,7 +14,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $data['comment'] = Comment::all();
+        $data['comments'] = Comment::all();
 
         return view('comments.index', $data);
     }
@@ -62,7 +62,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Comment $comment)
+    public function show($id)
     {
         $data['comments'] = Comment::find($id);
         return view('comments.show',$data);
@@ -87,7 +87,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
+    public function update(Request $request,$comment)
     {
         $data = $request->validate([
             'date' => 'required',
@@ -114,7 +114,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
         $comment = Comment::find($id);
         $comment->delete();
