@@ -19,7 +19,7 @@
                 <th scole="col">imagen</th>
                 <th scole="col">dirección</th>
                 <th scole="col">rol</th>
-                
+
             </tr>
         </thead>
 
@@ -34,11 +34,11 @@
                 <td> {{$user->phone}} </td>
                 <td> {{$user->movilephone}} </td>
                 <td> {{$user->borndate}} </td>
-                <td> {{$user->photo}} </td>
+                <td> <img src="{{url($user->photo)}}" width="20%"></td>
                 <td> {{$user->address}} </td>
                 <td> {{$user->rol}} </td>
                 <td>
-                   
+
 
 
                 <form method="POST" action="{{ route('users.destroy', $user->id) }}">
