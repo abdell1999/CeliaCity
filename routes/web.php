@@ -22,4 +22,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/pointofinterests', 'PointofinterestController');
-Route::resource('/categorie', 'CategorieController');
+Route::resource('/categories', 'CategorieController');
