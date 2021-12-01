@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Punto de interes</h1>
+<h1>Usuarios</h1>
 
 <a href=" {{ route('users.create') }} ">Nuevo usuario</a>
 
@@ -13,7 +13,6 @@
                 <th scole="col">Apellido 1</th>
                 <th scole="col">Apellido 2</th>
                 <th scole="col">email</th>
-                <th scole="col">password</th>
                 <th scole="col">telefono fijo</th>
                 <th scole="col">telefono móvil</th>
                 <th scole="col">fecha de nacimiento</th>
@@ -32,7 +31,6 @@
                 <td> {{$user->surname1}} </td>
                 <td> {{$user->surname2}} </td>
                 <td> {{$user->email}} </td>
-                <td> {{$user->password}} </td>
                 <td> {{$user->phone}} </td>
                 <td> {{$user->movilephone}} </td>
                 <td> {{$user->borndate}} </td>
