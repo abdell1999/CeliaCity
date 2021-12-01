@@ -55,17 +55,17 @@ class UserController extends Controller
         $User = new User();
         $User->name = $data['name'];
         $User->surname1 = $data['surname1'];
-        $User->surname1 = $data['surname2'];
-        $User->surname2 = $data['movilephone'];
+        $User->surname2 = $data['surname2'];
+        $User->email = $data['email'];
         $User->email_verified_at = $data['email_verified_at'];
         $User->password = $data['password'];
         $User->phone = $data['phone'];
         $User->movilephone = $data['movilephone'];
-        $User->email = $data['borndate'];
-        $User->email = $data['photo'];
-        $User->email = $data['address'];
-        $User->email = $data['rol'];
-        $User->rememberToken = $data['rememberToken'];
+        $User->borndate = $data['borndate'];
+        $User->photo = $data['photo'];
+        $User->address = $data['address'];
+        $User->rol = $data['rol'];
+        
 
         $User->save();
         return redirect()->route('users.index');
@@ -122,17 +122,16 @@ class UserController extends Controller
         $users = User::find($id);
         $User->name = $data['name'];
         $User->surname1 = $data['surname1'];
-        $User->surname1 = $data['surname2'];
-        $User->surname2 = $data['movilephone'];
+        $User->surname2 = $data['surname2'];
+        $User->email = $data['email'];
         $User->email_verified_at = $data['email_verified_at'];
         $User->password = $data['password'];
         $User->phone = $data['phone'];
         $User->movilephone = $data['movilephone'];
-        $User->email = $data['borndate'];
-        $User->email = $data['photo'];
-        $User->email = $data['address'];
-        $User->email = $data['rol'];
-        $User->rememberToken = $data['rememberToken'];
+        $User->borndate = $data['borndate'];
+        $User->photo = $data['photo'];
+        $User->address = $data['address'];
+        $User->rol = $data['rol'];
         $users->save();
         return redirect()->route('users.index');
     }
