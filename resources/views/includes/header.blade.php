@@ -26,8 +26,12 @@
                             <li>
                                 <hr class="border-t mx-2 border-gray-400">
                             </li>
-                            <li><a href="#"
-                                    class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Logout</a>
+                            <li><form  action="{{ route('logout') }}" method="POST" >
+                                        @csrf
+
+                                        <input class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline" type="submit" value="Cerrar Sesión">
+
+                                    </form>
                             </li>
                         </ul>
                     </div>
