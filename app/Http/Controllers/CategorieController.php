@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 
-class CategorieController extends Controller
-{
+class CategorieController extends Controller {
 
-    public function __construct(){
+    public function __construct() {
         $this->middleware("auth")->except("show");
     }
     /**
@@ -16,12 +15,10 @@ class CategorieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
         $data['categories'] = Categorie::all();
         return view('categories.index', $data);
-
     }
 
     /**
@@ -29,8 +26,7 @@ class CategorieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
         return view('categories.create');
     }
@@ -41,8 +37,7 @@ class CategorieController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
         $data = $request->validate([
             'name' => 'required'
@@ -61,11 +56,10 @@ class CategorieController extends Controller
      * @param \App\Models\Categorie $categorie
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
-        $data['categories']= Categorie::find($id);
-        return view('categories.show',$data);
+        $data['categories'] = Categorie::find($id);
+        return view('categories.show', $data);
     }
 
     /**
@@ -74,11 +68,10 @@ class CategorieController extends Controller
      * @param \App\Models\Categorie $categorie
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
         $data['categories'] = Categorie::find($id);
-        return view('categories.edit',$data);
+        return view('categories.edit', $data);
     }
 
     /**
@@ -88,8 +81,7 @@ class CategorieController extends Controller
      * @param \App\Models\Categorie $categorie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
         $data = $request->validate([
             'name' => 'required'
@@ -106,8 +98,7 @@ class CategorieController extends Controller
      * @param \App\Models\Categorie $categorie
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
         $categorie = Categorie::find($id);
         $categorie->delete();
