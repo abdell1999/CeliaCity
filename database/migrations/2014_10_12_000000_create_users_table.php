@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
      * El segundo apellido es algo opcional ya que no se da en todos los paises
      *El correo y los números de teléfono (el fijo es opcional) deben de ser únicos, es decir no puede
      *haber varios usuarios con el mismo número
-     *El rol lo controlamos con un número 0->ADMIN y 1->USER
+     *El rol lo controlamos con un número 0->ADMIN, 1->EDITOR, 2->USER
      * @return void
      */
     public function up()
