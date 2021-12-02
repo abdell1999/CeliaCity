@@ -12,8 +12,8 @@
                 <th scole="col">Fecha</th>
                 <th scole="col">Valoración</th>
                 <th scole="col">Texto</th>
-                <th scole="col">Usuario id</th>
-                <th scole="col">Punto de interés id</th>
+                <th scole="col">idUser</th>
+                <th scole="col">idPoint</th>
                 
                 
             </tr>
@@ -26,8 +26,8 @@
                 <td> {{$comment->date}} </td>
                 <td> {{$comment->valoration}} </td>
                 <td> {{$comment->text}} </td>
-                <td> {{$comment->idUser}} </td>
-                <td> {{$comment->idPoint}} </td>
+                <td> {{$comment->id_user}} </td>
+                <td> {{$comment->id_pointofinterest}} </td>
                 <td>
                    
 

@@ -21,7 +21,7 @@ class PointofinterestController extends Controller
      */
     public function index()
     {
-        $data['pointofinterests'] = Pointofinterest::all();
+        $data['pointofinterests'] = Pointofinterest::orderBy("name")->get();
 
         return view('pointofinterests.index', $data);
     }
