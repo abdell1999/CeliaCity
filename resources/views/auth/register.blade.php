@@ -13,8 +13,17 @@
                     Nombre
                 </label>
                 <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="name" name="name" type="text">
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white @error('name')
+                    border-red-500
+                    @enderror"
+                    id="name" name="name" type="text" required>
+
+
+                    @error('name')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
 
             </div>
             <div class="w-full md:w-1/3 px-3">
@@ -22,8 +31,15 @@
                     Primer apellido
                 </label>
                 <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="surname1" name="surname1" type="text"">
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('surname1')
+                    border-red-500
+                    @enderror"
+                    id="surname1" name="surname1" type="text" required>
+                    @error('surname1')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
           </div>
 
 
@@ -41,7 +57,16 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
                 EMAIL
               </label>
-              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="email">
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('email')
+              border-red-500
+              @enderror" id="email" name="email" type="email" required>
+
+
+              @error('email')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
 
 
         </div>
@@ -51,8 +76,14 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
                 DIRECCIÓN
               </label>
-              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="address" name="address" type="text">
-
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('address')
+              border-red-500
+              @enderror" id="address" name="address" type="text" required>
+              @error('address')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
 
         </div>
 
@@ -62,8 +93,15 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="movilphone">
                 TELÉFONO MÓVIL
               </label>
-              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="movilphone" name="movilphone" type="number">
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('movilphone')
+              border-red-500
+              @enderror" id="movilphone" name="movilphone" type="number" required>
 
+              @error('movilphone')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
 
         </div>
 
@@ -71,8 +109,15 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
                 TELÉFONO FIJO
               </label>
-              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="phone" name="phone" type="number">
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('phone')
+              border-red-500
+              @enderror" id="phone" name="phone" type="number" required>
 
+              @error('phone')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
 
         </div>
 
@@ -80,9 +125,15 @@
             <label class="block text-gray-700 text-sm font-bold mb-2" for="borndate">
                 FECHA DE NACIMIENTO
               </label>
-              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="borndate" name="borndate" type="date">
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('borndate')
+              border-red-500
+              @enderror" id="borndate" name="borndate" type="date" required>
 
-
+              @error('borndate')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
         </div>
 
 
@@ -93,8 +144,16 @@
                 Contraseña
             </label>
             <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="password" name="password" type="password">
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('password')
+                border-red-500
+                @enderror"
+                id="password" name="password" type="password" required>
+
+                @error('password')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
 
         </div>
 
@@ -116,8 +175,16 @@
                 FOTO DE PERFIL
             </label>
             <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('photo')
+                border-red-500
+                @enderror"
                 id="photo" name="photo" type="file">
+
+                @error('photo')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
 
         </div>
 
