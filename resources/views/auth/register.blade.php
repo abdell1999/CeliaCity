@@ -1,224 +1,213 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" novalidate>
-                        @csrf
 
+    <!-- NUEVO FORMULARIO REGISTRO -->
 
+    <form class="w-full max-w-lg" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" novalidate>
+        @csrf
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
+                    Nombre
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white @error('name')
+                    border-red-500
+                    @enderror"
+                    id="name" name="name" type="text" required>
 
 
+                    @error('name')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Nombre:</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="form-group row">
-                            <label for="surname1" class="col-md-4 col-form-label text-md-right">Primer apellido:</label>
-
-                            <div class="col-md-6">
-                                <input id="surname1" type="text" class="form-control @error('surname1') is-invalid @enderror" name="surname1" value="{{ old('surname1') }}" required autocomplete="surname1" autofocus>
-
-                                @error('surname1')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="form-group row">
-                            <label for="surname2" class="col-md-4 col-form-label text-md-right">Segundo apellido:</label>
-
-                            <div class="col-md-6">
-                                <input id="surname2" type="text" class="form-control @error('surname2') is-invalid @enderror" name="surname2" value="{{ old('surname2') }}" autocomplete="surname2" autofocus>
-
-                                @error('surname2')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Correo electrónico:</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">Dirección</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="address">
-
-                                @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="movilphone" class="col-md-4 col-form-label text-md-right">Teléfono móvil</label>
-
-                            <div class="col-md-6">
-                                <input id="movilphone" type="number" class="form-control @error('movilphone') is-invalid @enderror" name="movilphone" required autocomplete="movilphone">
-
-                                @error('movilphone')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="phone" class="col-md-4 col-form-label text-md-right">Teléfono fijo:</label>
-
-                            <div class="col-md-6">
-                                <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" required autocomplete="phone">
-
-                                @error('phone')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="borndate" class="col-md-4 col-form-label text-md-right">Fecha de nacimiento:</label>
-
-                            <div class="col-md-6">
-                                <input id="borndate" type="date" class="form-control @error('borndate') is-invalid @enderror" name="borndate">
-
-                                @error('borndate')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirma la contraseña:</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-                        <div class="form-group row">
-                            <label for="photo" class="col-md-4 col-form-label text-md-right">Foto de perfil:</label>
-                            <div class="col-md-6">
-                            <input type="file" class="form-control" name="photo">
-                            @error('photo')
-                            <span class="invalid-feedback d-block" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
+            <div class="w-full md:w-1/3 px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="surname1">
+                    Primer apellido
+                </label>
+                <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('surname1')
+                    border-red-500
+                    @enderror"
+                    id="surname1" name="surname1" type="text" required>
+                    @error('surname1')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
+          </div>
+
+
+          <div class="w-full md:w-1/3 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="surname2">
+                Segundo apellido
+            </label>
+            <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="surname2" name="surname2" type="text"">
+      </div>
+
+
+        <div class="w-full md:w-3/3 px-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                EMAIL
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('email')
+              border-red-500
+              @enderror" id="email" name="email" type="email" required>
+
+
+              @error('email')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
+
+
         </div>
-    </div>
-</div>
+
+
+        <div class="w-full md:w-3/3 px-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+                DIRECCIÓN
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('address')
+              border-red-500
+              @enderror" id="address" name="address" type="text" required>
+              @error('address')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
+
+        </div>
+
+
+
+        <div class="w-full md:w-1/2 px-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="movilphone">
+                TELÉFONO MÓVIL
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('movilphone')
+              border-red-500
+              @enderror" id="movilphone" name="movilphone" type="number" required>
+
+              @error('movilphone')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
+
+        </div>
+
+        <div class="w-full md:w-1/2 px-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                TELÉFONO FIJO
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('phone')
+              border-red-500
+              @enderror" id="phone" name="phone" type="number" required>
+
+              @error('phone')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
+
+        </div>
+
+        <div class="w-full md:w-2/2 px-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="borndate">
+                FECHA DE NACIMIENTO
+              </label>
+              <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('borndate')
+              border-red-500
+              @enderror" id="borndate" name="borndate" type="date" required>
+
+              @error('borndate')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
+        </div>
+
+
+
+        <div class="w-full md:w-1/2 px-3">
+
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="password">
+                Contraseña
+            </label>
+            <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('password')
+                border-red-500
+                @enderror"
+                id="password" name="password" type="password" required>
+
+                @error('password')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
+
+        </div>
+
+        <div class="w-full md:w-1/2 px-3">
+
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="password-confirm">
+                Confirma la contraseña
+            </label>
+            <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="password-confirm" name="password_confirmation" type="password">
+
+        </div>
+
+
+        <div class="w-full md:w-2/2 px-3">
+
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="photo">
+                FOTO DE PERFIL
+            </label>
+            <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('photo')
+                border-red-500
+                @enderror"
+                id="photo" name="photo" type="file">
+
+                @error('photo')
+                                        <p class="text-red-500 text-xs italic">
+                                            {{ $message }}
+                                        </p>
+                    @enderror
+
+        </div>
+
+
+        <div class="w-full md:w-2/2 px-3">
+
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+                REGISTRARSE
+              </button>
+
+        </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </form>
+
 @endsection
