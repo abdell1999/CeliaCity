@@ -87,7 +87,7 @@ class RegisterController extends Controller
             'borndate' => $data['borndate'],
             'address' => $data['address'],
             'photo' => "/storage/" . $data['photo']->store('users', 'public'),
-            'rol' => 0,
+            'rol' => 2,
         ]);
     }
 }

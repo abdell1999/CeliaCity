@@ -102,7 +102,16 @@
                                     {{$user->borndate}}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    Admin
+
+                                    @if ($user->rol == 0)
+                                        Administrador
+                                    @endif
+                                    @if ($user->rol == 1)
+                                        Editor
+                                    @endif
+                                    @if ($user->rol == 2)
+                                        Usuario
+                                    @endif
                                 </td>
                                 <td
                                     class="
