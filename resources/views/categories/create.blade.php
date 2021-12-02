@@ -1,28 +1,39 @@
 @extends("layouts.app")
 
-@section("content")
-    <br>
-    <div class="row">
-        <div class="col">
-            <div class="card shadow mb-3">
-                <div class="card-header py-3">
-                    <p class="text-primary m-0 fw-bold">Nombre Categoria</p>
+@section('content')
+
+    <form action="{{ route('categories.store') }}" enctype="multipart/form-data" method="post">
+        @csrf
+
+        <div class="w-full max-w-sm">
+            <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/3">
+
+                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
+                        Nombre
+                    </label>
                 </div>
-                <div class="card-body">
-                    <br>
-                    <form action = "{{ route('categories.store') }}" enctype="multipart/form-data" method = "post">
-                        @csrf
-                        <div class="row">
-                            <div class="col">
-                                <div class="mb-3"><label class="form-label" for="name"><strong>Nombre</strong></label><input class="form-control" type="text" id="name" placeholder="Nombre" name="name"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3"><input class="btn btn-primary btn-sm" type="submit" value="Enviar"></div>
-                    </form>
+                <div class="md:w-2/3">
+                    <input
+                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                        id="inline-full-name" type="text" id="name" placeholder="nombre de la nueva categoría" name="name">
+
                 </div>
             </div>
         </div>
+
+
+
+            <div class="md:w-1/3">
+
+                <button
+                    class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                    type="submit">
+                    Crear categoría
+                </button>
+            </div>
+
+    </form>
     </div>
-    </div>
-    </div>
+
 @endsection
