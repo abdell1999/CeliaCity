@@ -82,7 +82,7 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for editing the specified User.
+     * Show the form for editing the specified User.aaaaaaaaa
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
