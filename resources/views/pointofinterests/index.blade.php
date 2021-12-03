@@ -7,7 +7,7 @@
                 <div class="rounded-t mb-0 px-4 py-3 border-0">
                     <div class="flex flex-wrap items-center">
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                            <h1 class="font-semibold text-base text-xl text-blueGray-700">Puntos de Interes</h1>
+                            <h1 class="font-semibold text-base text-xl">Puntos de Interes</h1>
                         </div>
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                             <a href="{{ route('pointofinterests.create') }}"
@@ -22,27 +22,27 @@
                         <thead>
                             <tr>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
                                     Nombre
                                 </th>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
                                     Ubicación
                                 </th>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
                                     Número movil
                                 </th>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
                                     Texto
                                 </th>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
                                     Editar
                                 </th>
                                 <th
-                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
                                     Borrar
                                 </th>
                             </tr>
@@ -52,27 +52,27 @@
                             @foreach ($pointofinterests as $pointofinterest)
                             <tr>
                                 <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
                                     {{$pointofinterest->name}}
                                 </th>
                                 <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
                                     {{$pointofinterest->ubication}}
                                 </th>
                                 <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
                                     {{$pointofinterest->movilephone}}
                                 </th>
                                 <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-wrap p-4">
                                     {{$pointofinterest->text}}
                                 </th>
-                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 ">
+                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
                                     <a href="{{ route('pointofinterests.edit', $pointofinterest->id) }}"
                                         ><i class="far fa-edit" style="color: blue;"></i></a>
                                     </th>
                                     <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 ">
                                         <form method="POST" action="{{ route('pointofinterests.destroy', $pointofinterest->id) }}">
                                             @csrf
                                             @method('DELETE')
