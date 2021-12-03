@@ -74,7 +74,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function edit($id)
     {
         $data['comments'] = Comment::find($id);
         return view('comments.edit',$data);
@@ -87,7 +87,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$comment)
+    public function update(Request $request,$id)
     {
         $data = $request->validate([
             'date' => 'required',
