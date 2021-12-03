@@ -42,30 +42,30 @@ class UserController extends Controller
             'email'  =>   'required',
             'password'  =>   'required',
             'phone' =>   'required max:9 min:9',
-            'movilephone'  =>   'required max:9 min:9',
+            'movilphone'  =>   'required max:9 min:9',
             'borndate'  =>   'required',
             'photo'  =>   'required', //falta poner image en el required de momento no lo pongo para futuras pruebas
             'address'  =>   'required',
             'rol'  =>   'required'
-            
+
 
         ]);
-      
-        $users = new User();
-        $users->name = $data['name'];
-        $users->surname1 = $data['surname1'];
-        $users->surname2 = $data['surname2'];
-        $users->email = $data['email'];
-        $users->password = $data['password'];
-        $users->phone = $data['phone'];
-        $users->movilephone = $data['movilephone'];
-        $users->borndate = $data['borndate'];
-        $users->photo = $data['photo'];
-        $users->address = $data['address'];
-        $users->rol = $data['rol'];
-        
 
-        $users->save();
+        $User = new User();
+        $User->name = $data['name'];
+        $User->surname1 = $data['surname1'];
+        $User->surname2 = $data['surname2'];
+        $User->email = $data['email'];
+        $User->password = $data['password'];
+        $User->phone = $data['phone'];
+        $User->movilephone = $data['movilephone'];
+        $User->borndate = $data['borndate'];
+        $User->photo = $data['photo'];
+        $User->address = $data['address'];
+        $User->rol = $data['rol'];
+
+
+        $User->save();
         return redirect()->route('users.index');
     }
 
@@ -82,7 +82,7 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for editing the specified User.aaaaaaaaa
+     * Show the form for editing the specified User.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -115,7 +115,7 @@ class UserController extends Controller
             'rol'  =>   'required'
 
         ]);
-      
+
         $users = User::find($id);
         $users->name = $data['name'];
         $users->surname1 = $data['surname1'];
