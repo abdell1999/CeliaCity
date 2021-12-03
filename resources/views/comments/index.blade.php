@@ -1,57 +1,101 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Comentarios</h1>
 
-<a href=" {{ route('comments.create') }} ">Nuevo comentario</a>
+    <section class="bg-blueGray-50">
+        <div class="w-full mb-12 xl:mb-0 px-10 mx-auto mt-10">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+                <div class="rounded-t mb-0 px-4 py-3 border-0">
+                    <div class="flex flex-wrap items-center">
+                        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                            <h1 class="font-semibold text-base text-xl text-blueGray-700">Comentarios</h1>
+                        </div>
+                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                            <a href="{{ route('comments.create') }}"
+                                class="bg-indigo-500 text-white text-sm active:bg-indigo-600 font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button">Añadir Comentario</a>
+                        </div>
+                    </div>
+                </div>
 
-<div class="col-md10 mx-auto bg-white p-3">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scole="col">Fecha</th>
-                <th scole="col">Valoración</th>
-                <th scole="col">Texto</th>
-                <th scole="col">idUser</th>
-                <th scole="col">idPoint</th>
-                
-                
-            </tr>
-        </thead>
+                <div class="block w-full overflow-x-auto">
+                    <table class="items-center bg-transparent w-full border-collapse ">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    Fecha
+                                </th>
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    Valoración
+                                </th>
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    Contenido
+                                </th>
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    id User
+                                </th>
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    id Point
+                                </th>
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    Editar
+                                </th>
+                                <th
+                                    class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    Borrar
+                                </th>
+                            </tr>
+                        </thead>
 
+                        <tbody>
+                            @foreach ($comments as $comment)
+                            <tr>
+                                <th
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    {{$comment->date}}
+                                </th>
+                                <th
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    {{$comment->valoration}}
+                                </th>
+                                <th
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    {{$comment->text}}
+                                </th>
+                                <th
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    {{$comment->idUser}}
+                                </th>
+                                <th
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                    {{$comment->idPointofinterest}}
+                                </th>
+                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 ">
+                                    <a href="{{ route('comments.edit', $comment->id) }}"
+                                        ><i class="far fa-edit" style="color: blue;"></i></a>
+                                    </th>
+                                    <th
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
+                                        <form method="POST" action="{{ route('comments.destroy', $comment->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" class="" value="Eliminar">
+                                        </form>
+                                    </th>
+                            </tr>
+                                @endforeach
+                        </tbody>
 
-        <tbody>
-            @foreach ($comments as $comment)
-            <tr>
-                <td> {{$comment->date}} </td>
-                <td> {{$comment->valoration}} </td>
-                <td> {{$comment->text}} </td>
-                <td> {{$comment->id_user}} </td>
-                <td> {{$comment->id_pointofinterest}} </td>
-                <td>
-                   
-
-
-                <form method="POST" action="{{ route('comments.destroy', $comment->id) }}">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="btn btn-danger w-20 d-block" value="Eliminar">
-                    </form>
-                    <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-dark mr-1">Editar</a>
-                    <br>
-                    <a href="{{ route('comments.show', $comment->id) }}" class="btn btn-success mr-1">Ver</a>
-                </td>
-
-
-
-
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-
-
-    </table>
+                    </table>
+                </div>
+            </div>
+        </div>
 
 </div>
 
