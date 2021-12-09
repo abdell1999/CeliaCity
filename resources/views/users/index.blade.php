@@ -1,67 +1,26 @@
-@extends('layouts.app') @section('content')
-
-
+@extends('layouts.app')
+@section('content')
 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
     <a href="{{ route('users.create') }}" class="bg-indigo-500 text-white text-sm active:bg-indigo-600 font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Añadir Nuevo Usuario</a>
 </div>
 
-
-
-
 <div class="flex flex-col text-left">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div class="
-            shadow
-            overflow-hidden
-            border-b border-gray-200
-            sm:rounded-lg
-          ">
+            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col" class="
-                    px-6
-                    py-3
-                    text-left text-xs
-                    font-medium
-                    text-gray-500
-                    uppercase
-                    tracking-wider
-                  ">
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Nombre
                             </th>
-                            <th scope="col" class="
-                    px-6
-                    py-3
-                    text-left text-xs
-                    font-medium
-                    text-gray-500
-                    uppercase
-                    tracking-wider
-                  ">
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Contacto
                             </th>
-                            <th scope="col" class="
-                    px-6
-                    py-3
-                    text-left text-xs
-                    font-medium
-                    text-gray-500
-                    uppercase
-                    tracking-wider
-                  ">
+                            <th scope="col" class=" px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Fecha de nacimiento
                             </th>
-                            <th scope="col" class="
-                    px-6
-                    py-3
-                    text-left text-xs
-                    font-medium
-                    text-gray-500
-                    uppercase
-                    tracking-wider
-                  ">
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Role
                             </th>
                             <th scope="col" class="relative px-6 py-3">
@@ -100,13 +59,7 @@
 
                                 @if($user->rol == 0) Administrador @endif @if($user->rol == 1) Editor @endif @if($user->rol == 2) Usuario @endif
                             </td>
-                            <td class="
-                    px-6
-                    py-4
-                    whitespace-nowrap
-                    text-right text-sm
-                    font-medium
-                  ">
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <a href="{{ route('users.show', $user->id) }}" class="text-indigo-600 hover:text-indigo-900">View</a>
                                 <a href="{{ route('users.edit', $user->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
 
@@ -123,10 +76,5 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 
 @endsection

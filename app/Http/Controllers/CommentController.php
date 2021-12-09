@@ -50,8 +50,8 @@ class CommentController extends Controller
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];
         $comment->text = $data['text'];
-        $comment->idUser = $data['idUser'];
-        $comment->idPoint = $data['idPoint'];
+        $comment->id_user = $data['idUser'];
+        $comment->id_pointofinterest = $data['idPoint'];
         $comment->save();
         return redirect()->route('comments.index');
     }
@@ -102,8 +102,8 @@ class CommentController extends Controller
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];
         $comment->text = $data['text'];
-        $comment->idUser = $data['idUser'];
-        $comment->idPoint = $data['idPoint'];
+        $comment->id_user = $data['idUser'];
+        $comment->id_pointofinterest = $data['idPoint'];
         $comment->save();
         return redirect()->route('comments.index');
     }

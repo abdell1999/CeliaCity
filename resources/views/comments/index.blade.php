@@ -70,11 +70,11 @@
                                 </th>
                                 <th
                                     class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                    {{$comment->idUser}}
+                                    {{$comment->id_user}}
                                 </th>
                                 <th
                                     class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                    {{$comment->idPointofinterest}}
+                                    {{$comment->id_pointofinterest}}
                                 </th>
                                 <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 ">
                                     <a href="{{ route('comments.edit', $comment->id) }}"
