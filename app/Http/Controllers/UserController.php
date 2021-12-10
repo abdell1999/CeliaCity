@@ -100,35 +100,43 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $data = $request->validate([ //faltan cosas por agregar
-            'name' => 'required',
-            'surname1' => 'required',
-            'email'  =>   'required',
-            'password'  =>   'required',
-            'phone' =>   'required max:9 min:9',
-            'movilephone'  =>   'required max:9 min:9',
-            'borndate'  =>   'required',
-            'photo'  =>   'required', //falta poner image en el required de momento no lo pongo para futuras pruebas
-            'address'  =>   'required',
-            'rol'  =>   'required'
+    public function update(Request $request, $id){
+
+        //dd($request);
+
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'surname1' => ['required', 'string', 'max:255'],
+            'surname2' => ['nullable', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'phone' => ['required', 'min:9', 'max:9'],
+            'movilphone' => ['required', 'min:9', 'max:9'],
+            'borndate' => ['required'],
+            'address' => ['required'],
+            'photo' => ['nullable'],
+
 
         ]);
 
-        $users = User::find($id);
-        $users->name = $data['name'];
-        $users->surname1 = $data['surname1'];
-        $users->surname2 = $data['surname2'];
-        $users->email = $data['email'];
-        $users->password = $data['password'];
-        $users->phone = $data['phone'];
-        $users->movilephone = $data['movilephone'];
-        $users->borndate = $data['borndate'];
-        $users->photo = $data['photo'];
-        $users->address = $data['address'];
-        $users->rol = $data['rol'];
-        $users->save();
+
+
+        $user = User::find($id);
+        $user->name = $data['name'];
+        $user->surname1 = $data['surname1'];
+        $user->surname2 = $data['surname2'];
+        $user->email = $data['email'];
+        $user->phone = $data['phone'];
+        $user->movilphone = $data['movilphone'];
+        $user->borndate = $data['borndate'];
+
+
+        //$user->photo = "/storage/" . $data['photo']->store('users', 'public');
+
+
+
+        $user->address = $data['address'];
+        //$user->rol = $data['rol'];
+        $user->save();
         return redirect()->route('users.index');
     }
 
@@ -140,8 +148,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $User = User::find($id);
-        $User->delete();
+        $user = User::find($id);
+        $user->delete();
         return redirect()->route('users.index');
     }
 }
