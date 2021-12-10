@@ -50,8 +50,8 @@ class CommentController extends Controller
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];
         $comment->text = $data['text'];
-        $comment->idUser = $data['idUser'];
-        $comment->idPoint = $data['idPoint'];
+        $comment->id_user = $data['idUser'];
+        $comment->id_pointofinterest = $data['idPoint'];
         $comment->save();
         return redirect()->route('comments.index');
     }
@@ -74,7 +74,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function edit($id)
     {
         $data['comments'] = Comment::find($id);
         return view('comments.edit',$data);
@@ -87,7 +87,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$comment)
+    public function update(Request $request,$id)
     {
         $data = $request->validate([
             'date' => 'required',
@@ -102,8 +102,8 @@ class CommentController extends Controller
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];
         $comment->text = $data['text'];
-        $comment->idUser = $data['idUser'];
-        $comment->idPoint = $data['idPoint'];
+        $comment->id_user = $data['idUser'];
+        $comment->id_pointofinterest = $data['idPoint'];
         $comment->save();
         return redirect()->route('comments.index');
     }
