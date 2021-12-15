@@ -39,30 +39,38 @@ class UserController extends Controller
         $data = $request->validate([ //faltan cosas por agregar
             'name' => 'required',
             'surname1' => 'required',
+            'surname2' => 'nullable',
             'email'  =>   'required',
             'password'  =>   'required',
             'phone' =>   'required max:9 min:9',
             'movilphone'  =>   'required max:9 min:9',
             'borndate'  =>   'required',
-            'photo'  =>   'required', //falta poner image en el required de momento no lo pongo para futuras pruebas
             'address'  =>   'required',
             'rol'  =>   'required'
 
 
         ]);
 
-        $User = new User();
-        $User->name = $data['name'];
-        $User->surname1 = $data['surname1'];
-        $User->surname2 = $data['surname2'];
-        $User->email = $data['email'];
-        $User->password = $data['password'];
-        $User->phone = $data['phone'];
-        $User->movilephone = $data['movilephone'];
-        $User->borndate = $data['borndate'];
-        $User->photo = $data['photo'];
-        $User->address = $data['address'];
-        $User->rol = $data['rol'];
+        $user = new User();
+        $user->name = $data['name'];
+        $user->surname1 = $data['surname1'];
+        $user->surname2 = $data['surname2'];
+        $user->email = $data['email'];
+        $user->password = $data['password'];
+        $user->phone = $data['phone'];
+        $user->movilephone = $data['movilephone'];
+        $user->borndate = $data['borndate'];
+
+        if(request('photo')){
+
+            //'photo' => "/storage/" . $data['photo']->store('users', 'public'),
+            $user->photo = "/storage/" . $request['photo']->store('users', 'public');
+
+        }
+
+
+        $user->address = $data['address'];
+        $user->rol = $data['rol'];
 
 
         $User->save();
@@ -132,7 +140,12 @@ class UserController extends Controller
 
         //$user->photo = "/storage/" . $data['photo']->store('users', 'public');
 
+        if(request('photo')){
 
+            //'photo' => "/storage/" . $data['photo']->store('users', 'public'),
+            $user->photo = "/storage/" . $request['photo']->store('users', 'public');
+
+        }
 
         $user->address = $data['address'];
         //$user->rol = $data['rol'];
