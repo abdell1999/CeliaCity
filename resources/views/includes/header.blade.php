@@ -119,6 +119,7 @@
 
     var navMenuDiv = document.getElementById("nav-content");
     var navMenu = document.getElementById("nav-toggle");
+    //var userMenuDiv = document.getElementById("menu");
 
     document.onclick = check;
 
