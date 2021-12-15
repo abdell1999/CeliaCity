@@ -51,18 +51,18 @@ class UserController extends Controller
 
         ]);
 
-        $User = new User();
-        $User->name = $data['name'];
-        $User->surname1 = $data['surname1'];
-        $User->surname2 = $data['surname2'];
-        $User->email = $data['email'];
-        $User->password = $data['password'];
-        $User->phone = $data['phone'];
-        $User->movilephone = $data['movilephone'];
-        $User->borndate = $data['borndate'];
-        $User->photo = $data['photo'];
-        $User->address = $data['address'];
-        $User->rol = $data['rol'];
+        $user = new User();
+        $user->name = $data['name'];
+        $user->surname1 = $data['surname1'];
+        $user->surname2 = $data['surname2'];
+        $user->email = $data['email'];
+        $user->password = $data['password'];
+        $user->phone = $data['phone'];
+        $user->movilephone = $data['movilephone'];
+        $user->borndate = $data['borndate'];
+        $user->photo = $data['photo'];
+        $user->address = $data['address'];
+        $user->rol = $data['rol'];
 
 
         $User->save();
@@ -132,7 +132,12 @@ class UserController extends Controller
 
         //$user->photo = "/storage/" . $data['photo']->store('users', 'public');
 
+        if(request('photo')){
 
+            //'photo' => "/storage/" . $data['photo']->store('users', 'public'),
+            $user->photo = "/storage/" . $request['photo']->store('users', 'public');
+
+        }
 
         $user->address = $data['address'];
         //$user->rol = $data['rol'];
