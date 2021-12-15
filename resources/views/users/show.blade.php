@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<script src="/assets/js/jquery-3.6.0.min.js"></script>
-<script src="/assets/js/editarPerfil.js"></script>
+
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
     <div class="px-4 py-5 sm:px-6" >
       <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -26,23 +25,39 @@
       </p>
     </div>
 
-    <div class="border-t border-gray-200">
+    <div class="border-t border-gray-200 ficha">
       <dl>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-sm font-medium text-gray-500" >
-            Nombre Completo 
+          <dt class="text-sm font-medium text-gray-500"  >
+            Nombre 
           </dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="nombre">
-            Poner nombre de usuario
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" >
+           <input name="name" value="{{$users->name}}" id="name" >
             
           </dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-sm font-medium text-gray-500">
+          <dt class="text-sm font-medium text-gray-500" >
+            Primer Apellido
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" >
+          <input name="surname1" value="{{$users->surname1}}" disabled id="surname1">
+          </dd>
+        </div>
+        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500" >
+           Segundo Apellido
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <input name="surname2" value="{{$users->surname2}}" disabled id="surname2">
+          </dd>
+        </div>
+        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500" >
             Dirección
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            Calle Sanchez numero 6
+          <input name="address" value="{{$users->address}}" disabled id="address">
           </dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -50,15 +65,23 @@
             Correo electrónico
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            margotfoster@example.com
+          <input name="email" value="{{$users->email}}" disabled id="email">
           </dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500">
-            Números de contacto
+            Teléfono fijo
           </dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            601074779 / 950128397
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" >
+          <input name="phone" value="{{$users->phone}}" disabled id="phone">
+          </dd>
+        </div>
+        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500">
+            Teléfono móvil
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" >
+          <input name="movilphone" value="{{$users->movilphone}}" disabled id="movilphone">
           </dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -66,10 +89,16 @@
             Fecha De Nacimiento
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-            14-02-99
+          <input type="date" name="borndate" value="{{$users->borndate}}" disabled id="borndate">
           </dd>
         </div>
       </dl>
     </div>
+    
   </div>
+  <button type="button" class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Guardar
+       </button>
+       <script src="/assets/js/jquery-3.6.0.min.js"></script>
+      <script src="/assets/js/editarPerfil.js"></script>
 @endsection
