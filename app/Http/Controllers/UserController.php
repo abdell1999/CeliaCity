@@ -39,12 +39,12 @@ class UserController extends Controller
         $data = $request->validate([ //faltan cosas por agregar
             'name' => 'required',
             'surname1' => 'required',
+            'surname2' => 'nullable',
             'email'  =>   'required',
             'password'  =>   'required',
             'phone' =>   'required max:9 min:9',
             'movilphone'  =>   'required max:9 min:9',
             'borndate'  =>   'required',
-            'photo'  =>   'required', //falta poner image en el required de momento no lo pongo para futuras pruebas
             'address'  =>   'required',
             'rol'  =>   'required'
 
@@ -60,7 +60,15 @@ class UserController extends Controller
         $user->phone = $data['phone'];
         $user->movilephone = $data['movilephone'];
         $user->borndate = $data['borndate'];
-        $user->photo = $data['photo'];
+
+        if(request('photo')){
+
+            //'photo' => "/storage/" . $data['photo']->store('users', 'public'),
+            $user->photo = "/storage/" . $request['photo']->store('users', 'public');
+
+        }
+
+
         $user->address = $data['address'];
         $user->rol = $data['rol'];
 

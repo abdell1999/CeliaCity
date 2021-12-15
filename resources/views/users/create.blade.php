@@ -189,6 +189,36 @@
         </div>
 
 
+
+        <div class="w-full md:w-1/2 px-3">
+
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="rol">
+                Seleccione el rol del usuario:
+            </label>
+            <select class="form-select appearance-none
+            block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding bg-no-repeat
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="rol" id="rol">
+
+                <option value="0">Administrador</option>
+                <option value="1">Editor</option>
+                <option value="2">Usuario</option>
+            </select>
+
+        </div>
+
+
         <div class="w-full md:w-2/2 px-3">
 
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
