@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-
+<form class="w-full max-w-lg" method="POST" action="{{ route('users.update',['user' => $users->id]) }}" enctype="multipart/form-data" novalidate>
+        @csrf
+        @method("PUT")
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
     <div class="px-4 py-5 sm:px-6" >
       <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -102,9 +104,13 @@
         </div>
       </dl>
     </div>
-    
   </div>
   
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+    EDITAR
+  </button>
+  </form>
        <script src="/assets/js/jquery-3.6.0.min.js"></script>
       <script src="/assets/js/editarPerfil.js"></script>
+
 @endsection
