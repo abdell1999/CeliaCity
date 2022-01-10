@@ -27,7 +27,11 @@
                                 </th>
                                 <th
                                     class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
-                                    Ubicación
+                                    Latitud
+                                </th>
+                                <th
+                                    class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    Longitud
                                 </th>
                                 <th
                                     class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
@@ -57,7 +61,11 @@
                                 </th>
                                 <th
                                     class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
-                                    {{$pointofinterest->ubication}}
+                                    {{$pointofinterest->latitude}}
+                                </th>
+                                <th
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
+                                    {{$pointofinterest->longitude}}
                                 </th>
                                 <th
                                     class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">

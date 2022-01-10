@@ -16,7 +16,8 @@ class CreatePointofinterestsTable extends Migration
         Schema::create('pointofinterests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('ubication');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->string('movilephone');
             $table->string('text');
             $table->timestamps();
