@@ -46,7 +46,8 @@ class PointofinterestController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'ubication' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
             'movilephone' => 'required',
             'text'  =>   'required'
 
@@ -54,7 +55,8 @@ class PointofinterestController extends Controller
 
         $pointofinterest = new Pointofinterest();
         $pointofinterest->name = $data['name'];
-        $pointofinterest->ubication = $data['ubication'];
+        $pointofinterest->latitude = $data['latitude'];
+        $pointofinterest->latitude = $data['longitude'];
         $pointofinterest->movilephone = $data['movilephone'];
         $pointofinterest->text = $data['text'];
         $pointofinterest->save();
@@ -96,7 +98,8 @@ class PointofinterestController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'ubication' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
             'movilephone' => 'required',
             'text'  =>   'required'
 
@@ -104,7 +107,8 @@ class PointofinterestController extends Controller
 
         $pointofinterests = Pointofinterest::find($id);
         $pointofinterests->name = $data['name'];
-        $pointofinterests->ubication = $data['ubication'];
+        $pointofinterests->latitude = $data['latitude'];
+        $pointofinterest->latitude = $data['longitude'];
         $pointofinterests->movilephone = $data['movilephone'];
         $pointofinterests->text = $data['text'];
         $pointofinterests->save();
