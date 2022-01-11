@@ -65,6 +65,21 @@
                         id="inline-full-name" type="text" id="text" cols="100" rows="10" placeholder="Nombre del nuevo contenido" name="text"></textarea>
                 </div>
             </div>
+            <div class="md:flex md:items-center mb-6">
+                <div class="md:w-1/3">
+                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="categorie">
+                        Categorias a la que pertenece
+                    </label>
+                </div>
+                <div class="md:w-2/3">
+                <span class="text-gray-700">Selección multiple</span>
+                    <select class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="categoriespoint" multiple>
+                        @foreach($categories as $categorie)
+                        <option value="{{$categorie['id']}}">{{$categorie['name']}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
         </div>
 
 <div class="md:w-1/3">
@@ -73,5 +88,4 @@
         Enviar
     </button>
 </div>
-
 @endsection

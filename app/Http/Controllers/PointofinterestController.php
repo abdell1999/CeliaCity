@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pointofinterest;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class PointofinterestController extends Controller
@@ -33,7 +34,10 @@ class PointofinterestController extends Controller
      */
     public function create()
     {
-        return view('pointofinterests.create');
+        $data['categories'] = Categorie::all();
+
+        return view('pointofinterests.create',$data);
+
     }
 
     /**
@@ -49,7 +53,8 @@ class PointofinterestController extends Controller
             'latitude' => 'required',
             'longitude' => 'required',
             'movilephone' => 'required',
-            'text'  =>   'required'
+            'text'  =>   'required',
+            'categoriespoint' => 'required'
 
         ]);
 
@@ -60,6 +65,21 @@ class PointofinterestController extends Controller
         $pointofinterest->movilephone = $data['movilephone'];
         $pointofinterest->text = $data['text'];
         $pointofinterest->save();
+
+
+        $pointid = Pointofinterest::where('name', $data['name'])->take(1)->get();
+
+
+
+        foreach ($data->categoriespoint as $categoria) {
+            DB::table('categories_pointofinterests')->insert([
+                'id_categorie' => $categoria,
+                'id_pointofinterest' => $pointid[0]->id,
+
+                ])
+        }
+
+
         return redirect()->route('pointofinterests.index');
     }
 
