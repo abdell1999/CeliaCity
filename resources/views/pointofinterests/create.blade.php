@@ -73,7 +73,7 @@
                 </div>
                 <div class="md:w-2/3">
                 <span class="text-gray-700">Selección multiple</span>
-                    <select class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="categoriespoint" multiple>
+                    <select class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="categoriespoint[]" multiple="multiple">
                         @foreach($categories as $categorie)
                         <option value="{{$categorie['id']}}">{{$categorie['name']}}</option>
                         @endforeach

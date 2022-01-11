@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pointofinterest;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PointofinterestController extends Controller
 {
@@ -46,8 +47,7 @@ class PointofinterestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $data = $request->validate([
             'name' => 'required',
             'latitude' => 'required',
@@ -61,7 +61,7 @@ class PointofinterestController extends Controller
         $pointofinterest = new Pointofinterest();
         $pointofinterest->name = $data['name'];
         $pointofinterest->latitude = $data['latitude'];
-        $pointofinterest->latitude = $data['longitude'];
+        $pointofinterest->longitude = $data['longitude'];
         $pointofinterest->movilephone = $data['movilephone'];
         $pointofinterest->text = $data['text'];
         $pointofinterest->save();
@@ -71,13 +71,15 @@ class PointofinterestController extends Controller
 
 
 
-        foreach ($data->categoriespoint as $categoria) {
+        foreach($request->categoriespoint as $categoria){
             DB::table('categories_pointofinterests')->insert([
                 'id_categorie' => $categoria,
                 'id_pointofinterest' => $pointid[0]->id
 
             ]);
         }
+
+
 
 
         return redirect()->route('pointofinterests.index');

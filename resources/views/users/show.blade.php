@@ -4,7 +4,7 @@
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
     <div class="px-4 py-5 sm:px-6" >
       <h3 class="text-lg leading-6 font-medium text-gray-900">
-        Perfil De Usuario 
+        Perfil De Usuario
       </h3>
       <p class="mt-1 max-w-2xl text-sm text-gray-500">
         <!--<img src="https://previews.123rf.com/images/tuktukdesign/tuktukdesign1606/tuktukdesign160600119/59070200-icono-de-usuario-hombre-perfil-hombre-de-negocios-avatar-icono-persona-en-la-ilustraci%C3%B3n-vectorial.jpg?fj=1" alt="noseve" width="50px" heigth="50px"> -->
@@ -29,7 +29,7 @@
       <dl>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"  >
-            Nombre 
+            Nombre
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" >
            <input name="name" value="{{$users->name}}" id="name" disabled>
@@ -43,7 +43,7 @@
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" >
           <input name="surname1" value="{{$users->surname1}}"  id="surname1" >
           <button id="editsurname1"><i class="far fa-edit" style="color: blue;"></i></button>
-          
+
           </dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -103,9 +103,16 @@
       </dl>
     </div>
   </div>
+<<<<<<< HEAD
+  <form class="w-full max-w-lg" method="POST" action="{{ route('users.update',['user' => $users->id]) }}" enctype="multipart/form-data" novalidate>
+    @csrf
+    @method("PUT")
+
+=======
 <form class="w-full max-w-lg" method="POST" action="{{ route('users.update',['user' => $users->id]) }}" enctype="multipart/form-data" novalidate>
         @csrf
         @method("PUT")
+>>>>>>> c746eadce7b2330c4e36c49fe88c829e7558d7ef
 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
     EDITAR
   </button>
