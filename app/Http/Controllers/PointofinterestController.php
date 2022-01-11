@@ -74,9 +74,9 @@ class PointofinterestController extends Controller
         foreach ($data->categoriespoint as $categoria) {
             DB::table('categories_pointofinterests')->insert([
                 'id_categorie' => $categoria,
-                'id_pointofinterest' => $pointid[0]->id,
+                'id_pointofinterest' => $pointid[0]->id
 
-                ])
+            ]);
         }
 
 
