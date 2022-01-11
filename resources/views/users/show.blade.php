@@ -41,7 +41,7 @@
             Primer Apellido
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" >
-          <input name="surname1" value="{{$users->surname1}}"  id="surname1" disabled>
+          <input name="surname1" value="{{$users->surname1}}"  id="surname1" >
           <button id="editsurname1"><i class="far fa-edit" style="color: blue;"></i></button>
 
           </dd>
@@ -51,7 +51,7 @@
            Segundo Apellido
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          <input name="surname2" value="{{$users->surname2}}"  id="surname2" disabled>
+          <input name="surname2" value="{{$users->surname2}}" id="surname2" >
           <button id="editsurname2"><i class="far fa-edit" style="color: blue;"></i></button>
           </dd>
         </div>
@@ -103,10 +103,16 @@
       </dl>
     </div>
   </div>
+<<<<<<< HEAD
   <form class="w-full max-w-lg" method="POST" action="{{ route('users.update',['user' => $users->id]) }}" enctype="multipart/form-data" novalidate>
     @csrf
     @method("PUT")
 
+=======
+<form class="w-full max-w-lg" method="POST" action="{{ route('users.update',['user' => $users->id]) }}" enctype="multipart/form-data" novalidate>
+        @csrf
+        @method("PUT")
+>>>>>>> c746eadce7b2330c4e36c49fe88c829e7558d7ef
 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
     EDITAR
   </button>

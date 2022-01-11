@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pointofinterest;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PointofinterestController extends Controller
 {
@@ -33,7 +35,10 @@ class PointofinterestController extends Controller
      */
     public function create()
     {
-        return view('pointofinterests.create');
+        $data['categories'] = Categorie::all();
+
+        return view('pointofinterests.create',$data);
+
     }
 
     /**
@@ -42,22 +47,41 @@ class PointofinterestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $data = $request->validate([
             'name' => 'required',
-            'ubication' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
             'movilephone' => 'required',
-            'text'  =>   'required'
+            'text'  =>   'required',
+            'categoriespoint' => 'required'
 
         ]);
 
         $pointofinterest = new Pointofinterest();
         $pointofinterest->name = $data['name'];
-        $pointofinterest->ubication = $data['ubication'];
+        $pointofinterest->latitude = $data['latitude'];
+        $pointofinterest->longitude = $data['longitude'];
         $pointofinterest->movilephone = $data['movilephone'];
         $pointofinterest->text = $data['text'];
         $pointofinterest->save();
+
+
+        $pointid = Pointofinterest::where('name', $data['name'])->take(1)->get();
+
+
+
+        foreach($request->categoriespoint as $categoria){
+            DB::table('categories_pointofinterests')->insert([
+                'id_categorie' => $categoria,
+                'id_pointofinterest' => $pointid[0]->id,
+
+            ]);
+        }
+
+
+
+
         return redirect()->route('pointofinterests.index');
     }
 
@@ -96,7 +120,8 @@ class PointofinterestController extends Controller
     {
         $data = $request->validate([
             'name' => 'required',
-            'ubication' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
             'movilephone' => 'required',
             'text'  =>   'required'
 
@@ -104,7 +129,8 @@ class PointofinterestController extends Controller
 
         $pointofinterests = Pointofinterest::find($id);
         $pointofinterests->name = $data['name'];
-        $pointofinterests->ubication = $data['ubication'];
+        $pointofinterests->latitude = $data['latitude'];
+        $pointofinterest->latitude = $data['longitude'];
         $pointofinterests->movilephone = $data['movilephone'];
         $pointofinterests->text = $data['text'];
         $pointofinterests->save();

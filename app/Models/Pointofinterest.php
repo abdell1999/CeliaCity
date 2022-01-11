@@ -11,7 +11,8 @@ class Pointofinterest extends Model
 
     protected $fillable = [
         'name',
-        'ubication',
+        'latitude',
+        'longitude',
         'movilephone',
         'text'
     ];

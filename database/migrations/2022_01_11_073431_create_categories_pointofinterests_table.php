@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePointofinterestsTable extends Migration
+class CreateCategoriesPointofinterestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreatePointofinterestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pointofinterests', function (Blueprint $table) {
+        Schema::create('categories_pointofinterests', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('latitude');
-            $table->string('longitude');
-            $table->string('movilephone');
-            $table->string('text');
+            $table->Integer('id_pointofinterest');
+            $table->Integer('id_categorie');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreatePointofinterestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pointofinterests');
+        Schema::dropIfExists('categories_pointofinterests');
     }
 }

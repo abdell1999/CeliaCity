@@ -17,7 +17,8 @@ class PointofviewSeeder extends Seeder
     {
         DB::table('pointofinterests')->insert([
             'name' => 'IES Celia Viñas',
-            'ubication' => 'Centro de Almería',
+            'latitude' => '37.330822]',
+            'longitude' => '-2.302065',
             'movilephone' => '123 456 789',
             'text' => 'Aquí es donde nosotros estudiamos',
             'created_at' => now(),

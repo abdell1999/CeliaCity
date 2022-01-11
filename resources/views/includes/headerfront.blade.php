@@ -9,6 +9,7 @@
         height: 100vh;
         position: relative;
         overflow: hidden;
+        z-index: 0;
 
     }
 
@@ -26,14 +27,6 @@
 <div class="video-wrapper">
     <div class="videos">
         <div id="carousel" class="carousel slide carousel-fade relative" data-bs-ride="carousel">
-            <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-                <button type="button" data-bs-target="#carouselExampleCrossfade" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCrossfade" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCrossfade" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
             <div class="carousel-inner relative w-full overflow-hidden">
                 <div class="carousel-item active float-left w-full">
                     <img src="{{asset('assets/img/purullena.jpg')}}" class="block w-full" alt="Wild Landscape" />
@@ -58,18 +51,11 @@
                     <li onclick="selected()"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
                         Home</li>
+                    @foreach ($categories as $categorie)
                     <li onclick="selected()"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
-                        Guia Turistica</li>
-                    <li onclick="selected()"
-                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
-                        Historia</li>
-                    <li onclick="selected()"
-                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
-                        Restaurantes</li>
-                    <li onclick="selected()"
-                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
-                        Monumentos</li>
+                        <a href="">{{$categorie->name}}</a></li>
+                    @endforeach
                     <li onclick="selected()"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
                         Iniciar Sesion</li>
@@ -79,7 +65,7 @@
     </div>
     <!-- For medium and plus sized devices -->
     <!-- for smaller devcies md -->
-    <div class="block md:hidden w-full mt-5 left-1/4">
+    <div class="block md:hidden m-5 left-1/4">
         <div class="px-4 py-3 text-white bg-indigo-600 rounded flex justify-between items-center w-full left-1/4">
             <div class="flex space-x-2">
                 <span id="s1" class="font-semibold text-sm leading-3 hidden">Selecciona: </span>
@@ -93,18 +79,11 @@
         </div>
         <div class="relative">
             <ul id="list" class="hidden font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md">
+                @foreach ($categories as $categorie)
                 <li onclick="selectedSmall()"
                     class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-sm leading-3 font-normal">
-                    Guia Turistica</li>
-                <li onclick="selectedSmall()"
-                    class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-sm leading-3 font-normal">
-                    Historia</li>
-                <li onclick="selectedSmall()"
-                    class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-sm leading-3 font-normal">
-                    Restaurantes</li>
-                <li onclick="selectedSmall()"
-                    class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-sm leading-3 font-normal">
-                    Monumentos</li>
+                    <a href="">{{$categorie->name}}</a></li>
+                   @endforeach
                 <li onclick="selectedSmall()"
                     class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-sm leading-3 font-normal">
                     Iniciar Sesion</li>
@@ -113,7 +92,7 @@
     </div>
 
     <!-- for smaller devcies sm-->
-    <div class="titulo" style="position: relative;
+    <div class="invisible md:visible" style="position: relative;
     top: 10%;">
         <div class=" font-serif text-bold md:text-6xl text-5xl text-center text-white" id="titulo">Bienvenido a
         </div>
