@@ -22,3 +22,6 @@
 
 <!-- Styles -->
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.9/tailwind.css' integrity='sha512-vRllZkbyjzSjGDGk8Xfx8B+98TKNnDH2uu1NFpUKTEviN5fyjHa5+BE2jtlkrgONgT928Whsi9Zh4rYxIlBBRA==' crossorigin='anonymous'/>
+
+<!-- AlpineJS -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
