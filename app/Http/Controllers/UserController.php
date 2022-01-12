@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -162,6 +163,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+        $comment = Comment::find($id);
+        $comment->delete();
         $user->delete();
         return redirect()->route('users.index');
     }
