@@ -54,7 +54,7 @@
                     @foreach ($categories as $categorie)
                     <li onclick="selected()"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
-                        <a href="">{{$categorie->name}}</a></li>
+                        <a href="{{ route('categories.show', $categorie->id) }}">{{$categorie->name}}</a></li>
                     @endforeach
                     <li onclick="selected()"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
