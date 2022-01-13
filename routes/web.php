@@ -23,3 +23,5 @@ Route::resource('/pointofinterests', 'PointofinterestController');
 Route::resource('/categories', 'CategorieController');
 Route::resource('/users', 'UserController');
 Route::resource('/comments','CommentController');
+Route::resource('/resources','ResourceController');
+Route::resource('/pointofinterest_resources','Pointofinterest_ResourceController');
