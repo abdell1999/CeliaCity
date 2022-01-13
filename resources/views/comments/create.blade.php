@@ -50,7 +50,7 @@
                 <div class="md:w-2/3">
                     <div class="flex justify-center">
                           <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0
-                          focus:outline-none focus:bg-white focus:border-purple-500" aria-label="Default select example">
+                          focus:outline-none focus:bg-white focus:border-purple-500" aria-label="Default select example" name="users">
                             <option selected>Elige el usuario</option>
                             @foreach($users as $user)
                             <option value="{{$user['id']}}">{{$user['name']}}</option>
@@ -68,7 +68,7 @@
                 <div class="md:w-2/3">
                     <div class="flex justify-center">
                           <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0
-                          focus:outline-none focus:bg-white focus:border-purple-500" aria-label="Default select example">
+                          focus:outline-none focus:bg-white focus:border-purple-500" aria-label="Default select example" name="pointofinterests">
                             <option selected>Elige el punto de interes</option>
                             @foreach($pointofinterests as $pointofinterest)
                             <option value="{{$pointofinterest['id']}}">{{$pointofinterest['name']}}</option>

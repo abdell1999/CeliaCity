@@ -45,8 +45,8 @@ class CommentController extends Controller
             'date' => 'required',
             'valoration' => 'required',
             'text' => 'required',
-            'idUser' => 'required',
-            'idPoint'  =>   'required'
+            'users' => 'required',
+            'pointofinterests'  =>   'required'
 
         ]);
 
@@ -54,8 +54,8 @@ class CommentController extends Controller
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];
         $comment->text = $data['text'];
-        $comment->id_user = $data['idUser'];
-        $comment->id_pointofinterest = $data['idPoint'];
+        $comment->id_user = $data['users'];
+        $comment->id_pointofinterest = $data['pointofinterests'];
         $comment->save();
         return redirect()->route('comments.index');
     }
