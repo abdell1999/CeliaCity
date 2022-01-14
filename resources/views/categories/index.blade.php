@@ -4,15 +4,7 @@
 
 
 
-    <main x-data="{
-            showModal1: false
 
-        }" :class="{
-    'overflow-y-hidden': showModal1
-
-
-
-    }">
 
 
 
@@ -56,7 +48,8 @@
                             <tbody>
                                 @foreach ($categories as $categorie)
 
-
+                                <body x-data="{showModal{{ $categorie->id }}: false}" :class="{
+                                    'overflow-y-hidden': showModal{{ $categorie->id }}}">
                                     <!-- Modales -->
                                     <div class="fixed inset-0 w-full h-full z-20 bg-black bg-opacity-50 duration-300 overflow-y-auto"
                                         x-show="showModal{{ $categorie->id }}"
@@ -154,7 +147,7 @@
 
 
 
-    </main>
+        </body>
 
 
 @endsection

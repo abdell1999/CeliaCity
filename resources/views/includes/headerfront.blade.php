@@ -50,11 +50,18 @@
                 <ul class="hidden md:flex flex-auto space-x-2">
                     <li onclick="selected()"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
-                        Home</li>
-                    @foreach ($categories as $categorie)
+                        Inicio</li>
+
+                    @php
+                        $categoriesS = $categoriesS->toArray();
+                        //print_r($categoriesS);
+                        //echo "HOLA MUNDO";
+                    @endphp
+
+                    @foreach ($categoriesS as $categorieS)
                     <li onclick="selected()"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
-                        <a href="{{ route('categories.show', $categorie->id) }}">{{$categorie->name}}</a></li>
+                        <a href="{{ route('categories.show', $categorieS["id"]) }} ">{{$categorieS["name"]}}</a></li>
                     @endforeach
                     <li onclick="selected()"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-base leading-3 shadow-md rounded">
@@ -79,10 +86,10 @@
         </div>
         <div class="relative">
             <ul id="list" class="hidden font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md">
-                @foreach ($categories as $categorie)
+                @foreach ($categoriesS as $categorieS)
                 <li onclick="selectedSmall()"
                     class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-sm leading-3 font-normal">
-                    <a href="">{{$categorie->name}}</a></li>
+                    <a href="">{{$categorieS["name"]}}</a></li>
                    @endforeach
                 <li onclick="selectedSmall()"
                     class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-sm leading-3 font-normal">
