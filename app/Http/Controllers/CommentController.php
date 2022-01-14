@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Pointofinterest;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -26,7 +28,9 @@ class CommentController extends Controller
      */
     public function create()
     {
-        return view('comments.create');
+        $data['users'] = User::all();
+        $data['pointofinterests'] = Pointofinterest::all();
+        return view('comments.create', $data);
     }
 
     /**
@@ -41,17 +45,17 @@ class CommentController extends Controller
             'date' => 'required',
             'valoration' => 'required',
             'text' => 'required',
-            'idUser' => 'required',
-            'idPoint'  =>   'required'
+            'users' => 'required',
+            'pointofinterests'  =>   'required'
 
         ]);
-      
+
         $comment = new Comment();
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];
         $comment->text = $data['text'];
-        $comment->id_user = $data['idUser'];
-        $comment->id_pointofinterest = $data['idPoint'];
+        $comment->id_user = $data['users'];
+        $comment->id_pointofinterest = $data['pointofinterests'];
         $comment->save();
         return redirect()->route('comments.index');
     }
@@ -97,7 +101,7 @@ class CommentController extends Controller
             'idPoint' => 'required'
 
         ]);
-      
+
         $comment = Comment::find($id);
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];

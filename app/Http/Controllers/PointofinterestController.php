@@ -66,10 +66,7 @@ class PointofinterestController extends Controller
         $pointofinterest->text = $data['text'];
         $pointofinterest->save();
 
-
         $pointid = Pointofinterest::where('name', $data['name'])->take(1)->get();
-
-
 
         foreach($request->categoriespoint as $categoria){
             DB::table('categories_pointofinterests')->insert([
@@ -78,9 +75,6 @@ class PointofinterestController extends Controller
 
             ]);
         }
-
-
-
 
         return redirect()->route('pointofinterests.index');
     }
@@ -130,7 +124,7 @@ class PointofinterestController extends Controller
         $pointofinterests = Pointofinterest::find($id);
         $pointofinterests->name = $data['name'];
         $pointofinterests->latitude = $data['latitude'];
-        $pointofinterest->latitude = $data['longitude'];
+        $pointofinterests->latitude = $data['longitude'];
         $pointofinterests->movilephone = $data['movilephone'];
         $pointofinterests->text = $data['text'];
         $pointofinterests->save();

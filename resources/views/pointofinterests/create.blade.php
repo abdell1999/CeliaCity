@@ -14,7 +14,7 @@
                 <div class="md:w-2/3">
                     <input
                         class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="name" placeholder="Nombre del punto de interes" name="name">
+                        type="text" id="name" placeholder="Nombre del punto de interes" name="name">
                 </div>
             </div>
             <div class="md:flex md:items-center mb-6">
@@ -26,7 +26,7 @@
                 <div class="md:w-2/3">
                     <input
                         class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="latitude" placeholder="Latitud" name="latitude">
+                        type="text" id="latitude" placeholder="Latitud" name="latitude">
                 </div>
             </div>
             <div class="md:flex md:items-center mb-6">
@@ -38,7 +38,7 @@
                 <div class="md:w-2/3">
                     <input
                         class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="longitude" placeholder="longitud" name="longitude">
+                        type="text" id="longitude" placeholder="longitud" name="longitude">
                 </div>
             </div>
             <div class="md:flex md:items-center mb-6">
@@ -50,7 +50,7 @@
                 <div class="md:w-2/3">
                     <input
                         class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="movilephone" placeholder="Nombre del nuevo teléfono" name="movilephone">
+                        type="text" id="movilephone" placeholder="Nombre del nuevo teléfono" name="movilephone">
                 </div>
             </div>
             <div class="md:flex md:items-center mb-6">
@@ -62,7 +62,7 @@
                 <div class="md:w-2/3">
                     <textarea
                         class="bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="text" cols="100" rows="10" placeholder="Nombre del nuevo contenido" name="text"></textarea>
+                        type="text" id="text" cols="100" rows="10" placeholder="Nombre del nuevo contenido" name="text"></textarea>
                 </div>
             </div>
             <div class="md:flex md:items-center mb-6">

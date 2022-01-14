@@ -48,10 +48,16 @@
                     </label>
                 </div>
                 <div class="md:w-2/3">
-                    <input
-                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="idUser" placeholder="id del nuevo usuario" name="idUser">
-                </div>
+                    <div class="flex justify-center">
+                          <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0
+                          focus:outline-none focus:bg-white focus:border-purple-500" aria-label="Default select example" name="users">
+                            <option selected>Elige el usuario</option>
+                            @foreach($users as $user)
+                            <option value="{{$user['id']}}">{{$user['name']}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                      </div>
             </div>
             <div class="md:flex md:items-center mb-6">
                 <div class="md:w-1/3">
@@ -60,10 +66,18 @@
                     </label>
                 </div>
                 <div class="md:w-2/3">
-                    <input
-                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="idPoint" placeholder="id del nuevo punto" name="idPoint">
-                </div>
+                    <div class="flex justify-center">
+                          <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0
+                          focus:outline-none focus:bg-white focus:border-purple-500" aria-label="Default select example" name="pointofinterests">
+                            <option selected>Elige el punto de interes</option>
+                            @foreach($pointofinterests as $pointofinterest)
+                            <option value="{{$pointofinterest['id']}}">{{$pointofinterest['name']}}</option>
+                            @endforeach
+
+
+                          </select>
+                        </div>
+                      </div>
             </div>
         </div>
 
