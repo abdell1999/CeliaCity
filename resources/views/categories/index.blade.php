@@ -39,7 +39,8 @@
                         <tbody>
                             @foreach ($categories as $categorie)
 
-                                <div x-data="{showModal{{ $categorie->id }}: false}" :class="{'overflow-y-hidden': showModal{{ $categorie->id }}}">
+                                <div x-data="{showModal{{ $categorie->id }}: false}"
+                                    :class="{'overflow-y-hidden': showModal{{ $categorie->id }}}">
                                     <!-- Modales -->
                                     <div class="fixed inset-0 w-full h-full z-20 bg-black bg-opacity-50 duration-300 overflow-y-auto"
                                         x-show="showModal{{ $categorie->id }}"
@@ -139,6 +140,36 @@
 
 
     </div>
+
+
+    <!-- ADAPTAR ESTE MODAL DE BOOTSTRAP -->
+    <div class="text-center">
+        <a href="#eliminar1" class="trigger-btn" data-toggle="modal">MODAL 2</a>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="eliminar1" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header flex-column">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE5CD;</i>
+                    </div>
+                    <h4 class="modal-title w-100">Eliminar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estas segur@ de que quieres eliminar este registro? ¡Este proceso es irreversible!</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 @endsection
