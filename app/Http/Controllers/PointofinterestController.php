@@ -100,6 +100,11 @@ class PointofinterestController extends Controller
     public function edit($id)
     {
         $data['pointofinterests'] = Pointofinterest::find($id);
+        $data['categories']= Categorie::all();
+        $data['categoriespoint'] = DB::table('categories_pointofinterests')
+        ->where('id_pointofinterest','=',$id)
+        ->get();
+        //dd($data['categoriespoint']);
         return view('pointofinterests.edit',$data);
     }
 
@@ -117,16 +122,24 @@ class PointofinterestController extends Controller
             'latitude' => 'required',
             'longitude' => 'required',
             'movilephone' => 'required',
-            'text'  =>   'required'
-
+            'text'  =>   'required',
+            'categoriespoint' => 'required'
         ]);
-
+        $sql = 'delete from categories_pointofinterests where id_pointofinterest = '. $id;
+        DB::unprepared($sql);
         $pointofinterests = Pointofinterest::find($id);
         $pointofinterests->name = $data['name'];
         $pointofinterests->latitude = $data['latitude'];
         $pointofinterests->latitude = $data['longitude'];
         $pointofinterests->movilephone = $data['movilephone'];
         $pointofinterests->text = $data['text'];
+        foreach($request->categoriespoint as $categoria){
+            DB::table('categories_pointofinterests')->insert([
+                'id_categorie' => $categoria,
+                'id_pointofinterest' => $id
+
+            ]);
+        }
         $pointofinterests->save();
         return redirect()->route('pointofinterests.index');
     }
@@ -140,6 +153,8 @@ class PointofinterestController extends Controller
     public function destroy($id)
     {
         $pointofinterest = Pointofinterest::find($id);
+        $sql = 'delete from categories_pointofinterests where id_pointofinterest = '. $id;
+        DB::unprepared($sql);
         $pointofinterest->delete();
         return redirect()->route('pointofinterests.index');
     }
