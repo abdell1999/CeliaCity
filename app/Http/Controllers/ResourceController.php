@@ -16,8 +16,8 @@ class ResourceController extends Controller
      */
     public function index()
     {
-        $data['resources'] = Resource::orderBy("name")->get();
-
+        $data['resources'] = Resource::orderBy('title')->get();
+        //dd($data['resources']);
         return view('resources.index', $data);
     }
 
@@ -28,9 +28,9 @@ class ResourceController extends Controller
      */
     public function create()
     {
-        $data['resources'] = Resource::all();
+        //$data['resources'] = Resource::all();
 
-        return view('resources.create',$data);
+        return view('resources.create');
     }
 
     /**
@@ -49,9 +49,10 @@ class ResourceController extends Controller
         ]);
       
         $resource = new Resource();
-        $resource->date = $data['title'];
-        $resource->valoration = $data['route'];
-        $resource->text = $data['type'];
+        $resource->date = $request->title;
+        $resource->valoration = $request->route;
+        $resource->text = $request->type;
+        $resource->pointofinterests()->attach($request->puntosDeInteres); //->get()
         $resource->save();
         return redirect()->route('resources.index');
     }

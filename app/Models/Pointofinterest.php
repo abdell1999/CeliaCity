@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Resource;
 
 class Pointofinterest extends Model
 {
@@ -16,4 +17,10 @@ class Pointofinterest extends Model
         'movilephone',
         'text'
     ];
+
+    public function resource(){
+        return $this-> hasMany('App\Models\Resource', 'id_resource', 'id_pointofinterest');
+        //return $this-> hasMany('App\Models\Resource','id_pointofinterest', 'id_resource');
+    }
 }
+
