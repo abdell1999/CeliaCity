@@ -153,6 +153,8 @@ class PointofinterestController extends Controller
     public function destroy($id)
     {
         $pointofinterest = Pointofinterest::find($id);
+        $sql = 'delete from categories_pointofinterests where id_pointofinterest = '. $id;
+        DB::unprepared($sql);
         $pointofinterest->delete();
         return redirect()->route('pointofinterests.index');
     }
