@@ -20,11 +20,11 @@ class Comment extends Model
     ];
 
     public function users(){
-        return $this->belongsTo(User::class,'id');
+        return $this->belongsTo('App\Models\User','id_user');
     }
 
     public function pointofinterests(){
-        return $this->belongsTo(Pointofinterest::class,'id');
+        return $this->belongsTo('App\Models\Pointofinterest');
     }
 
     public static function userName($id){

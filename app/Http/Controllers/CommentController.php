@@ -94,7 +94,9 @@ class CommentController extends Controller
         ->get()->first();
         $data['users'] = DB::table('users')
         ->get();
-
+        $comentario =  Comment::find($id)->users;
+        $nombre= $comentario['name'].$comentario['surname1'].$comentario['surname2'];
+        dd($nombre);
         $pointid = DB::table('comments')
         ->select('id_pointofinterest')
         ->where('id','=',$id)
