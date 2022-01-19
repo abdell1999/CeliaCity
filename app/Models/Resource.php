@@ -17,8 +17,6 @@ class Resource extends Model
     ];
 
     public function pointofinterests(){
-        return $this->hasMany('App\Models\Pointofinterest', 'id_pointofinterest', 'id_resource');
-        //return $this->hasMany('App\Models\Pointofinterest', 'id_resource', 'id_pointofinterest');
-        //return $this->belongsToMany(Pointofinterest::class);
+        return $this->belongsToMany('App\Models\Pointofinterest', 'pointofinterests_resources', 'id_pointofinterest', 'id_resource');
     }
 }
