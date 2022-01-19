@@ -101,14 +101,18 @@ class CategorieController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        //
+        $categorie = Categorie::find($id);
+        //echo "Nombre original ".$categorie->name. " Nombre nuevo: ".$request->name;
+        //dd($request);
+
         $data = $request->validate([
             'name' => 'required'
         ]);
-        $categorie = Categorie::find($id);
+
         $categorie->name = $data['name'];
         $categorie->save();
-        return redirect()->route('categories.index');
+        echo "Ya esta";
+
     }
 
     /**

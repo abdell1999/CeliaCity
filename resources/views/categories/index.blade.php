@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+
+
+
 @section('content')
     <div class="bg-blueGray-50">
         <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-10">
@@ -38,14 +41,14 @@
 
                         <tbody>
                             @foreach ($categories as $categorie)
-                                    <tr>
+                                    <tr id="{{$categorie->id}}">
                                         <th
                                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                            {{ $categorie->name }}
+                                            <input type="text" id="categorie{{$categorie->id}}" readonly value="{{ $categorie->name }}">
                                         </th>
                                         <th
                                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 ">
-                                            <a href="{{ route('categories.edit', $categorie->id) }}"><i
+                                            <a href="#" class="categorieEdit"><i
                                                     class="far fa-edit" style="color: blue;"></i></a>
                                         </th>
                                         <th>

@@ -26,3 +26,19 @@
 <!-- AlpineJS -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
+
+<!-- Editar Categorías -->
+<script src="/assets/js/editarCategoria.js"></script>
+
+
+<script>
+
+$.ajaxSetup({
+     headers: {
+         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+     }
+ });
+
+
+</script>
+
