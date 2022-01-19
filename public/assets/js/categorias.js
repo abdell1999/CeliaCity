@@ -1,18 +1,15 @@
 console.log("Script para editar categorías cargado correctamente");
-
-
 $(document).ready(function() {
-    $('.categorieEdit').click(function() {
 
-        //categorie
-        var id = $(this).parent().parent().attr("id");
-        var idInput = "categorie"+id
-        //alert(idInput);
 
+
+    function editable(idInput){
         $('#'+idInput).attr("readonly", false);
         $('#'+idInput).focus();
+    }
 
-
+    function editar(id, idInput){
+        editable(idInput);
         $('#'+idInput).focusout(function(){
             if ($(this).is('[readonly]')) {
                 console.log("Ya esta hermano, no más");
@@ -45,32 +42,7 @@ $(document).ready(function() {
                         }
 
                 })
-
-
-
-
-
-
-
                 $(this).attr("readonly", true);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     		//alert(idInput);
                 console.log(idInput);
             }
@@ -78,6 +50,20 @@ $(document).ready(function() {
 
 
 	});
+    }
+
+
+
+
+
+    $('.categorieEdit').click(function() {
+
+        //categorie
+        var id = $(this).parent().parent().attr("id");
+        var idInput = "categorie"+id
+        //alert(idInput);
+        editar(id, idInput);
+
 
 
 

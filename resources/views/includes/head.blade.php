@@ -27,8 +27,8 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 
-<!-- Editar Categorías -->
-<script src="/assets/js/editarCategoria.js"></script>
+<!-- Categorías -->
+<script src="/assets/js/categorias.js"></script>
 
 
 <script>
