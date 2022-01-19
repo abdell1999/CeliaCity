@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\Pointofinterest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CommentController extends Controller
 {
@@ -81,6 +82,28 @@ class CommentController extends Controller
     public function edit($id)
     {
         $data['comments'] = Comment::find($id);
+        $userid = DB::table('comments')
+        ->select('id_user')
+        ->where('id','=',$id)
+        ->get()->first();
+        $data['username'] = DB::table('users')
+        ->select('name','surname1','surname2')
+        ->where('id','=',$userid->id_user)
+        ->get()->first();
+        $data['users'] = DB::table('users')
+        ->get();
+
+        $pointid = DB::table('comments')
+        ->select('id_pointofinterest')
+        ->where('id','=',$id)
+        ->get()->first();
+        $data['pointofinterest'] = DB::table('pointofinterests')
+        ->select('name')
+        ->where('id','=',$pointid->id_pointofinterest)
+        ->get()->first();
+        $data['pointofinterests'] = DB::table('pointofinterests')
+        ->get();
+
         return view('comments.edit',$data);
     }
 
@@ -97,8 +120,8 @@ class CommentController extends Controller
             'date' => 'required',
             'valoration' => 'required',
             'text' => 'required',
-            'idUser'  =>   'required',
-            'idPoint' => 'required'
+            'user'  =>   'required',
+            'pointofinterest' => 'required'
 
         ]);
 
@@ -106,8 +129,8 @@ class CommentController extends Controller
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];
         $comment->text = $data['text'];
-        $comment->id_user = $data['idUser'];
-        $comment->id_pointofinterest = $data['idPoint'];
+        $comment->id_user = $data['user'];
+        $comment->id_pointofinterest = $data['pointofinterest'];
         $comment->save();
         return redirect()->route('comments.index');
     }
