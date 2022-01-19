@@ -18,6 +18,8 @@ class CommentController extends Controller
     public function index()
     {
         $data['comments'] = Comment::all();
+        $data['users'] = User::all();
+        $data['points'] = Pointofinterest::all();
 
         return view('comments.index', $data);
     }
