@@ -1,4 +1,4 @@
-console.log("Script para editar categorías cargado correctamente");
+console.log("Script para gestionar categorías cargado correctamente");
 $(document).ready(function() {
 
 
@@ -68,4 +68,60 @@ $(document).ready(function() {
 
 
     })
+
+
+    $('#categorieCreate').click(function() {
+
+        console.log("Creando categoría, espere un momento!");
+
+        $('#categorieTable').append("<tr><th>HOLA</th></tr>");
+
+
+
+    })
+
+
+
+    function eliminar(id){
+
+        $.ajax({
+            url: "/categories/"+id,
+            type: "POST",
+            data:{
+                id:id,
+                _method: "DELETE"
+            },
+            success:function(response){
+
+                $("#"+id).remove();
+
+
+                if(response){
+                    //RESPUESTA
+                }else{
+                    //SIN RESPUESTA
+                }
+            },
+            error:function(){
+                    alert("Ha ocurrido un error al eliminar la categoría");
+                }
+
+        })
+
+    }
+
+
+    $('.categorieDelete').click(function(){
+
+        id = $(this).attr("eliminar");
+        eliminar(id);
+    })
+
+
+
+
+
+
+
+
 });
