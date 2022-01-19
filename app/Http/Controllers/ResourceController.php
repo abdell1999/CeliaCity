@@ -49,9 +49,9 @@ class ResourceController extends Controller
         ]);
       
         $resource = new Resource();
-        $resource->date = $request->title;
-        $resource->valoration = $request->route;
-        $resource->text = $request->type;
+        $resource->date = $data['title'];
+        $resource->valoration = $data['route'];
+        $resource->text = $data['type'];
         $resource->pointofinterests()->attach($request->puntosDeInteres); //->get()
         $resource->save();
         return redirect()->route('resources.index');
