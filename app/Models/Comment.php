@@ -24,18 +24,7 @@ class Comment extends Model
     }
 
     public function pointofinterests(){
-        return $this->belongsTo('App\Models\Pointofinterest');
+        return $this->belongsTo('App\Models\Pointofinterest','id_pointofinterest');
     }
 
-    public static function userName($id){
-        $userid = DB::table('comments')
-        ->select('id_user')
-        ->where('id','=',$id);
-
-        $username = DB::table('users')
-        ->select('name','surname1','surname2')
-        ->where('id','=',$userid);
-
-        return $username;
-    }
 }

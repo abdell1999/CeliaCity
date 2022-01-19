@@ -84,30 +84,12 @@ class CommentController extends Controller
     public function edit($id)
     {
         $data['comments'] = Comment::find($id);
-        $userid = DB::table('comments')
-        ->select('id_user')
-        ->where('id','=',$id)
-        ->get()->first();
-        $data['username'] = DB::table('users')
-        ->select('name','surname1','surname2')
-        ->where('id','=',$userid->id_user)
-        ->get()->first();
-        $data['users'] = DB::table('users')
-        ->get();
-        $comentario =  Comment::find($id)->users;
-        $nombre= $comentario['name'].$comentario['surname1'].$comentario['surname2'];
-        dd($nombre);
-        $pointid = DB::table('comments')
-        ->select('id_pointofinterest')
-        ->where('id','=',$id)
-        ->get()->first();
-        $data['pointofinterest'] = DB::table('pointofinterests')
-        ->select('name')
-        ->where('id','=',$pointid->id_pointofinterest)
-        ->get()->first();
-        $data['pointofinterests'] = DB::table('pointofinterests')
-        ->get();
-
+        $usuario = Comment::find($id)->users;
+        $data['users'] = User::all();
+        $data['nombre'] = $usuario['name']." ".$usuario['surname1']." ".$usuario['surname2'];
+        $punto = Comment::find($id)->pointofinterests;
+        $data['puntointeres'] = $punto['name'];
+        $data['pointofinterests'] = Pointofinterest::all();
         return view('comments.edit',$data);
     }
 
