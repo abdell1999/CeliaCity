@@ -13,15 +13,15 @@
                             <h1 class="font-semibold text-base text-xl text-blueGray-700">Categorias</h1>
                         </div>
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                            <a href="{{ route('categories.create') }}"
+                            <a href="#"
                                 class="bg-indigo-500 text-white text-sm active:bg-indigo-600 font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button">Añadir Categoria</a>
+                                id="categorieCreate" type="button">Añadir Categoria</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="block w-full overflow-x-auto">
-                    <table class="items-center bg-transparent w-full border-collapse ">
+                    <table class="items-center bg-transparent w-full border-collapse " id="categorieTable">
                         <thead>
                             <tr>
                                 <th
@@ -109,14 +109,8 @@
                     Cancelar
                 </button>
 
-                <form method="POST"
-                    action="{{ route('categories.destroy', $categorie->id) }}">
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit"
-                        class="bg-red-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-red-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300"
-                        value="Eliminar">
-                </form>
+                    <button class="bg-red-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-red-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 categorieDelete" eliminar="{{$categorie->id}}">Eliminar</button>
+
 
 
             </footer>

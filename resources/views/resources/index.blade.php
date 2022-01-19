@@ -27,6 +27,10 @@
                                     class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
                                     Type
                                 </th>
+                                <th
+                                    class="px-6 align-middle border border-solid py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold ">
+                                    Point of Interest
+                                </th>
                             </tr>   
                         </thead>
                         <tbody>
@@ -43,6 +47,10 @@
                                 <th
                                     class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
                                     {{$resource->type}}
+                                </th>
+                                <th
+                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
+                                    {{$resource->pointofinterest}}
                                 </th>
                             </tr>
                             @endforeach

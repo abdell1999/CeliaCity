@@ -11,9 +11,9 @@
                     <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                         <h1 class="font-semibold text-base text-xl text-blueGray-700">{{$resources->title}}</h1>
                     </div>
-                    {{ dd($resources->pointofinterests())}}
-                    @foreach($resources->pointofinterests() as $point)                
-                        <li>{{$point->text}}</li>
+                    @foreach($resources->pointofinterests as $point)   
+                        <li>Item</li>             
+                        <li>{{$point->name}}</li>
                     @endforeach
                     </div>
                 </div>
