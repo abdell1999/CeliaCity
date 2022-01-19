@@ -111,7 +111,7 @@ class CategorieController extends Controller {
 
         $categorie->name = $data['name'];
         $categorie->save();
-        echo "Ya esta";
+        //echo "Ya esta";
 
     }
 

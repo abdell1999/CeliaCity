@@ -33,10 +33,10 @@ $(document).ready(function() {
                     },
                     success:function(response){
                         if(response){
-                            alert("HAY RESPUESTA");
-                            alert(response);
+                            //alert("HAY RESPUESTA");
+                            //alert(response);
                         }else{
-                            alert("TODO CORRECTO HERMANO, AUNQUE NO HAY RESPUESTA");
+                            //alert("TODO CORRECTO HERMANO, AUNQUE NO HAY RESPUESTA");
                         }
                     },
                     error:function(){
