@@ -16,7 +16,13 @@ class Resource extends Model
         'type'
     ];
 
+    /**
+     * 
+     */
     public function pointofinterests(){
         return $this->belongsToMany('App\Models\Pointofinterest', 'pointofinterests_resources', 'id_pointofinterest', 'id_resource');
     }
+
+
+
 }
