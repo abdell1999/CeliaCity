@@ -39,16 +39,12 @@ class CategorieController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
-        $data = $request->validate([
-            'name' => 'required'
-        ]);
 
         $categorie = new Categorie();
-        $categorie->name = $data['name'];
+        $categorie->name = $request->name;
         $categorie->save();
 
-        return redirect()->route('categories.index');
+        echo $categorie->id;
     }
 
     /**

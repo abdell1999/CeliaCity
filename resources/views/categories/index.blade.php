@@ -41,7 +41,7 @@
 
                         <tbody>
                             @foreach ($categories as $categorie)
-                                    <tr id="{{$categorie->id}}">
+                                    <tr class="datos" id="{{$categorie->id}}">
                                         <th
                                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
                                             <input type="text" id="categorie{{$categorie->id}}" readonly value="{{ $categorie->name }}">
