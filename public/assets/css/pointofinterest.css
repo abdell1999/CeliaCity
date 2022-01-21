@@ -1,0 +1,169 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #map {
+      
+      height: 20em;
+      
+      
+     
+    }
+   
+    h1 {
+      margin-left: 8%;
+      font-family: 'Trebuchet MS', sans-serif;
+
+    }
+
+    h2 {
+      margin-left: 5%;
+    }
+
+    .contenido {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2em;
+      padding: 2em;
+    }
+
+    body {
+      background-color: #f2f2f2;
+    }
+
+    div.mapita {
+      background-color: white;
+      margin: 5% 5%;
+      
+      padding-top: 2%;
+     
+      
+    }
+
+    #comentario {
+      margin-top: 50%;
+      margin-left: 20%;
+    }
+
+
+
+
+    .datos {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      padding: 2em;
+    }
+
+    .slider {
+      width: 60%;
+      height: 25em;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mySwiper2 {
+      height: 80%;
+      width: 100%;
+    }
+
+    .mySwiper {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .mySwiper .swiper-slide {
+      width: 25%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .mySwiper .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #tarjeta {
+      width: 100%;
+    }
+
+    @media(max-width:1260px) {
+      .contenido {
+        flex-direction: column-reverse;
+
+      }
+
+      .contenido>div {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+
+    @media(max-width:768px) {
+
+      .contenido>div {
+        width: 100%;
+        padding: 0.5em;
+
+      }
+    }
+  

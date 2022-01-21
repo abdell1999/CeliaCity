@@ -18,14 +18,21 @@
 
 <!-- Elementos Tailwind !-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/1.16.0/full.css" />
 <!-- Styles -->
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.9/tailwind.css' integrity='sha512-vRllZkbyjzSjGDGk8Xfx8B+98TKNnDH2uu1NFpUKTEviN5fyjHa5+BE2jtlkrgONgT928Whsi9Zh4rYxIlBBRA==' crossorigin='anonymous'/>
 
 <!-- AlpineJS -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
+<!--Leaflet-->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+  <!-- CSS Swiper-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <!-- Categorías -->
 <script src="/assets/js/categorias.js"></script>
