@@ -162,6 +162,29 @@ $(document).ready(function() {
                     //editable(idInputR);
                     editar(response, idInputR);
 
+                    $('.categorieDelete').click(function(){
+
+                        id = $(this).attr("eliminar");
+                        eliminar(id);
+                    })
+
+
+                    $('.categorieEdit').click(function() {
+
+                        //categorie
+                        var id = $(this).parent().parent().attr("id");
+                        var idInput = "categorie"+id
+                        //alert(idInput);
+                        editar(id, idInput);
+
+
+
+
+                    })
+
+
+
+
 
                 }else{
                     //SIN RESPUESTA
