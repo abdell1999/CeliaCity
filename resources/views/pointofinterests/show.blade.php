@@ -3,18 +3,13 @@
 <!--pepe-->
 <link rel="stylesheet" type="text/css" href="/assets/css/pointofinterest.css">
 <body>
-  <h1 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-800">Nombre del restaurante</h1>
+  <h1 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-800">{{$pointofinterests->name}}</h1>
   <section class="contenido">
     <div class="datos">
       <div id="tarjeta" class=" block p-6 rounded-lg shadow-2xl bg-white ">
         <h5 class="text-gray-900 text-xl leading-tight font-bold mb-2">Acerca de...</h5>
         <p class="text-gray-700 text-base mb-4">
-          The Marble Interpretation Center is conceived as a cultural space where history, tradition, innovation and
-          future harmoniously coexist to offer us a vision of the Macael marble culture. It fulfills a triple function
-          as visitor reception center, tourist information point and interpretive space that enables a contextualization
-          of the Macael marble culture. Inside there are 22 panels, with information in Spanish and English. Together
-          with them, the exhibition of different pieces and elements contributes to making the visit more attractive,
-          participative and experiential.
+          {{$pointofinterests->text}}
         </p>
       </div>
     </div>
