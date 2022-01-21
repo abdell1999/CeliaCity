@@ -103,16 +103,9 @@
       </dl>
     </div>
   </div>
-<<<<<<< HEAD
-  <form class="w-full max-w-lg" method="POST" action="{{ route('users.update',['user' => $users->id]) }}" enctype="multipart/form-data" novalidate>
-    @csrf
-    @method("PUT")
-
-=======
 <form class="w-full max-w-lg" method="POST" action="{{ route('users.update',['user' => $users->id]) }}" enctype="multipart/form-data" novalidate>
         @csrf
         @method("PUT")
->>>>>>> c746eadce7b2330c4e36c49fe88c829e7558d7ef
 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
     EDITAR
   </button>

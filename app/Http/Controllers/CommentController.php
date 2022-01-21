@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\Pointofinterest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CommentController extends Controller
 {
@@ -17,6 +18,8 @@ class CommentController extends Controller
     public function index()
     {
         $data['comments'] = Comment::all();
+        $data['users'] = User::all();
+        $data['points'] = Pointofinterest::all();
 
         return view('comments.index', $data);
     }
@@ -81,6 +84,12 @@ class CommentController extends Controller
     public function edit($id)
     {
         $data['comments'] = Comment::find($id);
+        $usuario = Comment::find($id)->users;
+        $data['users'] = User::all();
+        $data['nombre'] = $usuario['name']." ".$usuario['surname1']." ".$usuario['surname2'];
+        $punto = Comment::find($id)->pointofinterests;
+        $data['puntointeres'] = $punto['name'];
+        $data['pointofinterests'] = Pointofinterest::all();
         return view('comments.edit',$data);
     }
 
@@ -97,8 +106,8 @@ class CommentController extends Controller
             'date' => 'required',
             'valoration' => 'required',
             'text' => 'required',
-            'idUser'  =>   'required',
-            'idPoint' => 'required'
+            'user'  =>   'required',
+            'pointofinterest' => 'required'
 
         ]);
 
@@ -106,8 +115,8 @@ class CommentController extends Controller
         $comment->date = $data['date'];
         $comment->valoration = $data['valoration'];
         $comment->text = $data['text'];
-        $comment->id_user = $data['idUser'];
-        $comment->id_pointofinterest = $data['idPoint'];
+        $comment->id_user = $data['user'];
+        $comment->id_pointofinterest = $data['pointofinterest'];
         $comment->save();
         return redirect()->route('comments.index');
     }

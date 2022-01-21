@@ -15,8 +15,8 @@ class CreatePointofinterestsResourcesTable extends Migration
     {
         Schema::create('pointofinterests_resources', function (Blueprint $table) {
             $table->increments('id');
-            $table->Integer('id_resource');
             $table->Integer('id_pointofinterest');
+            $table->Integer('id_resource');
             $table->timestamps();
         });
     }

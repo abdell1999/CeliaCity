@@ -16,8 +16,8 @@ class ResourceController extends Controller
      */
     public function index()
     {
-        $data['resources'] = Resource::orderBy("name")->get();
-
+        $data['resources'] = Resource::orderBy('title')->get();
+        //dd($data['resources']);
         return view('resources.index', $data);
     }
 
@@ -28,9 +28,9 @@ class ResourceController extends Controller
      */
     public function create()
     {
-        $data['resources'] = Resource::all();
+        //$data['resources'] = Resource::all();
 
-        return view('resources.create',$data);
+        return view('resources.create');
     }
 
     /**
@@ -41,18 +41,32 @@ class ResourceController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required',
-            'route' => 'required',
-            'type' => 'required'
 
-        ]);
-      
+        $request->validate([
+            'images' => 'required',
+          ]);
+
+          if ($request->hasfile('images')) {
+              $images = $request->file('images');
+
+              foreach($images as $image) {
+                  $name = $image->getClientOriginalName();
+                  $path = $image->storeAs('uploads', $name, 'public');
+
+                  Resource::create([
+                      'title' => $name,
+                      'route' => '/storage/'.$path
+                    ]);
+              }
+           }
+        /*
         $resource = new Resource();
         $resource->date = $data['title'];
         $resource->valoration = $data['route'];
         $resource->text = $data['type'];
+        $resource->pointofinterests()->attach($request->puntosDeInteres); //->get()
         $resource->save();
+        */
         return redirect()->route('resources.index');
     }
 
@@ -95,7 +109,7 @@ class ResourceController extends Controller
             'type' => 'required'
 
         ]);
-      
+
         $resource = Resource::find($id);
         $resource->title = $data['title'];
         $resource->route = $data['route'];

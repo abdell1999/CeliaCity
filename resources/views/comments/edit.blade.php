@@ -15,7 +15,7 @@
                 <div class="md:w-2/3">
                     <input
                         class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="date" placeholder="Fecha del nuevo comentario" name="date" value="{{ $comments->date }}" required>
+                        id="inline-full-name" type="date" id="date" placeholder="Fecha del nuevo comentario" name="date" value="{{ $comments->date }}" required>
                 </div>
             </div>
             <div class="md:flex md:items-center mb-6">
@@ -45,26 +45,41 @@
             <div class="md:flex md:items-center mb-6">
                 <div class="md:w-1/3">
                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="idUser">
-                        id User
+                        Usuario
                     </label>
                 </div>
                 <div class="md:w-2/3">
-                    <input
-                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="idUser" placeholder="id del nuevo usuario" name="idUser" value="{{ $comments->id_user }}" required>
-                </div>
+                        <div class="flex justify-center">
+                            <div class="mb-3 xl:w-96">
+                              <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal
+                                text-gray-700 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="user" aria-label="Default select example">
+                                  <option value="{{ $comments->id_user }}" selected>{{ $nombre }}</option>
+                                  @foreach ($users as $user)
+                                      <option value="{{$user->id}}">{{$user->name}} {{$user->surname1}} {{$user->surname2}}</option>
+                                  @endforeach
+                              </select>
+                            </div>
+                          </div>
+                    </div>
             </div>
             <div class="md:flex md:items-center mb-6">
                 <div class="md:w-1/3">
                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="idPoint">
-                        id Point
+                        Punto de Interes
                     </label>
                 </div>
                 <div class="md:w-2/3">
-                    <input
-                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                        id="inline-full-name" type="text" id="idPoint" placeholder="id del nuevo punto" name="idPoint" value="{{ $comments->id_pointofinterest }}" required>
-                </div>
+                    <div class="flex justify-center">
+                        <div class="mb-3 xl:w-96">
+                          <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal
+                            text-gray-700 bg-gray-200 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="pointofinterest" aria-label="Default select example">
+                              <option value="{{ $comments->id_pointofinterest }}" selected>{{ $puntointeres }}</option>
+                              @foreach ($pointofinterests as $pointofinterest)
+                                  <option value="{{$pointofinterest->id}}">{{$pointofinterest->name}}</option>
+                              @endforeach
+                          </select>
+                        </div>
+                      </div>
             </div>
         </div>
 

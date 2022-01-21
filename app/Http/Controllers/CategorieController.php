@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategorieController extends Controller {
 
@@ -38,16 +39,12 @@ class CategorieController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
-        $data = $request->validate([
-            'name' => 'required'
-        ]);
 
         $categorie = new Categorie();
-        $categorie->name = $data['name'];
+        $categorie->name = $request->name;
         $categorie->save();
 
-        return redirect()->route('categories.index');
+        echo $categorie->id;
     }
 
     /**
@@ -58,7 +55,25 @@ class CategorieController extends Controller {
      */
     public function show($id) {
         //
-        $data['categories'] = Categorie::find($id);
+        $data['categorie'] = Categorie::find($id);
+
+
+
+
+        //Seleccionamos los puntos de interes que pertenecen a la categoría que nos interesa recibida mediante la url
+        //$selected = DB::table('categories_pointofinterests')->where('id_categorie', $id)->get();
+        //dd($selected);
+        $data['selected'] = DB::table('categories_pointofinterests')
+            ->join('pointofinterests', 'categories_pointofinterests.id_pointofinterest', '=', 'pointofinterests.id')
+            ->where('categories_pointofinterests.id_categorie', '=', $id)
+            ->select('*')
+            ->get();
+
+
+            //dd($selected);
+
+
+
         return view('categories.show', $data);
     }
 
@@ -82,14 +97,18 @@ class CategorieController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        //
+        $categorie = Categorie::find($id);
+        //echo "Nombre original ".$categorie->name. " Nombre nuevo: ".$request->name;
+        //dd($request);
+
         $data = $request->validate([
             'name' => 'required'
         ]);
-        $categorie = Categorie::find($id);
+
         $categorie->name = $data['name'];
         $categorie->save();
-        return redirect()->route('categories.index');
+        //echo "Ya esta";
+
     }
 
     /**

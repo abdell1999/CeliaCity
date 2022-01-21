@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Pointofinterest;
 
 class Resource extends Model
 {
@@ -14,4 +15,15 @@ class Resource extends Model
         'route',
         'type'
     ];
+
+    /**
+     * 
+     */
+    public function pointofinterests(){
+        return $this->belongsToMany('App\Models\Pointofinterest', 'pointofinterests_resources', 'id_pointofinterest', 'id_resource');
+    }
+
+    
+
+
 }
