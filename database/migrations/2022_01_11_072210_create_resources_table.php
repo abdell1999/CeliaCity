@@ -17,7 +17,6 @@ class CreateResourcesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('route');
-            $table->enum('type', ['image', 'audio', 'video', 'document'])->nullable();
             $table->timestamps();
         });
     }
