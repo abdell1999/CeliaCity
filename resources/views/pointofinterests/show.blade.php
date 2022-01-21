@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-
+<!--pepe-->
 <link rel="stylesheet" type="text/css" href="/assets/css/pointofinterest.css">
 <body>
   <h1 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-800">Nombre del restaurante</h1>
