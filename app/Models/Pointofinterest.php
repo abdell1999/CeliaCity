@@ -29,6 +29,5 @@ class Pointofinterest extends Model
     public function categories(){
         return $this->belongsToMany('App\Models\Categorie', 'categories_pointofinterests', 'id_categorie', 'id_pointofinterest');
     }
-
 }
 
