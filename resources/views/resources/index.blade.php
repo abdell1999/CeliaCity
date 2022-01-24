@@ -111,7 +111,7 @@
            <h1 class="flex justify-start">{{ $resource->title}}</h1>
            <!--Edit button-->
            <button 
-                class="ml-20">
+                class="ml-auto">
                 <i class="far fa-edit" style="color: black;"></i>
             </button> 
             <!--Delete button-->
