@@ -81,12 +81,10 @@
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
           maxZoom: 18
         }).addTo(mapsipe);
-        var marker = L.marker([37.335513, -2.30154]).addTo(mapsipe);
-        marker.bindPopup("<b>Monumento</b><br>Mortero del Arguiñano.<br> <img src='mortero2.jfif'width='200px' height='100px'>"
+        var marker = L.marker([{{$pointofinterests->latitude}}, {{$pointofinterests->longitude}}]).addTo(mapsipe);
+        marker.bindPopup("<b>{{$pointofinterests->name}}</b>"
         ).openPopup();
 
-        var marker2 = L.marker([37.334998, -2.299739]).addTo(mapsipe);
-        marker2.bindPopup("<b>Monumento</b><br>CRISTIAN ROSQUILLA.").openPopup();
 
         var popup = L.popup();
         function onMapClick(e) {
@@ -128,20 +126,15 @@
   </div>
   <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600">Comentarios</h2>
 
-  <!--Caja insertar comentario-->
   <div class="flex justify-start items-center mb-2 ml-20 ">
 
     <div class="w-1/2 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
-          @foreach($users as $user)
-          @if((Auth::user()->id)== ($user['id']))
-          <img src="{{$user['photo']}}"  alt="" class="rounded-full"  width="50px" height="50px">
-          @endif
-          @endforeach
+          <img src="http://picsum.photos/50" alt="" class="rounded-full">
         </div>
         <div>
-          <h1 class="font-semibold"> {{Auth::user()->name}} {{Auth::user()->surname1}} {{Auth::user()->surname2}}</h1>
+          <h1 class="font-semibold">Itay Buyoy</h1>
 
         </div>
 
@@ -160,33 +153,20 @@
     </div>
 
   </div>
-<!--Fin de caja de insertar comentario-->
-<!--Comentario posteado-->
-  @foreach($comments as $comment)
-  @if(($pointofinterests->id)==($comment['id_pointofinterest']))
+
   <div class="flex justify-start items-center mb-2 ml-20">
     <div class="w-1/2 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
-        @foreach($users as $user)
-            @if(($comment['id_user'])==($user['id']))
-          <img src="{{ url($user->photo) }}" alt="" class="rounded-full"  width="50px" height="50px">
-          @endif
-          @endforeach
+          <img src="http://picsum.photos/50" alt="" class="rounded-full">
         </div>
         <div>
-          <h1 class="font-semibold">
-            @foreach($users as $user)
-            @if(($comment['id_user'])==($user['id']))
-                {{$user['name']}} {{$user['surname1']}} {{$user['surname2']}}
-            @endif
-            @endforeach
-          </h1>
+          <h1 class="font-semibold">Itay Buyoy</h1>
         </div>
       </div>
 
       <div class="mt-5 p-3 w-full">
-        <p>{{$comment['text']}}</p>
+        <p>El texto del comentario ya posteado</p>
       </div>
       <div class="flex justify-end">
         <button class="mr-2">
@@ -200,9 +180,7 @@
       </div>
     </div>
   </div>
-  @endif
-  @endforeach
-<!-- Fin Comentario posteado-->
+
   </div>
 
   </div>

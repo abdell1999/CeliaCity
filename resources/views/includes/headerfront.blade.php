@@ -107,12 +107,6 @@
     </div>
 </div>
 </header>
-<section>
-    <header>
-        <div class="text-white">MAPA TURISTICO INTERACTIVO o lo que querais</div>
-    </header>
-
-</section>
 
 <script>
     function showList() {
