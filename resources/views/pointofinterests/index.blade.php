@@ -16,7 +16,8 @@
                     data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body relative p-4">
-                <form action="" enctype="multipart/form-data" method="post">
+                <ul id="saveform_errList"></ul>
+                <form action="" class="formPoint" enctype="multipart/form-data" method="post">
                     @csrf
                     <div class="w-full max-w-sm">
                         <div class="md:flex md:items-center mb-6">
@@ -29,7 +30,7 @@
                             <div class="md:w-2/3">
                                 <input
                                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 name"
-                                    type="text" id="name" placeholder="Nombre del punto de interes" name="name">
+                                    type="text" id="name" placeholder="Nombre del punto de interes" name="name" required>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -42,7 +43,7 @@
                             <div class="md:w-2/3">
                                 <input
                                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 latitude"
-                                    type="text" id="latitude" placeholder="Latitud" name="latitude">
+                                    type="text" id="latitude" placeholder="Latitud" name="latitude" required>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -55,7 +56,7 @@
                             <div class="md:w-2/3">
                                 <input
                                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 longitude"
-                                    type="text" id="longitude" placeholder="longitud" name="longitude">
+                                    type="text" id="longitude" placeholder="longitud" name="longitude" required>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -69,7 +70,7 @@
                                 <input
                                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 movilephone"
                                     type="text" id="movilephone" placeholder="Nombre del nuevo teléfono"
-                                    name="movilephone">
+                                    name="movilephone" required>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -81,9 +82,9 @@
                             </div>
                             <div class="md:w-2/3">
                                 <textarea
-                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 content"
-                                    type="text" id="text" cols="65" rows="10"
-                                    placeholder="Nombre del nuevo contenido" name="text"></textarea>
+                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 contenido"
+                                    type="text" id="contenido" name="contenido" cols="65" rows="10"
+                                    placeholder="Nombre del nuevo contenido" name="text" required></textarea>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -97,7 +98,7 @@
                                 <span class="text-gray-700">Selección multiple</span>
                                 <select
                                     class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 categoriespoint"
-                                    name="categoriespoint[]" multiple="multiple">
+                                    name="categoriespoint[]" id="categoriespoint" multiple="multiple">
                                     @foreach($categoriesS as $categorieS)
                                     <option value="{{$categorieS['id']}}">{{$categorieS['name']}}</option>
                                     @endforeach
@@ -111,6 +112,11 @@
                             class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded add_pointofinterest"
                             type="submit">
                             Guardar
+                        </button>
+                        <button
+                            class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                            data-bs-dismiss="modal">
+                            Cerrar
                         </button>
                     </div>
 
@@ -131,11 +137,11 @@
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                             <button type="button"
                                 class="inline-block px-6 py-2.5 bg-indigo-500 text-white font-bold text-sm leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-600 active:shadow-lg transition-all duration-150 ease-linear"
-                                data-bs-toggle="modal" data-bs-target="#exampleModalLg">Añadir Punto de Interes</button>
+                                data-bs-toggle="modal" data-bs-target="#exampleModalLg" data-bs-target="#AddPointModal">Añadir Punto de Interes</button>
                         </div>
                     </div>
                 </div>
-
+                <div id="success_message"></div>
                 <div class="block w-full overflow-x-auto">
                     <table class="items-center bg-transparent w-full border-collapse ">
                         <thead>

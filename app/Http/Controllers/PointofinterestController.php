@@ -43,6 +43,14 @@ class PointofinterestController extends Controller
 
     }
 
+    public function fetchpoint()
+    {
+        $pointofinterests = Pointofinterest::all();
+        return response()->json([
+            'pointofinterests'=>$pointofinterests,
+        ]);
+    }
+
     /**
      * Store a newly created pointofinterest in storage.
      *
@@ -50,7 +58,7 @@ class PointofinterestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $data = $request->validate([
+        /* $data = $request->validate([
             'name' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
@@ -59,7 +67,7 @@ class PointofinterestController extends Controller
             'categoriespoint' => 'required'
 
         ]);
-
+        */
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'latitude' => 'required',
@@ -69,30 +77,22 @@ class PointofinterestController extends Controller
             'categoriespoint' => 'required'
         ]);
         if($validator->fails()){
-            return response()->json([
-                'status'=>400,
-                'errors'=>$validator->messages(),
-            ]);
+            return response()->json(['status' =>400,'errors' => $validator->errors()->all()]);
         }else{
             $pointofinterest = new Pointofinterest();
             $pointofinterest->name = $request->input('name');
             $pointofinterest->latitude = $request->input('latitude');
             $pointofinterest->longitude = $request->input('longitude');
             $pointofinterest->movilephone = $request->input('movilephone');
-            $pointofinterest->categories()->attach($request->categoriespoint);
-             /*foreach($request->categoriespoint as $categoria){
-                DB::table('categories_pointofinterests')->insert([
-                    'id_categorie' => $categoria,
-                    'id_pointofinterest' => $pointid[0]->id
+            $pointofinterest->text = $request->input('text');
+            $pointofinterest->save();
+            $pointofinterest->categories()->sync($request->categoriespoint);
 
-                ]);
-                */
         }
 
         return response()->json([
             'status' =>200,
             'message' =>'Punto de interes añadido correctamente',
-
         ]);
 
 
@@ -104,6 +104,7 @@ class PointofinterestController extends Controller
         $pointofinterest->movilephone = $data['movilephone'];
         $pointofinterest->text = $data['text'];
         $pointofinterest->save();
+        $pointofinterest->categories()->sync($request->categoriespoint,);
 
         $pointid = Pointofinterest::where('name', $data['name'])->take(1)->get();
 
@@ -115,6 +116,7 @@ class PointofinterestController extends Controller
             ]);
         }
         */
+
         return redirect()->route('pointofinterests.index');
     }
 
