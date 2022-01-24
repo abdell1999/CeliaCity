@@ -13,7 +13,7 @@ class Categorie extends Model
       'name'
     ];
 
-    public function pointofinterest(){
-        return $this->belongsToMany('App\Models\Pointofinterest', 'categories_pointofinterests', 'id_categorie','id_pointofinterest');
-    }
+    public function pointofinterests(){
+      return $this->belongsToMany('App\Models\Pointofinterest', 'categories_pointofinterests',  'id_categorie', 'id_pointofinterest');
+  }
 }

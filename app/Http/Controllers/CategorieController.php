@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Pointofinterest;
 class CategorieController extends Controller {
 
     public function __construct() {
@@ -56,7 +56,9 @@ class CategorieController extends Controller {
     public function show($id) {
         //
         $data['categorie'] = Categorie::find($id);
-
+      
+        $pointofinterest = Categorie::find($id)->pointofinterests;
+       
 
 
 
