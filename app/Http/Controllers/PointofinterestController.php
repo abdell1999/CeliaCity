@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Pointofinterest;
 use App\Models\Categorie;
+use App\Models\Comment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,7 +26,6 @@ class PointofinterestController extends Controller
     public function index()
     {
         $data['pointofinterests'] = Pointofinterest::orderBy("name")->get();
-
         return view('pointofinterests.index', $data);
     }
 
@@ -88,6 +89,8 @@ class PointofinterestController extends Controller
     public function show($id)
     {
         $data['pointofinterests'] = Pointofinterest::find($id);
+        $data['users'] = User::all();
+        $data['comments'] = Comment::all();
         return view('pointofinterests.show',$data);
     }
 

@@ -128,15 +128,20 @@
   </div>
   <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600">Comentarios</h2>
 
+  <!--Caja insertar comentario-->
   <div class="flex justify-start items-center mb-2 ml-20 ">
 
     <div class="w-1/2 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
-          <img src="http://picsum.photos/50" alt="" class="rounded-full">
+          @foreach($users as $user)
+          @if((Auth::user()->id)== ($user['id']))
+          <img src="{{$user['photo']}}"  alt="" class="rounded-full"  width="50px" height="50px">
+          @endif
+          @endforeach
         </div>
         <div>
-          <h1 class="font-semibold">Itay Buyoy</h1>
+          <h1 class="font-semibold"> {{Auth::user()->name}} {{Auth::user()->surname1}} {{Auth::user()->surname2}}</h1>
 
         </div>
 
@@ -155,20 +160,33 @@
     </div>
 
   </div>
-
+<!--Fin de caja de insertar comentario-->
+<!--Comentario posteado-->
+  @foreach($comments as $comment)
+  @if(($pointofinterests->id)==($comment['id_pointofinterest']))
   <div class="flex justify-start items-center mb-2 ml-20">
     <div class="w-1/2 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
-          <img src="http://picsum.photos/50" alt="" class="rounded-full">
+        @foreach($users as $user)
+            @if(($comment['id_user'])==($user['id']))
+          <img src="{{ url($user->photo) }}" alt="" class="rounded-full"  width="50px" height="50px">
+          @endif
+          @endforeach
         </div>
         <div>
-          <h1 class="font-semibold">Itay Buyoy</h1>
+          <h1 class="font-semibold">
+            @foreach($users as $user)
+            @if(($comment['id_user'])==($user['id']))
+                {{$user['name']}} {{$user['surname1']}} {{$user['surname2']}}
+            @endif
+            @endforeach
+          </h1>
         </div>
       </div>
 
       <div class="mt-5 p-3 w-full">
-        <p>El texto del comentario ya posteado</p>
+        <p>{{$comment['text']}}</p>
       </div>
       <div class="flex justify-end">
         <button class="mr-2">
@@ -182,7 +200,9 @@
       </div>
     </div>
   </div>
-
+  @endif
+  @endforeach
+<!-- Fin Comentario posteado-->
   </div>
 
   </div>
