@@ -37,6 +37,8 @@
 <!-- Categorías -->
 <script src="/assets/js/categorias.js"></script>
 <script src="/assets/js/galerias.js"></script>
+<script src="/assets/js/pointofinterests.js"></script>
+
 
 
 <script>

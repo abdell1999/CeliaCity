@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Pointofinterest;
 use App\Models\Categorie;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class PointofinterestController extends Controller
 {
@@ -58,6 +60,43 @@ class PointofinterestController extends Controller
 
         ]);
 
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+            'movilephone' => 'required',
+            'text'  =>   'required',
+            'categoriespoint' => 'required'
+        ]);
+        if($validator->fails()){
+            return response()->json([
+                'status'=>400,
+                'errors'=>$validator->messages(),
+            ]);
+        }else{
+            $pointofinterest = new Pointofinterest();
+            $pointofinterest->name = $request->input('name');
+            $pointofinterest->latitude = $request->input('latitude');
+            $pointofinterest->longitude = $request->input('longitude');
+            $pointofinterest->movilephone = $request->input('movilephone');
+            $pointofinterest->categories()->attach($request->categoriespoint);
+             /*foreach($request->categoriespoint as $categoria){
+                DB::table('categories_pointofinterests')->insert([
+                    'id_categorie' => $categoria,
+                    'id_pointofinterest' => $pointid[0]->id
+
+                ]);
+                */
+        }
+
+        return response()->json([
+            'status' =>200,
+            'message' =>'Punto de interes añadido correctamente',
+
+        ]);
+
+
+        /*
         $pointofinterest = new Pointofinterest();
         $pointofinterest->name = $data['name'];
         $pointofinterest->latitude = $data['latitude'];
@@ -75,7 +114,7 @@ class PointofinterestController extends Controller
 
             ]);
         }
-
+        */
         return redirect()->route('pointofinterests.index');
     }
 
