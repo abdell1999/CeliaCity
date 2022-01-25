@@ -20,7 +20,7 @@ $(document).ready(function() {
                     <th>"+ item.movilephone+"</th>\
                     <th>"+ item.text+"</th>\
                     <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4'><button class='editbtn' value="+item.id+"><i class='far fa-edit' style='color: blue;'></i></button></th>\
-                    <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 '><button class='deletebtn' value="+item.id+"><i class='far fa-trash-alt' style='color: blue;'></i></button></th>\
+                    <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 '><button data-bs-toggle='modal' data-bs-target='#exampleModal' class='deletebtn' value="+item.id+"><i class='far fa-trash-alt' style='color: blue;'></i></button></th>\
                     </tr>");
                 })
             },
@@ -61,12 +61,46 @@ $(document).ready(function() {
                     $('#exampleModalLg').modal('hide');
                     fetchpoint();
                 }
-            }
-            /*
+            },
             error: function (data) {
                 console.log(data);
             }
-            */
+
+        });
+    });
+
+    $(document).on('click', '.deletebtn', function () {
+        var point_id = $(this).val();
+        $('#DeleteModal').modal('show');
+        $('#deleteing_id').val(point_id);
+    });
+
+    $(document).on('click', '.delete_point', function (e) {
+        e.preventDefault();
+
+        $(this).text('Deleting..');
+        var id = $('#deleteing_id').val();
+        $.ajax({
+            type: "DELETE",
+            url: "/delete-point/" + id,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response.status == 404) {
+                    $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
+                    $('#success_message').text(response.message);
+                    $('.delete_point').text('Yes Delete');
+                } else {
+                    $('#success_message').html("");
+                    $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
+                    $('#success_message').text(response.message);
+                    $('.delete_point').text('Yes Delete');
+                    $('#exampleModal').modal('hide');
+                    fetchpoint();
+                }
+            }, error: function(response){
+                console.log(response);
+            }
         });
     });
 
