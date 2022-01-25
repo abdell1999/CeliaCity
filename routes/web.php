@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home2');
 Route::resource('/pointofinterests', 'PointofinterestController');
+Route::get('fetch-point', [App\Http\Controllers\PointofinterestController::class, 'fetchpoint']);
 Route::resource('/categories', 'CategorieController');
 Route::resource('/users', 'UserController');
 Route::resource('/comments','CommentController');

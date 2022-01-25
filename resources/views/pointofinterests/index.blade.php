@@ -115,7 +115,7 @@
                         </button>
                         <button
                             class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                            data-bs-dismiss="modal">
+                            data-bs-dismiss="modal" aria-label="Close">
                             Cerrar
                         </button>
                     </div>
@@ -137,7 +137,7 @@
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                             <button type="button"
                                 class="inline-block px-6 py-2.5 bg-indigo-500 text-white font-bold text-sm leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-600 active:shadow-lg transition-all duration-150 ease-linear"
-                                data-bs-toggle="modal" data-bs-target="#exampleModalLg" data-bs-target="#AddPointModal">Añadir Punto de Interes</button>
+                                data-bs-toggle="modal" data-bs-target="#exampleModalLg">Añadir Punto de Interes</button>
                         </div>
                     </div>
                 </div>
@@ -178,42 +178,7 @@
                         </thead>
 
                         <tbody>
-                            @foreach ($pointofinterests as $pointofinterest)
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
-                                    {{$pointofinterest->name}}
-                                </th>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
-                                    {{$pointofinterest->latitude}}
-                                </th>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
-                                    {{$pointofinterest->longitude}}
-                                </th>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
-                                    {{$pointofinterest->movilephone}}
-                                </th>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-wrap p-4">
-                                    {{$pointofinterest->text}}
-                                </th>
-                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4">
-                                    <a href="{{ route('pointofinterests.edit', $pointofinterest->id) }}"
-                                        ><i class="far fa-edit" style="color: blue;"></i></a>
-                                    </th>
-                                    <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 ">
-                                        <form method="POST" action="{{ route('pointofinterests.destroy', $pointofinterest->id) }}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input type="submit" class="" value="Eliminar">
-                                        </form>
-                                    </th>
-                            </tr>
-                                @endforeach
+
                         </tbody>
 
                     </table>

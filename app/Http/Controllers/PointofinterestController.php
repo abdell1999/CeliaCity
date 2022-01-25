@@ -27,7 +27,7 @@ class PointofinterestController extends Controller
     public function index()
     {
         $data['pointofinterests'] = Pointofinterest::orderBy("name")->get();
-        return view('pointofinterests.index', $data);
+        return view('pointofinterests.index');
     }
 
     /**
@@ -47,7 +47,7 @@ class PointofinterestController extends Controller
     {
         $pointofinterests = Pointofinterest::all();
         return response()->json([
-            'pointofinterests'=>$pointofinterests,
+            'pointofinterest'=>$pointofinterests,
         ]);
     }
 
@@ -196,8 +196,9 @@ class PointofinterestController extends Controller
     public function destroy($id)
     {
         $pointofinterest = Pointofinterest::find($id);
-        $sql = 'delete from categories_pointofinterests where id_pointofinterest = '. $id;
-        DB::unprepared($sql);
+        /*$sql = 'delete from categories_pointofinterests where id_pointofinterest = '. $id;
+        DB::unprepared($sql);*/
+        $pointofinterest->categories()->detach();
         $pointofinterest->delete();
         return redirect()->route('pointofinterests.index');
     }
