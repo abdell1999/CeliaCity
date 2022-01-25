@@ -27,7 +27,7 @@ class PointofinterestController extends Controller
     public function index()
     {
         $data['pointofinterests'] = Pointofinterest::orderBy("name")->get();
-        return view('pointofinterests.index', $data);
+        return view('pointofinterests.index');
     }
 
     /**
@@ -47,7 +47,7 @@ class PointofinterestController extends Controller
     {
         $pointofinterests = Pointofinterest::all();
         return response()->json([
-            'pointofinterests'=>$pointofinterests,
+            'pointofinterest'=>$pointofinterests,
         ]);
     }
 
@@ -58,16 +58,7 @@ class PointofinterestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        /* $data = $request->validate([
-            'name' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
-            'movilephone' => 'required',
-            'text'  =>   'required',
-            'categoriespoint' => 'required'
 
-        ]);
-        */
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'latitude' => 'required',
@@ -94,28 +85,6 @@ class PointofinterestController extends Controller
             'status' =>200,
             'message' =>'Punto de interes añadido correctamente',
         ]);
-
-
-        /*
-        $pointofinterest = new Pointofinterest();
-        $pointofinterest->name = $data['name'];
-        $pointofinterest->latitude = $data['latitude'];
-        $pointofinterest->longitude = $data['longitude'];
-        $pointofinterest->movilephone = $data['movilephone'];
-        $pointofinterest->text = $data['text'];
-        $pointofinterest->save();
-        $pointofinterest->categories()->sync($request->categoriespoint,);
-
-        $pointid = Pointofinterest::where('name', $data['name'])->take(1)->get();
-
-        foreach($request->categoriespoint as $categoria){
-            DB::table('categories_pointofinterests')->insert([
-                'id_categorie' => $categoria,
-                'id_pointofinterest' => $pointid[0]->id
-
-            ]);
-        }
-        */
 
         return redirect()->route('pointofinterests.index');
     }
@@ -196,9 +165,23 @@ class PointofinterestController extends Controller
     public function destroy($id)
     {
         $pointofinterest = Pointofinterest::find($id);
-        $sql = 'delete from categories_pointofinterests where id_pointofinterest = '. $id;
-        DB::unprepared($sql);
-        $pointofinterest->delete();
+
+        if($pointofinterest)
+        {
+            $pointofinterest->categories()->detach();
+            $pointofinterest->delete();
+            return response()->json([
+                'status'=>200,
+                'message'=>'Punto de interes Borrado'
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No encuentra Punto de interes'
+            ]);
+        }
         return redirect()->route('pointofinterests.index');
     }
 }

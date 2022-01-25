@@ -20,6 +20,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home2');
 Route::resource('/pointofinterests', 'PointofinterestController');
+Route::get('fetch-point', [App\Http\Controllers\PointofinterestController::class, 'fetchpoint']);
+Route::delete('delete-point/{id}', [App\Http\Controllers\PointofinterestController::class, 'destroy']);
 Route::resource('/categories', 'CategorieController');
 Route::resource('/users', 'UserController');
 Route::resource('/comments','CommentController');

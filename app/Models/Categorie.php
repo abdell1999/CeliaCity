@@ -14,6 +14,6 @@ class Categorie extends Model
     ];
 
     public function pointofinterests(){
-      return $this->belongsToMany('App\Models\Pointofinterest', 'categories_pointofinterests',  'id_categorie', 'id_pointofinterest');
+      return $this->belongsToMany('App\Models\Pointofinterest', 'categories_pointofinterests',  'id_pointofinterest', 'id_categorie');
   }
 }
