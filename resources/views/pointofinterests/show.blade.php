@@ -81,18 +81,17 @@
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
           maxZoom: 18
         }).addTo(mapsipe);
-        var marker = L.marker([37.335513, -2.30154]).addTo(mapsipe);
-        marker.bindPopup("<b>Monumento</b><br>Mortero del Arguiñano.<br> <img src='mortero2.jfif'width='200px' height='100px'>"
+        var marker = L.marker([{{$pointofinterests->latitude}}, {{$pointofinterests->longitude}}]).addTo(mapsipe);
+        marker.bindPopup("<b>{{$pointofinterests->name}}</b>"
         ).openPopup();
 
-        var marker2 = L.marker([37.334998, -2.299739]).addTo(mapsipe);
-        marker2.bindPopup("<b>Monumento</b><br>CRISTIAN ROSQUILLA.").openPopup();
 
         var popup = L.popup();
         function onMapClick(e) {
           popup
             .setLatLng(e.latlng)
             .setContent("Has pulsado en el mapa en la coordenada " + e.latlng.toString())
+
             .openOn(mapsipe);
         }
         mapsipe.on('click', onMapClick);

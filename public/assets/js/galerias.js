@@ -1,31 +1,34 @@
 console.log("Script para gestionar galeria cargado correctamente");
 $(document).ready(function() {
-    function eliminar(id){
+        console.log("Documento cargado correctamente!");
 
-        $.ajax({
-            url: "/resources/"+id,
-            type: "POST",
-            data:{
-                id:id,
-                _method: "DELETE"
-            },
-            success:function(response){
+        function eliminar(id){
 
-                $("#"+id).remove();
+            $.ajax({
+                url: "/resources/"+id,
+                type: "POST",
+                data:{
+                    id:id,
+                    _method: "DELETE"
+                },
+                success:function(response){
+                    console.log("Correcto");
+                    $("#"+id).remove();
 
 
-                if(response){
-                    //RESPUESTA
-                }else{
-                    //SIN RESPUESTA
-                }
-            },
-            error:function(){
-                    alert("Ha ocurrido un error al eliminar el recurso");
-                    alert(id);
-                }
+                    if(response){
+                        //RESPUESTA
+                    }else{
+                        //SIN RESPUESTA
+                    }
+                },
+                error:function(){
+                        console.log("ID del recurso: "+id);
+                        console.log("Ha ocurrido un error al eliminar el recurso");
+                    }
 
-        })
+            })
+
 
     }
 

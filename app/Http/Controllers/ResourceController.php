@@ -127,7 +127,7 @@ class ResourceController extends Controller
     public function destroy(Resource $id)
     {
         $resource = Resource::find($id);
-        $resource->delete();
+        $resource->pointofinterests()->delete();
         return redirect()->route('resources.index');
     }
 }
