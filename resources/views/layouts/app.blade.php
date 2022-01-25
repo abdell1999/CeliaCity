@@ -2,6 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 @include('includes.head')
+
+@yield('scripts')
+@yield('style')
 <header>
     @include('includes.header')
 <header>

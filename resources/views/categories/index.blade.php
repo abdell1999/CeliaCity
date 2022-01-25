@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
+@section('scripts')
 
+<script src="/assets/js/categorias.js"></script>
+@endsection
 
 
 @section('content')

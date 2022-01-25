@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+
+@section('scripts')
+
+<script src="/assets/js/pointofinterests.js"></script>
+@endsection
+
+
 @section('content')
 <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
     id="exampleModalLg" tabindex="-1" aria-labelledby="exampleModalLgLabel" aria-modal="true" role="dialog">
