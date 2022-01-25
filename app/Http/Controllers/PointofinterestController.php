@@ -117,7 +117,31 @@ class PointofinterestController extends Controller
         ->where('id_pointofinterest','=',$id)
         ->get();
         //dd($data['categoriespoint']);
-        return view('pointofinterests.edit',$data);
+
+        $pointofinterests = Pointofinterest::find($id);
+        $categorias = DB::table('categories_pointofinterests')
+        ->where('id_pointofinterest','=',$id)
+        ->get();
+        $categories = Pointofinterest::find($id)->categories;
+
+        if($pointofinterests)
+        {
+            return response()->json([
+                'status'=>200,
+                'pointofinterests'=> $pointofinterests,
+                'categorias'=> $categorias,
+                'categories'=> $categories,
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No pointofinterest Found.'
+            ]);
+        }
+
+        //return view('pointofinterests.edit',$data);
     }
 
     /**
