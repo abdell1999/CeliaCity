@@ -88,4 +88,15 @@
         Enviar
     </button>
 </div>
+
+<h2>Prueba de selector de puntos</h2>
+
+
+
+
+
+
+
+
+
 @endsection

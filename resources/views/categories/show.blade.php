@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.frontpage')
 @section('content')
 
     <header>
@@ -7,7 +7,12 @@
         </div>
 
         <div class="ml-10 mt-10 md:flex md:flex-row md:justify-evenly flex-wrap">
-        @foreach ($selected as $seleccionado )
+
+        @foreach($categorie->pointofinterests as $point)
+                        <br>   
+                        <li>FK</li>             
+                        <li>{{$point->name}}</li>
+                        
 
 
     <div class="mt-10 rounded-lg shadow-lg bg-white max-w-sm">

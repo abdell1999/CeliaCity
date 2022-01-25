@@ -12,4 +12,8 @@ class Categorie extends Model
     protected $fillable = [
       'name'
     ];
+
+    public function pointofinterests(){
+      return $this->belongsToMany('App\Models\Pointofinterest', 'categories_pointofinterests',  'id_categorie', 'id_pointofinterest');
+  }
 }
