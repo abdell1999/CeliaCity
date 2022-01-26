@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home2');
 Route::resource('/pointofinterests', 'PointofinterestController');
 Route::get('fetch-point', [App\Http\Controllers\PointofinterestController::class, 'fetchpoint']);
+Route::get('fetch-resources', [App\Http\Controllers\ResourceController::class, 'fetchresources']);
 Route::get('edit-pointofinterest/{id}', [App\Http\Controllers\PointofinterestController::class, 'edit']);
 Route::put('update-pointofinterest/{id}', [App\Http\Controllers\PointofinterestController::class, 'update']);
 Route::delete('delete-point/{id}', [App\Http\Controllers\PointofinterestController::class, 'destroy']);

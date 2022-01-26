@@ -130,4 +130,14 @@ class ResourceController extends Controller
         $resource->pointofinterests()->delete();
         return redirect()->route('resources.index');
     }
+
+    public function fetchresources(){
+        $resources=Resource::all();
+
+        return response()->json([
+            "resources"=>$resources,
+        ]);
+    }
+
+
 }
