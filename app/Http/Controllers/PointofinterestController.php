@@ -99,7 +99,10 @@ class PointofinterestController extends Controller
     {
         $data['pointofinterests'] = Pointofinterest::find($id);
         $data['users'] = User::all();
-        $data['comments'] = Comment::all();
+        $data['comments'] = $data['pointofinterests']->comments;
+
+        //dd($data['comments']);
+
         return view('pointofinterests.show',$data);
     }
 

@@ -163,19 +163,33 @@
   </div>
   <!-- Comentario sin postear -->
   <!-- Comentario posteado -->
-  <div class="flex justify-start items-center mb-2 ml-20">
+ 
+
+    @foreach($comments as $comment)
+    @foreach($users as $user)
+    @if($user->id == $comment->id_user)
+    <div id= "{{$comment->id}}">
+    <div class="flex justify-start items-center mb-2 ml-20">
     <div class="w-1/2 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
-          <img src="http://picsum.photos/50" alt="" class="rounded-full">
+          <img src="{{$user->photo}}" alt="" class="w-12 h-12 rounded-full mr-4">
         </div>
         <div>
-          <h1 class="font-semibold">Itay Buyoy</h1>
+          <h1 class="font-semibold">
+
+          
+              
+              {{$user->name}}
+              @endif
+          @endforeach
+
+          </h1>
         </div>
       </div>
 
       <div class="mt-5 p-3 w-full">
-        <p>El texto del comentario ya posteado</p>
+        <p>{{$comment->text}}</p>
       </div>
       <div class="flex justify-end">
         <button class="mr-2">
@@ -189,7 +203,14 @@
       </div>
     </div>
   </div>
+  </div>
 <!-- Comentario posteado -->
+
+
+    @endforeach
+
+
+
   </div>
 
   </div>

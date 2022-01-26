@@ -19,7 +19,7 @@ class Pointofinterest extends Model
     ];
 
     public function comments(){
-        $this->hasMany('App\Models\Comment', 'id_pointofinterest');
+        return $this->hasMany('App\Models\Comment', 'id_pointofinterest');
     }
 
     public function resource(){

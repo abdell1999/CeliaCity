@@ -22,6 +22,7 @@ function crearComentario(){
         success:function(response){
 
             console.log("SE HA INSERTADO ALGO");
+            $('#text').val('');
 
             if(response){
                 //RESPUESTA
