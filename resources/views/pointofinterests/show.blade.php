@@ -136,9 +136,7 @@
 
   </div>
   <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600">Comentarios</h2>
-<!-- Comentario sin postear -->
-  <form action="{{ route('comentar')}} " method="post">
-    @csrf 
+<!-- Comentario sin postear --> 
   <div class="flex justify-start items-center mb-2 ml-20 ">
 
     <div class="w-1/2 bg-white p-2 pt-4 rounded shadow-2xl">
@@ -148,22 +146,21 @@
         </div>
         <div>
           <h1 class="font-semibold">{{Auth::user()->name}}</h1>
-          <input type="hidden" value="{{$pointofinterests->id}}" name="id_pointofinterest">
+          <input type="hidden" value="{{$pointofinterests->id}}" name="id_pointofinterest" id="id_pointofinterest">
         </div>
 
       </div>
 
       <div class="mt-3 p-3 w-full">
-        <textarea rows="3" class="border p-2 rounded w-full" placeholder="Write something..." name="text"> </textarea>
+        <textarea rows="3" class="border p-2 rounded w-full" placeholder="Write something..." name="text" id="text"> </textarea>
       </div>
 
       <div class="flex justify-between mx-3">
-        <div><button type="submit" class="px-4 py-1 bg-purple-800 text-white rounded font-light hover:bg-green-700">Enviar</button>
+        <div><button class="px-4 py-1 bg-purple-800 text-white rounded font-light hover:bg-green-700" id="btnComentar">Enviar</button>
         </div>
       </div>
     </div>
   </div>
-  </form>
   <!-- Comentario sin postear -->
   <!-- Comentario posteado -->
   <div class="flex justify-start items-center mb-2 ml-20">

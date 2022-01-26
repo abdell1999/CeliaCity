@@ -142,6 +142,6 @@ class CommentController extends Controller
         $comment->id_user = Auth::id();
         $comment->id_pointofinterest = $request->id_pointofinterest;
         $comment->save();
-        return redirect()->route('comments.index');
+        
     }
 }
