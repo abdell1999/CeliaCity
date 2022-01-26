@@ -136,10 +136,9 @@
 
   </div>
   <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600">Comentarios</h2>
-<!-- Comentario sin postear --> 
-  <div class="flex justify-start items-center mb-2 ml-20 ">
-
-    <div class="w-1/2 bg-white p-2 pt-4 rounded shadow-2xl">
+<!-- Comentario sin postear -->
+<div class="flex xl:justify-start md:justify-center sm:justify-center items-center mt-6 mb-6 ml-20">
+    <div class="w-9/12 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
           <img src="http://picsum.photos/50" alt="" class="rounded-full">
@@ -163,14 +162,14 @@
   </div>
   <!-- Comentario sin postear -->
   <!-- Comentario posteado -->
- 
+
 
     @foreach($comments as $comment)
     @foreach($users as $user)
     @if($user->id == $comment->id_user)
     <div id= "{{$comment->id}}">
-    <div class="flex justify-start items-center mb-2 ml-20">
-    <div class="w-1/2 bg-white p-2 pt-4 rounded shadow-2xl">
+        <div class="flex xl:justify-start md:justify-center sm:justify-center items-center mt-6 mb-6 ml-20">
+            <div class="w-9/12 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
           <img src="{{$user->photo}}" alt="" class="w-12 h-12 rounded-full mr-4">
@@ -178,8 +177,8 @@
         <div>
           <h1 class="font-semibold">
 
-          
-              
+
+
               {{$user->name}}
               @endif
           @endforeach

@@ -1,4 +1,4 @@
-<div class="relative bg-white rounded shadow-lg py-5 px-7 m-5">
+<div class="relative bg-white rounded shadow-lg py-5 px-7 mx-24 mt-5">
     <nav class="flex justify-center">
         <div class="flex items-center space-x-3 lg:pr-16 pr-6">
             <img class="cursor-pointer" width="34" height="34" src="{{asset('assets/img/icons/village.svg')}}">

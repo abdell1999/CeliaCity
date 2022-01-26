@@ -23,7 +23,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15em;
+    gap: 10em;
 }
 
 body {
@@ -32,7 +32,7 @@ body {
 
 div.mapita {
     background-color: white;
-    margin: 5% 5%;
+    margin: 6rem 6rem;
 
     padding-top: 2%;
 }
@@ -45,7 +45,7 @@ div.mapita {
 .datos {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 2em;
 }
 
