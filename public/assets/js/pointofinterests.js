@@ -35,7 +35,7 @@ $(document).ready(function() {
     $(document).on('click','.editbtn',function(e) {
         e.preventDefault();
         var point_id = $(this).val();
-        console.log(point_id);
+        //console.log(point_id);
 
         $('#editModal').modal('show');
 
@@ -43,8 +43,10 @@ $(document).ready(function() {
             type: "GET",
             url: "/edit-pointofinterest/"+point_id,
             success: function (response) {
+                console.log(response);
                 console.log(response.pointofinterests);
-                console.log(response.categorias);
+                console.log(response.categories);
+                console.log(response.puntocategoria);
 
                 if (response.status == 404) {
                     $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
@@ -58,8 +60,13 @@ $(document).ready(function() {
                     $('#edit_longitude').val(response.pointofinterests.longitude);
                     $('#edit_movilephone').val(response.pointofinterests.movilephone);
                     $('#edit_contenido').val(response.pointofinterests.text);
-                    $.each(response.categorias,function(index, item){
-                        console.log(index.item.name);
+                    $.each(response.categories,function(index, item){
+                            console.log(item.name);
+                            if(item.selected) {
+                                $('#edit_categoriespoint').append(`<option selected value="${item.id}">${item.name}</option>`);
+                            }else{
+                            $('#edit_categoriespoint').append(`<option value="${item.id}">${item.name}</option>`);
+                            }
                     });
                     $('#point_id').val(point_id);
                 }

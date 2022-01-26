@@ -111,26 +111,39 @@ class PointofinterestController extends Controller
      */
     public function edit($id)
     {
-        $data['pointofinterests'] = Pointofinterest::find($id);
-        $data['categories']= Categorie::all();
-        $data['categoriespoint'] = DB::table('categories_pointofinterests')
-        ->where('id_pointofinterest','=',$id)
-        ->get();
-        //dd($data['categoriespoint']);
-
+        //Punto de interes segun el id
         $pointofinterests = Pointofinterest::find($id);
-        $categorias = DB::table('categories_pointofinterests')
-        ->where('id_pointofinterest','=',$id)
-        ->get();
+        //Categorias relacionadas con el punto de interes
         $categories = Pointofinterest::find($id)->categories;
+        //Todas las categorias
+        $allcategories = Categorie::all();
+
+        $categorieselected = [];
+        foreach ($allcategories as $allcategorie){
+            $idcategorie = $allcategorie->id;
+            $categorianame = $allcategorie-> name;
+            $categoria = [
+                "id" => $idcategorie,
+                "name" => $categorianame,
+                "selected" => false,
+            ];
+            array_push($categorieselected, $categoria);
+        }
+        foreach ($categories as $categorie){
+            $id = $categorie->id;
+            for ($i = 0; $i < count($categorieselected); $i++){
+                if($id == $categorieselected[$i]['id']){
+                    $categorieselected[$i]['selected'] = true;
+                }
+            }
+        }
 
         if($pointofinterests)
         {
             return response()->json([
                 'status'=>200,
                 'pointofinterests'=> $pointofinterests,
-                'categorias'=> $categorias,
-                'categories'=> $categories,
+                'categories'=> $categorieselected,
             ]);
         }
         else
