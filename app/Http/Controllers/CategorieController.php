@@ -56,9 +56,9 @@ class CategorieController extends Controller {
     public function show($id) {
         //
         $data['categorie'] = Categorie::find($id);
-      
+
         $pointofinterest = Categorie::find($id)->pointofinterests;
-       
+
 
 
 
