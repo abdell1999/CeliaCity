@@ -195,8 +195,8 @@
                             </div>
                             <div class="md:w-2/3">
                                 <input
-                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 name"
-                                    type="text" id="edit_name" placeholder="Nombre del punto de interes" name="name" required>
+                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_name"
+                                    type="text" id="edit_name" placeholder="Nombre del punto de interes" name="edit_name" required>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -208,8 +208,8 @@
                             </div>
                             <div class="md:w-2/3">
                                 <input
-                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 latitude"
-                                    type="text" id="edit_latitude" placeholder="Latitud" name="latitude" required>
+                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_latitude"
+                                    type="text" id="edit_latitude" placeholder="Latitud" name="edit_latitude" required>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -221,8 +221,8 @@
                             </div>
                             <div class="md:w-2/3">
                                 <input
-                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 longitude"
-                                    type="text" id="edit_longitude" placeholder="longitud" name="longitude" required>
+                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_longitude"
+                                    type="text" id="edit_longitude" placeholder="longitud" name="edit_longitude" required>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -234,9 +234,9 @@
                             </div>
                             <div class="md:w-2/3">
                                 <input
-                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 movilephone"
+                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_movilephone"
                                     type="text" id="edit_movilephone" placeholder="Nombre del nuevo teléfono"
-                                    name="movilephone" required>
+                                    name="edit_movilephone" required>
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -263,8 +263,8 @@
                             <div class="md:w-2/3">
                                 <span class="text-gray-700">Selección multiple</span>
                                 <select
-                                    class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 categoriespoint"
-                                    name="categoriespoint[]" id="edit_categoriespoint" multiple="multiple">
+                                    class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_categoriespoint"
+                                    name="edit_categoriespoint[]" id="edit_categoriespoint" multiple="multiple">
 
                                 </select>
                             </div>

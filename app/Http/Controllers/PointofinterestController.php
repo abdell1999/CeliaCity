@@ -166,7 +166,7 @@ class PointofinterestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
@@ -174,22 +174,30 @@ class PointofinterestController extends Controller
             'text'  =>   'required',
             'categoriespoint' => 'required'
         ]);
-        $sql = 'delete from categories_pointofinterests where id_pointofinterest = '. $id;
-        DB::unprepared($sql);
-        $pointofinterests = Pointofinterest::find($id);
-        $pointofinterests->name = $data['name'];
-        $pointofinterests->latitude = $data['latitude'];
-        $pointofinterests->latitude = $data['longitude'];
-        $pointofinterests->movilephone = $data['movilephone'];
-        $pointofinterests->text = $data['text'];
-        foreach($request->categoriespoint as $categoria){
-            DB::table('categories_pointofinterests')->insert([
-                'id_categorie' => $categoria,
-                'id_pointofinterest' => $id
 
+        if($validator->fails()){
+            return response()->json([
+                'status' =>400,
+                'errors' => $validator->errors()->all()
             ]);
+        }else{
+            $pointofinterest = Pointofinterest::find($id);
+            if($pointofinterest){
+            $pointofinterest->name = $request->input('name');
+            $pointofinterest->latitude = $request->input('latitude');
+            $pointofinterest->longitude = $request->input('longitude');
+            $pointofinterest->movilephone = $request->input('movilephone');
+            $pointofinterest->text = $request->input('text');
+            $pointofinterest->save();
+            $pointofinterest->categories()->sync($request->edit_categoriespoint);
+            }
         }
-        $pointofinterests->save();
+
+        return response()->json([
+            'status' =>200,
+            'message' =>'Punto de interes añadido correctamente',
+        ]);
+
         return redirect()->route('pointofinterests.index');
     }
 

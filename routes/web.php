@@ -22,6 +22,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/pointofinterests', 'PointofinterestController');
 Route::get('fetch-point', [App\Http\Controllers\PointofinterestController::class, 'fetchpoint']);
 Route::get('edit-pointofinterest/{id}', [App\Http\Controllers\PointofinterestController::class, 'edit']);
+Route::put('update-pointofinterest/{id}', [App\Http\Controllers\PointofinterestController::class, 'update']);
 Route::delete('delete-point/{id}', [App\Http\Controllers\PointofinterestController::class, 'destroy']);
 Route::resource('/categories', 'CategorieController');
 Route::resource('/users', 'UserController');

@@ -44,9 +44,6 @@ $(document).ready(function() {
             url: "/edit-pointofinterest/"+point_id,
             success: function (response) {
                 console.log(response);
-                console.log(response.pointofinterests);
-                console.log(response.categories);
-                console.log(response.puntocategoria);
 
                 if (response.status == 404) {
                     $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
@@ -61,7 +58,6 @@ $(document).ready(function() {
                     $('#edit_movilephone').val(response.pointofinterests.movilephone);
                     $('#edit_contenido').val(response.pointofinterests.text);
                     $.each(response.categories,function(index, item){
-                            console.log(item.name);
                             if(item.selected) {
                                 $('#edit_categoriespoint').append(`<option selected value="${item.id}">${item.name}</option>`);
                             }else{
@@ -75,7 +71,53 @@ $(document).ready(function() {
         $('.editformPoint').find('input').val('');
     });
 
+    //Update de Punto de Interes
 
+    $(document).on('click', '.update_pointofinterest', function (e) {
+        e.preventDefault();
+
+        $(this).text('Actualizando..');
+        var id = $('#point_id').val();
+        // alert(id);
+
+        var data = {
+            'name': $('.edit_name').val(),
+            'latitude':$('.edit_latitude').val(),
+            'longitude':$('.edit_longitude').val(),
+            'movilephone':$('.edit_movilephone').val(),
+            'text':$('.edit_contenido').val(),
+            'categoriespoint':$('.edit_categoriespoint').val(),
+        }
+
+        $.ajax({
+            type: "PUT",
+            url: "/update-pointofinterest/" + id,
+            data: data,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response.status == 400) {
+                    $('#update_msgList').html("");
+                    $('#update_msgList').addClass('inline-block px-6 py-2.5 bg-red-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-600 hover:shadow-lg focus:bg-red-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out');
+                    $.each(response.errors, function (key, err_value) {
+                        $('#update_msgList').append('<li>' + err_value +
+                            '</li>');
+                    });
+                    $('.update_pointofinterest').text('Actualizar');
+                } else {
+                    $('#update_msgList').html("");
+
+                    $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
+                    $('#success_message').text(response.message);
+                    $('#editModal').find('input').val('');
+                    $('.update_pointofinterest').text('Update');
+                    $('#editModal').modal('hide');
+                    fetchpoint();
+                }
+            }
+        });
+
+    });
 
 
     $(document).on('click','.add_pointofinterest', function(e) {
@@ -151,6 +193,8 @@ $(document).ready(function() {
             }
         });
     });
+
+
 
 
 });
