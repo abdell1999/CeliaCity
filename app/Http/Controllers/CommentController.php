@@ -7,7 +7,7 @@ use App\Models\Pointofinterest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
 class CommentController extends Controller
 {
     /**
@@ -131,6 +131,17 @@ class CommentController extends Controller
     {
         $comment = Comment::find($id);
         $comment->delete();
+        return redirect()->route('comments.index');
+    }
+
+    public function comentar(Request $request){
+        $comment = new Comment();
+        $comment->date = now();
+        $comment->text = $request->text;
+        $comment->valoration=5;
+        $comment->id_user = Auth::id();
+        $comment->id_pointofinterest = $request->id_pointofinterest;
+        $comment->save();
         return redirect()->route('comments.index');
     }
 }

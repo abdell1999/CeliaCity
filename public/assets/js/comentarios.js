@@ -1,4 +1,6 @@
 $(document).ready(function() {
-console.log("ejemplo");
+console.log("Documento cargado correctamente Comentarios");
+
+
 
 });

@@ -28,5 +28,5 @@ Route::resource('/categories', 'CategorieController');
 Route::resource('/users', 'UserController');
 Route::resource('/comments','CommentController');
 Route::resource('/resources','ResourceController');
-
 Route::get('fetch-user', [App\Http\Controllers\UserController::class, 'fetchuser']);
+Route::post('comentar', [App\Http\Controllers\CommentController::class, 'comentar'])->name('comentar');
