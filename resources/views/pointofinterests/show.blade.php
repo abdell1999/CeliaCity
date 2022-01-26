@@ -1,4 +1,9 @@
 @extends('layouts.frontpage')
+@section('scripts')
+
+    <script src="/assets/js/comentarios.js"></script>
+    
+@endsection
 @section('content')
 <!--pepe-->
 <link rel="stylesheet" type="text/css" href="/assets/css/pointofinterest.css">
@@ -188,6 +193,9 @@
 </body>
 
 </html>
+
+
+
 
 
 
