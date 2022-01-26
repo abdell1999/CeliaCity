@@ -168,4 +168,19 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index');
     }
+
+
+    public function fetchuser()
+    {
+        $users = User::all();
+        return response()->json([
+            'user'=>$users,
+        ]);
+    }
+
+
+
+
+
+
 }

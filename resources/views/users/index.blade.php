@@ -1,4 +1,12 @@
 @extends('layouts.app')
+
+@section('scripts')
+
+<script src="/assets/js/users.js"></script>
+@endsection
+
+
+
 @section('content')
 
 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
