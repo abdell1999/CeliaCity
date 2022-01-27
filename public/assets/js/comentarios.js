@@ -1,5 +1,11 @@
 $(document).ready(function() {
-console.log("Documento cargado correctamente Comentarios");
+console.log("Script para gestionar comentarios cargado correctamente");
+
+
+function fetchcomment(){
+
+}
+
 
 
 $('#btnComentar').click(function() {
@@ -30,7 +36,7 @@ function crearComentario(){
 
             }else{
                 //SIN RESPUESTA
-                
+
             }
         },
         error:function(){

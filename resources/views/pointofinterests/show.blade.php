@@ -141,7 +141,7 @@
     <div class="w-9/12 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
-          <img src="http://picsum.photos/50" alt="" class="rounded-full">
+          <img src="{{Auth::user()->photo}}" alt="" class="w-12 h-12 rounded-full">
         </div>
         <div>
           <h1 class="font-semibold">{{Auth::user()->name}}</h1>
@@ -172,7 +172,7 @@
             <div class="w-9/12 bg-white p-2 pt-4 rounded shadow-2xl">
       <div class="flex ml-3">
         <div class="mr-3">
-          <img src="{{$user->photo}}" alt="" class="w-12 h-12 rounded-full mr-4">
+          <img src="{{$user->photo}}" alt="" class="w-12 h-12 rounded-full">
         </div>
         <div>
           <h1 class="font-semibold">

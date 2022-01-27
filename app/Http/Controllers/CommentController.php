@@ -142,6 +142,18 @@ class CommentController extends Controller
         $comment->id_user = Auth::id();
         $comment->id_pointofinterest = $request->id_pointofinterest;
         $comment->save();
-        
+
     }
+
+
+    public function fetchcomment()
+    {
+        $comments = Comment::all();
+        return response()->json([
+            'comments'=>$comments,
+        ]);
+    }
+
+
+
 }
