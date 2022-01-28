@@ -146,11 +146,20 @@ class CommentController extends Controller
     }
 
 
-    public function fetchcomment()
+    public function fetchcomment($id_pointofinterest)
     {
-        $comments = Comment::all();
+
+        $comments = Comment::where('id_pointofinterest', '=', $id_pointofinterest)->get();
+        //$comments = Comment::all();
+        //dd($comments);
+
+        $users = User::all();
+
+
+
         return response()->json([
             'comments'=>$comments,
+            'users'=>$users,
         ]);
     }
 

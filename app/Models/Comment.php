@@ -15,8 +15,8 @@ class Comment extends Model
         'date',
         'valoration',
         'text',
-        'idUser',
-        'idPoint'
+        'id_user',
+        'id_pointofinterest'
     ];
 
     public function users(){
