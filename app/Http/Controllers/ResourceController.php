@@ -50,7 +50,7 @@ class ResourceController extends Controller
 
         $request->validate([
             'images' => 'required',
-            //'pointofinterests' => 'required',
+            'pointofinterests' => 'required',
           ]);
 
         if ($request->hasfile('images')) {
@@ -60,22 +60,30 @@ class ResourceController extends Controller
                 $name = $image->getClientOriginalName();
                 $path = $image->storeAs('uploads', $name, 'public');
 
+                $resource= new Resource();
+                $resource -> title = $name;
+                $resource -> route = '/storage/'.$path;
+                $resource -> save();
+
+                /*
                 Resource::create([
                     'title' => $name,
                     'route' => '/storage/'.$path
-                ]);
+                ]);*/
+
+                $resourceid= Resource::where('title',$name)->take(1)->get();
+                    foreach($request->pointofinterests as $pointofinterest){
+                        //$resource->pointofinterests()->attach($request->puntosDeInteres); //->get()
+                        DB::table('pointofinterests_resources') ->insert([
+                            'id_pointofinterest' => $pointofinterest,
+                            'id_resource' => $resourceid[0]->id,
+                        ]);
+                        
+                    }
             }
         }
         
-        /*Fumadita --> No existe punto de interes en la tabla
-        $data = $request->validate([
-            'pointofinterests'  =>   'required'
-        ]);
-
-        $resource = new Resource();
-        $resource-> id_pointofinterest = $data['pointofinterests'];
-        $resource->save();
-        */
+        
 
         /*
         $resource = new Resource();
