@@ -17,6 +17,7 @@ class ResourceController extends Controller
     public function index()
     {
         $data['resources'] = Resource::orderBy('title')->get();
+        $data['pointofinterests'] = Pointofinterest::all();
         //dd($data['resources']);
         return view('resources.index', $data);
     }
@@ -28,9 +29,10 @@ class ResourceController extends Controller
      */
     public function create()
     {
-        //$data['resources'] = Resource::all();
+        $data['resources'] = Resource::all();
+        $data['pointofinterests'] = Pointofinterest::all();
 
-        return view('resources.create');
+        return view('resources.create', $data);
     }
 
     /**
@@ -42,23 +44,47 @@ class ResourceController extends Controller
     public function store(Request $request)
     {
 
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //Si no carga la galería hay que hacer un php artisan storage:link para que se conecte public con uploads.
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
         $request->validate([
             'images' => 'required',
+            'pointofinterests' => 'required',
           ]);
 
-          if ($request->hasfile('images')) {
-              $images = $request->file('images');
+        if ($request->hasfile('images')) {
+            $images = $request->file('images');
 
-              foreach($images as $image) {
-                  $name = $image->getClientOriginalName();
-                  $path = $image->storeAs('uploads', $name, 'public');
+            foreach($images as $image) {
+                $name = $image->getClientOriginalName();
+                $path = $image->storeAs('uploads', $name, 'public');
 
-                  Resource::create([
-                      'title' => $name,
-                      'route' => '/storage/'.$path
-                    ]);
-              }
-           }
+                $resource= new Resource();
+                $resource -> title = $name;
+                $resource -> route = '/storage/'.$path;
+                $resource -> save();
+
+                /*
+                Resource::create([
+                    'title' => $name,
+                    'route' => '/storage/'.$path
+                ]);*/
+
+                $resourceid= Resource::where('title',$name)->take(1)->get();
+                    foreach($request->pointofinterests as $pointofinterest){
+                        //$resource->pointofinterests()->attach($request->puntosDeInteres); //->get()
+                        DB::table('pointofinterests_resources') ->insert([
+                            'id_pointofinterest' => $pointofinterest,
+                            'id_resource' => $resourceid[0]->id,
+                        ]);
+                        
+                    }
+            }
+        }
+        
+        
+
         /*
         $resource = new Resource();
         $resource->date = $data['title'];
@@ -130,14 +156,4 @@ class ResourceController extends Controller
         $resource->pointofinterests()->delete();
         return redirect()->route('resources.index');
     }
-
-    public function fetchresources(){
-        $resources=Resource::all();
-
-        return response()->json([
-            "resources"=>$resources,
-        ]);
-    }
-
-
 }
