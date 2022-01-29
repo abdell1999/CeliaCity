@@ -24,6 +24,18 @@ class CommentController extends Controller
         return view('comments.index', $data);
     }
 
+    public function fetchcomments(){
+        $comments = Comment::all();
+        $users = User::all();
+        $points = Pointofinterest::all();
+
+        return response()->json([
+            'comments' => $comments,
+            'users' => $users,
+            'points' => $points,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -130,7 +142,22 @@ class CommentController extends Controller
     public function destroy($id)
     {
         $comment = Comment::find($id);
-        $comment->delete();
+
+        if($comment)
+        {
+            $comment->delete();
+            return response()->json([
+                'status'=>200,
+                'message'=>'Punto de interes Borrado'
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No encuentra Punto de interes'
+            ]);
+        }
         return redirect()->route('comments.index');
     }
 

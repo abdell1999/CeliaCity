@@ -1,6 +1,171 @@
 @extends('layouts.app')
 
+@section('scripts')
+    <script src="/assets/js/comments.js"></script>
+@endsection
+
 @section('content')
+
+<!-- Modal Delete --->
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+        id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog relative w-auto pointer-events-none">
+            <div
+                class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                <div
+                    class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                    <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">Eliminar</h5>
+                    <button type="button"
+                        class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body relative p-4">
+                    ¿Seguro que quieres borrar el punto de interes?
+                </div>
+                <div
+                    class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                    <input type="hidden" id="comment_id" value="" />
+                    <button type="button"
+                        class="px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded
+          shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                        data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button"
+                        class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded
+      shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0
+      active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out ml-1 delete_comment">Borrar</button>
+                    <input type="hidden" id="deleteing_id">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Fin Modal Delete -->
+
+<!-- Modal Edit -->
+
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+id="editModal" tabindex="-1" aria-labelledby="editModal" aria-modal="true" role="dialog">
+<div class="modal-dialog modal-lg relative w-auto pointer-events-none">
+    <div
+        class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+        <div
+            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+            <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLgLabel">
+                Editar y Actualizar Punto de Interes
+            </h5>
+            <button type="button"
+                class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body relative p-4">
+            <ul id="saveform_errList"></ul>
+            <form action="" class="editformPoint" enctype="multipart/form-data" method="post">
+                @csrf
+                <div class="w-full max-w-sm">
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
+                                Nombre
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <input
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_name"
+                                type="text" id="edit_name" placeholder="Nombre del punto de interes"
+                                name="edit_name" required>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                for="latitude">
+                                Latitud
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <input
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_latitude"
+                                type="text" id="edit_latitude" placeholder="Latitud" name="edit_latitude" required>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                for="longitude">
+                                Longitud
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <input
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_longitude"
+                                type="text" id="edit_longitude" placeholder="longitud" name="edit_longitude"
+                                required>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                for="movilephone">
+                                Número móvil
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <input
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_movilephone"
+                                type="text" id="edit_movilephone" placeholder="Nombre del nuevo teléfono"
+                                name="edit_movilephone" required>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                for="latitude">
+                                Contenido
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <textarea
+                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_contenido"
+                                type="text" id="edit_contenido" name="edit_contenido" cols="65" rows="10"
+                                placeholder="Nombre del nuevo contenido" name="text" required></textarea>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                for="categorie">
+                                Categorias a la que pertenece
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <span class="text-gray-700">Selección multiple</span>
+                            <select
+                                class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_categoriespoint"
+                                name="edit_categoriespoint[]" id="edit_categoriespoint" multiple="multiple">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3">
+                    <button
+                        class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded update_pointofinterest"
+                        type="submit">
+                        Actualizar
+                    </button>
+                    <button
+                        class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                        data-bs-dismiss="modal" aria-label="Close">
+                        Cerrar
+                    </button>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Fin Modal Edit -->
 
     <section class="bg-blueGray-50">
         <div class="w-full mb-12 xl:mb-0 px-10 mx-auto mt-10">
@@ -9,11 +174,6 @@
                     <div class="flex flex-wrap items-center">
                         <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                             <h1 class="font-semibold text-base text-xl text-blueGray-700">Comentarios</h1>
-                        </div>
-                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                            <a href="{{ route('comments.create') }}"
-                                class="bg-indigo-500 text-white text-sm active:bg-indigo-600 font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button">Añadir Comentario</a>
                         </div>
                     </div>
                 </div>
@@ -54,50 +214,7 @@
                         </thead>
 
                         <tbody>
-                            @foreach ($comments as $comment)
-                            <tr>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                    {{$comment->date}}
-                                </th>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                    {{$comment->valoration}}
-                                </th>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                    {{$comment->text}}
-                                </th>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                    @foreach ($users as $user)
-                                    @if($comment->id_user == $user->id)
-                                        {{$user->name}} {{$user->surname1}} {{$user->surname2}}
-                                    @endif
-                                    @endforeach
-                                </th>
-                                <th
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                    @foreach ($points as $point)
-                                    @if($comment->id_pointofinterest == $point->id)
-                                        {{$point->name}}
-                                    @endif
-                                    @endforeach
-                                </th>
-                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 ">
-                                    <a href="{{ route('comments.edit', $comment->id) }}"
-                                        ><i class="far fa-edit" style="color: blue;"></i></a>
-                                    </th>
-                                    <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4  text-blueGray-700">
-                                        <form method="POST" action="{{ route('comments.destroy', $comment->id) }}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input type="submit" class="" value="Eliminar">
-                                        </form>
-                                    </th>
-                            </tr>
-                                @endforeach
+
                         </tbody>
 
                     </table>
