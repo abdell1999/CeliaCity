@@ -6,7 +6,7 @@ use App\Models\Comment;
 use App\Models\Pointofinterest;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 class CommentController extends Controller
 {
@@ -95,14 +95,29 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        $data['comments'] = Comment::find($id);
+        $comments = Comment::find($id);
         $usuario = Comment::find($id)->users;
-        $data['users'] = User::all();
-        $data['nombre'] = $usuario['name']." ".$usuario['surname1']." ".$usuario['surname2'];
+        $nombre = $usuario['name']." ".$usuario['surname1']." ".$usuario['surname2'];
         $punto = Comment::find($id)->pointofinterests;
-        $data['puntointeres'] = $punto['name'];
-        $data['pointofinterests'] = Pointofinterest::all();
-        return view('comments.edit',$data);
+        $pointofinterest = $punto['name'];
+
+        if($comments)
+        {
+            return response()->json([
+                'status'=>200,
+                'comment'=> $comments,
+                'username'=>$nombre,
+                'pointofinterest'=>$pointofinterest,
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No se encuentra comentario'
+            ]);
+        }
+        //return view('comments.edit',$data);
     }
 
     /**
@@ -114,22 +129,28 @@ class CommentController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $data = $request->validate([
-            'date' => 'required',
-            'valoration' => 'required',
-            'text' => 'required',
-            'user'  =>   'required',
-            'pointofinterest' => 'required'
-
+        $validator = Validator::make($request->all(), [
+            'text'  =>   'required',
         ]);
 
-        $comment = Comment::find($id);
-        $comment->date = $data['date'];
-        $comment->valoration = $data['valoration'];
-        $comment->text = $data['text'];
-        $comment->id_user = $data['user'];
-        $comment->id_pointofinterest = $data['pointofinterest'];
-        $comment->save();
+        if($validator->fails()){
+            return response()->json([
+                'status' =>400,
+                'errors' => $validator->errors()->all()
+            ]);
+        }else{
+            $comment = Comment::find($id);
+            if($comment){
+            $comment->text = $request->input('text');
+            $comment->save();
+            }
+        }
+
+        return response()->json([
+            'status' =>200,
+            'message' =>'Comentario editado correctamente',
+        ]);
+
         return redirect()->route('comments.index');
     }
 

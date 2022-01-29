@@ -52,7 +52,7 @@ id="editModal" tabindex="-1" aria-labelledby="editModal" aria-modal="true" role=
         <div
             class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
             <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLgLabel">
-                Editar y Actualizar Punto de Interes
+                Editar y Actualizar Comentario
             </h5>
             <button type="button"
                 class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
@@ -60,97 +60,57 @@ id="editModal" tabindex="-1" aria-labelledby="editModal" aria-modal="true" role=
         </div>
         <div class="modal-body relative p-4">
             <ul id="saveform_errList"></ul>
-            <form action="" class="editformPoint" enctype="multipart/form-data" method="post">
+            <form action="" class="editformComment" enctype="multipart/form-data" method="post">
                 @csrf
                 <div class="w-full max-w-sm">
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3">
-                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
-                                Nombre
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="idUser">
+                                Usuario
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input
-                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_name"
-                                type="text" id="edit_name" placeholder="Nombre del punto de interes"
-                                name="edit_name" required>
-                        </div>
+                                <div class="flex justify-center">
+                                    <div class="mb-3 xl:w-96">
+                                        <input
+                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_user"
+                                        id="inline-full-name" type="text" id="edit_user" name="edit_user" value="" disabled>
+                                    </div>
+                                  </div>
+                            </div>
                     </div>
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3">
-                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                for="latitude">
-                                Latitud
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="idPoint">
+                                Punto de Interes
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input
-                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_latitude"
-                                type="text" id="edit_latitude" placeholder="Latitud" name="edit_latitude" required>
-                        </div>
-                    </div>
-                    <div class="md:flex md:items-center mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                for="longitude">
-                                Longitud
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <input
-                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_longitude"
-                                type="text" id="edit_longitude" placeholder="longitud" name="edit_longitude"
-                                required>
-                        </div>
-                    </div>
-                    <div class="md:flex md:items-center mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                for="movilephone">
-                                Número móvil
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <input
-                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_movilephone"
-                                type="text" id="edit_movilephone" placeholder="Nombre del nuevo teléfono"
-                                name="edit_movilephone" required>
-                        </div>
-                    </div>
-                    <div class="md:flex md:items-center mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                for="latitude">
-                                Contenido
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <textarea
-                                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_contenido"
-                                type="text" id="edit_contenido" name="edit_contenido" cols="65" rows="10"
-                                placeholder="Nombre del nuevo contenido" name="text" required></textarea>
-                        </div>
-                    </div>
-                    <div class="md:flex md:items-center mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                for="categorie">
-                                Categorias a la que pertenece
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <span class="text-gray-700">Selección multiple</span>
-                            <select
-                                class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_categoriespoint"
-                                name="edit_categoriespoint[]" id="edit_categoriespoint" multiple="multiple">
-
-                            </select>
-                        </div>
+                            <div class="flex justify-center">
+                                <div class="mb-3 xl:w-96">
+                                    <input
+                                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_point"
+                                    id="inline-full-name" type="text" id="edit_point" name="edit_point" value="" disabled>
+                                </div>
+                              </div>
                     </div>
                 </div>
+                <div class="md:flex md:items-center mb-6">
+                    <div class="md:w-1/3">
+                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="text">
+                            Comentario
+                        </label>
+                    </div>
+                    <div class="md:w-2/3">
+                        <input
+                            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_text"
+                            id="inline-full-name" type="text" id="edit_text" placeholder="Texto del nuevo comentario" name="edit_text" value="" required>
+                    </div>
+                </div>
+                <div class="md:flex md:items-center mb-6">
                 <div class="md:w-1/3">
                     <button
-                        class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded update_pointofinterest"
+                        class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded update_comment"
                         type="submit">
                         Actualizar
                     </button>
@@ -162,6 +122,8 @@ id="editModal" tabindex="-1" aria-labelledby="editModal" aria-modal="true" role=
                 </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 </div>
 
