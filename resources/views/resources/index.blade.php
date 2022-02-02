@@ -43,6 +43,57 @@
 </style>
 
 @section('content')
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+        id="editModal" tabindex="-1" aria-labelledby="editModal" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg relative w-auto pointer-events-none">
+            <div
+                class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                <div
+                    class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                    <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLgLabel">
+                        Editar Nombre Recurso
+                    </h5>
+                    <button type="button"
+                        class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body relative p-4">
+                    <ul id="saveform_errList"></ul>
+                    <form action="" class="editformResource" enctype="multipart/form-data" method="post">
+                        @csrf
+                        <div class="w-full max-w-sm">
+                            <div class="md:flex md:items-center mb-6">
+                                <div class="md:w-1/3">
+                                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
+                                        Nombre
+                                    </label>
+                                </div>
+                                <div class="md:w-2/3">
+                                    <input
+                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_name"
+                                        type="text" id="edit_name" placeholder="Nombre del recurso"
+                                        name="edit_name" required>
+                                </div>
+                            </div>
+                                <div class="md:flex md:items-center mb-6">
+                                <div class="md:w-1/3">
+                                    <button
+                                        class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded update_resource"
+                                        type="submit">
+                                        Actualizar
+                                    </button>
+                                    <button
+                                        class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                                        data-bs-dismiss="modal" aria-label="Close">
+                                        Cerrar
+                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
         <a href="{{ route('resources.create') }}"
             class="bg-indigo-500 text-white text-sm active:bg-indigo-600 font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -53,77 +104,18 @@
     <div class="imagetext">
         <div class="w-full w-20 h-64 overflow-hidden">
             <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg w-99" src="{{ url($resource->route) }}">
-
-            <div class="flex justify-end">
-                <div x-data="{modal{{$resource->id}}: false}" :class="{'overflow-y-hidden': modal{{$resource->id}}}">
-
-                <!--
-                <button
-                    class=""
-                    @click="modal{{$resource->id}} = true">
-                    <i class="far fa-trash-alt" style="color: black;"></i>
-                </button>
-                -->
-
-                    <!-- Modales -->
-                    <!--
-                    <div class="fixed inset-0 w-full h-full z-20 bg-black bg-opacity-50 duration-300 overflow-y-auto"
-                        x-show="modal{{$resource->id}}"
-                        x-transition:enter="transition duration-300" x-transition:enter-start="opacity-0"
-                        x-transition:enter-end="opacity-100" x-transition:leave="transition duration-300"
-                        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
-                        <div class="relative sm:w-3/4 md:w-1/2 lg:w-1/3 mx-2 sm:mx-auto my-10 opacity-100">
-                            <div class="relative bg-white shadow-lg rounded-md text-gray-900 z-20"
-                                @click.away="modal{{$resource->id}} = false"
-                                x-show="modal{{$resource->id}}"
-                                x-transition:enter="transition transform duration-300"
-                                x-transition:enter-start="scale-0" x-transition:enter-end="scale-100"
-                                x-transition:leave="transition transform duration-300"
-                                x-transition:leave-start="scale-100" x-transition:leave-end="scale-0">
-                            <header class="flex items-center justify-between p-2">
-                                <h2 class="font-semibold">Confirmar eliminación</h2>
-                                    <button class="focus:outline-none p-2" @click="modal{{$resource->id}} = false">
-                                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                            <path
-                                            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
-                                            </path>
-                                        </svg>
-                                    </button>
-                            </header>
-                            <main class="p-2 text-center">
-                                <p>
-                                    ¿Esta seguro de que desea eliminar este registro (Este proceso es
-                                    irreversible)?
-                                </p>
-                            </main>
-                            <footer class="flex justify-center p-2">
-                                <button
-                                    class="bg-green-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-green-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300"
-                                    @click="modal{{$resource->id}} = false">
-                                    Cancelar
-                                </button>
-                                <button class="bg-red-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-red-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 resourceDelete" eliminar="{{$resource->id}}">
-                                    Eliminar
-                                </button>
-                            </footer>
-                            </div>
-                        </div>
-                    </div>-->
-                </div>
-            </div>
         </div>
         <div class="flex justify-between">
             <!--Image Tittle-->
            <h1 class="flex justify-start">{{ $resource->title}}</h1>
            <!--Edit button-->
            <button
-                class="ml-auto">
+                class="ml-auto editbtn" data-bs-toggle='modal' data-bs-target='#editModal' value="{{$resource->id}}">
                 <i class="far fa-edit" style="color: black;"></i>
             </button>
             <!--Delete button-->
             <button
-                class="ml-2"
-                @click="modal{{$resource->id}} = true">
+                class="ml-2">
                 <i class="far fa-trash-alt" style="color: black;"></i>
             </button>
         </div>

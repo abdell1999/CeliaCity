@@ -6,6 +6,7 @@ use App\Models\Resource;
 use App\Models\Pointofinterest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ResourceController extends Controller
 {
@@ -57,19 +58,13 @@ class ResourceController extends Controller
             $images = $request->file('images');
 
             foreach($images as $image) {
-                $name = $image->getClientOriginalName();
+                $name = Str::random(10).'.'.$image->getClientOriginalExtension();
                 $path = $image->storeAs('uploads', $name, 'public');
 
                 $resource= new Resource();
                 $resource -> title = $name;
                 $resource -> route = '/storage/'.$path;
                 $resource -> save();
-
-                /*
-                Resource::create([
-                    'title' => $name,
-                    'route' => '/storage/'.$path
-                ]);*/
 
                 $resourceid= Resource::where('title',$name)->take(1)->get();
                     foreach($request->pointofinterests as $pointofinterest){
@@ -78,21 +73,11 @@ class ResourceController extends Controller
                             'id_pointofinterest' => $pointofinterest,
                             'id_resource' => $resourceid[0]->id,
                         ]);
-                        
+
                     }
             }
         }
-        
-        
 
-        /*
-        $resource = new Resource();
-        $resource->date = $data['title'];
-        $resource->valoration = $data['route'];
-        $resource->text = $data['type'];
-        $resource->pointofinterests()->attach($request->puntosDeInteres); //->get()
-        $resource->save();
-        */
         return redirect()->route('resources.index');
     }
 
