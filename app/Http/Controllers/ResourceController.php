@@ -166,10 +166,26 @@ class ResourceController extends Controller
      * @param  \App\Models\Resource  $resource
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resource $id)
+    public function destroy($id)
     {
         $resource = Resource::find($id);
-        $resource->pointofinterests()->delete();
+
+        if($resource)
+        {
+            $resource->pointofinterests()->detach();
+            $resource->delete();
+            return response()->json([
+                'status'=>200,
+                'message'=>'Recurso Borrado'
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No encuentra Recurso'
+            ]);
+        }
         return redirect()->route('resources.index');
     }
 }

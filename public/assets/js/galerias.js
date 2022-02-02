@@ -10,7 +10,7 @@ $(document).ready(function () {
             url: "/fetch-resources",
             dataType: "json",
             success: function (response) {
-                console.log(response);
+                //console.log(response);
                 $('.dividir').html("");
                 $.each(response.resources, function (key, item) {
                     $('.dividir').append(`
@@ -27,7 +27,7 @@ $(document).ready(function () {
                             <i class="far fa-edit" style="color: black;"></i>
                             </button>
                         <!--Delete button-->
-                        <button class="ml-2"> <i class="far fa-trash-alt" value="` + item.id + `" style="color: black;"></i> </button>
+                        <button class="ml-2 deletebtn" data-bs-toggle='modal' data-bs-target='#exampleModal' value="` + item.id + `"> <i class="far fa-trash-alt" style="color: black;"></i> </button>
                         </div>
                     </div>`);
                 });
@@ -59,6 +59,7 @@ $(document).ready(function () {
         $('.btn-close').find('input').val('');
     });
 
+    /*EVENTO BORRAR */
     $(document).on('click', '.update_resource', function (e) {
         e.preventDefault();
 
@@ -88,7 +89,7 @@ $(document).ready(function () {
                 } else {
                     $('#update_msgList').html("");
 
-                    $('#success_message').addClass('alert alert-success');
+                    $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
                     $('#success_message').text(response.message);
                     $('#editModal').find('input').val('');
                     $('.update_resource').text('Actualizando');
@@ -98,5 +99,43 @@ $(document).ready(function () {
             }
         });
     });
+    /*EVENTO EDITAR */
+
+    /*EVENTO BORRAR */
+    $(document).on('click', '.deletebtn', function () {
+        var resource_id = $(this).val();
+        $('#DeleteModal').modal('show');
+        $('#deleteing_id').val(resource_id);
+    });
+
+    $(document).on('click', '.delete_resource', function (e) {
+        e.preventDefault();
+
+        $(this).text('Deleting..');
+        var id = $('#deleteing_id').val();
+        $.ajax({
+            type: "DELETE",
+            url: "/delete-resource/" + id,
+            dataType: "json",
+            success: function (response) {
+                if (response.status == 404) {
+                    $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
+                    $('#success_message').text("Borrado con éxito");
+                    $('.delete_resource').text('Yes Delete');
+                } else {
+                    $('#success_message').html("");
+                    $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
+                    $('#success_message').text("Borrado con éxito");
+                    $('.delete_resource').text('Yes Delete');
+                    $('#exampleModal').modal('hide');
+                    fetchresources();
+                }
+            }, error: function(response){
+                console.log(response);
+            }
+        });
+    });
+    /*EVENTO BORRAR */
+
 
 });

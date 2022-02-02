@@ -21,7 +21,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home2');
 Route::resource('/pointofinterests', 'PointofinterestController');
 Route::get('fetch-point', [App\Http\Controllers\PointofinterestController::class, 'fetchpoint']);
-Route::get('fetch-resources', [App\Http\Controllers\ResourceController::class, 'fetchresources']);
 Route::get('fetch-comments', [App\Http\Controllers\CommentController::class, 'fetchcomments']);
 Route::get('fetch-resources', [App\Http\Controllers\ResourceController::class, 'fetchresources']);
 Route::get('edit-pointofinterest/{id}', [App\Http\Controllers\PointofinterestController::class, 'edit']);
@@ -32,6 +31,7 @@ Route::get('edit-resource/{id}', [App\Http\Controllers\ResourceController::class
 Route::put('update-resource/{id}', [App\Http\Controllers\ResourceController::class, 'update']);
 Route::delete('delete-point/{id}', [App\Http\Controllers\PointofinterestController::class, 'destroy']);
 Route::delete('delete-comment/{id}', [App\Http\Controllers\CommentController::class, 'destroy']);
+Route::delete('delete-resource/{id}', [App\Http\Controllers\ResourceController::class, 'destroy']);
 Route::resource('/categories', 'CategorieController');
 Route::resource('/users', 'UserController');
 Route::resource('/comments','CommentController');
