@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('scripts')
+
+    <script src="/assets/js/galerias.js"></script>
+
+@endsection
+
 <style type="text/css">
     .dividir{
         width: 100%;
@@ -61,6 +67,7 @@
                     <ul id="saveform_errList"></ul>
                     <form action="" class="editformResource" enctype="multipart/form-data" method="post">
                         @csrf
+                        <input type="hidden" id="resource_id" />
                         <div class="w-full max-w-sm">
                             <div class="md:flex md:items-center mb-6">
                                 <div class="md:w-1/3">
@@ -70,9 +77,9 @@
                                 </div>
                                 <div class="md:w-2/3">
                                     <input
-                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_name"
-                                        type="text" id="edit_name" placeholder="Nombre del recurso"
-                                        name="edit_name" required>
+                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_title"
+                                        type="text" id="edit_title" placeholder="Nombre del recurso"
+                                        name="edit_title" required>
                                 </div>
                             </div>
                                 <div class="md:flex md:items-center mb-6">
@@ -100,26 +107,6 @@
             type="button">Añadir Recurso </a>
 </div>
 <div class="flex flex-wrap overflow-hidden justify-between dividir">
-    @foreach ($resources as $resource)
-    <div class="imagetext">
-        <div class="w-full w-20 h-64 overflow-hidden">
-            <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg w-99" src="{{ url($resource->route) }}">
-        </div>
-        <div class="flex justify-between">
-            <!--Image Tittle-->
-           <h1 class="flex justify-start">{{ $resource->title}}</h1>
-           <!--Edit button-->
-           <button
-                class="ml-auto editbtn" data-bs-toggle='modal' data-bs-target='#editModal' value="{{$resource->id}}">
-                <i class="far fa-edit" style="color: black;"></i>
-            </button>
-            <!--Delete button-->
-            <button
-                class="ml-2">
-                <i class="far fa-trash-alt" style="color: black;"></i>
-            </button>
-        </div>
-    </div>
-@endforeach
+
 </div>
 @endsection

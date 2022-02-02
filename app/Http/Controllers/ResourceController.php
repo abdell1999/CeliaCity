@@ -7,6 +7,8 @@ use App\Models\Pointofinterest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
+
 
 class ResourceController extends Controller
 {
@@ -21,6 +23,13 @@ class ResourceController extends Controller
         $data['pointofinterests'] = Pointofinterest::all();
         //dd($data['resources']);
         return view('resources.index', $data);
+    }
+
+    public function fetchresources(){
+        $resources = Resource::all();
+        return response()->json([
+            'resources' => $resources,
+        ]);
     }
 
     /**
@@ -101,8 +110,18 @@ class ResourceController extends Controller
      */
     public function edit($id)
     {
-        $data['resources'] = Resource::find($id);
-        return view('resources.edit',$data);
+        $resource = Resource::find($id);
+        if($resource){
+            return response()->json([
+                'status'=> 200,
+                'resource' => $resource,
+            ]);
+        }else{
+            return response()->json([
+                'status'=> 404,
+                'message'=> 'No se encuentra la imagen',
+            ]);
+        }
     }
 
     /**
@@ -114,19 +133,31 @@ class ResourceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->validate([
+        $validator = Validator::make($request->all(),[
             'title' => 'required',
-            'route' => 'required',
-            'type' => 'required'
-
         ]);
 
-        $resource = Resource::find($id);
-        $resource->title = $data['title'];
-        $resource->route = $data['route'];
-        $resource->type = $data['type'];
-        $resource->save();
-        return redirect()->route('resources.index');
+        if($validator->fails()){
+            return response()->json([
+                'status' => 400,
+                'errors' => $validator->errors()->all(),
+            ]);
+        }else{
+            $resource = Resource::find($id);
+            if($resource){
+                $resource->title = $request->input('title');
+                $resource->update();
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Recurso actualizado correctamente',
+                ]);
+            }else{
+                return response()->json([
+                    'status' => 404,
+                    'errors' => 'No se encuentra el recurso'
+                ]);
+            }
+        }
     }
 
     /**
