@@ -283,7 +283,7 @@
                                     <input type="password" class="form-control" name="password" id="password"
                                         placeholder="Contraseña">
                                 </div>
-                                <button type="button" class="btn btn-info btn-block btn-round">Acceder</button>
+                                <input type="submit" class="btn btn-info btn-block btn-round">Acceder</button>
                             </form>
 
 
