@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-@include('includes.head')
+@include('includes.headfront')
 @yield('styles')
 @yield('scripts')
 <header>
-    @include('includes.headfrontall')
+    @include('includes.headerfront')
 <header>
 </head>
 <body>

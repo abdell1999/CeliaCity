@@ -12,7 +12,9 @@
 @section('content')
     <!--pepe-->
     <link rel="stylesheet" type="text/css" href="/assets/css/pointofinterest.css">
-
+<br>
+<br>
+<br>
     <body>
         <h1 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-800">{{ $pointofinterests->name }}</h1>
         <section class="contenido">

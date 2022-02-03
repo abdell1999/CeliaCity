@@ -119,7 +119,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 order-md-1 order-lg-1">
                     <div class="footer_about mt-50">
-                        <a href="#"><img src="assets/images/logo.svg" alt="logo"></a>
+                        <a href="#"><img src="/assets/img/logo.svg" alt="logo"></a>
                         <p>Lorem ipsum dolor sifsddt amet, conse tetur sadipscing elitr, sed diam onumy eirmod
                             tempor invidunt ut labore et dolore magna aliquya.</p>
                         <ul class="social">
@@ -137,7 +137,7 @@
                 <div class="col-lg-4 col-md-12 order-md-3 order-lg-2">
                     <div class="footer_link_wrapper d-flex flex-wrap">
                         <div class="footer_link mt-45">
-                            <h4 class="footer_title">Quick Link</h4>
+                            <h4 class="footer_title">Enlaces de interés</h4>
                             <ul class="link">
                                 <li><a href="javascript:void(0)">Guía</a></li>
                                 <li><a href="javascript:void(0)">Monumentos</a></li>
