@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 @include('includes.frontlibraries')
+@include('includes.auth')
 
 @yield('scripts')
 
@@ -45,9 +46,17 @@
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#contact">Porsiacaso</a>
                                     </li>
+                                    @if (Auth::guest())
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="{{route('login')}}">Login</a>
+                                        <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
                                     </li>
+                                    @else
+
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#">Cerrar sesión</a>
+                                    </li>
+
+                                    @endif
                                 </ul>
                             </div> <!-- navbar collapse -->
                         </nav> <!-- navbar -->
