@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-@include('includes.frontlibraries')
+@include('includes.headfront')
 
 @yield('scripts')
 
@@ -12,7 +12,7 @@
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="index.html">
-                                <img src="assets/img/logo.svg" alt="logo">
+                                <img src="/assets/img/logo.svg" style="width: 80%; height: 80%;" type="image/svg" alt="logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
