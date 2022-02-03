@@ -5,7 +5,7 @@
 
     <!-- NUEVO FORMULARIO REGISTRO -->
 
-    <form class="w-full max-w-lg" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" novalidate>
+    <form class="w-full max-w-lg" method="POST" action = "{{ route('users.store') }}" enctype="multipart/form-data" novalidate>
         @csrf
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">

@@ -43,14 +43,16 @@ class UserController extends Controller
             'surname2' => 'nullable',
             'email'  =>   'required',
             'password'  =>   'required',
-            'phone' =>   'required max:9 min:9',
-            'movilphone'  =>   'required max:9 min:9',
+            'phone' =>   'required',
+            'movilphone'  =>   'required',
             'borndate'  =>   'required',
             'address'  =>   'required',
             'rol'  =>   'required'
 
 
         ]);
+
+        //dd($request);
 
         $user = new User();
         $user->name = $data['name'];
@@ -59,7 +61,7 @@ class UserController extends Controller
         $user->email = $data['email'];
         $user->password = $data['password'];
         $user->phone = $data['phone'];
-        $user->movilephone = $data['movilephone'];
+        $user->movilphone = $data['movilphone'];
         $user->borndate = $data['borndate'];
 
         if(request('photo')){
@@ -74,7 +76,7 @@ class UserController extends Controller
         $user->rol = $data['rol'];
 
 
-        $User->save();
+        $user->save();
         return redirect()->route('users.index');
     }
 
