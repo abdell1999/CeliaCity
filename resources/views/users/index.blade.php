@@ -29,7 +29,7 @@
                         data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body relative p-4">
-                    <form class="w-full max-w-lg" method="POST" action="{{ route('register') }}"
+                    <form class="w-full max-w-lg" method="POST" action = "{{ route('users.store') }}"
                         enctype="multipart/form-data" novalidate>
                         @csrf
                         <div class="flex flex-wrap -mx-3 mb-6">
