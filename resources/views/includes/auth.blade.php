@@ -276,14 +276,24 @@
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" id="email"
+                                    <input type="email" class="form-control" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" name="email" id="email"
                                         placeholder="Correo">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="password" id="password"
                                         placeholder="Contraseña">
                                 </div>
-                                <input type="submit" class="btn btn-info btn-block btn-round">Acceder</button>
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Correo o contraseña incorrectos</strong>
+                                </span>
+                                @enderror
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Correo o contraseña incorrectos</strong>
+                                </span>
+                                @enderror
+                                <input type="submit" class="btn btn-info btn-block btn-round" value="Acceder">
                             </form>
 
 
@@ -303,6 +313,16 @@
     </article>
 </main>
 
+
+@parent
+
+@if($errors->has('email') || $errors->has('password'))
+    <script>
+    $(function() {
+        $('#loginModal').modal('show');
+    });
+    </script>
+@endif
 
 <script>
     $(document).ready(function() {
