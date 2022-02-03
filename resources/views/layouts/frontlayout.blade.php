@@ -3,7 +3,6 @@
 <head>
 @include('includes.headfront')
 
-
 @yield('scripts')
 
     <header class="header_area">
@@ -69,5 +68,7 @@
 </head>
 <body>
 @yield('content')
+@include('includes.auth')
+
 </body>
 </html>
