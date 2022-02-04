@@ -1,6 +1,19 @@
 $(document).ready(function () {
 
 
+
+      //Editar
+      $(document).on('click','.editBtn',function(e) {
+        e.preventDefault();
+          $('#modalEditar').modal('show');
+
+        });
+
+
+
+
+
+
     console.log("Script para gestionar usuarios cargado correctamente!!");
     fetchuser();
     function fetchuser() {
@@ -46,7 +59,7 @@ $(document).ready(function () {
                     <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>"+ rol +"</td>\
                     <td class='px-6 py-4 whitespace-nowrap text-right text-sm font-medium'>\
                     <a href='#' class='text-indigo-600 hover:text-indigo-900'>View</a>\
-                    <a href='#' class='text-indigo-600 hover:text-indigo-900'>Edit</a>\
+                    <a href='#' class='text-indigo-600 hover:text-indigo-900 editBtn' data-bs-target='#modalEditar'>Edit</a>\
                     <a href='#' class='text-indigo-600 hover:text-indigo-900'>Delete</a></td></tr>\
                     </tr>");
                 })
