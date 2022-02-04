@@ -6,6 +6,8 @@ $(document).ready(function () {
       $(document).on('click','.editBtn',function(e) {
         e.preventDefault();
           $('#modalEditar').modal('show');
+          id_user = $(this).parent().parent().attr("id");
+          //alert("ID = "+ id_user);
 
         });
 
@@ -43,7 +45,7 @@ $(document).ready(function () {
 
 
 
-                    $('tbody').append("<tr id='+"+ item.id +"'>\
+                    $('tbody').append("<tr id='"+ item.id +"'>\
                     <td class='px-6 py-4 whitespace-nowrap'>\
                     <div class='flex items-center'>\
                     <div class='flex-shrink-0 h-10 w-10'>\
@@ -65,7 +67,7 @@ $(document).ready(function () {
                 })
 
 
-                //console.log(response);
+                console.log(response);
             },
             error: function (response) {
                 console.log("ERROR");
