@@ -313,9 +313,6 @@
     </article>
 </main>
 
-
-@parent
-
 @if($errors->has('email') || $errors->has('password'))
     <script>
     $(function() {
