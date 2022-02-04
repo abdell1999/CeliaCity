@@ -1,7 +1,7 @@
 @extends('layouts.frontpage')
 
 @section('scripts')
-
+<script scr="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/comentarios.js"></script>
 @endsection
 
@@ -17,15 +17,32 @@
 <br>
     <body>
         <h1 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-800">{{ $pointofinterests->name }}</h1>
-        <section class="contenido">
-            <div class="datos">
-                <div id="tarjeta" class=" block p-6 rounded-lg shadow-2xl bg-white ">
-                    <h5 class="text-gray-900 text-xl leading-tight font-bold mb-2">Acerca de...</h5>
-                    <p class="text-gray-700 text-base mb-4">
-                        {{ $pointofinterests->text }}
-                    </p>
+        <section class="contenido" style="display:flex;">
+
+            <!--====== ABOUT PART START ======-->
+
+ <section id="about" class="about_area  pb-50">
+    <div class="about_wrapper">
+        <!-- about image -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about_content">
+                        <div class="section_title">
+                            <h3 class="title">Acerca de <br> <span>Numbers</span></h3>
+                            <p>{{ $pointofinterests->text }}</p>
+                        </div> <!-- section title -->
+
+                    </div> <!-- about content -->
+                    <!-- about_counter -->
                 </div>
-            </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- about wrapper -->
+</section>
+
+<!--====== ABOUT PART ENDS ======-->
+ <!-- Slider start -->
             <div class="slider">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
@@ -50,10 +67,11 @@
                 <!-- Imagen grande-->
             </div>
             </div>
+            <!-- Slider end -->
         </section>
-
-        <div class="rounded-lg mapita shadow-2xl">
-            <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600">Localización</h2>
+        <!-- Map start Bootstrap -->
+        <div class="rounded mapita">
+            <h2 class="card-title">Localización</h2>
             <div id="map" class="mapa">
 
                 <script type="text/javascript">
@@ -82,6 +100,7 @@
                 </script>
             </div>
         </div>
+        <!-- Map end Bootstrap -->
         <script>
             var swiper = new Swiper(".mySwiper", {
                 loop: true,
@@ -105,38 +124,55 @@
 
 
         </div>
-        <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600">Comentarios</h2>
+        <h2 class="title">Comentarios</h2>
         <!-- Comentario sin postear -->
-        <div class="flex xl:justify-start md:justify-center sm:justify-center items-center mt-6 mb-6 ml-20">
-            <div class="w-9/12 bg-white p-2 pt-4 rounded shadow-2xl">
-                <div class="flex ml-3">
-                    <div class="mr-3">
-                        <img src="{{ Auth::user()->photo }}" alt="" class="w-12 h-12 rounded-full">
-                    </div>
-                    <div>
-                        <h1 class="font-semibold">{{ Auth::user()->name }}</h1>
-                        <input type="hidden" value="{{ $pointofinterests->id }}" name="id_pointofinterest"
+        <div class="card">
+            <div class="card-body">
+        <div class="comment-widgets m-b-20">
+            <div class="d-flex flex-row comment-row">
+                <div class="p-2"><span class="round"><img src="{{ Auth::user()->photo }}" alt="user" width="50"></span></div>
+                <div class="comment-text w-100">
+                    <h5>{{ Auth::user()->name }}</h5>
+                    <div class="comment-footer"> <span class="date">March 13, 2020</span>  </div>
+                    <input type="hidden" value="{{ $pointofinterests->id }}" name="id_pointofinterest"
                             id="id_pointofinterest">
-                    </div>
-
-                </div>
-
-                <div class="mt-3 p-3 w-full">
-                    <textarea rows="3" class="border p-2 rounded w-full" placeholder="Write something..." name="text"
-                        id="text"> </textarea>
-                </div>
-
-                <div class="flex justify-between mx-3">
-                    <div><button class="px-4 py-1 bg-purple-800 text-white rounded font-light hover:bg-green-700"
-                            id="btnComentar">Enviar</button>
-                    </div>
+                            <textarea class="form-control" placeholder="Escribe tu comentario aqui..." name="text" id="text" rows="3"></textarea>
+                            <button type="button" class="btn btn-primary" id="btnComentar">Enviar</button>
                 </div>
             </div>
         </div>
-        <!-- Comentario sin postear -->
-        <!-- Comentario posteado -->
 
-        <div id="comentariosPosteados">
+                </div>
+            </div>
+
+<!-- PRUEBAS -->
+<div class="container d-flex justify-content-center mt-100 mb-100">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Recent Comments</h4>
+                    <h6 class="card-subtitle">Latest Comments section by users</h6>
+                </div>
+                <div class="comment-widgets m-b-20">
+                    <div class="d-flex flex-row comment-row">
+                        <div class="p-2"><span class="round"><img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50"></span></div>
+                        <div class="comment-text w-100">
+                            <h5>Samso Nagaro</h5>
+                            <div class="comment-footer"> <span class="date">April 14, 2019</span> <span class="label label-info">Pending</span> <span class="action-icons"> <a href="#" data-abc="true"><i class="fa fa-pencil"></i></a> <a href="#" data-abc="true"><i class="fa fa-rotate-right"></i></a> <a href="#" data-abc="true"><i class="fa fa-heart"></i></a> </span> </div>
+                            <p class="m-b-5 m-t-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- PRUEBAS -->
+        <div id="comentariosPosteados" class="comment-widgets m-b-20">
 
 
         </div>
