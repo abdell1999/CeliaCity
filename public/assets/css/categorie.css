@@ -2,3 +2,25 @@ body{
     margin-top:20px;
     background:#eee;
 }
+img{
+    width:70%;
+    height:30%;
+}
+
+@media(max-width: 780px)  {
+    .card {
+        width:80% !important;
+        margin: 5 auto !important;
+    }
+    .card img{
+        width: 100% !important;
+        height: 22em !important;
+        overflow: hidden !important;
+    }
+}
+
+.card img{
+    width: 100% !important;
+    height: 12em ;
+    overflow: hidden !important;
+}
