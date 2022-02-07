@@ -148,7 +148,7 @@
     }
 
     main {
-        background: #fff;
+
         padding: : 20px;
 
     }
