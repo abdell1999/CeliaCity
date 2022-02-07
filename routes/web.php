@@ -40,3 +40,5 @@ Route::get('fetch-user', [App\Http\Controllers\UserController::class, 'fetchuser
 Route::post('comentar', [App\Http\Controllers\CommentController::class, 'comentar'])->name('comentar');
 Route::get('/fetch-comment/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'fetchcomment']);
 Route::view('/guide', 'guide');
+
+Route::get('/options', [App\Http\Controllers\OptionController::class, 'index'])->name('options');

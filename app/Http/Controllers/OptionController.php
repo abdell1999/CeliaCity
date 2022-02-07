@@ -36,7 +36,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        echo "PRUEBA";
+        return view("options.index");
     }
 
     /**
