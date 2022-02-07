@@ -16,13 +16,13 @@
 
             <!--====== ABOUT PART START ======-->
 
-            <section id="about" class="about_area  pb-50">
+            <section id="about" class="about_area">
                 <div class="about_wrapper">
                     <!-- about image -->
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-9">
-                                <div class="about_content">
+                            <div class="col-lg-9 bg-light rounded-lg" style="">
+                                <div class="about_content m-3">
                                     <div class="section_title">
                                         <h3 class="title"><span>{{$pointofinterests->name }}</span></h3>
                                         <p>{{ $pointofinterests->text }}</p>
@@ -64,17 +64,17 @@
             <!-- Slider end -->
         </section>
         <!-- Map start Bootstrap -->
-        <div class="rounded-lg container bg-light mt-20">
-            <h2 class="card-title pt-20">Localización</h2>
+        <div class="rounded-lg container bg-light mt-60 pb-20">
+            <h2 class="card-title pt-20" style="color: #EEC41E;">Localización</h2>
             <div id="map" class="mapa">
-        </div>
+            </div>
         </div>
         <!-- PRUEBAS -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
         <div class="container">
-            <h2 class="mt-20">Opiniones</h2>
+            <h2 class="mt-20" style="color: #EEC41E;">Opiniones</h2>
             <div class="col">
                 <div class="col-md-8">
                     <div class="media g-mb-30 media-comment">
@@ -108,6 +108,28 @@
                 </div>
             </div>
         </div>
+        <!-- Map end Bootstrap -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                spaceBetween: 10,
+                slidesPerView: 4,
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
+            var swiper2 = new Swiper(".mySwiper2", {
+                loop: true,
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+        </script>
+
 
         <script type="text/javascript">
             //Cargando nuestro mapa
@@ -132,29 +154,6 @@
                     .openOn(mapsipe);
             }
             mapsipe.on('click', onMapClick);
-        </script>
-    </div>
-</div>
-        <!-- Map end Bootstrap -->
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                loop: true,
-                spaceBetween: 10,
-                slidesPerView: 4,
-                freeMode: true,
-                watchSlidesProgress: true,
-            });
-            var swiper2 = new Swiper(".mySwiper2", {
-                loop: true,
-                spaceBetween: 10,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                thumbs: {
-                    swiper: swiper,
-                },
-            });
         </script>
 
     </body>
