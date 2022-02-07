@@ -7,6 +7,12 @@
 <header>
     @include('includes.headerfront')
     @include('includes.auth')
+<script>
+    $('#barraNav').addClass('sticky2');
+
+
+</script>
+
 <header>
 </head>
 <body>

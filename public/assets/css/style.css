@@ -474,6 +474,16 @@ p {
   transition: all 0.3s ease-out 0s;
 }
 
+.sticky2 {
+    position: fixed;
+    z-index: 99;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+
 .sticky .navbar {
   padding: 0;
 }
@@ -753,6 +763,9 @@ p {
   color: #222;
 }
 
+.sticky2 .navbar-nav .nav-item a {
+    color: #222;
+  }
 .sticky .navbar-nav .nav-item.active > a, .sticky .navbar-nav .nav-item:hover > a {
   color: #EEC41E;
 }

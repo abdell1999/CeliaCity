@@ -1,5 +1,5 @@
 <section class="header_area">
-    <div class="header_navbar">
+    <div class="header_navbar" id="barraNav">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
