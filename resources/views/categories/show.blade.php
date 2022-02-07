@@ -1,18 +1,13 @@
 @extends('layouts.frontpage')
 @section('content')
-
+<!--
     <header>
         <div class="flex justify-center ">
             <h1 class="italic text-3xl">{{ $categorie->name }}</h1>
         </div>
 
-        <div class="ml-10 mt-10 md:flex md:flex-row md:justify-evenly flex-wrap">
+        <div class="ml-10 mt-10 md:flex md:flex-row md:justify-evenly flex-wrap">s
 
-        @foreach($categorie->pointofinterests as $point)
-                        <br>   
-                        <li>FK</li>             
-                        <li>{{$point->name}}</li>
-                        
 
 
     <div class="mt-10 rounded-lg shadow-lg bg-white max-w-sm">
@@ -44,7 +39,7 @@
         </div>
       </a>
       <div class="p-6">
-        <h5 class="text-gray-900 text-xl font-medium mb-2">{{$seleccionado->name}}</h5>
+        <h5 class="text-gray-900 text-xl font-medium mb-2">/h5>
         <p class="text-gray-700 text-base mb-4">
           Some quick example text to build on the card title and make up the bulk of the card's
           content.
@@ -53,9 +48,19 @@
       </div>
     </div>
 
+</div>
+-->
+<h1 class="pt-50">{{$categorie->name}}</h1>
+<div class="d-flex flex-wrap flex-md-wrap flex-sm-wrap flex-xl-wrap">
+@foreach($categorie->pointofinterests as $point)
+<div class="card m-2 ">
+    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+    <div class="card-body">
+      <h5 class="card-title">{{$point->name}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">{{$point->text}}</a>
+    </div>
+  </div>
 @endforeach
 </div>
-
-
-
 @endsection
