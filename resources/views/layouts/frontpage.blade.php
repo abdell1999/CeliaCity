@@ -6,6 +6,7 @@
 @yield('scripts')
 <header>
     @include('includes.headerfront')
+    @include('includes.auth')
 <header>
 </head>
 <body>

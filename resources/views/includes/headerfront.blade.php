@@ -38,9 +38,17 @@
                                 <li class="nav-item">
                                     <a class="page-scroll" href="#contact">Porsiacaso</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="#contact">Login</a>
-                                </li>
+                                @if (Auth::guest())
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                                    </li>
+                                    @else
+
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#" id="logoutBtn" >Cerrar sesión</a>
+                                    </li>
+
+                                    @endif
                             </ul>
                         </div> <!-- navbar collapse -->
                     </nav> <!-- navbar -->
