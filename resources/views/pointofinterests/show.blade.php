@@ -11,12 +11,7 @@
 @section('content')
     <!--pepe-->
     <link rel="stylesheet" type="text/css" href="/assets/css/pointofinterest.css">
-    <br>
-    <br>
-    <br>
-
     <body>
-        <h1 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-800">{{ $pointofinterests->name }}</h1>
         <section class="contenido" style="display:flex;">
 
             <!--====== ABOUT PART START ======-->
@@ -26,13 +21,12 @@
                     <!-- about image -->
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-9">
                                 <div class="about_content">
                                     <div class="section_title">
-                                        <h3 class="title">Acerca de <br> <span>Numbers</span></h3>
+                                        <h3 class="title"><span>{{$pointofinterests->name }}</span></h3>
                                         <p>{{ $pointofinterests->text }}</p>
                                     </div> <!-- section title -->
-
                                 </div> <!-- about content -->
                                 <!-- about_counter -->
                             </div>
@@ -70,68 +64,18 @@
             <!-- Slider end -->
         </section>
         <!-- Map start Bootstrap -->
-        <div class="rounded mapita">
-            <h2 class="card-title">Localización</h2>
+        <div class="rounded-lg container bg-light mt-20">
+            <h2 class="card-title pt-20">Localización</h2>
             <div id="map" class="mapa">
-
-                <script type="text/javascript">
-                    //Cargando nuestro mapa
-                    var mapsipe = L.map('map').
-                    setView([37.330822, -2.302065],
-                        16); //[38.6202, -0.5731] es la latitud y longitud de la zona que queremos mostrar
-                    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                        maxZoom: 18
-                    }).addTo(mapsipe);
-                    var marker = L.marker([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}]).addTo(mapsipe);
-                    marker.bindPopup("<b>{{ $pointofinterests->name }}</b>").openPopup();
-
-
-                    var popup = L.popup();
-
-                    function onMapClick(e) {
-                        popup
-                            .setLatLng(e.latlng)
-                            .setContent("Has pulsado en el mapa en la coordenada " + e.latlng.toString())
-
-                            .openOn(mapsipe);
-                    }
-                    mapsipe.on('click', onMapClick);
-                </script>
-            </div>
         </div>
-        <!-- Map end Bootstrap -->
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                loop: true,
-                spaceBetween: 10,
-                slidesPerView: 4,
-                freeMode: true,
-                watchSlidesProgress: true,
-            });
-            var swiper2 = new Swiper(".mySwiper2", {
-                loop: true,
-                spaceBetween: 10,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                thumbs: {
-                    swiper: swiper,
-                },
-            });
-        </script>
-
-
         </div>
-        <h2 class="title">Comentarios</h2>
-
-
         <!-- PRUEBAS -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
         <div class="container">
-            <div class="row">
+            <h2 class="mt-20">Opiniones</h2>
+            <div class="col">
                 <div class="col-md-8">
                     <div class="media g-mb-30 media-comment">
                         <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
@@ -165,13 +109,54 @@
             </div>
         </div>
 
+        <script type="text/javascript">
+            //Cargando nuestro mapa
+            var mapsipe = L.map('map').
+            setView([37.330822, -2.302065],
+                16); //[38.6202, -0.5731] es la latitud y longitud de la zona que queremos mostrar
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                maxZoom: 18
+            }).addTo(mapsipe);
+            var marker = L.marker([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}]).addTo(mapsipe);
+            marker.bindPopup("<b>{{ $pointofinterests->name }}</b>").openPopup();
 
 
+            var popup = L.popup();
 
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("Has pulsado en el mapa en la coordenada " + e.latlng.toString())
 
-        </div>
-        </div>
-        </div>
+                    .openOn(mapsipe);
+            }
+            mapsipe.on('click', onMapClick);
+        </script>
+    </div>
+</div>
+        <!-- Map end Bootstrap -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                spaceBetween: 10,
+                slidesPerView: 4,
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
+            var swiper2 = new Swiper(".mySwiper2", {
+                loop: true,
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+        </script>
+
     </body>
 
     </html>
