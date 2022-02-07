@@ -10,11 +10,9 @@
                     <div class="slider_content">
                         <h2 class="slider_title wow fadeInLeftBig" data-wow-duration="1.3s"
                             data-wow-delay="0.2s">Bienvenido a<span> Purullena</span></h2>
-                        <p class="wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">Lorem ipsum
-                            dolor amet, consetetur sadipscing elitr sed diam nonumy eirmod tempor invidun
-                            dolore.</p>
+                        <p class="wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">Purullena es una localidad y un municipio español situado en la parte centro-oeste de la comarca de Guadix, en la provincia de Granada, comunidad autónoma de Andalucía.</p>
                         <a href="javascript:void(0)" class="main-btn wow fadeInLeftBig" data-wow-duration="1.3s"
-                            data-wow-delay="0.8s">Book Now</a>
+                            data-wow-delay="0.8s">Guía Turística</a>
                     </div> <!-- slider content -->
                 </div>
             </div> <!-- row -->
@@ -33,7 +31,7 @@
                 <div class="col-lg-6">
                     <div class="about_content">
                         <div class="section_title">
-                            <h3 class="title">About Us <br> TraveLand in <span>Numbers</span></h3>
+                            <h3 class="title">Más información <br> sobre <span>Purullena</span></h3>
                             <p>Purullena destaca por su gran cantidad de casas cueva y por ser un pueblo eminentemente agrícola y artesanal. Es famoso por su cerámica decorada con azul cobalto con la técnica del reflejo policromado, cuya tradición se remonta al siglo XVI y cuyas piezas se exponen y venden en tiendas cueva. “Una villa alucinante”, en palabras del historiador Carlos Asenjo Sedano, “que permanece ‘colgada’ de las arcillas de las cárcavas que se ofrecen en infinidad de pinguruchos desconcertantes” y en cuyas viviendas subterráneas dice la leyenda que se refugiaba el célebre bandolero José María ’El Tempranillo’.</p>
                         </div> <!-- section title -->
                         <a href="javascript:void(0)" class="main-btn">Guía Turística</a>
@@ -54,7 +52,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center pb-25">
-                    <h3 class="title">Recent Blog Post</h3>
+                    <h3 class="title">Últimas actualizaciones</h3>
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dianum eirmod tempor invidunt ut
                         labore et dolore magna </p>
                 </div> <!-- section title -->
@@ -149,7 +147,7 @@
                         <div class="footer_link mt-45">
                             <h4 class="footer_title">Creditos</h4>
                             <ul class="link text-light">
-                                <li>Abdellah Bukadduh Rappani</li>
+                                <li>Abdellah Bukad-duh Rappani</li>
                                 <li>Cristian Rosca</li>
                                 <li>Francisco Javier Juárez Cruz</li>
                                 <li>José David Martínez Ruiz </li>
