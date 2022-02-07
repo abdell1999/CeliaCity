@@ -52,7 +52,7 @@
                                     @else
 
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#">Cerrar sesión</a>
+                                        <a class="page-scroll" href="#" id="logoutBtn" >Cerrar sesión</a>
                                     </li>
 
                                     @endif

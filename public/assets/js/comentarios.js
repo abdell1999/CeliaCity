@@ -1,6 +1,5 @@
 $(document).ready(function() {
 console.log("Script para gestionar comentarios cargado correctamente");
-alert("HOLA");
 
 $('#comentariosPosteados').html("");
 

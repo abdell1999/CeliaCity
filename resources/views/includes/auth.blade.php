@@ -313,6 +313,23 @@
     </article>
 </main>
 
+
+<form id="logoutForm" action="{{ route('logout') }}" method="POST" >
+    @csrf
+</form>
+
+<script>
+$("#logoutBtn").click(function(evento){
+    evento.preventDefault();
+
+    $("#logoutForm").submit();
+});
+</script>
+
+
+
+
+
 @if($errors->has('email') || $errors->has('password'))
     <script>
     $(function() {
