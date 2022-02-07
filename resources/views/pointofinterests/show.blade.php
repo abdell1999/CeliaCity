@@ -21,7 +21,7 @@
                     <!-- about image -->
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-9 bg-light rounded-lg" style="">
+                            <div class="col-lg-9 bg-light rounded shadow-lg">
                                 <div class="about_content m-3">
                                     <div class="section_title">
                                         <h3 class="title"><span>{{$pointofinterests->name }}</span></h3>
@@ -41,7 +41,7 @@
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
                         @foreach ($resources as $resource)
-                            <div class="swiper-slide">
+                            <div class="swiper-slide shadow-lg rounded">
                                 <img src="{{ url($resource->route) }}" />
                             </div>
                         @endforeach
@@ -64,7 +64,7 @@
             <!-- Slider end -->
         </section>
         <!-- Map start Bootstrap -->
-        <div class="rounded-lg container bg-light mt-60 pb-20">
+        <div class="rounded shadow-lg container bg-light mt-60 pb-20">
             <h2 class="card-title pt-20" style="color: #EEC41E;">Localización</h2>
             <div id="map" class="mapa">
             </div>
@@ -73,14 +73,14 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-        <div class="container">
+        <div class="container mb-20">
             <h2 class="mt-20" style="color: #EEC41E;">Opiniones</h2>
-            <div class="col">
+            <div>
                 <div class="col-md-8">
                     <div class="media g-mb-30 media-comment">
                         <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
                             src={{ Auth::user()->photo }} alt="Image Description">
-                        <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                        <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30 shadow-lg rounded">
                             <input type="hidden" value="{{ $pointofinterests->id }}" name="id_pointofinterest"
                                 id="id_pointofinterest">
                             <div class="g-mb-15">

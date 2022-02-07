@@ -1,26 +1,33 @@
-body{
-    margin-top:20px;
-    background:#eee;
+body {
+    margin-top: 20px;
+    background: #eee;
 }
-img{
-    width:70%;
-    height:30%;
+img {
+    width: 70%;
+    height: 30%;
 }
 
-@media(max-width: 780px)  {
+h5 {
+    margin-top: 6em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 780px) {
     .card {
-        width:80% !important;
+        width: 80% !important;
         margin: 5 auto !important;
     }
-    .card img{
+    .card img {
         width: 100% !important;
         height: 22em !important;
         overflow: hidden !important;
     }
 }
 
-.card img{
+.card img {
     width: 100% !important;
-    height: 12em ;
+    height: 19em;
     overflow: hidden !important;
 }
