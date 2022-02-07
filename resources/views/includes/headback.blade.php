@@ -36,7 +36,7 @@
 
 <!-- Categorías -->
 
-<script src="/assets/js/galerias.js"></script>
+
 
 
 
