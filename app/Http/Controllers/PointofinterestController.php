@@ -191,7 +191,7 @@ class PointofinterestController extends Controller
             $pointofinterest->movilephone = $request->input('movilephone');
             $pointofinterest->text = $request->input('text');
             $pointofinterest->save();
-            $pointofinterest->categories()->sync($request->edit_categoriespoint);
+            $pointofinterest->categories()->sync($request->categoriespoint);
             }
         }
 
