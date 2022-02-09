@@ -24,8 +24,8 @@ class PointofinterestController extends Controller
      */
     public function index()
     {
-        $data['pointofinterests'] = Pointofinterest::orderBy("name")->get();
-        return view('pointofinterests.index');
+        $data['categories'] = Categorie::all();
+        return view('pointofinterests.index', $data);
     }
 
     /**

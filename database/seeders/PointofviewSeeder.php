@@ -65,7 +65,7 @@ class PointofviewSeeder extends Seeder
 
         DB::table('pointofinterests')->insert([
             'id' => '3',
-            'name' => 'Cueva-Museo "La Inmaculada"',
+            'name' => 'Cueva-Museo <br>"La Inmaculada"',
             'latitude' => '37.3165462',
             'longitude' => '-3.1859825',
             'movilephone' => '',

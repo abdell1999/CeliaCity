@@ -24,7 +24,7 @@
                             <div class="col-lg-9 bg-light rounded shadow-lg">
                                 <div class="about_content m-3">
                                     <div class="section_title">
-                                        <h3 class="title"><span>{{$pointofinterests->name }}</span></h3>
+                                        <h3 class="title"><span>{!!$pointofinterests->name !!}</span></h3>
                                         <p>{{ $pointofinterests->text }}</p>
                                     </div> <!-- section title -->
                                 </div> <!-- about content -->
@@ -130,18 +130,20 @@
             });
         </script>
 
-
+            @php
+                $nombre = $pointofinterests->name;
+            @endphp
         <script type="text/javascript">
             //Cargando nuestro mapa
             var mapsipe = L.map('map').
-            setView([37.330822, -2.302065],
-                16); //[38.6202, -0.5731] es la latitud y longitud de la zona que queremos mostrar
+            setView([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}],
+                16); //[] es la latitud y longitud de la zona que queremos mostrar
             L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
                 maxZoom: 18
             }).addTo(mapsipe);
             var marker = L.marker([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}]).addTo(mapsipe);
-            marker.bindPopup("<b>{{ $pointofinterests->name }}</b>").openPopup();
+            marker.bindPopup('<b>{!! $pointofinterests->name !!}</b>').openPopup();
 
 
             var popup = L.popup();

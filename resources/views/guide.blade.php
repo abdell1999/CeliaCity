@@ -43,36 +43,14 @@
   </div>
 
   <div class="container mt-100 pt-20">
-    <h1 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600">Guia Turistica Purullena</h1>
     <div class="row justify-content-center mt-20 pb-20">
       <div class="col-md-6">
-        <div class="rounded-lg bg-light shadow-lg shadow-2xl">
-            <div id="map" class="" style="height: 40em;">
-            </div>
+        
         </div>
       </div>
 
       <div class="col-md-6 text-center pt-30">
-        <h3>Itinerario 1</h3>
-        <ul class="pt-10">
-            <li>Cuesta del Negro</li>
-            <li>Iglesia Parroqual</li>
-            <li>Museo troglodita</li>
-            <li>La torre de Magru</li>
-        </ul>
-        <h3 class="pt-10">Itinerario 2</h3>
-        <ul class="pt-10">
-            <li>Cuevas Almagruz</li>
-            <li>Badlands de Purullena</li>
-            <li>Carcavas del Marchal</li>
-            <li>Mirador del Fin del Mundo</li>
-        </ul>
-        <h3 class="pt-10">Itinerario 3</h3>
-        <ul class="pt-10">
-            <li>Campo de tiro con Arco de Purullena</li>
-            <li>Torre de Culiebre</li>
-            <li>Cueva de los Algarbes de Tablar</li>
-        </ul>
+        
       </div>
 
     </div>
