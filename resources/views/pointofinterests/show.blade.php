@@ -130,9 +130,6 @@
             });
         </script>
 
-            @php
-                $nombre = $pointofinterests->name;
-            @endphp
         <script type="text/javascript">
             //Cargando nuestro mapa
             var mapsipe = L.map('map').

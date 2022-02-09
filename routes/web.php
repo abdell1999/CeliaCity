@@ -39,6 +39,8 @@ Route::resource('/resources','ResourceController');
 Route::get('fetch-user', [App\Http\Controllers\UserController::class, 'fetchuser']);
 Route::post('comentar', [App\Http\Controllers\CommentController::class, 'comentar'])->name('comentar');
 Route::get('/fetch-comment/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'fetchcomment']);
-Route::view('/guide', 'guide');
+Route::get('guide', [App\Http\Controllers\GuideController::class, 'guide']);
+Route::get('guide/{id}', [App\Http\Controllers\GuideController::class, 'showpoint']);
+
 
 Route::get('/options', [App\Http\Controllers\OptionController::class, 'index'])->name('options');
