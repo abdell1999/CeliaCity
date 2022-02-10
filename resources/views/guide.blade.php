@@ -1,5 +1,10 @@
 @extends('layouts.frontlayout')
 
+@section('scripts')
+<script src="/assets/js/guide.js"></script>
+
+@endsection
+
 @section('content')
 <style>
     h1, h3, li {
@@ -17,26 +22,12 @@
       </div>
 
       <div class="col-md-6 text-center pt-30">
-        <h3>Itinerario 1</h3>
+        <h3>Lugares para visitar</h3>
+        @foreach ($pointofinterests as $point)
         <ul class="pt-10">
-            <li>Cuesta del Negro</li>
-            <li>Iglesia Parroqual</li>
-            <li>Museo troglodita</li>
-            <li>La torre de Magru</li>
+            <li><a class="point" href="#{{$point['id']}}" data-guide="{{$point['id']}}">{!!$point['name']!!}</a></li>
         </ul>
-        <h3 class="pt-10">Itinerario 2</h3>
-        <ul class="pt-10">
-            <li>Cuevas Almagruz</li>
-            <li>Badlands de Purullena</li>
-            <li>Carcavas del Marchal</li>
-            <li>Mirador del Fin del Mundo</li>
-        </ul>
-        <h3 class="pt-10">Itinerario 3</h3>
-        <ul class="pt-10">
-            <li>Campo de tiro con Arco de Purullena</li>
-            <li>Torre de Culiebre</li>
-            <li>Cueva de los Algarbes de Tablar</li>
-        </ul>
+        @endforeach
       </div>
 
     </div>
