@@ -96,11 +96,11 @@
                 </div>
                 <div class="modal-body relative p-4">
                     <div id="originalContent">
-                    <p>Contenido original</p>
+
                     </div>
                     <br><br><br><br>
                     <div id="modifiedContent">
-                    <p>Input para modificar</p>
+
                 </div>
                 </div>
                 <div

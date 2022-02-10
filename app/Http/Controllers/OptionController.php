@@ -40,6 +40,16 @@ class OptionController extends Controller
         return view("options.index", $data);
     }
 
+    public function getoption($id)
+    {
+        $option = Option::find($id);
+        return response()->json([
+            'option'=>$option,
+        ]);
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
