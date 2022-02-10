@@ -36,7 +36,8 @@ class OptionController extends Controller
      */
     public function index()
     {
-        return view("options.index");
+        $data['options'] = Option::all();
+        return view("options.index", $data);
     }
 
     /**
