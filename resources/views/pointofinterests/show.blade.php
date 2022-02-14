@@ -16,15 +16,15 @@
 
             <!--====== ABOUT PART START ======-->
 
-            <section id="about" class="about_area  pb-50">
+            <section id="about" class="about_area">
                 <div class="about_wrapper">
                     <!-- about image -->
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-9">
-                                <div class="about_content">
+                            <div class="col-lg-9 bg-light rounded shadow-lg">
+                                <div class="about_content m-3">
                                     <div class="section_title">
-                                        <h3 class="title"><span>{{$pointofinterests->name }}</span></h3>
+                                        <h3 class="title"><span>{!!$pointofinterests->name !!}</span></h3>
                                         <p>{{ $pointofinterests->text }}</p>
                                     </div> <!-- section title -->
                                 </div> <!-- about content -->
@@ -41,7 +41,7 @@
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
                         @foreach ($resources as $resource)
-                            <div class="swiper-slide">
+                            <div class="swiper-slide shadow-lg rounded">
                                 <img src="{{ url($resource->route) }}" />
                             </div>
                         @endforeach
@@ -64,23 +64,23 @@
             <!-- Slider end -->
         </section>
         <!-- Map start Bootstrap -->
-        <div class="rounded-lg container bg-light mt-20">
-            <h2 class="card-title pt-20">Localización</h2>
+        <div class="rounded shadow-lg container bg-light mt-60 pb-20">
+            <h2 class="card-title pt-20" style="color: #EEC41E;">Localización</h2>
             <div id="map" class="mapa">
-        </div>
+            </div>
         </div>
         <!-- PRUEBAS -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-        <div class="container">
-            <h2 class="mt-20">Opiniones</h2>
-            <div class="col">
+        <div class="container mb-20">
+            <h2 class="mt-20" style="color: #EEC41E;">Opiniones</h2>
+            <div>
                 <div class="col-md-8">
                     <div class="media g-mb-30 media-comment">
                         <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
                             src={{ Auth::user()->photo }} alt="Image Description">
-                        <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                        <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30 shadow-lg rounded">
                             <input type="hidden" value="{{ $pointofinterests->id }}" name="id_pointofinterest"
                                 id="id_pointofinterest">
                             <div class="g-mb-15">
@@ -108,33 +108,6 @@
                 </div>
             </div>
         </div>
-
-        <script type="text/javascript">
-            //Cargando nuestro mapa
-            var mapsipe = L.map('map').
-            setView([37.330822, -2.302065],
-                16); //[38.6202, -0.5731] es la latitud y longitud de la zona que queremos mostrar
-            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                maxZoom: 18
-            }).addTo(mapsipe);
-            var marker = L.marker([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}]).addTo(mapsipe);
-            marker.bindPopup("<b>{{ $pointofinterests->name }}</b>").openPopup();
-
-
-            var popup = L.popup();
-
-            function onMapClick(e) {
-                popup
-                    .setLatLng(e.latlng)
-                    .setContent("Has pulsado en el mapa en la coordenada " + e.latlng.toString())
-
-                    .openOn(mapsipe);
-            }
-            mapsipe.on('click', onMapClick);
-        </script>
-    </div>
-</div>
         <!-- Map end Bootstrap -->
         <script>
             var swiper = new Swiper(".mySwiper", {
@@ -155,6 +128,31 @@
                     swiper: swiper,
                 },
             });
+        </script>
+
+        <script type="text/javascript">
+            //Cargando nuestro mapa
+            var mapsipe = L.map('map').
+            setView([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}],
+                16); //[] es la latitud y longitud de la zona que queremos mostrar
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                maxZoom: 18
+            }).addTo(mapsipe);
+            var marker = L.marker([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}]).addTo(mapsipe);
+            marker.bindPopup('<b>{!! $pointofinterests->name !!}</b>').openPopup();
+
+
+            var popup = L.popup();
+
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("Has pulsado en el mapa en la coordenada " + e.latlng.toString())
+
+                    .openOn(mapsipe);
+            }
+            mapsipe.on('click', onMapClick);
         </script>
 
     </body>

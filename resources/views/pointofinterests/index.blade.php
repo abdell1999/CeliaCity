@@ -132,8 +132,8 @@
                                     <select
                                         class="form-multiselect block w-full mt-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 categoriespoint"
                                         name="categoriespoint[]" id="categoriespoint" multiple="multiple">
-                                        @foreach ($categoriesS as $categorieS)
-                                            <option value="{{ $categorieS['id'] }}">{{ $categorieS['name'] }}</option>
+                                        @foreach ($categories as $categorie)
+                                            <option value="{{ $categorie['id'] }}">{{ $categorie['name'] }}</option>
                                         @endforeach
                                     </select>
                                 </div>

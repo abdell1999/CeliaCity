@@ -1,5 +1,5 @@
 <section class="header_area">
-    <div class="header_navbar" id="barraNav">
+    <div class="header_navbar sticky" id="barraNav">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -17,7 +17,7 @@
 
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ml-auto">
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="page-scroll" href="#home">Home</a>
                                 </li>
                                 <li class="nav-item">

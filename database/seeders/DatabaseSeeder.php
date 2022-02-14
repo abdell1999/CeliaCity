@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CommentSeeder::class);
         $this->call(PointofviewSeeder::class);
         $this->call(CategorieSeeder::class);
+        $this->call(OptionsSeeder::class);
     }
 }

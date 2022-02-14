@@ -24,8 +24,8 @@ class PointofinterestController extends Controller
      */
     public function index()
     {
-        $data['pointofinterests'] = Pointofinterest::orderBy("name")->get();
-        return view('pointofinterests.index');
+        $data['categories'] = Categorie::all();
+        return view('pointofinterests.index', $data);
     }
 
     /**
@@ -191,7 +191,7 @@ class PointofinterestController extends Controller
             $pointofinterest->movilephone = $request->input('movilephone');
             $pointofinterest->text = $request->input('text');
             $pointofinterest->save();
-            $pointofinterest->categories()->sync($request->edit_categoriespoint);
+            $pointofinterest->categories()->sync($request->categoriespoint);
             }
         }
 
