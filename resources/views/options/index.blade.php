@@ -98,7 +98,7 @@
                     <div id="originalContent">
 
                     </div>
-                    <br><br><br><br>
+                    <br><br>
                     <div id="modifiedContent">
 
                 </div>

@@ -26,7 +26,13 @@ $(document).ready(function () {
 
 
 
-                //Codigo de inserción en el modal
+                $('#originalContent').html("");
+                $('#originalContent').append("<p>"+response.option.value+"</p>");
+
+
+                $('#modifiedContent').html("");
+                $('#modifiedContent').append("<input type='text' placeholder='"+response.option.value+"' value='"+response.option.value+"'>");
+
 
 
 
