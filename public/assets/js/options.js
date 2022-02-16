@@ -63,7 +63,7 @@ $(document).ready(function () {
                 $('#originalContent').html("");
                 $('#originalContent').append(campoMostrar(valor, tipo));
 
-
+                $('#modifiedContent').append(`<form method="post" enctype="multipart/form-data">`);
                 $('#modifiedContent').html("");
                 $('#modifiedContent').append(campoEditar(valor, tipo));
 
@@ -74,9 +74,10 @@ $(document).ready(function () {
                 Cerrar
             </button>
             <button idOption="${id_option}" type="button" optionType="${tipo}"
-                class="guardar${tipo} inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+                class="guardar guardar${tipo} inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
                 Guardar cambios
             </button>`);
+            $('#modifiedContent').append(`</form>`);
 
 
 
@@ -94,31 +95,33 @@ $(document).ready(function () {
 
     }
 
-    $(document).on('click', '.guardartext', '.guardarimage', function (e) {
+    $(document).on('click', '.guardar', function (e) {
         e.preventDefault();
 
 
-
-        //Prubeas
+        //Pruebas
         let type = $(this).attr("optionType");
 
 
         let id = $(this).attr("idOption");
         let idInput = "input"+id;
-        let newValue = $('#'+idInput).val();
+        let newValue;
 
 
         console.log("Función update de options.js");
         console.log("id: "+id);
-        console.log("newValue: "+newValue);
+        //console.log("newValue: "+newValue);
         console.log("type: "+type);
 
 
         if(type === "text"){
-            console.log("text");
+            newValue = $('#'+idInput).val();
         }
         if(type === "image"){
             console.log("image");
+            console.log($('#'+idInput)[0].files[0]);
+            //filename = $('#image_file')[0].files[0]
+            newValue = $('#'+idInput)[0].files[0];
         }
 
         //Modificar con AJAX
@@ -129,6 +132,7 @@ $(document).ready(function () {
             data:{
                 id:id,
                 value:newValue,
+                type:type,
                 _method: "PUT"
             },
             success:function(response){

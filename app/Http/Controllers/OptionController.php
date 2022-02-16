@@ -72,15 +72,32 @@ class OptionController extends Controller
      * @param  \App\Models\Option  $option
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request, $type = "")
     {
         $option = Option::find($id);
 
         $data = $request->validate([
-            'value' => 'required'
+            'value' => 'required',
+            'type' => 'required'
         ]);
+        $type = $data['type'];
 
-        $option->value = $data['value'];
+
+        $option->value = "DEFAULT VALUE";
+
+
+        if($type == "text"){
+            $option->value = $data['value'];
+        }
+
+        if($type == "image"){
+            //$user->photo = "/storage/" . $request['photo']->store('users', 'public');
+            //$option->value = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg/365px-Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg";
+            //$option->value =  "/storage/" . $request['value']->store('options', 'public');
+            $option->value = "/storage/" . $request['value']->store('options', 'public');
+        }
+
+
         $option->save();
     }
 
