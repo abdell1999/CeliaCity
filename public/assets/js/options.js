@@ -21,7 +21,18 @@ $(document).ready(function () {
             url: "/options/get-option/" + id_option,
             success: function (response) {
                 console.log(response);
+                let valor = response.option.value;
+                let tipo = response.option.type;
 
+                console.log(tipo);
+
+                function campoEditar(value, type){
+                    console.log("mostrar un input para editar en función del tipo");
+                };
+
+                function campoEditar(value, type){
+                    console.log("mostrar un input para editar en función del tipo");
+                };
 
 
 

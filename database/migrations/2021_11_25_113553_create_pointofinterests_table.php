@@ -18,7 +18,7 @@ class CreatePointofinterestsTable extends Migration
             $table->string('name');
             $table->string('latitude');
             $table->string('longitude');
-            $table->string('movilephone');
+            $table->string('movilephone')->nullable();
             $table->string('text', 5000);
             $table->timestamps();
         });

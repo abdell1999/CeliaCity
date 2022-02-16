@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PointofviewSeeder::class);
         $this->call(CategorieSeeder::class);
         $this->call(OptionsSeeder::class);
+        $this->call(MacaelSeeder::class);
     }
 }
