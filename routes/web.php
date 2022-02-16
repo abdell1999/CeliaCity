@@ -45,3 +45,4 @@ Route::get('guide/{id}', [App\Http\Controllers\GuideController::class, 'showpoin
 
 Route::get('/options', [App\Http\Controllers\OptionController::class, 'index'])->name('options');
 Route::get('/options/get-option/{id}', [App\Http\Controllers\OptionController::class, 'getoption']);
+Route::put('/options/{id}', [App\Http\Controllers\OptionController::class, 'update'])->name('options.update');

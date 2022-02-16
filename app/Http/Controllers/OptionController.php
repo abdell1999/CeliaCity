@@ -60,38 +60,10 @@ class OptionController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Option  $option
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Option $option)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Option  $option
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Option $option)
-    {
-        //
-    }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -100,19 +72,16 @@ class OptionController extends Controller
      * @param  \App\Models\Option  $option
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Option $option)
+    public function update(Request $request, $id)
     {
-        //
+        $option = Option::find($id);
+
+        $data = $request->validate([
+            'value' => 'required'
+        ]);
+
+        $option->value = $data['value'];
+        $option->save();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Option  $option
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Option $option)
-    {
-        //
-    }
 }
