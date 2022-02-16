@@ -132,6 +132,10 @@ $(document).ready(function () {
                 _method: "PUT"
             },
             success:function(response){
+
+                loadOption(id);
+
+
                 if(response){
                     //alert("HAY RESPUESTA");
                     //alert(response);
