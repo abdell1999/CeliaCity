@@ -141,5 +141,119 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        
+        DB::table('pointofinterests')->insert([
+            'id' => '8',
+            'name' => 'Torre de Culibre',
+            'latitude' => '',
+            'longitude' => '',
+            'movilephone' => '',
+            'text' => 'Torre atalaya andalusí, de figura prismática y planta rectangular, de medidas 4.65 x 3.30 metros, estando los lados mayores orientados al Norte y Sur. Está construida con un muro perimetral de tapial calicastrado, de 65 centímetros de espesor, macizado interiormente con mampostería. Tiene una altura conservada de 3.40 metros, apreciándose intacto parte del enlucido superficial.',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '9',
+            'name' => 'Teatro Municipal',
+            'latitude' => '37.3145765',
+            'longitude' => '-3.1890351',
+            'movilephone' => '',
+            'text' => 'Inaugurado por el presidente de la Diputación de Granada Sebastián Pérez, el teatro cuenta con 790 metros cuadrados, con capacidad para 1200 personas en pie y 346 con asientos, y una entrada de unos 100 metros. El escenario es de 86 metros cuadrados y el edificio cuenta además con aseos, taquilla, bar, guardarropa, sala de proyecciones y un despacho.',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '10',
+            'name' => 'Piscina Municipal',
+            'latitude' => '37.31913',
+            'longitude' => '-3.18309',
+            'movilephone' => '',
+            'text' => 'Inaugurada en 2010, la Piscina de Purullena se encuentra en un espacio natural de singular belleza rodeada de pinares.
+            El recinto cuenta con césped artificial, vestuarios y baños públicos, servicio de Bar y zona chillout.',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        /*BARES, PUBS y RESTAURANTES (HOSTELERIA) */
+        DB::table('pointofinterests')->insert([
+            'id' => '20',
+            'name' => 'El Royo Café & Copas',
+            'latitude' => '37.3175707',
+            'longitude' => '-3.1943277',
+            'movilephone' => '',
+            'text' => '',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '21',
+            'name' => 'Restaurante Mesón la Taberna',
+            'latitude' => '37.317406',
+            'longitude' => '-3.1929099',
+            'movilephone' => '',
+            'text' => '',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '22',
+            'name' => 'Hostal-Restaurante Ruta del Sur',
+            'latitude' => '37.3180833',
+            'longitude' => '-3.1943175',
+            'movilephone' => '',
+            'text' => '',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '23',
+            'name' => 'Café Bar Parada',
+            'latitude' => '37.3180833',
+            'longitude' => '-3.1943175',
+            'movilephone' => '',
+            'text' => '',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '24',
+            'name' => 'Las Cuatro Hermanas',
+            'latitude' => '37.3177648',
+            'longitude' => '-3.1938992',
+            'movilephone' => '',
+            'text' => '',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '25',
+            'name' => 'Cafetería Fabiola',
+            'latitude' => '37.3166406',
+            'longitude' => '-3.1908579',
+            'movilephone' => '',
+            'text' => '',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '26',
+            'name' => 'Brothers Café Bar Pub',
+            'latitude' => '37.3173007',
+            'longitude' => '-3.1905241',
+            'movilephone' => '',
+            'text' => '',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        
     }
 }
