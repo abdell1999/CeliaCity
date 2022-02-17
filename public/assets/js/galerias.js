@@ -150,12 +150,9 @@ $(document).ready(function () {
         $('.form-select').for(function (resource){
             imagenes.append("Resources", $('.form-control').files[i]);
         })
-    */
         
 
-
-       
-    })
+    })*/
 
 
 });
