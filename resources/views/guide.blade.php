@@ -1,6 +1,7 @@
 @extends('layouts.frontlayout')
 
 @section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="/assets/js/guide.js"></script>
 
 @endsection
@@ -25,7 +26,7 @@
         <h3>Lugares para visitar</h3>
         @foreach ($pointofinterests as $point)
         <ul class="pt-10">
-            <li><a class="point" href="#{{$point['id']}}" data-guide="{{$point['id']}}">{!!$point['name']!!}</a></li>
+            <li><p class="point" data-guide="{{$point['id']}}">{!!$point['name']!!}</p></li>
         </ul>
         @endforeach
       </div>
@@ -39,22 +40,14 @@
       <div class="slider">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
-                        @foreach ($resources as $resource)
-                            <div class="swiper-slide shadow-lg rounded">
-                                <img src="{{ url($resource->route) }}" />
-                            </div>
-                        @endforeach
+                        <!--Aquí entra AJAX-->
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
                 <div thumbsSlider="" class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        @foreach ($resources as $resource)
-                            <div class="swiper-slide">
-                                <img src="{{ url($resource->route) }}" />
-                            </div>
-                        @endforeach
+                        <!--Aquí entra AJAX-->
                     </div>
                 </div>
                 <!-- Imagen grande-->
@@ -64,8 +57,7 @@
       <div class="col-md-6 text-center pt-30">
       <div class="about_content">
                         <div class="section_title">
-                            <h3 class="title"> <span>Purullena</span></h3>
-                            <p>Purullena destaca por su gran cantidad de casas cueva y por ser un pueblo eminentemente agrícola y artesanal. Es famoso por su cerámica decorada con azul cobalto con la técnica del reflejo policromado, cuya tradición se remonta al siglo XVI y cuyas piezas se exponen y venden en tiendas cueva. “Una villa alucinante”, en palabras del historiador Carlos Asenjo Sedano, “que permanece ‘colgada’ de las arcillas de las cárcavas que se ofrecen en infinidad de pinguruchos desconcertantes” y en cuyas viviendas subterráneas dice la leyenda que se refugiaba el célebre bandolero José María ’El Tempranillo’.</p>
+                            <!--Aquí entra el AJAX-->
                         </div> <!-- section title -->
                     </div> <!-- about content -->
                     <!-- about_counter -->
@@ -76,6 +68,7 @@
 
   <script type="text/javascript">
     //Cargando nuestro mapa
+    /*
     var mapsipe = L.map('map').
     setView([37.330822, -2.302065],
         16); //[38.6202, -0.5731] es la latitud y longitud de la zona que queremos mostrar
@@ -83,6 +76,7 @@
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
         maxZoom: 18
     }).addTo(mapsipe);
+    */
 
 
     var popup = L.popup();
