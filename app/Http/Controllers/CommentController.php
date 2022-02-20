@@ -197,7 +197,7 @@ class CommentController extends Controller
     public function fetchcomment($id_pointofinterest)
     {
 
-        $comments = Comment::where('id_pointofinterest', '=', $id_pointofinterest)->get();
+        $comments = Comment::where('id_pointofinterest', '=', $id_pointofinterest)->orderBy('created_at', 'desc')->get();
         //$comments = Comment::all();
         //dd($comments);
 

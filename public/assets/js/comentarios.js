@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 
     function fetchcomment(id_pointofinterest) {
-
+        comentarios.innerHTML = "";
         $.ajax({
             type: "GET",
             url: "/fetch-comment/" + id_pointofinterest,
