@@ -81,7 +81,7 @@
 
  <!--====== Scrolling Nav js ======-->
  <script src="/assets/plantilla1/js/jquery.easing.min.js"></script>
- <script src="/assets/js/scrolling-nav.js"></script>
+ <script src="/assets/plantilla1/js/scrolling-nav.js"></script>
 
    <!--====== Main js ======-->
    <script src="/assets/plantilla1/js/main.js"></script>

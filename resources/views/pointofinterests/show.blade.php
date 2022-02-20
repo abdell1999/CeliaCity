@@ -88,7 +88,7 @@
 
                             </div>
 
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="text" rows="3"></textarea>
 
                             <ul class="list-inline d-sm-flex my-0">
 
