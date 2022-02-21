@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="https://avatars.githubusercontent.com/u/48606104?v=4" width="90">
-                <h5 class="mt-3 name">Abdellah Bukadduh</h5><span class="work d-block">Desarrollador.</span>
+                <h5 class="mt-3 name">Abdellah Bukad-duh Rappani</h5><span class="work d-block">Desarrollador.</span>
                 <div class="mt-4 about"><span></span></div>
                 <div class="mt-4">
 
