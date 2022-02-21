@@ -32,6 +32,7 @@ Route::put('update-resource/{id}', [App\Http\Controllers\ResourceController::cla
 Route::delete('delete-point/{id}', [App\Http\Controllers\PointofinterestController::class, 'destroy']);
 Route::delete('delete-comment/{id}', [App\Http\Controllers\CommentController::class, 'destroy']);
 Route::delete('delete-resource/{id}', [App\Http\Controllers\ResourceController::class, 'destroy']);
+Route::delete('delete-user/{id}', [App\Http\Controllers\UserController::class, 'destroy']);
 Route::resource('/categories', 'CategorieController');
 Route::resource('/users', 'UserController');
 Route::resource('/comments','CommentController');

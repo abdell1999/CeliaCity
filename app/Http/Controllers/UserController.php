@@ -162,12 +162,37 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /*
     public function destroy($id)
     {
         $user = User::find($id);
         $comment = Comment::find($id);
         $comment->delete();
         $user->delete();
+        return redirect()->route('users.index');
+    }*/
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $comment = Comment::find($id);
+
+        if($user)
+        {
+            $user->comments()->detach();
+            $user->delete();
+            return response()->json([
+                'status'=>200,
+                'message'=>'Usuario Borrado'
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No encuentra Usuario'
+            ]);
+        }
         return redirect()->route('users.index');
     }
 
