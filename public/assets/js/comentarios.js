@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 
     function fetchcomment(id_pointofinterest) {
-
+        comentarios.innerHTML = "";
         $.ajax({
             type: "GET",
             url: "/fetch-comment/" + id_pointofinterest,
@@ -86,6 +86,9 @@ $(document).ready(function () {
 
         text = $('#text').val();
 
+        console.log("Texto del comentario: "+text);
+        console.log("ID del punto: "+id_pointofinterest);
+
         $.ajax({
             url: "/comentar",
             type: "POST",
@@ -109,8 +112,9 @@ $(document).ready(function () {
 
                 }
             },
-            error: function () {
+            error: function (response) {
                 alert("Ha ocurrido un error al crear el comentario");
+                console.log(response);
             }
 
         })
