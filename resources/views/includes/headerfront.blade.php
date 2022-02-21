@@ -33,7 +33,7 @@
                                     <a class="page-scroll" href="#comercios">Comercios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#Ocio">Ocio</a>
+                                    <a class="page-scroll" href="/team">Créditos</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll" href="#" data-toggle="modal" data-target="#registerModal">Registro</a>
