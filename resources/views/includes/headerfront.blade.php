@@ -36,7 +36,7 @@
                                     <a class="page-scroll" href="#Ocio">Ocio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#contact">Porsiacaso</a>
+                                    <a class="page-scroll" href="#" data-toggle="modal" data-target="#registerModal">Registro</a>
                                 </li>
                                 @if (Auth::guest())
                                     <li class="nav-item">
