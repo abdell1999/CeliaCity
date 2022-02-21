@@ -19,7 +19,7 @@ $(document).ready(function () {
                     <th>" + item.latitude + "</th>\
                     <th>" + item.longitude + "</th>\
                     <th>" + item.movilephone + "</th>\
-                    <th>" + item.text + "</th>\
+                    <th>" + item.text.substr(0,150)+ "...</th>\
                     <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4'><button data-bs-toggle='modal' data-bs-target='#editModal' class='editbtn' value=" + item.id + "><i class='far fa-edit' style='color: blue;'></i></button></th>\
                     <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 '><button data-bs-toggle='modal' data-bs-target='#exampleModal' class='deletebtn' value=" + item.id + "><i class='far fa-trash-alt' style='color: blue;'></i></button></th>\
                     </tr>");
@@ -32,6 +32,7 @@ $(document).ready(function () {
     }
 
     //Editar
+
     $(document).on('click', '.editbtn', function (e) {
         e.preventDefault();
         var point_id = $(this).val();

@@ -21,7 +21,7 @@
                                     <a class="page-scroll" href="#home">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#guia">Guia</a>
+                                    <a class="page-scroll" href="/guide">Guia</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll" href="#monumentos">Monumentos</a>
