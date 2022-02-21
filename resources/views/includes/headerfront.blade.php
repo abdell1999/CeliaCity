@@ -21,7 +21,7 @@
                                     <a class="page-scroll" href="#home">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#guia">Guia</a>
+                                    <a class="page-scroll" href="/guide">Guia</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll" href="#monumentos">Monumentos</a>
@@ -33,10 +33,10 @@
                                     <a class="page-scroll" href="#comercios">Comercios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#Ocio">Ocio</a>
+                                    <a class="page-scroll" href="/team">Créditos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#contact">Porsiacaso</a>
+                                    <a class="page-scroll" href="#" data-toggle="modal" data-target="#registerModal">Registro</a>
                                 </li>
                                 @if (Auth::guest())
                                     <li class="nav-item">

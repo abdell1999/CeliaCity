@@ -4,7 +4,7 @@
 
     @media (min-width: 576px) {
         .modal-dialog {
-            max-width: 400px;
+            max-width: 600px;
         }
 
         .modal-dialog .modal-content {
@@ -304,8 +304,8 @@
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <div class="signup-section">¿No estas registrado? <a href="/register"
-                                class="text-info">Registrate</a>.</div>
+                        <div class="signup-section">¿No estas registrado? <a href="#"
+                                class="text-info" data-toggle="modal" onclick="cerrarLogin()" data-target="#registerModal">Registrate</a>.</div>
                     </div>
                 </div>
             </div>
@@ -313,10 +313,101 @@
     </article>
 </main>
 
+<script>
+    function cerrarLogin() {
+        $('#loginModal').modal('hide');
+    }
+    </script>
 
 <form id="logoutForm" action="{{ route('logout') }}" method="POST" >
     @csrf
 </form>
+
+<!-- Registro MODAL-->
+
+<main>
+    <article>
+
+        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom-0">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-title text-center">
+                            <h4>Registro</h4>
+                        </div>
+                        <div class="d-flex flex-column text-center">
+                            <form method="POST" action="{{ route('register') }}">
+                                @csrf
+                                <div class="input-group mb-3 ">
+                                    <input type="name" class="form-control" name="name" id="name"
+                                        placeholder="Nombre">
+                                        <span class="pl-3"></span>
+                                    <input type="surname1" class="form-control" name="surname1" id="surname1"
+                                        placeholder="Primer Apellido">
+                                        <span class="pl-3""></span>
+                                    <input type="surname2" class="form-control" name="surname2" id="surname2"
+                                        placeholder="Segundo Apellido">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Correo">
+                                </div>
+                                <div class="form-group">
+                                <input type="address" class="form-control" name="address" id="address"
+                                        placeholder="Dirección">
+                                </div>
+
+
+                                <div class="input-group mb-3 ">
+
+                                    <input type="movilphone" class="form-control" name="movilphone" id="movilphone"
+                                        placeholder="Teléfono móvil">
+                                        <span class="pl-3"></span>
+                                    <input type="phone" class="form-control" name="phone" id="phone"
+                                        placeholder="Teléfono fijo">
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" name="borndate" id="borndate"
+                                            placeholder="Fecha de nacimiento">
+                                    </div>
+
+
+                                <div class="input-group mb-3 ">
+                                    <input type="password" class="form-control" name="password" id="password"
+                                        placeholder="Contraseña">
+                                        <span class="pl-3"></span>
+                                     <input type="confirmpassword" class="form-control" name="confirmpassword" id="confirmpassword"
+                                        placeholder="confirmContraseña">
+                                </div>
+                                <div class="form-group">
+                                <input type="file" class="form-control" name="photo" id="photo" enctype="multipart/form-data"
+                                placeholder="confirmContraseña">
+                                </div>
+                                <input type="submit" class="btn btn-info btn-block btn-round" value="Registro">
+                            </form>
+
+
+                            <div class="d-flex justify-content-center social-buttons">
+
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </article>
+</main>
+
+<!-- Registro MODAL fin-->
 
 <script>
 $("#logoutBtn").click(function(evento){
@@ -337,4 +428,6 @@ $("#logoutBtn").click(function(evento){
     });
     </script>
 @endif
+
+
 
