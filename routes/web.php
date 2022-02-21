@@ -48,3 +48,4 @@ Route::get('/options/get-option/{id}', [App\Http\Controllers\OptionController::c
 Route::get('/team', function(){
     return view("team.show" );
 });
+Route::put('/options/{id}', [App\Http\Controllers\OptionController::class, 'update'])->name('options.update');

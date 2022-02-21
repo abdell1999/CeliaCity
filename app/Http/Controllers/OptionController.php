@@ -60,38 +60,10 @@ class OptionController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Option  $option
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Option $option)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Option  $option
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Option $option)
-    {
-        //
-    }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -100,19 +72,33 @@ class OptionController extends Controller
      * @param  \App\Models\Option  $option
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Option $option)
+    public function update($id, Request $request, $type = "")
     {
-        //
+        $option = Option::find($id);
+
+        $data = $request->validate([
+            'value' => 'required',
+            'type' => 'required'
+        ]);
+        $type = $data['type'];
+
+
+        $option->value = "DEFAULT VALUE";
+
+
+        if($type == "text"){
+            $option->value = $data['value'];
+        }
+
+        if($type == "image"){
+            //$user->photo = "/storage/" . $request['photo']->store('users', 'public');
+            //$option->value = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg/365px-Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg";
+            //$option->value =  "/storage/" . $request['value']->store('options', 'public');
+            $option->value = "/storage/" . $request['value']->store('options', 'public');
+        }
+
+
+        $option->save();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Option  $option
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Option $option)
-    {
-        //
-    }
 }
