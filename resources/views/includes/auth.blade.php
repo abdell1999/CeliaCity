@@ -384,7 +384,7 @@
                                     <input type="password" class="form-control" name="password" id="password"
                                         placeholder="Contraseña">
                                         <span class="pl-3"></span>
-                                     <input type="password" class="form-control" name="password-confirm" id="password-confirm"
+                                     <input type="password" class="form-control" name="password_confirmation" id="password-confirm"
                                         placeholder="Repite tu contraseña">
                                 </div>
                                 <div class="form-group">
