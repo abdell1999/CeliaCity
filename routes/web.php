@@ -32,6 +32,7 @@ Route::put('update-resource/{id}', [App\Http\Controllers\ResourceController::cla
 Route::delete('delete-point/{id}', [App\Http\Controllers\PointofinterestController::class, 'destroy']);
 Route::delete('delete-comment/{id}', [App\Http\Controllers\CommentController::class, 'destroy']);
 Route::delete('delete-resource/{id}', [App\Http\Controllers\ResourceController::class, 'destroy']);
+Route::delete('delete-user/{id}', [App\Http\Controllers\UserController::class, 'destroy']);
 Route::resource('/categories', 'CategorieController');
 Route::resource('/users', 'UserController');
 Route::resource('/comments','CommentController');
@@ -41,6 +42,7 @@ Route::post('comentar', [App\Http\Controllers\CommentController::class, 'comenta
 Route::get('/fetch-comment/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'fetchcomment']);
 Route::get('guide', [App\Http\Controllers\GuideController::class, 'guide']);
 Route::get('guide/{id}', [App\Http\Controllers\GuideController::class, 'showpoint']);
+Route::get('myprofile/{id}', [App\Http\Controllers\UserController::class, 'myprofile']);
 
 
 Route::get('/options', [App\Http\Controllers\OptionController::class, 'index'])->name('options');

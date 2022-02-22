@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="/">
                             <img src="/assets/img/logo.svg" style="width: 80%; height: 80%;" type="image/svg" alt="Logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
