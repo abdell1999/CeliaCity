@@ -342,16 +342,16 @@
                             <h4>Registro</h4>
                         </div>
                         <div class="d-flex flex-column text-center">
-                            <form method="POST" action="{{ route('register') }}">
+                            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="input-group mb-3 ">
-                                    <input type="name" class="form-control" name="name" id="name"
+                                    <input type="text" class="form-control" name="name" id="name"
                                         placeholder="Nombre">
                                         <span class="pl-3"></span>
-                                    <input type="surname1" class="form-control" name="surname1" id="surname1"
+                                    <input type="text" class="form-control" name="surname1" id="surname1"
                                         placeholder="Primer Apellido">
                                         <span class="pl-3""></span>
-                                    <input type="surname2" class="form-control" name="surname2" id="surname2"
+                                    <input type="text" class="form-control" name="surname2" id="surname2"
                                         placeholder="Segundo Apellido">
                                 </div>
 
@@ -360,17 +360,17 @@
                                         placeholder="Correo">
                                 </div>
                                 <div class="form-group">
-                                <input type="address" class="form-control" name="address" id="address"
+                                <input type="text" class="form-control" name="address" id="address"
                                         placeholder="Dirección">
                                 </div>
 
 
                                 <div class="input-group mb-3 ">
 
-                                    <input type="movilphone" class="form-control" name="movilphone" id="movilphone"
+                                    <input type="number" class="form-control" name="movilphone" id="movilphone"
                                         placeholder="Teléfono móvil">
                                         <span class="pl-3"></span>
-                                    <input type="phone" class="form-control" name="phone" id="phone"
+                                    <input type="number" class="form-control" name="phone" id="phone"
                                         placeholder="Teléfono fijo">
 
                                 </div>
@@ -384,14 +384,16 @@
                                     <input type="password" class="form-control" name="password" id="password"
                                         placeholder="Contraseña">
                                         <span class="pl-3"></span>
-                                     <input type="confirmpassword" class="form-control" name="confirmpassword" id="confirmpassword"
-                                        placeholder="confirmContraseña">
+                                     <input type="password" class="form-control" name="password-confirm" id="password-confirm"
+                                        placeholder="Repite tu contraseña">
                                 </div>
                                 <div class="form-group">
-                                <input type="file" class="form-control" name="photo" id="photo" enctype="multipart/form-data"
+                                <input type="file" class="form-control" name="photo" id="photo"
                                 placeholder="confirmContraseña">
                                 </div>
-                                <input type="submit" class="btn btn-info btn-block btn-round" value="Registro">
+                                <button type="submit" class="btn btn-info btn-block btn-round" value="Registro">
+                                    Registro
+                                </button>
                             </form>
 
 
