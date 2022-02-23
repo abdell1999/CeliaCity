@@ -391,7 +391,7 @@
                                 <input type="file" class="form-control" name="photo" id="photo"
                                 placeholder="confirmContraseña">
                                 </div>
-                                <button type="submit" class="btn btn-info btn-block btn-round" value="Registro">
+                                <button type="submit" class="btn btn-info btn-block btn-round" onclick="cerrarRegistro()" value="Registro">
                                     Registro
                                 </button>
                             </form>
@@ -408,7 +408,11 @@
         </div>
     </article>
 </main>
-
+<script>
+    function cerrarRegistro() {
+        $('#registerModal').modal('hide');
+    }
+    </script>
 <!-- Registro MODAL fin-->
 
 <script>

@@ -35,9 +35,15 @@
                                 <li class="nav-item">
                                     <a class="page-scroll" href="/team">Créditos</a>
                                 </li>
+                                @if (Auth::guest())
                                 <li class="nav-item">
                                     <a class="page-scroll" href="#" data-toggle="modal" data-target="#registerModal">Registro</a>
                                 </li>
+                                @else
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="/myprofile/{{Auth::user()->id}}">Mi perfil</a>
+                                </li>
+                                @endif
                                 @if (Auth::guest())
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
