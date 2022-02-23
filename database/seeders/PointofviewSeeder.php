@@ -254,6 +254,17 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '27',
+            'name' => 'Pizzería Eclipse',
+            'latitude' => '37.3168394',
+            'longitude' => '-3.1895305',
+            'movilephone' => '',
+            'text' => '',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
         
     }
 }
