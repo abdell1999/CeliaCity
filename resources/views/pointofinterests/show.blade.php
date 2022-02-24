@@ -5,9 +5,6 @@
 @endsection
 
 
-
-
-
 @section('content')
     <!--pepe-->
     <link rel="stylesheet" type="text/css" href="/assets/css/pointofinterest.css">
@@ -73,20 +70,23 @@
         <!-- PRUEBAS -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+        
         <div class="container mb-20">
             <h2 class="mt-20" style="color: #EEC41E;">Opiniones</h2>
             <div>
                 <div class="col-md-8">
                     <div class="media g-mb-30 media-comment">
+                        @if(@Auth::user())
                         <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15"
                             src={{ Auth::user()->photo }} alt="Image Description">
+                        @endif
                         <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30 shadow-lg rounded">
                             <input type="hidden" value="{{ $pointofinterests->id }}" name="id_pointofinterest"
                                 id="id_pointofinterest">
                             <div class="g-mb-15">
+                            @if(@Auth::user())
                                 <h5 class="h5 g-color-gray-dark-v1 mb-2">{{ Auth::user()->name }}</h5>
-
+                            @endif
                             </div>
 
                             <textarea class="form-control" id="text" rows="3"></textarea>
@@ -94,10 +94,14 @@
                             <ul class="list-inline d-sm-flex my-0">
 
                                 <li class="list-inline-item ml-auto">
+                                    @if(@Auth::user())
                                     <a class="g-color-black  g-color-primary--hover" class="btn btn-primary"
                                         id="btnComentar" href="#!">
                                         Enviar
                                     </a>
+                                    @else
+                                    <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                                    @endif
                                 </li>
                             </ul>
                         </div>
