@@ -99,9 +99,10 @@ body {
     margin-top: 20px;
 }
 
+/*Mirad si asi queda bien con 40em etaba antes en 25*/
 .slider {
     width: 40%;
-    height: 25em;
+    height: 40em;
     display: flex;
     justify-content: center;
     flex-direction: column;

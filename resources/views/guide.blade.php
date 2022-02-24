@@ -7,13 +7,14 @@
 @endsection
 
 @section('content')
+<!--Cambiado para que se vea los colores naranjas Mira si os gusta quitando lugares para visitar y dejando en medio guia turistica purullena-->
 <style>
-    h1, h3, li {
-        font-family: cursive;
+    h2, h3, li {
+        color: #eec41e;
     }
 </style>
 <div class="container mt-100 pt-20">
-    <h1 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600">Guia Turistica Purullena</h1>
+    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600 text-center">Guia Turistica Purullena</h2>
     <div class="row justify-content-center mt-20 pb-20">
       <div class="col-md-6">
         <div class="rounded-lg bg-light shadow-lg shadow-2xl">
@@ -36,7 +37,16 @@
 
   <div class="container mt-100 pt-20">
     <div class="row justify-content-center mt-20 pb-20">
-      <div class="col-md-6">
+        <!--Cambiado slider y texto de sitio para que se vea antes texto que slider -->
+        <div class="col-md-6 text-center pt-30">
+            <div class="about_content">
+                              <div class="section_title new_section">
+                                  <!--Aquí entra el AJAX-->
+                              </div> <!-- section title -->
+                          </div> <!-- about content -->
+                          <!-- about_counter -->
+        </div>
+      <div class="col-md-6 pt-100">
       <div class="slider">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
@@ -53,17 +63,6 @@
                 <!-- Imagen grande-->
             </div>
         </div>
-
-      <div class="col-md-6 text-center pt-30">
-      <div class="about_content">
-                        <div class="section_title">
-                            <!--Aquí entra el AJAX-->
-                        </div> <!-- section title -->
-                    </div> <!-- about content -->
-                    <!-- about_counter -->
-      </div>
-
-    </div>
   </div>
 
   <script type="text/javascript">

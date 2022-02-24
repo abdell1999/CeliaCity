@@ -21,7 +21,8 @@
                     <!-- about image -->
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-9 bg-light rounded shadow-lg">
+                            <!--Cambiado col-lg-9 a xl-9 -->
+                            <div class="col-xl-9 bg-light rounded shadow-lg">
                                 <div class="about_content m-3">
                                     <div class="section_title">
                                         <h3 class="title"><span>{!!$pointofinterests->name !!}</span></h3>
