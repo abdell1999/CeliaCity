@@ -37,12 +37,12 @@
 
             <!--====== ABOUT PART ENDS ======-->
             <!-- Slider start -->
-            <div class="slider">
+            <div class="slider"">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
                         @foreach ($resources as $resource)
                             <div class="swiper-slide shadow-lg rounded">
-                                <img src="{{ url($resource->route) }}" />
+                                <img src="{{ url($resource->route) }}" href="#" data-toggle="modal" data-target="#zoomImage"/>
                             </div>
                         @endforeach
                     </div>
@@ -108,6 +108,28 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- MODAL SLIDER-->
+        <div class="modal fade" id="zoomImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="slider">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; top: 90%; left: 90%; transform: translate(-25%, -50%);" class="swiper mySwiper2">
+                    <div class="swiper-wrapper">
+                        @foreach ($resources as $resource)
+                            <div class="swiper-slide shadow-lg rounded">
+                                <img src="{{ url($resource->route) }}" style="width: 100%; height: 100%;">
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <!-- Imagen grande-->
+            </div>
+        </div>
+        </div>
+
+        <!--FIN MODAL SLIDER-->
         <!-- Map end Bootstrap -->
         <script>
             var swiper = new Swiper(".mySwiper", {
