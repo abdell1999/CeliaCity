@@ -48,8 +48,6 @@ class UserController extends Controller
             'borndate'  =>   'required',
             'address'  =>   'required',
             'rol'  =>   'required'
-
-
         ]);
 
         //dd($request);
@@ -206,8 +204,7 @@ class UserController extends Controller
     }
 
     public function myprofile($id){
-        
-        $data['users'] = User::find($id);
+        $data['user'] = User::find($id);
         return view('users.myprofile',$data);
     }
 
