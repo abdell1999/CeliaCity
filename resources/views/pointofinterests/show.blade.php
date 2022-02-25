@@ -29,7 +29,28 @@
     </div>
   </div>
     <!-- End Modal Delete Commnet -->
-
+    <!-- Start Modal Edit Comment -->
+    <div class="modal fade" id="editComment" tabindex="-1" role="dialog" aria-labelledby="editCommentLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editCommentLabel">Editar Comentario</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="comment_id" value="" />
+                <input type="text" class="edit_text">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary update_comment">Editar Comentario</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Modal Edit Comment -->
     <!--pepe-->
     <link rel="stylesheet" type="text/css" href="/assets/css/pointofinterest.css">
     <body>

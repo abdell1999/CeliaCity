@@ -157,7 +157,65 @@ $(document).ready(function () {
         });
     });
 
+    $(document).on('click', '.editbtn', function (e) {
+        e.preventDefault();
+        var comment_id = $(this).val();
+        console.log(comment_id);
 
+        $('#editModal').modal('show');
+
+        $.ajax({
+            type: "GET",
+            url: "/edit-comment/" + comment_id,
+            success: function (response) {
+                console.log(response);
+                if (response.status == 404) {
+                    $('#editModal').modal('hide');
+                } else {
+                    $('.edit_text').val(response.comment.text);
+                    $('#comment_id').val(comment_id);
+                }
+            }
+        });
+        $('.editformComment').find('input').val('');
+    });
+
+    //Update de Comentario
+
+    $(document).on('click', '.update_comment', function (e) {
+        e.preventDefault();
+
+        $(this).text('Actualizando..');
+        var id = $('#comment_id').val();
+        //alert(id);
+
+        var data = {
+            'text': $('.edit_text').val(),
+        }
+
+        $.ajax({
+            type: "PUT",
+            url: "/update-comment/" + id,
+            data: data,
+            dataType: "json",
+            success: function (response) {
+                //console.log(response);
+                if (response.status == 400) {
+                    $.each(response.errors, function (key, err_value) {
+                        $('#update_msgList').append('<li>' + err_value +
+                            '</li>');
+                    });
+                    $('.update_comment').text('Actualizar');
+                } else {
+                    $('#editModal').find('input').val('');
+                    $('.update_comment').text('Update');
+                    $('#editComment').modal('hide');
+                    fetchcomment(id_pointofinterest);
+                }
+
+            }
+        });
+    });
 
 
 });
