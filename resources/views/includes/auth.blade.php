@@ -342,7 +342,7 @@
                             <h4>Registro</h4>
                         </div>
                         <div class="d-flex flex-column text-center">
-                            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="formulario" >
                                 @csrf
                                 <div class="input-group mb-3 ">
                                     <input type="text" class="form-control" name="name" id="name"
@@ -391,7 +391,16 @@
                                 <input type="file" class="form-control" name="photo" id="photo"
                                 placeholder="confirmContraseña">
                                 </div>
-                                <button type="submit" class="btn btn-info btn-block btn-round" onclick="cerrarRegistro()" value="Registro">
+
+                                <button type="submit" class="btn btn-info btn-block btn-round" id="registro" onclick="cerrarRegistro()"  value="Registro">
+                                    <script>
+                                        $("#registro").click(function(){
+                                            if($("#formulario").valid() == false){
+                                                return;
+                                            }
+
+                                        });
+                                        </script>
                                     Registro
                                 </button>
                             </form>
@@ -408,6 +417,106 @@
         </div>
     </article>
 </main>
+
+<script type="text/javascript">
+$("#formulario").validate()({
+    rules: {
+
+        name: {
+            required: true,
+            minlength: 3,
+            maxlength: 30
+
+        },
+
+        surname1: {
+            required: true,
+            minlength: 3,
+            maxlength: 30
+
+        },
+
+        surname2: {
+            minlength: 3,
+            maxlength: 30
+
+
+        },
+
+        email: {
+            required: true,
+            email: true
+
+        },
+
+        address: {
+
+            required: true,
+            minlength: 3,
+            maxlength: 100
+
+        },
+
+        movilphone: {
+
+            required: true,
+            number: true,
+            max:9,
+            min:9
+
+
+        },
+
+        phone: {
+
+            required: true,
+            number: true,
+            max:9,
+            min:9
+        },
+
+        borndate: {
+
+            required: true,
+            date: true
+
+        },
+
+        password: {
+            required: true,
+            minlength: 5,
+            maxlength: 40
+
+        },
+
+        password_confirmation: {
+            required: true,
+            minlength: 5,
+            maxlength: 40,
+            equalTo : '[name="password"]'
+
+        },
+
+        photo: {
+            required: true
+
+        }
+
+    }
+
+
+})
+</script>
+
+<script>
+    $("#registro").click(function(){
+        if($("#formulario").valid() == false){
+            return;
+        }
+
+    });
+    </script>
+
 <script>
     function cerrarRegistro() {
         $('#registerModal').modal('hide');

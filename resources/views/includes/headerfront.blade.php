@@ -24,13 +24,13 @@
                                     <a class="page-scroll" href="/guide">Guia</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#monumentos">Monumentos</a>
+                                    <a class="page-scroll" href="/categories/1">Monumentos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#hosteleria">Hostelería</a>
+                                    <a class="page-scroll" href="/categories/2">Hostelería</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#comercios">Comercios</a>
+                                    <a class="page-scroll" href="/categories/3">Comercios</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll" href="/team">Créditos</a>

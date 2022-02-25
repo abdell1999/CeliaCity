@@ -21,9 +21,8 @@
                     <div id="userMenu"
                         class="bg-gray-900 rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
                         <ul class="list-reset">
-                            <li><a href="#"
-                                    class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">My
-                                    account</a></li>
+                            <li><a href="myprofile/{{Auth::user()->id}}"
+                                    class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">My account</a></li>
                             <li>
                                 <hr class="border-t mx-2 border-gray-400">
                             </li>
@@ -58,7 +57,7 @@
             id="nav-content">
             <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
                 <li class="mr-6 my-2 md:my-0">
-                    <a href="#"
+                    <a href="{{ route('home') }}"
                         class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
                         <i class="fas fa-home fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
                     </a>
