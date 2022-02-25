@@ -4,6 +4,7 @@ $(document).ready(function () {
 
 
     id_option = 999;
+    getAll();
 
 
     $(document).on('click', '.optionEdit', function () {
@@ -118,10 +119,22 @@ $(document).ready(function () {
             newValue = $('#'+idInput).val();
         }
         if(type === "image"){
-            console.log("image");
+            console.log("image, el input es una imagen !!!");
+            //alert(idInput);
             console.log($('#'+idInput)[0].files[0]);
+            //alert($('#'+idInput)[0].files[0]);
             //filename = $('#image_file')[0].files[0]
-            newValue = $('#'+idInput)[0].files[0];
+            //newValue = $('#'+idInput).prop("files")[0];
+
+            newValue = new FormData();
+            //newValue.append('value', $('#'+idInput).prop("files")[0]);
+
+
+            var files = $('#'+idInput)[0].files[0];
+            console.log("FILES: "+files[0]);
+            //newValue = files;
+            newValue.append('value', files[0]);
+            console.log("newVALUEEEEEE "+newValue);
         }
 
         //Modificar con AJAX
@@ -133,7 +146,11 @@ $(document).ready(function () {
                 id:id,
                 value:newValue,
                 type:type,
-                _method: "PUT"
+                enctype: 'multipart/form-data',
+                _method: "PUT",
+                mimeType: 'multipart/form-data',
+                processData: false,
+                contentType: false,
             },
             success:function(response){
 
@@ -155,5 +172,42 @@ $(document).ready(function () {
         })
 
     });
+
+
+
+    function getAll() {
+
+        $.ajax({
+            type: "GET",
+            url: "/options/get-all",
+            success: function (response) {
+                //alert("MIRA AQUÏ");
+                console.log(response);
+                console.log(response.options[1].value); //accedo al value de townname
+
+                townname = response.options[1].value;
+                shortdescription = response.options[8].value;
+                longdescription = response.options[9].value;
+
+                $('.townname').html("");
+                $('.townname').text(townname);
+
+                $('.shortdescription').html("");
+                $('.shortdescription').text(shortdescription);
+
+                $('.longdescription').html("");
+                $('.longdescription').text(longdescription);
+
+
+                },error: function (response) {
+                    console.log(response);
+
+            }
+
+            })
+
+        }
+
+
 
 });

@@ -40,6 +40,14 @@ class OptionController extends Controller
         return view("options.index", $data);
     }
 
+    public function getall()
+    {
+        $options = Option::all();
+        return response()->json([
+            'options'=>$options,
+        ]);
+    }
+
     public function getoption($id)
     {
         $option = Option::find($id);

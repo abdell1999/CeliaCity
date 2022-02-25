@@ -1,4 +1,6 @@
 @extends('layouts.frontlayout')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/options.js"></script>
 
 @section('content')
 <div id="home" class="header_slider">
@@ -9,8 +11,8 @@
                 <div class="col-lg-6 col-md-8">
                     <div class="slider_content">
                         <h2 class="slider_title wow fadeInLeftBig" data-wow-duration="1.3s"
-                            data-wow-delay="0.2s">Bienvenido a<span> Purullena</span></h2>
-                        <p class="wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">Purullena es una localidad y un municipio español situado en la parte centro-oeste de la comarca de Guadix, en la provincia de Granada, comunidad autónoma de Andalucía.</p>
+                            data-wow-delay="0.2s">Bienvenido a <span class="townname">TOWNNAME</span></h2>
+                        <p class="wow fadeInLeftBig shortdescription" data-wow-duration="1.3s" data-wow-delay="0.5s">SHORTDESCRIPTION</p>
                         <a href="javascript:void(0)" class="main-btn wow fadeInLeftBig" data-wow-duration="1.3s"
                             data-wow-delay="0.8s">Guía Turística</a>
                     </div> <!-- slider content -->
@@ -31,8 +33,8 @@
                 <div class="col-lg-6">
                     <div class="about_content">
                         <div class="section_title">
-                            <h3 class="title">Más información <br> sobre <span>Purullena</span></h3>
-                            <p>Purullena destaca por su gran cantidad de casas cueva y por ser un pueblo eminentemente agrícola y artesanal. Es famoso por su cerámica decorada con azul cobalto con la técnica del reflejo policromado, cuya tradición se remonta al siglo XVI y cuyas piezas se exponen y venden en tiendas cueva. “Una villa alucinante”, en palabras del historiador Carlos Asenjo Sedano, “que permanece ‘colgada’ de las arcillas de las cárcavas que se ofrecen en infinidad de pinguruchos desconcertantes” y en cuyas viviendas subterráneas dice la leyenda que se refugiaba el célebre bandolero José María ’El Tempranillo’.</p>
+                            <h3 class="title">Más información <br> sobre <span class="townname">TOWNNAME</span></h3>
+                            <p class="longdescription">LONGDESCRIPTION</p>
                         </div> <!-- section title -->
                         <a href="javascript:void(0)" class="main-btn">Guía Turística</a>
                     </div> <!-- about content -->
