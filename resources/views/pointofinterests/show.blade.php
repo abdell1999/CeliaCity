@@ -6,6 +6,51 @@
 
 
 @section('content')
+<!-- Start Modal Delete Comment -->
+  <!-- Modal -->
+  <div class="modal fade" id="deleteComment" tabindex="-1" role="dialog" aria-labelledby="deleteCommentLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteCommentLabel">Borrar Comentario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Seguro que quieres borrar este comentario?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary delete_comment">Borrar</button>
+          <input type="hidden" id="deleteing_id">
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- End Modal Delete Commnet -->
+    <!-- Start Modal Edit Comment -->
+    <div class="modal fade" id="editComment" tabindex="-1" role="dialog" aria-labelledby="editCommentLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editCommentLabel">Editar Comentario</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="comment_id" value="" />
+                <input type="text" class="edit_text">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary update_comment">Editar Comentario</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Modal Edit Comment -->
     <!--pepe-->
     <link rel="stylesheet" type="text/css" href="/assets/css/pointofinterest.css">
     <body>
@@ -70,7 +115,7 @@
         <!-- PRUEBAS -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        
+
         <div class="container mb-20">
             <h2 class="mt-20" style="color: #EEC41E;">Opiniones</h2>
             <div>
