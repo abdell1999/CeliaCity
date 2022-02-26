@@ -1,4 +1,3 @@
-<!-- MODAL DE LOGIN -->
 <style>
 
 
@@ -258,7 +257,8 @@
 
 <main>
     <article>
-
+        <form method="POST" action="{{ route('login') }}" class="needs-validation">
+            @csrf
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -273,15 +273,16 @@
                             <h4>Acceder</h4>
                         </div>
                         <div class="d-flex flex-column text-center">
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
+
                                 <div class="form-group">
                                     <input type="email" class="form-control" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" name="email" id="email"
-                                        placeholder="Correo">
+                                        placeholder="Correo" required>
+                                    <div class="invalid-feedback">Correo incorrecto</div>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="password" id="password"
-                                        placeholder="Contraseña">
+                                        placeholder="Contraseña" required>
+                                    <div class="invalid-feedback">Contraseña Incorrecta</div>
                                 </div>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -305,19 +306,13 @@
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
                         <div class="signup-section">¿No estas registrado? <a href="#"
-                                class="text-info" data-toggle="modal" onclick="cerrarLogin()" data-target="#registerModal">Registrate</a>.</div>
+                                class="text-info" data-toggle="modal" onclick="" data-target="#registerModal">Registrate</a>.</div>
                     </div>
                 </div>
             </div>
         </div>
     </article>
 </main>
-
-<script>
-    function cerrarLogin() {
-        $('#loginModal').modal('hide');
-    }
-    </script>
 
 <form id="logoutForm" action="{{ route('logout') }}" method="POST" >
     @csrf
@@ -327,7 +322,8 @@
 
 <main>
     <article>
-
+        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="formulario" class="needs-validation" novalidate>
+        @csrf
         <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -342,22 +338,27 @@
                             <h4>Registro</h4>
                         </div>
                         <div class="d-flex flex-column text-center">
-                            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="formulario" >
                                 @csrf
                                 <div class="input-group mb-3 ">
                                     <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Nombre">
-                                        <span class="pl-3"></span>
+                                        placeholder="Nombre" required>
+                                        <span class="pl-3">
+                                            <div class="valid-feedback">Válido!</div>
+                                            <div class="invalid-feedback">Nombre incorrecto</div>
+                                        </span>
                                     <input type="text" class="form-control" name="surname1" id="surname1"
-                                        placeholder="Primer Apellido">
-                                        <span class="pl-3""></span>
+                                        placeholder="Primer Apellido" required>
+                                        <span class="pl-3">
+                                        </span>
                                     <input type="text" class="form-control" name="surname2" id="surname2"
                                         placeholder="Segundo Apellido">
                                 </div>
 
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Correo">
+                                        placeholder="Correo" required>
+                                        <div class="valid-feedback">Válido!</div>
+                                        <div class="invalid-feedback">Correo incorrecto</div>
                                 </div>
                                 <div class="form-group">
                                 <input type="text" class="form-control" name="address" id="address"
@@ -368,39 +369,38 @@
                                 <div class="input-group mb-3 ">
 
                                     <input type="number" class="form-control" name="movilphone" id="movilphone"
-                                        placeholder="Teléfono móvil">
-                                        <span class="pl-3"></span>
+                                        placeholder="Teléfono móvil" required>
+                                        <span class="pl-3">
+                                            <div class="valid-feedback">Válido!</div>
+                                        <div class="invalid-feedback">Error en el numero</div>
+                                        </span>
                                     <input type="number" class="form-control" name="phone" id="phone"
                                         placeholder="Teléfono fijo">
 
                                 </div>
                                 <div class="form-group">
                                     <input type="date" class="form-control" name="borndate" id="borndate"
-                                            placeholder="Fecha de nacimiento">
+                                            placeholder="Fecha de nacimiento" required>
+                                        <div class="valid-feedback">Válido!</div>
+                                        <div class="invalid-feedback">Error Fecha</div>
                                     </div>
 
 
                                 <div class="input-group mb-3 ">
                                     <input type="password" class="form-control" name="password" id="password"
-                                        placeholder="Contraseña">
-                                        <span class="pl-3"></span>
+                                        placeholder="Contraseña" required>
+                                        <span class="pl-3">
+                                            <div class="valid-feedback">Válido!</div>
+                                        <div class="invalid-feedback">Contraseña incorrecta o no coincide la contraseña</div>
+                                        </span>
                                      <input type="password" class="form-control" name="password_confirmation" id="password-confirm"
-                                        placeholder="Repite tu contraseña">
+                                        placeholder="Repite tu contraseña" required>
                                 </div>
                                 <div class="form-group">
                                 <input type="file" class="form-control" name="photo" id="photo"
-                                placeholder="confirmContraseña">
+                                placeholder="Introduce la foto">
                                 </div>
-
-                                <button type="submit" class="btn btn-info btn-block btn-round" id="registro" onclick="cerrarRegistro()"  value="Registro">
-                                    <script>
-                                        $("#registro").click(function(){
-                                            if($("#formulario").valid() == false){
-                                                return;
-                                            }
-
-                                        });
-                                        </script>
+                                <button type="submit" class="btn btn-info btn-block btn-round" id="registro" value="Registro">
                                     Registro
                                 </button>
                             </form>
@@ -418,131 +418,37 @@
     </article>
 </main>
 
-<script type="text/javascript">
-$("#formulario").validate()({
-    rules: {
-
-        name: {
-            required: true,
-            minlength: 3,
-            maxlength: 30
-
-        },
-
-        surname1: {
-            required: true,
-            minlength: 3,
-            maxlength: 30
-
-        },
-
-        surname2: {
-            minlength: 3,
-            maxlength: 30
-
-
-        },
-
-        email: {
-            required: true,
-            email: true
-
-        },
-
-        address: {
-
-            required: true,
-            minlength: 3,
-            maxlength: 100
-
-        },
-
-        movilphone: {
-
-            required: true,
-            number: true,
-            max:9,
-            min:9
-
-
-        },
-
-        phone: {
-
-            required: true,
-            number: true,
-            max:9,
-            min:9
-        },
-
-        borndate: {
-
-            required: true,
-            date: true
-
-        },
-
-        password: {
-            required: true,
-            minlength: 5,
-            maxlength: 40
-
-        },
-
-        password_confirmation: {
-            required: true,
-            minlength: 5,
-            maxlength: 40,
-            equalTo : '[name="password"]'
-
-        },
-
-        photo: {
-            required: true
-
-        }
-
-    }
-
-
-})
-</script>
-
 <script>
-    $("#registro").click(function(){
-        if($("#formulario").valid() == false){
-            return;
-        }
 
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
     });
-    </script>
+  }, false);
+})();
 
-<script>
-    function cerrarRegistro() {
-        $('#registerModal').modal('hide');
-    }
-    </script>
-<!-- Registro MODAL fin-->
 
-<script>
 $("#logoutBtn").click(function(evento){
     evento.preventDefault();
 
     $("#logoutForm").submit();
 });
+
 </script>
 
 
 
-
-
-@if($errors->has('email') || $errors->has('password'))
-    <script>
-    $(function() {
-        $('#loginModal').modal('show');
-    });
-    </script>
-@endif
 
 
 
