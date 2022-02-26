@@ -42,6 +42,32 @@ $(document).ready(function () {
                         <input id="${id_input}"
                         name="imageOption" type="file">`;
                     }
+
+                    if(type === "point"){
+
+                        insertar = `
+                        <label for="pointOption">Seleccione un punto de interés:</label>
+                        <select id="${id_input} name="pointOption" class="pointOption">
+                        <option value="1">Opción 1 <option/>
+                        </select>
+                        `;
+
+                    }
+
+                $.ajax({
+                        url: "/fetch-point",
+                        dataType: "json"
+                        })
+                      .done(function(response) {
+                        $('.pointOption').html("");
+                        $.each(response.pointofinterest, function (key, item) {
+                            //console.log(response);
+                            $('.pointOption').append(`
+                            <option value="${item.id}">${item.name}<option/>`);
+                        })
+
+                    })
+
                     return insertar;
 
                 };
@@ -174,6 +200,11 @@ $(document).ready(function () {
     });
 
 
+    /**
+     * Esta función se encarga de traer desde la base de datos todas las opciones y de establecerselas
+     * a los diferentes elementos mediante una clase, es decir así es muy facil acceder a estos valores del
+     * si sabemos la clase que debemos ponerle.
+     */
 
     function getAll() {
 
@@ -199,6 +230,9 @@ $(document).ready(function () {
                 $('.longdescription').text(longdescription);
 
 
+
+
+
                 },error: function (response) {
                     console.log(response);
 
@@ -207,6 +241,13 @@ $(document).ready(function () {
             })
 
         }
+
+
+
+
+
+
+
 
 
 

@@ -56,6 +56,10 @@
                                     Imagen
                                     @endif
 
+                                    @if ($option['type'] == "point")
+                                    Punto de interés
+                                    @endif
+
                                 </th>
                                 <th>
                                     <a href="#" class="optionEdit" data-bs-toggle="modal" data-bs-target="#optionModalScrollable"><i class="far fa-edit"
