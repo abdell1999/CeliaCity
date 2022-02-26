@@ -82,7 +82,22 @@ $(document).ready(function () {
                     }
 
                     if(type === "point"){
-                        insertar = `<p> ${value} </p>`;
+                        insertar = `<p class="pointparra"></p>`;
+
+                        $.ajax({
+                            url: "/fetch-onepoint/"+value,
+                            dataType: "json"
+                            })
+                          .done(function(response) {
+                            $('.pointparra').html("");
+                                //console.log(response);
+                                $('.pointparra').text(response.pointofinterest.name);
+                                $('.pointparra').append(`<br><a class="underline" target="_blank" href="/pointofinterests/${value}">Ver punto</a>`);
+
+
+                        })
+
+
                     }
 
 
