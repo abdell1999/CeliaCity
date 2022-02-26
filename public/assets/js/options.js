@@ -80,6 +80,12 @@ $(document).ready(function () {
                     if(type === "image"){
                         insertar = `<img src="${value}" class="p-1 bg-white border rounded max-w-sm">`;
                     }
+
+                    if(type === "point"){
+                        insertar = `<p> ${value} </p>`;
+                    }
+
+
                     return insertar;
 
                 };
