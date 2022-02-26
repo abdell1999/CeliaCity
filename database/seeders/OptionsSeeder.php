@@ -84,5 +84,23 @@ class OptionsSeeder extends Seeder
             'type' => 'text'
         ]);
 
+        DB::table('options')->insert([
+            'name' => 'point1',
+            'value' => '1',
+            'type' => 'point'
+        ]);
+
+        DB::table('options')->insert([
+            'name' => 'point2',
+            'value' => '2',
+            'type' => 'point'
+        ]);
+
+        DB::table('options')->insert([
+            'name' => 'point3',
+            'value' => '3',
+            'type' => 'point'
+        ]);
+
     }
 }
