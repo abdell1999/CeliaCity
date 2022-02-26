@@ -54,9 +54,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center pb-25">
-                    <h3 class="title">Últimas actualizaciones</h3>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dianum eirmod tempor invidunt ut
-                        labore et dolore magna </p>
+                    <h3 class="title">Puntos destacados</h3>
+                    <p>Aquí tienes los tres puntos más destacados de <span class="townname">TOWNNAME</span>:</p>
                 </div> <!-- section title -->
             </div>
         </div> <!-- row -->
@@ -67,14 +66,8 @@
                         <img src="assets/img/Monumento.jpeg" alt="blog">
                     </div>
                     <div class="blog_content">
-                        <div class="blog_meta">
-                            <ul>
-                                <li>Posted by: <a href="javascript:void(0)">Michle Smith</a></li>
-                                <li>14 June 2023</li>
-                            </ul>
-                        </div>
-                        <h4 class="blog_title"><a href="javascript:void(0)">Tonumy eirmod tempor invidunt ut labore
-                                et dolore magn aaliq yam erat, sed diam voluptua.</a></h4>
+
+                        <h4 class="blog_title"><a href="javascript:void(0)">Punto1</a></h4>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                             invidunt ut labore et dolore magn aaliq yam erat, sed diam voluptua. At vero eos et
                             accusam et justo dolores ea rebum Stet clita kasd gubergren sea.</p>
@@ -87,8 +80,7 @@
                         <img src="assets/img/Hosteleria.jpeg" style="overflow:hidden; height: 100%;"  alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
-                        <h4 class="blog_title"><a href="javascript:void(0)">Tonumy eirmod temporinvi unt ut labore
-                                et dolore</a></h4>
+                        <h4 class="blog_title"><a href="javascript:void(0)">Punto2</a></h4>
                         <p>Lorem ipsum dolor sit ametcon setetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
                         <a href="javascript:void(0)" class="more">Read More</a>
                     </div>
@@ -99,8 +91,7 @@
                         <img src="assets/img/Piscina.jpg" style="overflow:hidden; height: 100%;" alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
-                        <h4 class="blog_title"><a href="javascript:void(0)">Tonumy eirmod temporinvi unt ut labore
-                                et dolore</a></h4>
+                        <h4 class="blog_title"><a href="javascript:void(0)">Punto3</a></h4>
                         <p>Lorem ipsum dolor sit ametcon setetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
                         <a href="javascript:void(0)" class="more">Read More</a>
                     </div>

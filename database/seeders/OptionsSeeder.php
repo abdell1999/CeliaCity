@@ -23,7 +23,7 @@ class OptionsSeeder extends Seeder
 
         DB::table('options')->insert([
             'name' => 'townname',
-            'value' => 'Town',
+            'value' => 'Purullena',
             'type' => 'text'
         ]);
 
@@ -66,13 +66,14 @@ class OptionsSeeder extends Seeder
 
         DB::table('options')->insert([
             'name' => 'shortdescription',
-            'value' => 'Descripción reducida',
+            'value' => '
+            Purullena es una localidad y un municipio español situado en la parte centro-oeste de la comarca de Guadix, en la provincia de Granada, comunidad autónoma de Andalucía.',
             'type' => 'text'
         ]);
 
         DB::table('options')->insert([
             'name' => 'longdescription',
-            'value' => 'Descripción extensa',
+            'value' => 'Purullena destaca por su gran cantidad de casas cueva y por ser un pueblo eminentemente agrícola y artesanal. Es famoso por su cerámica decorada con azul cobalto con la técnica del reflejo policromado, cuya tradición se remonta al siglo XVI y cuyas piezas se exponen y venden en tiendas cueva. “Una villa alucinante”, en palabras del historiador Carlos Asenjo Sedano, “que permanece ‘colgada’ de las arcillas de las cárcavas que se ofrecen en infinidad de pinguruchos desconcertantes” y en cuyas viviendas subterráneas dice la leyenda que se refugiaba el célebre bandolero José María ’El Tempranillo’.',
             'type' => 'text'
         ]);
 

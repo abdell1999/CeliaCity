@@ -19,6 +19,7 @@ class CreateOptionsTable extends Migration
             $table->text('value');
             $table->string('type'); //En un principio "text" o "image"
             $table->string('default')->nullable();
+            $table->string('name2')->nullable();
             $table->timestamps();
         });
     }

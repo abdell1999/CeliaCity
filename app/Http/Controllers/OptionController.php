@@ -9,7 +9,7 @@ class OptionController extends Controller
 {
 
     public function __construct() {
-        $this->middleware("auth")->except("show");
+        $this->middleware("auth")->except("getall");
     }
 
     /**TENER EN CUENTA QUE SE PUEDA MODIFICAR ESTO COMO MÍNIMO
