@@ -254,6 +254,9 @@ $(document).ready(function () {
                 townname = response.options[1].value;
                 shortdescription = response.options[8].value;
                 longdescription = response.options[9].value;
+                point1 = response.options[11].value;
+                point2 = response.options[12].value;
+                point3 = response.options[13].value;
 
                 $('.townname').html("");
                 $('.townname').text(townname);
@@ -263,6 +266,59 @@ $(document).ready(function () {
 
                 $('.longdescription').html("");
                 $('.longdescription').text(longdescription);
+
+
+
+
+                    console.log("Aquí empieza lo de editar puntos destacados");
+                    id_inicial = point1;
+                    limite = 235;
+
+                    for (let index = 1; index < 4; index++) {
+                        if(index != 1){
+                            limite = 85;
+                        }
+
+                        if(index == 2){
+                            id_inicial = point2;
+                        }
+
+                        if(index == 3){
+                            id_inicial = point3;
+                        }
+
+                        $('.pointname'+index).html("");
+                        $('.pointshorttext'+index).html("");
+                        //alert(point1);
+
+                        $.ajax({
+                            url: "/fetch-onepoint/"+id_inicial,
+                            dataType: "json"
+                            })
+                          .done(function(response) {
+                                //console.log(response);
+                                    console.log(response.pointofinterest.name);
+                                    //alert(response.pointofinterest.name);
+                                    $('.pointname'+index).text(response.pointofinterest.name);
+                                    $('.pointshorttext'+index).text(response.pointofinterest.text.substr(0,limite));
+                                    $('.pointlink'+index).attr("href", "/pointofinterests/"+response.pointofinterest.id);
+
+                        })
+
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

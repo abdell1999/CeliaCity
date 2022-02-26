@@ -67,10 +67,9 @@
                     </div>
                     <div class="blog_content">
 
-                        <h4 class="blog_title"><a href="javascript:void(0)">Punto1</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magn aaliq yam erat, sed diam voluptua. At vero eos et
-                            accusam et justo dolores ea rebum Stet clita kasd gubergren sea.</p>
+                        <h4 class="blog_title pointname1">POINT1</h4>
+                        <p class="pointshorttext1">POINT1 SHORT TEXT</p>
+                        <a href="#" class="more pointlink1">Leer más</a>
                     </div>
                 </div> <!-- single blog -->
             </div>
@@ -80,9 +79,9 @@
                         <img src="assets/img/Hosteleria.jpeg" style="overflow:hidden; height: 100%;"  alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
-                        <h4 class="blog_title"><a href="javascript:void(0)">Punto2</a></h4>
-                        <p>Lorem ipsum dolor sit ametcon setetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                        <a href="javascript:void(0)" class="more">Read More</a>
+                        <h4 class="blog_title pointname2">POINT2</h4>
+                        <p class="pointshorttext2">POINT2 SHORT TEXT</p>
+                        <a href="#" class="more pointlink2">Leer más</a>
                     </div>
                 </div> <!-- single blog -->
 
@@ -91,9 +90,9 @@
                         <img src="assets/img/Piscina.jpg" style="overflow:hidden; height: 100%;" alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
-                        <h4 class="blog_title"><a href="javascript:void(0)">Punto3</a></h4>
-                        <p>Lorem ipsum dolor sit ametcon setetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                        <a href="javascript:void(0)" class="more">Read More</a>
+                        <h4 class="blog_title pointname3">POINT3</h4>
+                        <p class="pointshorttext3">POINT2 SHORT TEXT</p>
+                        <a href="#" class="more pointlink3">Leer más</a>
                     </div>
                 </div> <!-- single blog -->
             </div>
