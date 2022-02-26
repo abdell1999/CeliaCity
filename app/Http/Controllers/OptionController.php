@@ -98,7 +98,7 @@ class OptionController extends Controller
         $option->value = "DEFAULT VALUE";
 
 
-        if($type == "text"){
+        if($type == "text" || $type == "point"){
             $option->value = $data['value'];
         }
 

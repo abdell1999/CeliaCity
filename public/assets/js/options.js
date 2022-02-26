@@ -47,7 +47,7 @@ $(document).ready(function () {
 
                         insertar = `
                         <label for="pointOption">Seleccione un punto de interés:</label>
-                        <select id="${id_input} name="pointOption" class="pointOption">
+                        <select id="${id_input}" name="pointOption" class="pointOption">
                         <option value="1">Opción 1 <option/>
                         </select>
                         `;
@@ -62,8 +62,7 @@ $(document).ready(function () {
                         $('.pointOption').html("");
                         $.each(response.pointofinterest, function (key, item) {
                             //console.log(response);
-                            $('.pointOption').append(`
-                            <option value="${item.id}">${item.name}<option/>`);
+                            $('.pointOption').append(`<option value="${item.id}">${item.id}. ${item.name}<option/>`);
                         })
 
                     })
@@ -91,8 +90,11 @@ $(document).ready(function () {
                           .done(function(response) {
                             $('.pointparra').html("");
                                 //console.log(response);
-                                $('.pointparra').text(response.pointofinterest.name);
-                                $('.pointparra').append(`<br><a class="underline" target="_blank" href="/pointofinterests/${value}">Ver punto</a>`);
+
+                                    $('.pointparra').text(response.pointofinterest.name);
+                                    $('.pointparra').append(`<br><a class="underline" target="_blank" href="/pointofinterests/${value}">Ver punto</a>`);
+
+
 
 
                         })
@@ -162,9 +164,13 @@ $(document).ready(function () {
         console.log("type: "+type);
 
 
-        if(type === "text"){
+        if(type === "text" || type === "point"){
             newValue = $('#'+idInput).val();
+            console.log(newValue);
+
         }
+
+
         if(type === "image"){
             console.log("image, el input es una imagen !!!");
             //alert(idInput);
@@ -185,6 +191,11 @@ $(document).ready(function () {
         }
 
         //Modificar con AJAX
+        console.log("AQUI -- ESTO ES LO QUE SE INSERTARA");
+        console.log("id en bd: "+id);
+        console.log("valor a insertar: "+newValue);
+        console.log("tipo a insertar: "+type);
+        console.log("FIN -- SUERTEEE!!!");
         $.ajax({
             url: "/options/"+id,
             //url: "{{ route(options.update) }}",
@@ -193,11 +204,7 @@ $(document).ready(function () {
                 id:id,
                 value:newValue,
                 type:type,
-                enctype: 'multipart/form-data',
                 _method: "PUT",
-                mimeType: 'multipart/form-data',
-                processData: false,
-                contentType: false,
             },
             success:function(response){
 
