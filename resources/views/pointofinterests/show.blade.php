@@ -62,7 +62,11 @@
                 <div class="about_wrapper">
                     <!-- about image -->
                     <div class="container">
+                        @if($resources->isEmpty())
+                        <div class="row justify-content-center">
+                        @else
                         <div class="row">
+                        @endif
                             <!--Cambiado col-lg-9 a xl-9 -->
                             <div class="col-xl-9 bg-light rounded shadow-lg">
                                 <div class="about_content m-3">
@@ -80,6 +84,7 @@
 
             <!--====== ABOUT PART ENDS ======-->
             <!-- Slider start -->
+            @if($resources->isNotEmpty())
             <div class="slider"">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
@@ -103,7 +108,7 @@
                 </div>
                 <!-- Imagen grande-->
             </div>
-            </div>
+            @endif
             <!-- Slider end -->
         </section>
         <!-- Map start Bootstrap -->
@@ -116,7 +121,11 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-        <div class="container mb-20">
+            @if($resources->isEmpty())
+            <div class="container mb-20" align="center">
+            @else
+            <div class="container mb-20">
+            @endif
             <h2 class="mt-20" style="color: #EEC41E;">Opiniones</h2>
             <div>
                 <div class="col-md-8">
@@ -181,6 +190,8 @@
 
         <!--FIN MODAL SLIDER-->
         <!-- Map end Bootstrap -->
+        @if ($resources)
+
         <script>
             var swiper = new Swiper(".mySwiper", {
                 loop: true,
@@ -201,7 +212,7 @@
                 },
             });
         </script>
-
+@endif
         <script type="text/javascript">
             //Cargando nuestro mapa
             var mapsipe = L.map('map').

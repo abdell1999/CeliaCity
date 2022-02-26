@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class OptionController extends Controller
 {
 
+    public function __construct() {
+        $this->middleware("auth")->except("show");
+    }
+
     /**TENER EN CUENTA QUE SE PUEDA MODIFICAR ESTO COMO MÍNIMO
      * Opciones para CeliaCity:
      * -Favicon

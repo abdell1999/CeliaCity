@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 class CommentController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware("auth")->except("show");
+    }
     /**
      * Display a listing of the resource.
      *

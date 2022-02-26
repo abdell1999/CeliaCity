@@ -342,14 +342,12 @@
                                 <div class="input-group mb-3 ">
                                     <input type="text" class="form-control" name="name" id="name"
                                         placeholder="Nombre" required>
-                                        <span class="pl-3">
-                                            <div class="valid-feedback">Válido!</div>
-                                            <div class="invalid-feedback">Nombre incorrecto</div>
-                                        </span>
+                                        <div class="invalid-feedback">Nombre incorrecto</div>
+                                        <span class="pl-3"></span>
                                     <input type="text" class="form-control" name="surname1" id="surname1"
                                         placeholder="Primer Apellido" required>
-                                        <span class="pl-3">
-                                        </span>
+                                        <div class="invalid-feedback">Introduce tus Apellidos</div>
+                                        <span class="pl-3"></span>
                                     <input type="text" class="form-control" name="surname2" id="surname2"
                                         placeholder="Segundo Apellido">
                                 </div>
@@ -357,7 +355,6 @@
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email" id="email"
                                         placeholder="Correo" required>
-                                        <div class="valid-feedback">Válido!</div>
                                         <div class="invalid-feedback">Correo incorrecto</div>
                                 </div>
                                 <div class="form-group">
@@ -370,9 +367,8 @@
 
                                     <input type="number" class="form-control" name="movilphone" id="movilphone"
                                         placeholder="Teléfono móvil" required>
+                                        <div class="invalid-feedback">El numero de telefono tiene 9 caracteres</div>
                                         <span class="pl-3">
-                                            <div class="valid-feedback">Válido!</div>
-                                        <div class="invalid-feedback">Error en el numero</div>
                                         </span>
                                     <input type="number" class="form-control" name="phone" id="phone"
                                         placeholder="Teléfono fijo">
@@ -381,7 +377,6 @@
                                 <div class="form-group">
                                     <input type="date" class="form-control" name="borndate" id="borndate"
                                             placeholder="Fecha de nacimiento" required>
-                                        <div class="valid-feedback">Válido!</div>
                                         <div class="invalid-feedback">Error Fecha</div>
                                     </div>
 
@@ -389,12 +384,12 @@
                                 <div class="input-group mb-3 ">
                                     <input type="password" class="form-control" name="password" id="password"
                                         placeholder="Contraseña" required>
+                                        <div class="invalid-feedback">Contraseña necesita 9 caracteres y una mayuscula</div>
                                         <span class="pl-3">
-                                            <div class="valid-feedback">Válido!</div>
-                                        <div class="invalid-feedback">Contraseña incorrecta o no coincide la contraseña</div>
                                         </span>
                                      <input type="password" class="form-control" name="password_confirmation" id="password-confirm"
                                         placeholder="Repite tu contraseña" required>
+                                        <div class="invalid-feedback">Contraseña incorrecta</div>
                                 </div>
                                 <div class="form-group">
                                 <input type="file" class="form-control" name="photo" id="photo"
