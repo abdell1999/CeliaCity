@@ -62,7 +62,14 @@ $(document).ready(function () {
                         $('.pointOption').html("");
                         $.each(response.pointofinterest, function (key, item) {
                             //console.log(response);
-                            $('.pointOption').append(`<option value="${item.id}">${item.id}. ${item.name}<option/>`);
+                            selected = "";
+
+                            if(item.id == value){
+                                selected = "selected";
+                            }
+
+
+                            $('.pointOption').append(`<option value="${item.id}" ${selected}>${item.id}. ${item.name}</option>`);
                         })
 
                     })
