@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="md:w-2/3">
                                     <input
-                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 latitude"
+                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 latitude latitude2"
                                         type="text" id="latitude" placeholder="Latitud" name="latitude" required>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="md:w-2/3">
                                     <input
-                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 longitude"
+                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 longitude longitude2"
                                         type="text" id="longitude" placeholder="longitud" name="longitude" required>
                                 </div>
                             </div>
@@ -229,6 +229,12 @@
                             </div>
                             <div class="md:flex md:items-center mb-6">
                                 <div class="md:w-1/3">
+                                    <button data-bs-target="#modalMapa" class="showMapbtn block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Mostrar Mapa</button>
+
+                                </div>
+                            </div>
+                            <div class="md:flex md:items-center mb-6">
+                                <div class="md:w-1/3">
                                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                                         for="latitude">
                                         Latitud
@@ -236,7 +242,7 @@
                                 </div>
                                 <div class="md:w-2/3">
                                     <input
-                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_latitude"
+                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_latitude latitude2"
                                         type="text" id="edit_latitude" placeholder="Latitud" name="edit_latitude" required>
                                 </div>
                             </div>
@@ -249,7 +255,7 @@
                                 </div>
                                 <div class="md:w-2/3">
                                     <input
-                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_longitude"
+                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_longitude longitude2"
                                         type="text" id="edit_longitude" placeholder="longitud" name="edit_longitude"
                                         required>
                                 </div>
