@@ -28,6 +28,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '100',
+            'id_categorie' => '1',
+        ]);
 
 
         DB::table('pointofinterests')->insert([
@@ -57,6 +62,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '101',
+            'id_categorie' => '1',
+        ]);
 
 
         DB::table('pointofinterests')->insert([
@@ -79,6 +89,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '102',
+            'id_categorie' => '1',
+        ]);
 
         DB::table('pointofinterests')->insert([
 
@@ -92,7 +107,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '103',
+            'id_categorie' => '1',
+        ]);
         DB::table('pointofinterests')->insert([
 
             'id' => '104',
@@ -108,7 +127,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '104',
+            'id_categorie' => '1',
+        ]);
         DB::table('pointofinterests')->insert([
 
             'id' => '105',
@@ -123,7 +146,10 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
-
+        DB::table('categories_pointofinterests')->insert([
+            'id_pointofinterest' => '105',
+            'id_categorie' => '1',
+        ]);
         DB::table('pointofinterests')->insert([
 
             'id' => '106',
@@ -138,7 +164,10 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
-
+        DB::table('categories_pointofinterests')->insert([
+            'id_pointofinterest' => '106',
+            'id_categorie' => '1',
+        ]);
         DB::table('pointofinterests')->insert([
 
             'id' => '107',
@@ -159,6 +188,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '107',
+            'id_categorie' => '1',
+        ]);
 
         DB::table('pointofinterests')->insert([
 
@@ -172,6 +206,13 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '108',
+            'id_categorie' => '1',
+        ]);
+
 
         DB::table('pointofinterests')->insert([
 
@@ -190,6 +231,11 @@ class MacaelSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
 
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '109',
+            'id_categorie' => '1',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -223,6 +269,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '110',
+            'id_categorie' => '1',
+        ]);
 
         DB::table('pointofinterests')->insert([
             'id' => '111',
@@ -239,6 +290,11 @@ class MacaelSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
 
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '111',
+            'id_categorie' => '1',
         ]);
 
 
@@ -261,7 +317,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '112',
+            'id_categorie' => '2',
+        ]);
         DB::table('pointofinterests')->insert([
             'id' => '113',
             'name' => 'Bar la Higuera.',
@@ -279,6 +339,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '113',
+            'id_categorie' => '2',
+        ]);
 
 
         DB::table('pointofinterests')->insert([
@@ -294,6 +359,11 @@ class MacaelSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
 
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '114',
+            'id_categorie' => '2',
         ]);
 
 
@@ -311,7 +381,11 @@ class MacaelSeeder extends Seeder
 
         ]);
 
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '115',
+            'id_categorie' => '2',
+        ]);
         DB::table('pointofinterests')->insert([
             'id' => '116',
             'name' => 'Cafetería Bulevar',
@@ -331,7 +405,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '116',
+            'id_categorie' => '2',
+        ]);
         DB::table('pointofinterests')->insert([
             'id' => '117',
             'name' => 'Heladería Martinez.',
@@ -343,7 +421,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '117',
+            'id_categorie' => '2',
+        ]);
 
         DB::table('pointofinterests')->insert([
             'id' => '118',
@@ -356,6 +438,11 @@ class MacaelSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
 
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '118',
+            'id_categorie' => '3',
         ]);
 
 
@@ -385,7 +472,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '119',
+            'id_categorie' => '2',
+        ]);
 
 
         DB::table('pointofinterests')->insert([
@@ -400,7 +491,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '120',
+            'id_categorie' => '2',
+        ]);
 
         DB::table('pointofinterests')->insert([
             'id' => '121',
@@ -419,7 +514,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '121',
+            'id_categorie' => '2',
+        ]);
 
 
         DB::table('pointofinterests')->insert([
@@ -435,7 +534,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '122',
+            'id_categorie' => '2',
+        ]);
 
         DB::table('pointofinterests')->insert([
             'id' => '123',
@@ -451,7 +554,11 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '123',
+            'id_categorie' => '2',
+        ]);
 
         DB::table('pointofinterests')->insert([
             'id' => '124',
@@ -469,6 +576,11 @@ class MacaelSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
 
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '124',
+            'id_categorie' => '2',
         ]);
         DB::table('pointofinterests')->insert([
             'id' => '125',
@@ -493,6 +605,12 @@ class MacaelSeeder extends Seeder
             'updated_at' => now()
 
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '125',
+            'id_categorie' => '2',
+        ]);
+
 
         DB::table('pointofinterests')->insert([
             'id' => '126',
@@ -508,8 +626,95 @@ class MacaelSeeder extends Seeder
 
         ]);
 
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '126',
+            'id_categorie' => '2',
+        ]);
 
+        DB::table('pointofinterests')->insert([
+            'id' => '127',
+            'name' => 'Autoreparaciones Juan Aranega Pastor.',
+            'latitude' => '37.33174104360633',
+            'longitude' => '-2.3004400000068577',
+            'movilephone' => '680782243',
+            'text' => 'Taller mecánico Aranega Pastor
+            abierto: 10:00 a 14:00
+                     17:00 a 20:00
+                     De lunes a viernes. Se atiende con cita previa.',
+            'created_at' => now(),
+            'updated_at' => now()
 
+        ]);
+
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '127',
+            'id_categorie' => '3',
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '128',
+            'name' => 'Salon de estetica peluquería Asmae.',
+            'latitude' => '37.33240849654674',
+            'longitude' => '-2.3046745768237082',
+            'movilephone' => '673857700',
+            'text' => 'Horario
+            lunes a viernes
+            9:30 a 14:00
+            16:00 a 18:00
+         ',
+            'created_at' => now(),
+            'updated_at' => now()
+
+        ]);
+
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '128',
+            'id_categorie' => '3',
+        ]);
+
+        DB::table('pointofinterests')->insert([
+            'id' => '129',
+            'name' => 'Admon. de Loterías Nº 2 Ntra. Sra. del Rosario.',
+            'latitude' => '37.33240849654674',
+            'longitude' => '-2.3046745768237082',
+            'movilephone' => '673857733',
+            'text' => 'Horario
+            lunes a viernes
+            9:00 a 14:00
+            17:00 a 20:00
+         ',
+            'created_at' => now(),
+            'updated_at' => now()
+
+        ]);
+
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '129',
+            'id_categorie' => '3',
+        ]);
+        DB::table('pointofinterests')->insert([
+            'id' => '130',
+            'name' => 'Estación de Servicio Ntra Sra. del Rosario.',
+            'latitude' => '37.33321999499964',
+            'longitude' => '-2.2988719006491176',
+            'movilephone' => '673857756',
+            'text' => 'Horario
+            lunes a viernes
+            7:00 a 00:00
+         ',
+            'created_at' => now(),
+            'updated_at' => now()
+
+        ]);
+
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '130',
+            'id_categorie' => '3',
+        ]);
     }
 }
