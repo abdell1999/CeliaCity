@@ -13,7 +13,7 @@ class PointofinterestController extends Controller
 
 
     public function __construct(){
-        $this->middleware("auth")->except("show");
+        $this->middleware("auth")->except("show","fetchonepoint");
     }
 
 
@@ -46,6 +46,16 @@ class PointofinterestController extends Controller
         $pointofinterests = Pointofinterest::all();
         return response()->json([
             'pointofinterest'=>$pointofinterests,
+        ]);
+    }
+
+
+
+    public function fetchonepoint($id)
+    {
+        $pointofinterest = Pointofinterest::find($id);
+        return response()->json([
+            'pointofinterest'=>$pointofinterest,
         ]);
     }
 
@@ -98,7 +108,9 @@ class PointofinterestController extends Controller
         $data['pointofinterests'] = Pointofinterest::find($id);
         $data['users'] = User::all();
         $data['comments'] = $data['pointofinterests']->comments;
-        $data['resources'] = Pointofinterest::find($id)->resources;
+        if(Pointofinterest::find($id)->resources){
+            $data['resources'] = Pointofinterest::find($id)->resources;
+        }
         //dd($data['resources']);
         //dd($data['comments']);
 

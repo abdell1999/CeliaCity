@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 class CommentController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware("auth")->except("show");
+    }
     /**
      * Display a listing of the resource.
      *
@@ -211,6 +215,26 @@ class CommentController extends Controller
         ]);
     }
 
+    public function deletecomment($id)
+    {
+        $comment = Comment::find($id);
 
+        if($comment)
+        {
+            $comment->delete();
+            return response()->json([
+                'status'=>200,
+                'message'=>'Punto de interes Borrado'
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No encuentra Punto de interes'
+            ]);
+        }
+        return redirect()->route('comments.index');
+    }
 
 }

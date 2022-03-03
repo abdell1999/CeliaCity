@@ -27,14 +27,9 @@ $(document).ready(function () {
                         if (user.id == comment.id_user) {
                             photo = user.photo;
                             name = user.name;
-
-
-
                         }
 
                     })
-                    //comentarios.innerHTML +="<div id='"+comment.id+"'> <div class='flex justify-start items-center mb-2 ml-20'> <div class='w-1/2 bg-white p-2 pt-4 rounded shadow-2xl'> <div class='flex ml-3'> <div class='mr-3'> <img src='"+photo+"' alt='' class='w-12 h-12 rounded-full mr-4'> </div> <div> <h1 class='font-semibold'> "+name+" </h1> </div> </div> <div class='mt-5 p-3 w-full'> <p>"+comment.text+"</p> </div> <div class='flex justify-end'> <button class='mr-2'> <i class='far fa-edit' style=\'color: black;\'></i> Editar </button> <button> <i class='far fa-trash-alt' style=\'color: black;\'></i> Eliminar </button> </div> </div> </div> </div>";
-                    //comentarios.innerHTML +="<div id = '"+comment.id+"'> <div class='d-flex flex-row comment-row'> <div class='p-2'><span class='round'><img src='"+photo+"' alt='user' width='50'></span></div> <div class='comment-text w-100'> <h5>"+name+"</h5> <div class='comment-footer'> <span class='date'>April 14, 2019</span> <span class='label label-info'>Pending</span> <span class='action-icons'> <a href='#' data-abc='true'><i class='fa fa-pencil'></i></a> <a href='#' data-abc='true'><i class='fa fa-rotate-right'></i></a> <a href='#' data-abc='true'><i class='fa fa-heart'></i></a> </span> </div> <p class='m-b-5 m-t-10'>"+comment.text+"</p> </div> </div> </div>";
                     comentarios.innerHTML += "<div class='col-md-8'> <div class='media g-mb-30 media-comment'>\
                     <img class='d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15' src='" + photo + "' alt='ImageDescription'>\
                     <div class='media-body u-shadow-v18 g-bg-secondary g-pa-30 shadow-lg rounded'>\
@@ -43,7 +38,8 @@ $(document).ready(function () {
                     </div>\
                     <p>" + comment.text + "</p>\
                     <ul class='list-inline d-sm-flex my-0'> </ul>\
-                    <button data-bs-toggle='modal' data-bs-target='#editComment' class='' values=" + comment.id + "><i class='far fa-edit'></i>\
+                    <button data-toggle='modal' data-target='#editComment' class='editbtn' value=" + comment.id + "><i class='far fa-edit'></i>\
+                    <button data-toggle='modal' data-target='#deleteComment' class='deletebtn' value=" + comment.id + "><i class='far fa-trash-alt'></i>\
                     </button>\
                     </div>\
                     </div>";
@@ -130,7 +126,96 @@ $(document).ready(function () {
 
     }
 
+    $(document).on('click', '.deletebtn', function () {
+        var comment_id = $(this).val();
+        $('#DeleteComment').modal('show');
+        $('#deleteing_id').val(comment_id);
+    });
 
+    $(document).on('click', '.delete_comment', function (e) {
+        e.preventDefault();
+        $(this).text('Borrando..');
+        var id = $('#deleteing_id').val();
+        $.ajax({
+            type: "DELETE",
+            url: "/delete-comments/" + id,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response.status == 404) {
+                    $('.delete_comment').text('Borrado Correctamente');
+                } else {
+                    $('.delete_comment').text('Borrado Correctamente');
+                    $('#deleteComment').modal('hide');
+                    fetchcomment(id_pointofinterest);
+                }
+
+            },
+            error: function (response) {
+                console.log(response);
+            }
+        });
+    });
+
+    $(document).on('click', '.editbtn', function (e) {
+        e.preventDefault();
+        var comment_id = $(this).val();
+        console.log(comment_id);
+
+        $('#editModal').modal('show');
+
+        $.ajax({
+            type: "GET",
+            url: "/edit-comment/" + comment_id,
+            success: function (response) {
+                console.log(response);
+                if (response.status == 404) {
+                    $('#editModal').modal('hide');
+                } else {
+                    $('.edit_text').val(response.comment.text);
+                    $('#comment_id').val(comment_id);
+                }
+            }
+        });
+        $('.editformComment').find('input').val('');
+    });
+
+    //Update de Comentario
+
+    $(document).on('click', '.update_comment', function (e) {
+        e.preventDefault();
+
+        $(this).text('Actualizando..');
+        var id = $('#comment_id').val();
+        //alert(id);
+
+        var data = {
+            'text': $('.edit_text').val(),
+        }
+
+        $.ajax({
+            type: "PUT",
+            url: "/update-comment/" + id,
+            data: data,
+            dataType: "json",
+            success: function (response) {
+                //console.log(response);
+                if (response.status == 400) {
+                    $.each(response.errors, function (key, err_value) {
+                        $('#update_msgList').append('<li>' + err_value +
+                            '</li>');
+                    });
+                    $('.update_comment').text('Actualizar');
+                } else {
+                    $('#editModal').find('input').val('');
+                    $('.update_comment').text('Update');
+                    $('#editComment').modal('hide');
+                    fetchcomment(id_pointofinterest);
+                }
+
+            }
+        });
+    });
 
 
 });

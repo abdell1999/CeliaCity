@@ -4,6 +4,7 @@ $(document).ready(function () {
 
 
     id_option = 999;
+    getAll();
 
 
     $(document).on('click', '.optionEdit', function () {
@@ -41,6 +42,38 @@ $(document).ready(function () {
                         <input id="${id_input}"
                         name="imageOption" type="file">`;
                     }
+
+                    if(type === "point"){
+
+                        insertar = `
+                        <label for="pointOption">Seleccione un punto de interés:</label>
+                        <select id="${id_input}" name="pointOption" class="pointOption">
+                        <option value="1">Opción 1 <option/>
+                        </select>
+                        `;
+
+                    }
+
+                $.ajax({
+                        url: "/fetch-point",
+                        dataType: "json"
+                        })
+                      .done(function(response) {
+                        $('.pointOption').html("");
+                        $.each(response.pointofinterest, function (key, item) {
+                            //console.log(response);
+                            selected = "";
+
+                            if(item.id == value){
+                                selected = "selected";
+                            }
+
+
+                            $('.pointOption').append(`<option value="${item.id}" ${selected}>${item.id}. ${item.name}</option>`);
+                        })
+
+                    })
+
                     return insertar;
 
                 };
@@ -53,6 +86,30 @@ $(document).ready(function () {
                     if(type === "image"){
                         insertar = `<img src="${value}" class="p-1 bg-white border rounded max-w-sm">`;
                     }
+
+                    if(type === "point"){
+                        insertar = `<p class="pointparra"></p>`;
+
+                        $.ajax({
+                            url: "/fetch-onepoint/"+value,
+                            dataType: "json"
+                            })
+                          .done(function(response) {
+                            $('.pointparra').html("");
+                                //console.log(response);
+
+                                    $('.pointparra').text(response.pointofinterest.name);
+                                    $('.pointparra').append(`<br><a class="underline" target="_blank" href="/pointofinterests/${value}">Ver punto</a>`);
+
+
+
+
+                        })
+
+
+                    }
+
+
                     return insertar;
 
                 };
@@ -114,17 +171,38 @@ $(document).ready(function () {
         console.log("type: "+type);
 
 
-        if(type === "text"){
+        if(type === "text" || type === "point"){
             newValue = $('#'+idInput).val();
+            console.log(newValue);
+
         }
+
+
         if(type === "image"){
-            console.log("image");
+            console.log("image, el input es una imagen !!!");
+            //alert(idInput);
             console.log($('#'+idInput)[0].files[0]);
+            //alert($('#'+idInput)[0].files[0]);
             //filename = $('#image_file')[0].files[0]
-            newValue = $('#'+idInput)[0].files[0];
+            //newValue = $('#'+idInput).prop("files")[0];
+
+            newValue = new FormData();
+            //newValue.append('value', $('#'+idInput).prop("files")[0]);
+
+
+            var files = $('#'+idInput)[0].files[0];
+            console.log("FILES: "+files[0]);
+            //newValue = files;
+            newValue.append('value', files[0]);
+            console.log("newVALUEEEEEE "+newValue);
         }
 
         //Modificar con AJAX
+        console.log("AQUI -- ESTO ES LO QUE SE INSERTARA");
+        console.log("id en bd: "+id);
+        console.log("valor a insertar: "+newValue);
+        console.log("tipo a insertar: "+type);
+        console.log("FIN -- SUERTEEE!!!");
         $.ajax({
             url: "/options/"+id,
             //url: "{{ route(options.update) }}",
@@ -133,7 +211,7 @@ $(document).ready(function () {
                 id:id,
                 value:newValue,
                 type:type,
-                _method: "PUT"
+                _method: "PUT",
             },
             success:function(response){
 
@@ -155,5 +233,113 @@ $(document).ready(function () {
         })
 
     });
+
+
+    /**
+     * Esta función se encarga de traer desde la base de datos todas las opciones y de establecerselas
+     * a los diferentes elementos mediante una clase, es decir así es muy facil acceder a estos valores del
+     * si sabemos la clase que debemos ponerle.
+     */
+
+    function getAll() {
+
+        $.ajax({
+            type: "GET",
+            url: "/options/get-all",
+            success: function (response) {
+                //alert("MIRA AQUÏ");
+                console.log(response);
+                console.log(response.options[1].value); //accedo al value de townname
+
+                townname = response.options[1].value;
+                shortdescription = response.options[8].value;
+                longdescription = response.options[9].value;
+                point1 = response.options[11].value;
+                point2 = response.options[12].value;
+                point3 = response.options[13].value;
+
+                $('.townname').html("");
+                $('.townname').text(townname);
+
+                $('.shortdescription').html("");
+                $('.shortdescription').text(shortdescription);
+
+                $('.longdescription').html("");
+                $('.longdescription').text(longdescription);
+
+
+
+
+                    console.log("Aquí empieza lo de editar puntos destacados");
+                    id_inicial = point1;
+                    limite = 235;
+
+                    for (let index = 1; index < 4; index++) {
+                        if(index != 1){
+                            limite = 85;
+                        }
+
+                        if(index == 2){
+                            id_inicial = point2;
+                        }
+
+                        if(index == 3){
+                            id_inicial = point3;
+                        }
+
+                        $('.pointname'+index).html("");
+                        $('.pointshorttext'+index).html("");
+                        //alert(point1);
+
+                        $.ajax({
+                            url: "/fetch-onepoint/"+id_inicial,
+                            dataType: "json"
+                            })
+                          .done(function(response) {
+                                //console.log(response);
+                                    console.log(response.pointofinterest.name);
+                                    //alert(response.pointofinterest.name);
+                                    $('.pointname'+index).text(response.pointofinterest.name);
+                                    $('.pointshorttext'+index).text(response.pointofinterest.text.substr(0,limite));
+                                    $('.pointlink'+index).attr("href", "/pointofinterests/"+response.pointofinterest.id);
+
+                        })
+
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                },error: function (response) {
+                    console.log(response);
+
+            }
+
+            })
+
+        }
+
+
+
+
+
+
+
+
+
 
 });

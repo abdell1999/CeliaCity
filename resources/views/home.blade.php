@@ -1,4 +1,6 @@
 @extends('layouts.frontlayout')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/options.js"></script>
 
 @section('content')
 <div id="home" class="header_slider">
@@ -9,8 +11,8 @@
                 <div class="col-lg-6 col-md-8">
                     <div class="slider_content">
                         <h2 class="slider_title wow fadeInLeftBig" data-wow-duration="1.3s"
-                            data-wow-delay="0.2s">Bienvenido a<span> Purullena</span></h2>
-                        <p class="wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">Purullena es una localidad y un municipio español situado en la parte centro-oeste de la comarca de Guadix, en la provincia de Granada, comunidad autónoma de Andalucía.</p>
+                            data-wow-delay="0.2s">Bienvenido a <span class="townname">TOWNNAME</span></h2>
+                        <p class="wow fadeInLeftBig shortdescription" data-wow-duration="1.3s" data-wow-delay="0.5s">SHORTDESCRIPTION</p>
                         <a href="javascript:void(0)" class="main-btn wow fadeInLeftBig" data-wow-duration="1.3s"
                             data-wow-delay="0.8s">Guía Turística</a>
                     </div> <!-- slider content -->
@@ -31,8 +33,8 @@
                 <div class="col-lg-6">
                     <div class="about_content">
                         <div class="section_title">
-                            <h3 class="title">Más información <br> sobre <span>Purullena</span></h3>
-                            <p>Purullena destaca por su gran cantidad de casas cueva y por ser un pueblo eminentemente agrícola y artesanal. Es famoso por su cerámica decorada con azul cobalto con la técnica del reflejo policromado, cuya tradición se remonta al siglo XVI y cuyas piezas se exponen y venden en tiendas cueva. “Una villa alucinante”, en palabras del historiador Carlos Asenjo Sedano, “que permanece ‘colgada’ de las arcillas de las cárcavas que se ofrecen en infinidad de pinguruchos desconcertantes” y en cuyas viviendas subterráneas dice la leyenda que se refugiaba el célebre bandolero José María ’El Tempranillo’.</p>
+                            <h3 class="title">Más información <br> sobre <span class="townname">TOWNNAME</span></h3>
+                            <p class="longdescription">LONGDESCRIPTION</p>
                         </div> <!-- section title -->
                         <a href="javascript:void(0)" class="main-btn">Guía Turística</a>
                     </div> <!-- about content -->
@@ -52,9 +54,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center pb-25">
-                    <h3 class="title">Últimas actualizaciones</h3>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dianum eirmod tempor invidunt ut
-                        labore et dolore magna </p>
+                    <h3 class="title">Puntos destacados</h3>
+                    <p>Aquí tienes los tres puntos más destacados de <span class="townname">TOWNNAME</span>:</p>
                 </div> <!-- section title -->
             </div>
         </div> <!-- row -->
@@ -65,17 +66,10 @@
                         <img src="assets/img/Monumento.jpeg" alt="blog">
                     </div>
                     <div class="blog_content">
-                        <div class="blog_meta">
-                            <ul>
-                                <li>Posted by: <a href="javascript:void(0)">Michle Smith</a></li>
-                                <li>14 June 2023</li>
-                            </ul>
-                        </div>
-                        <h4 class="blog_title"><a href="javascript:void(0)">Tonumy eirmod tempor invidunt ut labore
-                                et dolore magn aaliq yam erat, sed diam voluptua.</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magn aaliq yam erat, sed diam voluptua. At vero eos et
-                            accusam et justo dolores ea rebum Stet clita kasd gubergren sea.</p>
+
+                        <h4 class="blog_title pointname1">POINT1</h4>
+                        <p class="pointshorttext1">POINT1 SHORT TEXT</p>
+                        <a href="#" class="more pointlink1">Leer más</a>
                     </div>
                 </div> <!-- single blog -->
             </div>
@@ -85,10 +79,9 @@
                         <img src="assets/img/Hosteleria.jpeg" style="overflow:hidden; height: 100%;"  alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
-                        <h4 class="blog_title"><a href="javascript:void(0)">Tonumy eirmod temporinvi unt ut labore
-                                et dolore</a></h4>
-                        <p>Lorem ipsum dolor sit ametcon setetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                        <a href="javascript:void(0)" class="more">Read More</a>
+                        <h4 class="blog_title pointname2">POINT2</h4>
+                        <p class="pointshorttext2">POINT2 SHORT TEXT</p>
+                        <a href="#" class="more pointlink2">Leer más</a>
                     </div>
                 </div> <!-- single blog -->
 
@@ -97,10 +90,9 @@
                         <img src="assets/img/Piscina.jpg" style="overflow:hidden; height: 100%;" alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
-                        <h4 class="blog_title"><a href="javascript:void(0)">Tonumy eirmod temporinvi unt ut labore
-                                et dolore</a></h4>
-                        <p>Lorem ipsum dolor sit ametcon setetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                        <a href="javascript:void(0)" class="more">Read More</a>
+                        <h4 class="blog_title pointname3">POINT3</h4>
+                        <p class="pointshorttext3">POINT2 SHORT TEXT</p>
+                        <a href="#" class="more pointlink3">Leer más</a>
                     </div>
                 </div> <!-- single blog -->
             </div>

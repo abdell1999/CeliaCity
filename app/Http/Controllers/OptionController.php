@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class OptionController extends Controller
 {
 
+    public function __construct() {
+        $this->middleware("auth")->except("getall");
+    }
+
     /**TENER EN CUENTA QUE SE PUEDA MODIFICAR ESTO COMO MÍNIMO
      * Opciones para CeliaCity:
      * -Favicon
@@ -38,6 +42,14 @@ class OptionController extends Controller
     {
         $data['options'] = Option::all();
         return view("options.index", $data);
+    }
+
+    public function getall()
+    {
+        $options = Option::all();
+        return response()->json([
+            'options'=>$options,
+        ]);
     }
 
     public function getoption($id)
@@ -86,7 +98,7 @@ class OptionController extends Controller
         $option->value = "DEFAULT VALUE";
 
 
-        if($type == "text"){
+        if($type == "text" || $type == "point"){
             $option->value = $data['value'];
         }
 

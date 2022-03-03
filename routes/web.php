@@ -40,6 +40,8 @@ Route::resource('/resources','ResourceController');
 Route::get('fetch-user', [App\Http\Controllers\UserController::class, 'fetchuser']);
 Route::post('comentar', [App\Http\Controllers\CommentController::class, 'comentar'])->name('comentar');
 Route::get('/fetch-comment/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'fetchcomment']);
+Route::get('/update-comments/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'updatecomment']);
+Route::delete('/delete-comments/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'deletecomment']);
 Route::get('guide', [App\Http\Controllers\GuideController::class, 'guide']);
 Route::get('guide/{id}', [App\Http\Controllers\GuideController::class, 'showpoint']);
 Route::get('myprofile/{id}', [App\Http\Controllers\UserController::class, 'myprofile']);
@@ -51,3 +53,6 @@ Route::get('/team', function(){
     return view("team.show" );
 });
 Route::put('/options/{id}', [App\Http\Controllers\OptionController::class, 'update'])->name('options.update');
+Route::get('/options/get-all/', [App\Http\Controllers\OptionController::class, 'getall']);
+
+Route::get('fetch-onepoint/{id}', [App\Http\Controllers\PointofinterestController::class, 'fetchonepoint']);
