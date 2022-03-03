@@ -59,7 +59,14 @@ class CategorieController extends Controller {
 
         $pointofinterest = Categorie::find($id)->pointofinterests;
 
-
+        $data['recursospoints'] = DB::table('categories')
+        ->select('pointofinterests.id','pointofinterests.name', 'resources.route', 'resources.title')
+        ->join('categories_pointofinterests','categories.id','=','categories_pointofinterests.id_categorie')
+        ->leftJoin('pointofinterests','categories_pointofinterests.id_pointofinterest','=','pointofinterests.id')
+        ->leftJoin('pointofinterests_resources','pointofinterests.id','=','pointofinterests_resources.id_pointofinterest')
+        ->leftJoin('resources','pointofinterests_resources.id_resource','=','resources.id')
+        ->where('categories.id','=',$id)
+        ->get();
 
 
         //Seleccionamos los puntos de interes que pertenecen a la categoría que nos interesa recibida mediante la url
@@ -72,7 +79,7 @@ class CategorieController extends Controller {
             ->get();
 
 
-            //dd($selected);
+            dd($data);
 
 
 

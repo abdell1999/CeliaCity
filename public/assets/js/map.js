@@ -45,8 +45,8 @@ $(document).on('click', '.showMapbtn', function () {
 
 
 function cargarDatosLatLng(latitud, longitud){
-    $("#latitude").val(latitud);
-    $("#longitude").val(longitud);
+    $(".latitude2").val(latitud);
+    $(".longitude2").val(longitud);
 }
 
 });

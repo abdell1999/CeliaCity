@@ -16,19 +16,22 @@ class CategorieSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'monumentos',
+            'id' => '1',
+            'name' => 'Monumentos',
             'created_at' => now(),
             'updated_at' => now()
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'hostelería',
+            'id' => '2',
+            'name' => 'Hostelería',
             'created_at' => now(),
             'updated_at' => now()
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'comercios',
+            'id' => '3',
+            'name' => 'Servicios',
             'created_at' => now(),
             'updated_at' => now()
         ]);

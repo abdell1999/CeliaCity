@@ -170,14 +170,22 @@
 
 
         <!-- MODAL SLIDER-->
+<<<<<<< HEAD
         <div class="modal fade" id="zoomImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
         <div class="slider zoom" style="position:fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff;" class="swiper mySwiper2">
                 <a href='#' class="btn_ok closeModal"><i class="fas fa-plus"></i>Cerrar</a>
+=======
+        <div class="modal fade" id="zoomImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"" >
+        <div class="slider">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; top: 90%; left: 90%; transform: translate(-25%, -50%);" class="swiper mySwiper2">
+>>>>>>> 9f4dfafb3e10087b93f7630e10479abcfc761ad1
                     <div class="swiper-wrapper">
                         @foreach ($resources as $resource)
                             <div class="swiper-slide shadow-lg rounded">
+
                                 <img src="{{ url($resource->route) }}" style="width: 100%; height: 100%;">
+
                             </div>
                         @endforeach
                     </div>

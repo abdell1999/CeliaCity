@@ -30,7 +30,7 @@
                                     <a class="page-scroll" href="/categories/2">Hostelería</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="/categories/3">Comercios</a>
+                                    <a class="page-scroll" href="/categories/3">Servicios</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll" href="/team">Créditos</a>
