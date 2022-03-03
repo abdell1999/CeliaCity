@@ -70,7 +70,7 @@
         <!-- PRUEBAS -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        
+
         <div class="container mb-20">
             <h2 class="mt-20" style="color: #EEC41E;">Opiniones</h2>
             <div>
@@ -116,13 +116,15 @@
 
 
         <!-- MODAL SLIDER-->
-        <div class="modal fade" id="zoomImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal fade" id="zoomImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"" >
         <div class="slider">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; top: 90%; left: 90%; transform: translate(-25%, -50%);" class="swiper mySwiper2">
                     <div class="swiper-wrapper">
                         @foreach ($resources as $resource)
                             <div class="swiper-slide shadow-lg rounded">
+
                                 <img src="{{ url($resource->route) }}" style="width: 100%; height: 100%;">
+
                             </div>
                         @endforeach
                     </div>
@@ -136,6 +138,8 @@
 
         <!--FIN MODAL SLIDER-->
         <!-- Map end Bootstrap -->
+
+
         <script>
             var swiper = new Swiper(".mySwiper", {
                 loop: true,

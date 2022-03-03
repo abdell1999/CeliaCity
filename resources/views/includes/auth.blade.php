@@ -391,16 +391,16 @@
                                 <input type="file" class="form-control" name="photo" id="photo"
                                 placeholder="confirmContraseña">
                                 </div>
+                                <script>
+                                    $("#registro").click(function(){
+                                        if($("#formulario").valid() == false){
+                                            return;
+                                        }
 
+                                    });
+                                    </script>
                                 <button type="submit" class="btn btn-info btn-block btn-round" id="registro" onclick="cerrarRegistro()"  value="Registro">
-                                    <script>
-                                        $("#registro").click(function(){
-                                            if($("#formulario").valid() == false){
-                                                return;
-                                            }
 
-                                        });
-                                        </script>
                                     Registro
                                 </button>
                             </form>
@@ -418,7 +418,7 @@
     </article>
 </main>
 
-<script type="text/javascript">
+<script>
 $("#formulario").validate()({
     rules: {
 
