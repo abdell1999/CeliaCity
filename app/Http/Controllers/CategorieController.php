@@ -79,7 +79,7 @@ class CategorieController extends Controller {
             ->get();
 
 
-            dd($data);
+            //dd($data);
 
 
 
