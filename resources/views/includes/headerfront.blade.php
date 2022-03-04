@@ -18,10 +18,10 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="/home">Home</a>
+                                    <a class="page-scroll" href="/home">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="/guide">Guia</a>
+                                    <a class="page-scroll" href="/guide">Guía</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll" href="/categories/1">Monumentos</a>
@@ -37,7 +37,7 @@
                                 </li>
                                 @if (Auth::guest())
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="#" data-toggle="modal" data-target="#registerModal">Registro</a>
+                                    <a class="page-scroll" href="#" data-toggle="modal" data-target="#registerModal">Registrarse</a>
                                 </li>
                                 @else
                                 <li class="nav-item">
@@ -46,7 +46,7 @@
                                 @endif
                                 @if (Auth::guest())
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                                        <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Iniciar Sesión</a>
                                     </li>
                                     @else
 

@@ -104,7 +104,7 @@
 
 <!--====== FOOTER PART START =====-->
 <section id="footer" class="footer_area">
-    <div class="footer_widget pb-50">
+    <div class="footer_widget pb-20">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 order-md-1 order-lg-1">
@@ -137,20 +137,23 @@
                             </ul>
                         </div> <!-- footer link -->
                         <div class="footer_link mt-45">
-                            <h4 class="footer_title">Creditos</h4>
+                        <a class="page-scroll" href="/team">Créditos</a>
+                            <!--
+                            <h4 class="footer_title">Créditos</h4>
                             <ul class="link text-light">
                                 <li>Abdellah Bukad-duh Rappani</li>
                                 <li>Cristian Rosca</li>
                                 <li>Francisco Javier Juárez Cruz</li>
                                 <li>José David Martínez Ruiz </li>
                             </ul>
+                            -->
                         </div> <!-- footer link -->
                     </div> <!-- footer link wrapper -->
                 </div>
 
             </div> <!-- row -->
         </div> <!-- container -->
-        <p class="text-center mt-90">Desarrollado por el equipo de CeliaCity</a></p>
+        <p class="text-center mt-30">Desarrollado por el equipo de CeliaCity</a></p>
     </div> <!-- footer widget -->
 <!-- FOOTER END -->
 </section>

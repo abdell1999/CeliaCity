@@ -154,7 +154,7 @@
                                         Enviar
                                     </a>
                                     @else
-                                    <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                                    <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Iniciar Sesión</a>
                                     @endif
                                 </li>
                             </ul>

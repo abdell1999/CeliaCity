@@ -7,14 +7,14 @@
 @endsection
 
 @section('content')
-<!--Cambiado para que se vea los colores naranjas Mira si os gusta quitando lugares para visitar y dejando en medio guia turistica purullena-->
+<!--Cambiado para que se vea los colores naranjas Mira si os gusta quitando lugares para visitar y dejando en medio guía turística purullena-->
 <style>
     h2, h3, li {
         color: #eec41e;
     }
 </style>
 <div class="container mt-100 pt-20">
-    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600 text-center">Guia Turistica Purullena</h2>
+    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600 text-center">Guía Turística Purullena</h2>
     <div class="row justify-content-center mt-20 pb-20">
       <div class="col-md-6">
         <div class="rounded-lg bg-light shadow-lg shadow-2xl">
