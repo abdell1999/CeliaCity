@@ -18,8 +18,8 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '1',
             'name' => 'Cuesta del Negro',
-            'latitude' => '37.336014',
-            'longitude' => '-3.235191',
+            'latitude' => '',
+            'longitude' => '',
             'movilephone' => '',
             'text' => 'La Cuesta del Negro se sitúa entre cerros y laderas que se intercalan con barrancos y quebrados los cuales 
             conforman una defensa natural estratégica. Además está próximo a recursos esenciales como agua, 
