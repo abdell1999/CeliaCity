@@ -2,6 +2,7 @@
 
 @section('scripts')
     <script src="/assets/js/comentarios.js"></script>
+    <script src="/assets/js/pointofinterests.js"></script>
 @endsection
 
 
@@ -85,7 +86,7 @@
             <!--====== ABOUT PART ENDS ======-->
             <!-- Slider start -->
             @if($resources->isNotEmpty())
-            <div class="slider"">
+            <div class="slider">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
                         @foreach ($resources as $resource)
@@ -173,7 +174,7 @@
         <div class="modal fade" id="zoomImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
         <div class="slider zoom" style="position:fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff;" class="swiper mySwiper2">
-                <a href='#' class="btn_ok closeModal"><i class="fas fa-plus"></i>Cerrar</a>
+                <button class="btn-closeModal border-0 bg-transparent d-flex flex-row-reverse w-100" id="btn-closeModal"><i class="far fa-times-circle text-warning btn-lg m-0 p-0" id="eeee"></i></button>
                     <div class="swiper-wrapper">
                         @foreach ($resources as $resource)
                             <div class="swiper-slide shadow-lg rounded">
@@ -239,6 +240,14 @@
                     .openOn(mapsipe);
             }
             mapsipe.on('click', onMapClick);
+        </script>
+
+        <script>
+            document.getElementById("btn-closeModal").addEventListener('click', () => {
+                $('#zoomImage').hide();
+                $('.modal-backdrop').hide();
+            })
+
         </script>
 
     </body>
