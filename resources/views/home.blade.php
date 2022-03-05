@@ -63,7 +63,7 @@
             <div class="col-lg-6">
                 <div class="single_blog mt-30">
                     <div class="blog_image">
-                        <img src="assets/img/Monumento.jpeg" alt="blog">
+                        <img src="assets/img/CuestaNegro.png" alt="blog">
                     </div>
                     <div class="blog_content">
 
@@ -76,7 +76,7 @@
             <div class="col-lg-6">
                 <div class="single_blog d-sm-flex mt-30">
                     <div class="blog_image" style="height:200px; width:200px;">
-                        <img src="assets/img/Hosteleria.jpeg" style="overflow:hidden; height: 100%;"  alt="blog">
+                        <img src="assets/img/Iglesia.jpg" style="overflow:hidden; height: 100%;"  alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
                         <h4 class="blog_title pointname2">POINT2</h4>
@@ -87,7 +87,7 @@
 
                 <div class="single_blog d-sm-flex mt-30">
                     <div class="blog_image" style="height:200px; width:200px;">
-                        <img src="assets/img/Piscina.jpg" style="overflow:hidden; height: 100%;" alt="blog">
+                        <img src="assets/img/CuevaInmaculada.jpg" style="overflow:hidden; height: 100%;" alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
                         <h4 class="blog_title pointname3">POINT3</h4>
@@ -113,16 +113,17 @@
                         <p>Lorem ipsum dolor sifsddt amet, conse tetur sadipscing elitr, sed diam onumy eirmod
                             tempor invidunt ut labore et dolore magna aliquya.</p>
                         <ul class="social">
-                            <li><a class="social_1" href="javascript:void(0)"><i
-                                        class="lni lni-facebook-original"></i></a></li>
-                            <li><a class="social_2" href="javascript:void(0)"><i
-                                        class="lni lni-twitter-original"></i></a></li>
-                            <li><a class="social_3" href="javascript:void(0)"><i
-                                        class="lni lni-instagram-original"></i></a></li>
-                            <li><a class="social_4" href="javascript:void(0)"><i
-                                        class="lni lni-linkedin-original"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/abdellah-bukad-duh-rappani/" class="social_1" href="javascript:void(0)"><i
+                                        class="fab fa-linkedin fa-lg"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/cristian-rosca-b444251b8/" class="social_2" href="javascript:void(0)"><i
+                                        class="fab fa-linkedin fa-lg"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/francisco-javier-j-309a7611a/" class="social_3" href="javascript:void(0)"><i
+                                        class="fab fa-linkedin fa-lg"></i></a></li>
+                            <li><a  href="https://www.linkedin.com/in/jos%C3%A9-david-mart%C3%ADnez-ruiz-574430119/" class="social_4" href="javascript:void(0)"><i
+                                        class="fab fa-linkedin fa-lg"></i></a></li>
                         </ul>
                     </div> <!-- footer about -->
+                    <a class="page-scroll" href="/team" style="margin-top:25px;">Créditos</a>
                 </div>
                 <div class="col-lg-4 col-md-12 order-md-3 order-lg-2">
                     <div class="footer_link_wrapper d-flex flex-wrap">
@@ -137,7 +138,6 @@
                             </ul>
                         </div> <!-- footer link -->
                         <div class="footer_link mt-45">
-                        <a class="page-scroll" href="/team">Créditos</a>
                             <!--
                             <h4 class="footer_title">Créditos</h4>
                             <ul class="link text-light">
