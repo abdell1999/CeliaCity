@@ -246,8 +246,11 @@
             document.getElementById("btn-closeModal").addEventListener('click', () => {
                 $('#zoomImage').hide();
                 $('.modal-backdrop').hide();
+                $('#zoomImage').removeClass('show');
+                $('#zoomImage').removeAttr('style');
+                $('#zoomImage').removeAttr('area-modal');
+                $('#zoomImage').attr('area-hidden','true');
             })
-
         </script>
 
     </body>

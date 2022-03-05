@@ -38,11 +38,6 @@ $(document).ready(function() {
                     $('.swiper-wrapper').append(image);
                 })
 
-                /*CERRAR IMAGEN ZOOM*/
-                document.querySelector(".swiper-wrapper").addEventListener('click', () => {
-                    alert("ASudhad")
-                })
-
 
 
             },

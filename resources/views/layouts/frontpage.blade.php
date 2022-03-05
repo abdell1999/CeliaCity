@@ -16,7 +16,7 @@
 <header>
 </head>
 <body>
-<div class="container w-full mx-auto pt-0">
+<div class="container w-full mx-auto pt-100">
         @yield('content')
 <div>
 </body>
