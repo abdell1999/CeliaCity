@@ -54,6 +54,8 @@ class PointofinterestController extends Controller
     public function fetchonepoint($id)
     {
         $pointofinterest = Pointofinterest::find($id);
+
+
         return response()->json([
             'pointofinterest'=>$pointofinterest,
         ]);
