@@ -104,14 +104,13 @@
 
 <!--====== FOOTER PART START =====-->
 <section id="footer" class="footer_area">
-    <div class="footer_widget pb-20">
+    <div class="footer_widget pb-20" align="center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 order-md-1 order-lg-1">
                     <div class="footer_about mt-50">
                         <a href="#"><img src="/assets/img/logo.svg" alt="logo"></a>
-                        <p>Lorem ipsum dolor sifsddt amet, conse tetur sadipscing elitr, sed diam onumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquya.</p>
+                        <p>Guia desarrollada por CeliaCity un grupo de estudiantes del instituto Celia Viñas en el curso de Desarrollo de Aplicaciones Web.</p>
                         <ul class="social">
                             <li><a href="https://www.linkedin.com/in/abdellah-bukad-duh-rappani/" class="social_1" href="javascript:void(0)"><i
                                         class="fab fa-linkedin fa-lg"></i></a></li>
@@ -136,7 +135,10 @@
                                 <li><a href="javascript:void(0)">Comercios</a></li>
                                 <li><a href="javascript:void(0)">Ocio</a></li>
                             </ul>
-                        </div> <!-- footer link -->
+                        </div>
+
+
+                        <!-- footer link -->
                         <div class="footer_link mt-45">
                             <!--
                             <h4 class="footer_title">Créditos</h4>
@@ -152,8 +154,11 @@
                 </div>
 
             </div> <!-- row -->
-        </div> <!-- container -->
-        <p class="text-center mt-30">Desarrollado por el equipo de CeliaCity</a></p>
+        </div>
+         <!-- container -->
+
+        <p class="text-center mt-30" style="color: #eec41e;">Desarrollado por el equipo de CeliaCity</a></p>
+
     </div> <!-- footer widget -->
 <!-- FOOTER END -->
 </section>

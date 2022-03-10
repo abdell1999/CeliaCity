@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Resource;
 use App\Models\Pointofinterest;
+use App\Models\Categorie;
 
 class GuideController extends Controller
 {
     public function guide(){
         $data['resources'] = Resource::all();
-        $data['pointofinterests'] = Pointofinterest::all();
+        $data['pointofinterests'] = Categorie::find(4)->pointofinterests;
         return view('guide', $data);
     }
 

@@ -67,7 +67,7 @@
 
   <script type="text/javascript">
     //Cargando nuestro mapa
-    /*
+
     var mapsipe = L.map('map').
     setView([37.330822, -2.302065],
         16); //[38.6202, -0.5731] es la latitud y longitud de la zona que queremos mostrar
@@ -75,7 +75,7 @@
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
         maxZoom: 18
     }).addTo(mapsipe);
-    */
+
 
 
     var popup = L.popup();
@@ -86,7 +86,11 @@
             .setContent("Has pulsado en el mapa en la coordenada " + e.latlng.toString())
 
             .openOn(mapsipe);
-    }
+
+
+        //L.marker([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}]).addTo(mapsipe);
+
+        }
     mapsipe.on('click', onMapClick);
 </script>
 <script type="text/javascript">
