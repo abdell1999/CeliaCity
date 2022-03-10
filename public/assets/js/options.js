@@ -296,11 +296,11 @@ $(document).ready(function () {
                             dataType: "json"
                             })
                           .done(function(response) {
-                                //console.log(response);
-                                    console.log(response.pointofinterest.name);
+                                    console.log("PUNTO:");
+                                    console.log(response.pointofinterest);
                                     //alert(response.pointofinterest.name);
                                     $('.pointname'+index).text(response.pointofinterest.name);
-                                    $('.pointshorttext'+index).text(response.pointofinterest.text.substr(0,limite));
+                                    $('.pointshorttext'+index).text(response.pointofinterest.text.substr(0,limite)+" ...");
                                     $('.pointlink'+index).attr("href", "/pointofinterests/"+response.pointofinterest.id);
 
                         })
