@@ -84,22 +84,28 @@ class OptionController extends Controller
      * @param  \App\Models\Option  $option
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request, $type = "")
+    public function update($id, Request $request)
     {
+        //dd($request);
         $option = Option::find($id);
+        //echo $request->type;
+
 
         $data = $request->validate([
             'value' => 'required',
             'type' => 'required'
         ]);
+
+
         $type = $data['type'];
+        //$type = $request->type;
 
-
-        $option->value = "DEFAULT VALUE";
+        $option->value = "DEFAULT";
 
 
         if($type == "text" || $type == "point"){
             $option->value = $data['value'];
+            //$option->value = $request->value;
         }
 
         if($type == "image"){
@@ -107,10 +113,15 @@ class OptionController extends Controller
             //$option->value = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg/365px-Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg";
             //$option->value =  "/storage/" . $request['value']->store('options', 'public');
             $option->value = "/storage/" . $request['value']->store('options', 'public');
+            //$option->value = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg/365px-Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg";
         }
 
 
         $option->save();
     }
+
+
+
+
 
 }

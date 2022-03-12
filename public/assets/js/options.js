@@ -40,7 +40,7 @@ $(document).ready(function () {
                     if(type === "image"){
                         insertar = `<label for="imageOption">Selecciona un archivo:</label>
                         <input id="${id_input}"
-                        name="imageOption" type="file">`;
+                        name="value" type="file">`;
                     }
 
                     if(type === "point"){
@@ -120,8 +120,9 @@ $(document).ready(function () {
                 $('#originalContent').html("");
                 $('#originalContent').append(campoMostrar(valor, tipo));
 
-                $('#modifiedContent').append(`<form method="post" enctype="multipart/form-data">`);
                 $('#modifiedContent').html("");
+                $('#modifiedContent').append(`<form method="post" enctype="multipart/form-data id="formulario">`);
+
                 $('#modifiedContent').append(campoEditar(valor, tipo));
 
                 $('#controlesModal').html("");
@@ -163,6 +164,7 @@ $(document).ready(function () {
         let id = $(this).attr("idOption");
         let idInput = "input"+id;
         let newValue;
+        let formData = new FormData();
 
 
         console.log("Función update de options.js");
@@ -186,15 +188,32 @@ $(document).ready(function () {
             //filename = $('#image_file')[0].files[0]
             //newValue = $('#'+idInput).prop("files")[0];
 
-            newValue = new FormData();
+            //newValue = new FormData();
             //newValue.append('value', $('#'+idInput).prop("files")[0]);
+            //newValue = $('#'+idInput).prop("files")[0];
 
 
-            var files = $('#'+idInput)[0].files[0];
-            console.log("FILES: "+files[0]);
+            //var files = $('#'+idInput)[0].files[0];
+            //console.log("FILES: "+files[0]);
             //newValue = files;
-            newValue.append('value', files[0]);
-            console.log("newVALUEEEEEE "+newValue);
+            //newValue.append('value', files[0]);
+
+            //console.log("newVALUEEEEEE "+newValue);
+
+            //var formData = new FormData($('#formulario').eq(0)[0]);
+
+            formData.append('type', type);
+            formData.append('value', $('#'+idInput)[0].files[0]);
+            formData.append('_method', 'put');
+
+
+            //formData.append('hola', 'hola');
+            console.log("Después de crear el formdata");
+            for (var value of formData.values()) {
+                console.log(value);
+             }
+            console.log("MIRA ARRIBA");
+
         }
 
         //Modificar con AJAX
@@ -203,34 +222,78 @@ $(document).ready(function () {
         console.log("valor a insertar: "+newValue);
         console.log("tipo a insertar: "+type);
         console.log("FIN -- SUERTEEE!!!");
-        $.ajax({
-            url: "/options/"+id,
-            //url: "{{ route(options.update) }}",
-            type: "PUT",
-            data:{
-                id:id,
-                value:newValue,
-                type:type,
-                _method: "PUT",
-            },
-            success:function(response){
+        if(type == "image"){
+            console.log("HOLA");
 
-                loadOption(id);
+            $.ajax({
+                method: 'POST',
+                url: "/options/"+id,
 
 
-                if(response){
-                    //alert("HAY RESPUESTA");
-                    //alert(response);
-                }else{
-                    //alert("TODO CORRECTO HERMANO, AUNQUE NO HAY RESPUESTA");
+                data: formData,
+                _method: 'put',
+                cache:false,
+                contentType: false,
+                processData: false,
+                error: function(data){
+                   console.log(data);
+                 },
+                success: function(data){
+                    loadOption(id);
+                    console.log(data);
                 }
-            },
-            error:function(response){
-                    alert("Algo falla mijo");
-                    //alert(id);
-                }
+               });
 
-        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }else{
+            $.ajax({
+                url: "/options/"+id,
+                //url: "{{ route(options.update) }}",
+                type: "PUT",
+                //processData: false,
+                data:{
+                    id:id,
+                    value:newValue,
+                    type:type,
+                },
+
+
+                success:function(response){
+
+                    loadOption(id);
+
+
+                    if(response){
+                        //alert("HAY RESPUESTA");
+                        //alert(response);
+                    }else{
+                        //alert("TODO CORRECTO HERMANO, AUNQUE NO HAY RESPUESTA");
+                    }
+                },
+                error:function(response){
+                        alert("Algo falla mijo");
+                        //alert(id);
+                    }
+
+            })
+        }
 
     });
 
