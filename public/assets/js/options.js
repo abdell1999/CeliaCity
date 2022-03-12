@@ -321,8 +321,10 @@ $(document).ready(function () {
                 point2 = response.options[12].value;
                 point3 = response.options[13].value;
                 coverpage = response.options[4].value;
+                coverpage2 = response.options[14].value;
 
                 $('.coverpage').css("background-image", "url("+coverpage+")");
+                $('.coverpage2').css("background-image", "url("+coverpage2+")");
 
                 $('.townname').html("");
                 $('.townname').text(townname);

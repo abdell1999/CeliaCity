@@ -26,7 +26,7 @@
 
  <section id="about" class="about_area pt-130 pb-50">
     <div class="about_wrapper">
-        <div class="about_image bg_cover" style="background-image: url(assets/img/Estatuapurullena.jpeg)"></div>
+        <div class="about_image bg_cover coverpage2" style="background-image: url(assets/img/Estatuapurullena.jpeg)"></div>
         <!-- about image -->
         <div class="container">
             <div class="row justify-content-end">

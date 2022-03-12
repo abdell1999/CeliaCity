@@ -102,5 +102,11 @@ class OptionsSeeder extends Seeder
             'type' => 'point'
         ]);
 
+        DB::table('options')->insert([
+            'name' => 'coverpage2',
+            'value' => 'portada2.png',
+            'type' => 'image'
+        ]);
+
     }
 }
