@@ -370,6 +370,7 @@ $(document).ready(function () {
                                     $('.pointname'+index).text(response.pointofinterest.name);
                                     $('.pointshorttext'+index).text(response.pointofinterest.text.substr(0,limite)+" ...");
                                     $('.pointlink'+index).attr("href", "/pointofinterests/"+response.pointofinterest.id);
+                                    $('.point'+index+"image").attr("src", response.resources[0].route);
 
                         })
 

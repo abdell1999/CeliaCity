@@ -63,7 +63,7 @@
             <div class="col-lg-6">
                 <div class="single_blog mt-30">
                     <div class="blog_image">
-                        <img src="assets/img/CuestaNegro.png" alt="blog">
+                        <img src="assets/img/CuestaNegro.png" class="point1image" alt="blog">
                     </div>
                     <div class="blog_content">
 
@@ -76,7 +76,7 @@
             <div class="col-lg-6">
                 <div class="single_blog d-sm-flex mt-30">
                     <div class="blog_image" style="height:200px; width:200px;">
-                        <img src="assets/img/Iglesia.jpg" style="overflow:hidden; height: 100%;"  alt="blog">
+                        <img src="assets/img/Iglesia.jpg" class="point2image" style="overflow:hidden; height: 100%;"  alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
                         <h4 class="blog_title pointname2">POINT2</h4>
@@ -87,7 +87,7 @@
 
                 <div class="single_blog d-sm-flex mt-30">
                     <div class="blog_image" style="height:200px; width:200px;">
-                        <img src="assets/img/CuevaInmaculada.jpg" style="overflow:hidden; height: 100%;" alt="blog">
+                        <img src="assets/img/CuevaInmaculada.jpg" class="point3image" style="overflow:hidden; height: 100%;" alt="blog">
                     </div>
                     <div class="blog_content blog_content_2 media-body">
                         <h4 class="blog_title pointname3">POINT3</h4>

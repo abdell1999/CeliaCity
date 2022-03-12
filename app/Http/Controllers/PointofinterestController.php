@@ -54,10 +54,11 @@ class PointofinterestController extends Controller
     public function fetchonepoint($id)
     {
         $pointofinterest = Pointofinterest::find($id);
-
+        $resources = Pointofinterest::find($id)->resources;
 
         return response()->json([
             'pointofinterest'=>$pointofinterest,
+            'resources'=>$resources,
         ]);
     }
 
