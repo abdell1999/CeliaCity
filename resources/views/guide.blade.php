@@ -13,6 +13,10 @@
         color: #eec41e;
     }
 </style>
+
+
+
+
 <div class="container mt-100 pt-20">
     <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600 text-center">Guía Turística Purullena</h2>
     <div class="row justify-content-center mt-20 pb-20">
@@ -28,8 +32,13 @@
         @foreach ($pointofinterests as $point)
         <ul class="pt-10">
             <li><p class="point" data-guide="{{$point['id']}}">{!!$point['name']!!}</p></li>
+
         </ul>
         @endforeach
+
+
+
+
       </div>
 
     </div>
@@ -64,35 +73,35 @@
             </div>
         </div>
   </div>
-
   <script type="text/javascript">
     //Cargando nuestro mapa
-
     var mapsipe = L.map('map').
-    setView([37.330822, -2.302065],
-        16); //[38.6202, -0.5731] es la latitud y longitud de la zona que queremos mostrar
+    setView([37.330355, -2.302759],
+        16); //[] es la latitud y longitud de la zona que queremos mostrar
     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
         maxZoom: 18
     }).addTo(mapsipe);
 
 
+    </script>
+    @foreach ($pointofinterests as $point)
+    <ul class="pt-10">
+        <script>
+            var marker = L.marker([{{ $point->latitude }}, {{ $point->longitude }}]).addTo(mapsipe);
+            marker.bindPopup('<a target="_blank" href="/pointofinterests/{{$point->id}}"><b>{{ $point->name }}</b></a>').openPopup();
 
+                </script>
+
+    </ul>
+    @endforeach
+
+        <script>
     var popup = L.popup();
 
-    function onMapClick(e) {
-        popup
-            .setLatLng(e.latlng)
-            .setContent("Has pulsado en el mapa en la coordenada " + e.latlng.toString())
 
-            .openOn(mapsipe);
-
-
-        //L.marker([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}]).addTo(mapsipe);
-
-        }
-    mapsipe.on('click', onMapClick);
 </script>
+
 <script type="text/javascript">
             var swiper = new Swiper(".mySwiper", {
                 loop: true,

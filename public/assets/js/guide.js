@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    //alert("HOLA");
 
     //Editar
     $(document).on('click', '.point', function(e) {
@@ -38,7 +39,7 @@ $(document).ready(function() {
                     $('.swiper-wrapper').append(image);
                 })
 
-
+                
 
             },
             error: function(response) {
