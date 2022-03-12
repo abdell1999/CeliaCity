@@ -14,6 +14,8 @@ $(document).ready(function() {
                 console.log(response);
                 console.log("SEPARADOR");
                 console.log(response.pointofinterests.latitude);
+                mapsipe.panTo(new L.LatLng(response.pointofinterests.latitude, response.pointofinterests.longitude));
+                mapsipe.setZoom(18);
                 //cambiado el nombre a new_section porque daba conflico con css
                 $('.new_section').empty();
                 $('.new_section').append(`<h3 class="title"> <span>${response.pointofinterests.name}</span> </h3>`);
@@ -39,7 +41,7 @@ $(document).ready(function() {
                     $('.swiper-wrapper').append(image);
                 })
 
-                
+
 
             },
             error: function(response) {
