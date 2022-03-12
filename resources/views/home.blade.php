@@ -4,7 +4,7 @@
 
 @section('content')
 <div id="home" class="header_slider">
-    <div class="single_slider bg_cover d-flex align-items-center"
+    <div class="single_slider bg_cover d-flex align-items-center coverpage"
         style="background-image: url(assets/img/purullena.jpg)">
         <div class="container">
             <div class="row">
