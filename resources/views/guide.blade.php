@@ -9,37 +9,34 @@
 @section('content')
 <!--Cambiado para que se vea los colores naranjas Mira si os gusta quitando lugares para visitar y dejando en medio guía turística purullena-->
 <style>
-    h2, h3, li {
+    h2, li {
         color: #eec41e;
     }
+
+    .point {
+    cursor: pointer;
+}
 </style>
 
-
-
-
 <div class="container mt-100 pt-20">
-    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-black-600 text-center">Guía Turística Purullena</h2>
-    <div class="row justify-content-center mt-20 pb-20">
-      <div class="col-md-6">
-        <div class="rounded-lg bg-light shadow-lg shadow-2xl">
-            <div id="map" class="" style="height: 40em;">
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 text-center pt-30">
-        <h3>Lugares para visitar</h3>
+    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-center">Guía Turística Purullena</h2>
+    <div class="row mt-20 pb-20">
+      <div class="col-md-4 text-center bg-dark">
+        <h3 class="text-white pt-20 pb-20">Lugares para visitar</h3>
         @foreach ($pointofinterests as $point)
         <ul class="pt-10">
-            <li><p class="point" data-guide="{{$point['id']}}">{!!$point['name']!!}</p></li>
+            <li><p class="point" style="color: #eec41e;" data-guide="{{$point['id']}}">{!!$point['name']!!}</p></li>
 
         </ul>
         @endforeach
+    </div>
+        <div class="col-md-8" style="padding-right: 0 !important; padding-left: 0 !important;">
+            <div class="">
+                <div id="map" class="" style="height: 40em; z-index: -1;">
+                </div>
+            </div>
+          </div>
 
-
-
-
-      </div>
 
     </div>
   </div>
@@ -47,7 +44,7 @@
   <div class="container mt-100 pt-20">
     <div class="row justify-content-center mt-20 pb-20">
         <!--Cambiado slider y texto de sitio para que se vea antes texto que slider -->
-        <div class="col-md-6 text-center pt-30">
+        <div class="col-md-6 text-center">
             <div class="about_content">
                               <div class="section_title new_section">
                                   <!--Aquí entra el AJAX-->
@@ -55,7 +52,7 @@
                           </div> <!-- about content -->
                           <!-- about_counter -->
         </div>
-      <div class="col-md-6 pt-100">
+      <div class="col-md-6 pt-50">
       <div class="slider">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
                     <div class="swiper-wrapper">
