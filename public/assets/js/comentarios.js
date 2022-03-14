@@ -61,27 +61,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     $('#btnComentar').click(function () {
         crearComentario();
     })

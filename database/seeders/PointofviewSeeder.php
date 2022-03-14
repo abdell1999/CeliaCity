@@ -21,32 +21,42 @@ class PointofviewSeeder extends Seeder
             'latitude' => '',
             'longitude' => '',
             'movilephone' => '',
-            'text' => 'La Cuesta del Negro se sitúa entre cerros y laderas que se intercalan con barrancos y quebrados los cuales 
-            conforman una defensa natural estratégica. Además está próximo a recursos esenciales como agua, 
-            tierra fértil y planicies para el ganado. 
-            
+            'text' => 'La Cuesta del Negro se sitúa entre cerros y laderas que se intercalan con barrancos y quebrados los cuales
+            conforman una defensa natural estratégica. Además está próximo a recursos esenciales como agua,
+            tierra fértil y planicies para el ganado.
+
             En este punto geográfico se ubica el poblado argárico de la Cueta del Negro, el cual data de entre 1950-1500 AC.
-            Tras un breve abandono vuelve a ser ocupado en el Bronce Tardío, en el que se verifica una reocupación con 
+            Tras un breve abandono vuelve a ser ocupado en el Bronce Tardío, en el que se verifica una reocupación con
             cabañas de suelo rectangular y nueva cerámica de tipo Cogotas con decoración boquique.
-            
-            El conocimiento de la cronología y secuencia de este yacimiento se convirtió en los objetivos fundamentales del 
-            trabajo realizado por el Departamento de Prehistoria de la Universidad de Granada en 1971 y 1972. Organizados según 
-            el planteamiento de las zonas en las que se dividía el pueblo según su topografía, los resultados que se revelaron 
+
+            El conocimiento de la cronología y secuencia de este yacimiento se convirtió en los objetivos fundamentales del
+            trabajo realizado por el Departamento de Prehistoria de la Universidad de Granada en 1971 y 1972. Organizados según
+            el planteamiento de las zonas en las que se dividía el pueblo según su topografía, los resultados que se revelaron
             fueron satisfactorios, ya que en aquellas zonas de menor altura que se identificaron con las áreas habitadas del poblado
-            (zonas A, B C, D y E) se documentaron enterramientos argáricos, a diferencia de la parte más alta del asentamiento 
+            (zonas A, B C, D y E) se documentaron enterramientos argáricos, a diferencia de la parte más alta del asentamiento
             (zonas F y G) donde se ubicaron estructuras defensivas pero no enterramientos.
-            
-            En el interior de las viviendas, como en el resto de yacimientos de la cultura de El Argar, aparecen sepulturas, 
-            habiéndose excavado un total de treinta y seis enterramientos, la mayoría con enterramientos individuales en posición fetal, 
-            aunque algunas sepulturas son dobles. De todas ellas, sólo dos se presentan en urnas, a diferencia del resto que 
-            corresponden a enterramientos tipo fosa con cueva lateral. Además, acompañando al entierro, que en ocasiones se ubicaba 
-            sobre una especie de alfombra de esparto, se encontraba el ajuar compuesto por elementos como armas, útiles y 
-            ornamentos sobre distintos tipos de soportes, recipientes de cerámica y otros objetos que aparecen en menor número, 
-            así como ofrendas de carne. 
-            
+
+            En el interior de las viviendas, como en el resto de yacimientos de la cultura de El Argar, aparecen sepulturas,
+            habiéndose excavado un total de treinta y seis enterramientos, la mayoría con enterramientos individuales en posición fetal,
+            aunque algunas sepulturas son dobles. De todas ellas, sólo dos se presentan en urnas, a diferencia del resto que
+            corresponden a enterramientos tipo fosa con cueva lateral. Además, acompañando al entierro, que en ocasiones se ubicaba
+            sobre una especie de alfombra de esparto, se encontraba el ajuar compuesto por elementos como armas, útiles y
+            ornamentos sobre distintos tipos de soportes, recipientes de cerámica y otros objetos que aparecen en menor número,
+            así como ofrendas de carne.
+
             El yacimiento se encuentra repartido entre los municipios de Darro y Purullena.',
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '1',
+            'id_categorie' => '1',
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '1',
+            'id_categorie' => '4',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -55,12 +65,22 @@ class PointofviewSeeder extends Seeder
             'latitude' => '37.317653',
             'longitude' => '-3.1896225',
             'movilephone' => '',
-            'text' => 'Estructura mudéjar de planta rectangular y una sola nave. Posee un magnífico artesonado, 
+            'text' => 'Estructura mudéjar de planta rectangular y una sola nave. Posee un magnífico artesonado,
             realizado por Baltasar de la Hoya en 1558, y un artístico retablo firmado entre otros por Dionisio de Ávila.
-            La torre, situada a los pies, consta de dos cuerpos de ladrillo además del campanario, rematados por un capitel de hierro 
+            La torre, situada a los pies, consta de dos cuerpos de ladrillo además del campanario, rematados por un capitel de hierro
             de estilo neogótico. La fachada principal tiene arco de medio punto y cornisa.',
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '2',
+            'id_categorie' => '1',
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '2',
+            'id_categorie' => '4',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -69,14 +89,24 @@ class PointofviewSeeder extends Seeder
             'latitude' => '37.3165462',
             'longitude' => '-3.1859825',
             'movilephone' => '',
-            'text' => 'Purullena es conocida como la Ciudad Troglodita, nombre otorgado en los años 60, ya que era un pueblo en el que la única estructura arquitectónica conocida era la iglesia, 
-            y toda la población vivía en cuevas. Hoy en día muchas familias siguen disfrutando de esta forma de vivir, siendo el lugar de más concentración de cuevas de la Comarca de Guadix. 
-            Purullena goza de un rico pasado desde la pre-historia a la actualidad. Su ubicación en una encrucijada de caminos natural, además de estar rodeada de importantes sistemas montañosos, 
-            hacían que fuese un lugar de paso obligatorio. Tanto las culturas del Algar, Íbera, Romana, Musulmana, Cristiana y Actualidad han convivido con las cuevas de un modo u otro, 
+            'text' => 'Purullena es conocida como la Ciudad Troglodita, nombre otorgado en los años 60, ya que era un pueblo en el que la única estructura arquitectónica conocida era la iglesia,
+            y toda la población vivía en cuevas. Hoy en día muchas familias siguen disfrutando de esta forma de vivir, siendo el lugar de más concentración de cuevas de la Comarca de Guadix.
+            Purullena goza de un rico pasado desde la pre-historia a la actualidad. Su ubicación en una encrucijada de caminos natural, además de estar rodeada de importantes sistemas montañosos,
+            hacían que fuese un lugar de paso obligatorio. Tanto las culturas del Algar, Íbera, Romana, Musulmana, Cristiana y Actualidad han convivido con las cuevas de un modo u otro,
             dejando huella en este lugar.
             Esta cueva es un amplio Museo Etnológico, con una variada exposición de utensilios antiguos, herramientas, mobiliario, enseres, objetos curiosos, fotografías,etc. Todo ello, recopilado y usado por los pueblos de la Comarca de Guadix',
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '3',
+            'id_categorie' => '1',
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '3',
+            'id_categorie' => '4',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -85,9 +115,9 @@ class PointofviewSeeder extends Seeder
             'latitude' => '37.3390065',
             'longitude' => '-3.2118038',
             'movilephone' => '',
-            'text' => 'MODIFICAR! 
+            'text' => 'MODIFICAR!
             Las torres-atalayas que se encuentran en la comarca de Guadix forman parte del sistema defensivo que los árabes implementaron a partir del siglo XIV
-            ante el avance de las tropas cristianas y la pérdida de territorio. 
+            ante el avance de las tropas cristianas y la pérdida de territorio.
             La planta de estas fortificaciones solía ser circular y su desarrollo troncónico, aunque aparecen también atalayas de planta cuadrada como la Torre de Culibre.
             En el ángulo suroeste de los llanos de Magrú, en Purullena, se encuentra la torre de Al-Magruz, que también tiene otras denominaciones como son Atalaya de Magrú, y Magruz.
             La torre de Al-Magruz es de planta circular, de 3,55 metros de diámetro y desarrollo troncocónico. Está construida con calicanto de piedras de tamaño grande y mediano. La argamasa que une las piedras es de color rojizo, muy terrosa. No ha llegado hasta nuestros días ningún resto de su repellado exterior.
@@ -95,6 +125,16 @@ class PointofviewSeeder extends Seeder
             El hueco de acceso a la torre era una puerta-ventana situada a unos 5 metros de altura. Para llegar hasta ella, se utilizaba una escala elaborada de cuerdas o de madera y que una vez arriba, se retiraba para impedir que el enemigo pudiera acceder a la torre, evitando así que los atalayeros fueran sorprendidos o capturados.',
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '4',
+            'id_categorie' => '1',
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '4',
+            'id_categorie' => '4',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -105,12 +145,22 @@ class PointofviewSeeder extends Seeder
             'movilephone' => '',
             'text' => 'En el Centro de Interpretación "Hábitat Troglodita" Almagruz se ofrecen exposiciones, actividades y rutas, cuyo objetivo es acercar el mundo científico a todos los públicos.
             Sus objetivos principales son:
-            aprender a identificar, plantearse y resolver interrogantes y problemas relacionados con elementos significativos de su entorno, 
-            utilizar estrategias progresivamente más sistemáticas y complejas de búsqueda, almacenamiento y tratamiento de información, 
-            de formulación de conjeturas, de puesta a prueba de las mismas y de exploración de soluciones alternativas para conseguir un equilibrio 
+            aprender a identificar, plantearse y resolver interrogantes y problemas relacionados con elementos significativos de su entorno,
+            utilizar estrategias progresivamente más sistemáticas y complejas de búsqueda, almacenamiento y tratamiento de información,
+            de formulación de conjeturas, de puesta a prueba de las mismas y de exploración de soluciones alternativas para conseguir un equilibrio
             ecológico y de conservación del patrimonio cultural.',
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '5',
+            'id_categorie' => '1',
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '5',
+            'id_categorie' => '4',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -119,12 +169,18 @@ class PointofviewSeeder extends Seeder
             'latitude' => '37.3213288',
             'longitude' => '-3.1866393',
             'movilephone' => '',
-            'text' => 'Desde el año 1998 existe en Purullena un Campo de Tiro con Arco, en un principo se fundó para un grupo de amigos como entretenimiento. 
+            'text' => 'Desde el año 1998 existe en Purullena un Campo de Tiro con Arco, en un principo se fundó para un grupo de amigos como entretenimiento.
             Debido al gran interes que despertó, se fundó una sociedad llamada "Campo de tiro con arco de Purullena". En los primeros momentos sólo había ocho socios fundadores, que con el tiempo se incrementó hasta alcanzar alrededor de 50 a 60 socios.
             Entretanto  el Campo de Tiro con Arco es uno de los pricipales de España y ha acogido ya dos veces el Campeonato Español de Tiro con Arco 3D.',
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '6',
+            'id_categorie' => '3',
+        ]);
+
 
         DB::table('pointofinterests')->insert([
             'id' => '7',
@@ -141,8 +197,18 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
-        
+            'id_pointofinterest' => '7',
+            'id_categorie' => '1',
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '7',
+            'id_categorie' => '4',
+        ]);
+
+
         DB::table('pointofinterests')->insert([
             'id' => '8',
             'name' => 'Torre de Culibre',
@@ -152,6 +218,16 @@ class PointofviewSeeder extends Seeder
             'text' => 'Torre atalaya andalusí, de figura prismática y planta rectangular, de medidas 4.65 x 3.30 metros, estando los lados mayores orientados al Norte y Sur. Está construida con un muro perimetral de tapial calicastrado, de 65 centímetros de espesor, macizado interiormente con mampostería. Tiene una altura conservada de 3.40 metros, apreciándose intacto parte del enlucido superficial.',
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '8',
+            'id_categorie' => '1',
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '8',
+            'id_categorie' => '4',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -164,6 +240,12 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '9',
+            'id_categorie' => '3',
+        ]);
+
 
         DB::table('pointofinterests')->insert([
             'id' => '10',
@@ -176,6 +258,12 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '10',
+            'id_categorie' => '3',
+        ]);
+
 
         /*BARES, PUBS y RESTAURANTES (HOSTELERIA) */
         DB::table('pointofinterests')->insert([
@@ -188,6 +276,12 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '20',
+            'id_categorie' => '2',
+        ]);
+
 
         DB::table('pointofinterests')->insert([
             'id' => '21',
@@ -198,6 +292,11 @@ class PointofviewSeeder extends Seeder
             'text' => '',
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '21',
+            'id_categorie' => '2',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -210,6 +309,17 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '22',
+            'id_categorie' => '2',
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '22',
+            'id_categorie' => '3',
+        ]);
+
 
         DB::table('pointofinterests')->insert([
             'id' => '23',
@@ -221,6 +331,12 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '100',
+            'id_categorie' => '2',
+        ]);
+
 
         DB::table('pointofinterests')->insert([
             'id' => '24',
@@ -232,7 +348,11 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '100',
+            'id_categorie' => '2',
+        ]);
         DB::table('pointofinterests')->insert([
             'id' => '25',
             'name' => 'Cafetería Fabiola',
@@ -242,6 +362,11 @@ class PointofviewSeeder extends Seeder
             'text' => '',
             'created_at' => now(),
             'updated_at' => now()
+        ]);
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '100',
+            'id_categorie' => '2',
         ]);
 
         DB::table('pointofinterests')->insert([
@@ -254,7 +379,11 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('categories_pointofinterests')->insert([
 
+            'id_pointofinterest' => '100',
+            'id_categorie' => '2',
+        ]);
         DB::table('pointofinterests')->insert([
             'id' => '27',
             'name' => 'Pizzería Eclipse',
@@ -265,6 +394,10 @@ class PointofviewSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        
+        DB::table('categories_pointofinterests')->insert([
+
+            'id_pointofinterest' => '100',
+            'id_categorie' => '2',
+        ]);
     }
 }
