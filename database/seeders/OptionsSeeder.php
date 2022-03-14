@@ -80,7 +80,7 @@ class OptionsSeeder extends Seeder
 
         DB::table('options')->insert([
             'name' => 'theme',
-            'value' => 'dark',
+            'value' => 'theme1',
             'type' => 'text'
         ]);
 
