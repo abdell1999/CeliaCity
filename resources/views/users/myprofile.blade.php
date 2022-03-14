@@ -8,7 +8,7 @@
 
 @if(@Auth::user())
 <section style="background-color: #eee;">
-  
+
     <div class="row">
       <div class="col-lg-4">
         <div class="card mb-4 shadow-lg">
@@ -21,7 +21,7 @@
             -->
           </div>
         </div>
-        
+
       </div>
       <div class="col-lg-8">
         <div class="card mb-4 shadow-lg">

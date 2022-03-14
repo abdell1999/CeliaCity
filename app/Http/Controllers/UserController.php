@@ -211,6 +211,7 @@ class UserController extends Controller
     public function myprofile($id){
         $data['user'] = User::find($id);
         return view('users.myprofile',$data);
+
     }
 
 

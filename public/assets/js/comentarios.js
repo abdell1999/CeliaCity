@@ -38,8 +38,8 @@ $(document).ready(function () {
                     </div>\
                     <p>" + comment.text + "</p>\
                     <ul class='list-inline d-sm-flex my-0'> </ul>\
-                    <button data-toggle='modal' data-target='#editComment' class='editbtn' value=" + comment.id + "><i class='far fa-edit'></i>\
-                    <button data-toggle='modal' data-target='#deleteComment' class='deletebtn' value=" + comment.id + "><i class='far fa-trash-alt'></i>\
+                    <button data-toggle='modal' data-target='#editComment' class='btn btn-warning mt-2 ml-2 editbtn' value=" + comment.id + ">editar\
+                    <button data-toggle='modal' data-target='#deleteComment' class='btn btn-dark mt-2 ml-2 deletebtn' value=" + comment.id + ">eliminar\
                     </button>\
                     </div>\
                     </div>";
