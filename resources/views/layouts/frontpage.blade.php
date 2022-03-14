@@ -5,13 +5,19 @@
 @yield('styles')
 @yield('scripts')
 <header>
+    @if ($dataoptions['template'] == 1)
     @include('includes.headerfront')
+    <script>
+        $('#barraNav').addClass('sticky2');
+
+
+    </script>
+    @endif
+    @if ($dataoptions['template'] == 2)
+@include('includes.headerfronttemplate2')
+@endif
     @include('includes.auth')
-<script>
-    $('#barraNav').addClass('sticky2');
 
-
-</script>
 
 <header>
 </head>

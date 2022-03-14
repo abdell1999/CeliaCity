@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Models\Categorie;
 use DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
@@ -32,15 +31,16 @@ class AppServiceProvider extends ServiceProvider
          * Es necesario controlar esto con una variable ya que si no siempre va a intentar acceder a la bd
          * lo cual imposibilita hacer migraciones y etc.
          */
-        $hola = 1;
-        if($hola!=1){
-            $categoriesS=Categorie::all();
 
-        dd($categoriesS);
+        //Esta posicion de array controla la plantilla activa
+        $dataoptions['template'] = 1;
 
-        View::share('categoriesS',$categoriesS);
+        //dd($data);
 
-        }
+
+        View::share('dataoptions',$dataoptions);
+
+
 
     }
 }
