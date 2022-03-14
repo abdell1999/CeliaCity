@@ -13,6 +13,7 @@ class CommentController extends Controller
 
     public function __construct() {
         $this->middleware("auth")->except("fetchcomments", "fetchcomment");
+        $this->middleware("App\Http\Middleware\Administrate::class")->except("fetchcomment", "fetchcomments", "store", "edit", "update", "comentar");
     }
     /**
      * Display a listing of the resource.

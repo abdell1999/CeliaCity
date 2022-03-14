@@ -14,6 +14,7 @@ class PointofinterestController extends Controller
 
     public function __construct(){
         $this->middleware("auth")->except("show","fetchonepoint");
+        $this->middleware("App\Http\Middleware\Administrate::class")->except("show", "fetchonepoint");
     }
 
 

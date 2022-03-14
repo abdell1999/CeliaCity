@@ -9,7 +9,8 @@ class OptionController extends Controller
 {
 
     public function __construct() {
-        $this->middleware("auth")->except("getall");
+        $this->middleware("auth")->except("getall", "getoption");
+        $this->middleware("auth")->except("getall", "getoption");
     }
 
     /**TENER EN CUENTA QUE SE PUEDA MODIFICAR ESTO COMO MÍNIMO

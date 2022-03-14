@@ -13,7 +13,7 @@
                         <h2 class="slider_title wow fadeInLeftBig" data-wow-duration="1.3s"
                             data-wow-delay="0.2s">Bienvenido a <span class="townname">TOWNNAME</span></h2>
                         <p class="wow fadeInLeftBig shortdescription" data-wow-duration="1.3s" data-wow-delay="0.5s">SHORTDESCRIPTION</p>
-                        <a href="javascript:void(0)" class="main-btn wow fadeInLeftBig" data-wow-duration="1.3s"
+                        <a href="/guide" class="main-btn wow fadeInLeftBig" data-wow-duration="1.3s"
                             data-wow-delay="0.8s">Guía Turística</a>
                     </div> <!-- slider content -->
                 </div>
