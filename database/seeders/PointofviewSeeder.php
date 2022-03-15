@@ -19,7 +19,7 @@ class PointofviewSeeder extends Seeder
             'id' => '1',
             'name' => 'Cuesta del Negro',
             'latitude' => '37.3360835',
-            'longitude' => '-3.2365397,56',
+            'longitude' => '-3.236539756',
             'movilephone' => '',
             'text' => 'La Cuesta del Negro se sitúa entre cerros y laderas que se intercalan con barrancos y quebrados los cuales
             conforman una defensa natural estratégica. Además está próximo a recursos esenciales como agua,

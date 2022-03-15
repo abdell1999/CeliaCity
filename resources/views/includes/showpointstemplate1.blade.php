@@ -57,7 +57,7 @@
                         @if($resources->isEmpty())
                         <div class="row justify-content-center">
                         @else
-                        <div class="row">
+                        <div class="row justify-content-lg-center">
                         @endif
                             <!--Cambiado col-lg-9 a xl-9 -->
                             <div class="col-xl-9 bg-light rounded shadow-lg">
@@ -114,9 +114,9 @@
             integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
             @if($resources->isEmpty())
-            <div class="container mb-20" align="center">
+            <div class="container mb-20 pt-50" align="center">
             @else
-            <div class="container mb-20">
+            <div class="container mb-20 p5-50" align="center">
             @endif
             <h2 class="mt-20" style="color: #EEC41E;">Opiniones</h2>
             <div>

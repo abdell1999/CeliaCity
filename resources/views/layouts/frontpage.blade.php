@@ -16,14 +16,15 @@
     @if ($dataoptions['template'] == 2)
 @include('includes.headerfronttemplate2')
 @endif
-    @include('includes.auth')
+@include('includes.auth')
 
 
-<header>
+</header>
 </head>
 <body>
 <div class="container w-full mx-auto pt-100">
         @yield('content')
-<div>
+</div>
+@include('includes.footer')
 </body>
 </html>

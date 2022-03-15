@@ -176,7 +176,7 @@
 
     @media only screen and (min-width: 720px) {
         main {
-            
+
         }
 
 
@@ -293,12 +293,6 @@
                                 @enderror
                                 <input type="submit" class="btn btn-info btn-block btn-round" value="Acceder">
                             </form>
-
-
-                            <div class="d-flex justify-content-center social-buttons">
-
-
-                            </div>
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
@@ -396,12 +390,6 @@
                                     Registro
                                 </button>
                             </form>
-
-
-                            <div class="d-flex justify-content-center social-buttons">
-
-
-                            </div>
                         </div>
                     </div>
 

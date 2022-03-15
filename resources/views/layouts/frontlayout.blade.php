@@ -17,6 +17,6 @@
 <body>
 @yield('content')
 @include('includes.auth')
-
+@include('includes.footer')
 </body>
 </html>

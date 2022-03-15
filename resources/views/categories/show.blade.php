@@ -2,8 +2,8 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="/assets/css/categorie.css">
 <h1 class="pb-20" align="center" style="color: #eec41e;">{{$categorie->name}}</h1>
-<div class="d-md-flex flex-md-row justify-content-md-around flex-wrap flex-lg-wrap flex-xl-
-wrap tarjeta">
+<div align="center" class="d-md-flex flex-md-row justify-content-md-around align-center flex-wrap flex-lg-wrap flex-xl-
+wrap tarjeta pb-60">
 @foreach($categorie->pointofinterests as $point)
 <div class="card m-2 postion-relative" style="width:30%;">
     <div id="carouselExampleIndicators{{$point->id}}" class="carousel slide" data-ride="carousel">
