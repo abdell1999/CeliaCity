@@ -208,6 +208,7 @@
             });
         </script>
 @endif
+
         <script type="text/javascript">
             //Cargando nuestro mapa
             var mapsipe = L.map('map').
@@ -215,7 +216,7 @@
                 16); //[] es la latitud y longitud de la zona que queremos mostrar
             L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                maxZoom: 18
+
             }).addTo(mapsipe);
             var marker = L.marker([{{ $pointofinterests->latitude }}, {{ $pointofinterests->longitude }}]).addTo(mapsipe);
             marker.bindPopup('<b>{!! $pointofinterests->name !!}</b>').openPopup();
