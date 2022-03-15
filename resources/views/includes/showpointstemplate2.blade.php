@@ -1,21 +1,59 @@
+<!-- Main -->
+<article id="main">
 
-            <!-- Main -->
-            <article id="main">
+    <section class="wrapper style5">
+        <div class="inner">
 
-                <section class="wrapper style5">
-                    <div class="inner">
+            <h2>{!! $pointofinterests->name !!}</h2>
 
-                        <h2>{!!$pointofinterests->name !!}</h2>
+            <p>{{ $pointofinterests->text }}</p>
+            <hr />
 
-                        <p>{{ $pointofinterests->text }}</p>
-                        <hr />
+            <div class="box alt">
+                <div class="row gtr-50 gtr-uniform">
 
-                        <h4>Feugiat aliquam</h4>
-                        <p>Nam sapien ante, varius in pulvinar vitae, rhoncus id massa. Donec varius ex in mauris ornare, eget euismod urna egestas. Etiam lacinia tempor ipsum, sodales porttitor justo. Aliquam dolor quam, semper in tortor eu, volutpat efficitur quam. Fusce nec fermentum nisl. Aenean erat diam, tempus aliquet erat.</p>
+                    @php
+                        $numeroDeimagen = 1;
 
-                        <p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
+                    @endphp
 
-                    </div>
-                </section>
-            </article>
+                    @if ($resources->isNotEmpty())
 
+
+                        @foreach ($resources as $resource)
+                            @if ($numeroDeimagen == 1)
+                                <div class="col-12">
+                                    <span class="image fit"><img src="{{ $resource->route }}" alt="">
+                                    </span>
+                                </div>
+                                @php
+                                    $numeroDeimagen = 2;
+
+                                @endphp
+                            @else
+                                <div class="col-4">
+                                    <span class="image fit"><img src="{{ $resource->route }}" alt="">
+                                    </span>
+                                </div>
+
+
+                @endif
+                @endforeach
+
+                @endif
+
+            </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        </div>
+    </section>
+</article>
