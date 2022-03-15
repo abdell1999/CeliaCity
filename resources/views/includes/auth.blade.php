@@ -176,7 +176,7 @@
 
     @media only screen and (min-width: 720px) {
         main {
-            
+
         }
 
 

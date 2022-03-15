@@ -37,6 +37,17 @@ $(document).ready(function () {
                         <input id="${id_input}"
                         class="textOption" name="textOption" type="text" value="${value}">`;
                     }
+                    if(type === "template"){
+
+                        insertar = `
+                        <label for="templateOption">Seleccione la plantilla a aplicar:</label>
+                        <select id="${id_input}" name="templateOption" class="templateOption">
+                        <option value="1">Plantilla 1 </option>
+                        <option value="2">Plantilla 2 </option>
+                        </select>
+                        `;
+
+                    }
                     if(type === "image"){
                         insertar = `<label for="imageOption">Selecciona un archivo:</label>
                         <input id="${id_input}"
@@ -83,6 +94,11 @@ $(document).ready(function () {
                     if(type === "text"){
                         insertar = `<p> ${value} </p>`;
                     }
+
+                    if(type === "template"){
+                        insertar = `<p> Plantilla ${value} </p>`;
+                    }
+
                     if(type === "image"){
                         insertar = `<img src="${value}" class="p-1 bg-white border rounded max-w-sm">`;
                     }
@@ -173,7 +189,7 @@ $(document).ready(function () {
         console.log("type: "+type);
 
 
-        if(type === "text" || type === "point"){
+        if(type === "text" || type === "point" || type === "template"){
             newValue = $('#'+idInput).val();
             console.log(newValue);
 

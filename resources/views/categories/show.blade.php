@@ -1,5 +1,6 @@
 @extends('layouts.frontpage')
 @section('content')
+<script src="/assets/js/options.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/categorie.css">
 <h1 class="pb-20" align="center" style="color: #eec41e;">{{$categorie->name}}</h1>
 <div class="d-md-flex flex-md-row justify-content-md-around flex-wrap flex-lg-wrap flex-xl-

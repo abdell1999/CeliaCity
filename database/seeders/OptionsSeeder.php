@@ -108,5 +108,11 @@ class OptionsSeeder extends Seeder
             'type' => 'image'
         ]);
 
+        DB::table('options')->insert([
+            'name' => 'template',
+            'value' => '1',
+            'type' => 'template'
+        ]);
+
     }
 }

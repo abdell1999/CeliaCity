@@ -60,6 +60,11 @@
                                     Punto de interés
                                     @endif
 
+                                    @if ($option['type'] == "template")
+                                    Plantilla
+                                    @endif
+
+
                                 </th>
                                 <th>
                                     <a href="#" class="optionEdit" data-bs-toggle="modal" data-bs-target="#optionModalScrollable"><i class="far fa-edit"
