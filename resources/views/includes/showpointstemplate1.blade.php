@@ -245,6 +245,9 @@
             })
         </script>
 
+
+        <input type="hidden" id="template" value="1">
+
     </body>
 
     </html>

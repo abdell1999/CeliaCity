@@ -44,3 +44,13 @@
     <script src="/assets/plantilla2/js/breakpoints.min.js"></script>
     <script src="/assets/plantilla2/js/util.js"></script>
     <script src="/assets/plantilla2/js/main.js"></script>
+    <script>
+
+        $.ajaxSetup({
+             headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             }
+         });
+
+
+        </script>

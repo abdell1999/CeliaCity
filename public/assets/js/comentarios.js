@@ -1,7 +1,18 @@
 $(document).ready(function () {
     console.log("Script para gestionar comentarios cargado correctamente");
 
+    //alert("HHOLA");
+
     $('#comentariosPosteados').html("");
+
+
+//Hacer comprobacion de input hidden que recoja el valor de la template if getElementById igual a no se que, else por defecto
+
+    let template = $('#template').val()
+    //alert(template);
+
+
+
 
     comentarios = document.getElementById('comentariosPosteados');
 
@@ -30,7 +41,8 @@ $(document).ready(function () {
                         }
 
                     })
-                    comentarios.innerHTML += "<div class='col-md-8'> <div class='media g-mb-30 media-comment'>\
+                    if(template == 1){
+                        comentarios.innerHTML += "<div class='col-md-8'> <div class='media g-mb-30 media-comment'>\
                     <img class='d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15' src='" + photo + "' alt='ImageDescription'>\
                     <div class='media-body u-shadow-v18 g-bg-secondary g-pa-30 shadow-lg rounded'>\
                     <div class='g-mb-15'>\
@@ -43,6 +55,15 @@ $(document).ready(function () {
                     </button>\
                     </div>\
                     </div>";
+                    }
+
+                    if(template == 2){
+                        comentarios.innerHTML +=`<p><span class="image left"> <img class="rounded-circle shadow-1-strong me-3"
+                        src="${photo}" alt="avatar" width="60"
+                        height="60"></span>${name}</br>${comment.text}</p>`;
+
+                    }
+
 
                 })
 

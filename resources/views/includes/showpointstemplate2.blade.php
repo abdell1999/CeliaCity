@@ -42,11 +42,12 @@
             </script>
             <style>
                 #map {
-                  width: 100%;
-                  height: 400px;
-                  box-shadow: 5px 5px 5px #888;
-               }
-              </style>
+                    width: 100%;
+                    height: 400px;
+                    box-shadow: 5px 5px 5px #888;
+                }
+
+            </style>
 
 
 
@@ -90,19 +91,44 @@
                                     <span class="image fit"><img src="{{ $resource->route }}" alt="">
                                     </span>
                                 </div>
+                            @endif
+                        @endforeach
+
+                    @endif
+
+                </div>
+
+                <hr>
+                <br>
+                <br>
 
 
-                @endif
-                @endforeach
+                <div class="col-12">
+                    <textarea name="text" id="text" placeholder="Introduce un comentario" rows="6"></textarea>
+                    @if (@Auth::user())
+                        <button class="primary mt-2" type="submit" id="btnComentar" href="#!">
+                            Enviar
+                        </button>
+                    @else
+                        <a class="page-scroll" href="#" data-toggle="modal" data-target="#loginModal">Iniciar
+                            Sesión</a>
+                    @endif
+                </div>
 
-                @endif
 
-            </div>
 
+
+
+                <input type="hidden" id="template" value="2">
+                <input type="hidden" value="{{ $pointofinterests->id }}" name="id_pointofinterest"
+                    id="id_pointofinterest">
+                <div id="comentariosPosteados" class="comment-widgets m-b-20">
+
+
+                </div>
 
             </div>
         </div>
-
 
 
 
