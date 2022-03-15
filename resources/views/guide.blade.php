@@ -6,6 +6,8 @@
     <script src="/assets/js/guide.js"></script>
 @endsection
 
+
+
 @section('content')
     <!--Cambiado para que se vea los colores naranjas Mira si os gusta quitando lugares para visitar y dejando en medio guía turística purullena-->
     <style>
@@ -37,7 +39,7 @@
             </div>
             <div class="col-md-8" style="padding-right: 0 !important; padding-left: 0 !important;">
                 <div class="">
-                    <div id="map" class="" style="height: 40em; z-index: -1;">
+                    <div id="map" class="" style="height: 40em; z-index: 1;">
                     </div>
                 </div>
             </div>
@@ -45,6 +47,7 @@
 
         </div>
     </div>
+
 
     <div class="container mt-100 pt-20">
         <div class="row justify-content-center mt-20 pb-20">
@@ -75,6 +78,10 @@
                 </div>
             </div>
         </div>
+
+
+
+
         <script type="text/javascript">
             //Cargando nuestro mapa
             var mapsipe = L.map('map').
@@ -138,4 +145,25 @@
 
 
 
-    @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@endsection
