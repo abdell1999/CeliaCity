@@ -39,6 +39,7 @@
                         .openOn(mapsipe);
                 }
                 mapsipe.on('click', onMapClick);
+
             </script>
             <style>
                 #map {

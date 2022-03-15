@@ -421,7 +421,21 @@ $(document).ready(function () {
 
 
 
+        //OPTIMIZACION DE MAPAS
+        window.dispatchEvent(new Event('resize'));
+        function ESresize(){
 
+if (typeof (Event) === 'function') {
+// modern browsers
+window.dispatchEvent(new Event('resize'));
+} else {
+//This will be executed on old browsers and especially IE
+var resizeEvent = window.document.createEvent('UIEvents');
+resizeEvent.initUIEvent('resize', true, false, window, 0);
+window.dispatchEvent(resizeEvent);
+}
+}
+$(window).trigger('resize');
 
 
 
