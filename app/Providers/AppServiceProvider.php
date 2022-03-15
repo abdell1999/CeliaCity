@@ -34,14 +34,14 @@ class AppServiceProvider extends ServiceProvider
          */
 
         //Esta posicion de array controla la plantilla activa y demás datos que igual se han pesados de cargar por ajax actualmente
-        //$dataoptions['template'] = Option::find(16)->value;
-        //$dataoptions['coverpage'] = Option::find(5)->value;
-        //$dataoptions['coverpage2'] = Option::find(15)->value;
-        //$dataoptions['townname'] = Option::find(2)->value;
-        //$dataoptions['shortdescription'] = Option::find(9)->value;
-        //$dataoptions['longdescription'] = Option::find(10)->value;
+        $dataoptions['template'] = Option::find(16)->value;
+        $dataoptions['coverpage'] = Option::find(5)->value;
+        $dataoptions['coverpage2'] = Option::find(15)->value;
+        $dataoptions['townname'] = Option::find(2)->value;
+        $dataoptions['shortdescription'] = Option::find(9)->value;
+        $dataoptions['longdescription'] = Option::find(10)->value;
 
-        $dataoptions['template'] = 1;
+        //$dataoptions['template'] = 2;
 
 
 

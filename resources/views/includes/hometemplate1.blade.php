@@ -4,15 +4,15 @@
 
 @section('content')
 <div id="home" class="header_slider">
-    <div class="single_slider bg_cover d-flex align-items-center coverpage"
-        style="background-image: url(assets/img/purullena.jpg)">
+    <div class="single_slider bg_cover d-flex align-items-center coverpaged"
+        style="background-image: url({{$dataoptions['coverpage']}})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-8">
                     <div class="slider_content">
                         <h2 class="slider_title wow fadeInLeftBig" data-wow-duration="1.3s"
-                            data-wow-delay="0.2s">Bienvenido a <span class="townname">TOWNNAME</span></h2>
-                        <p class="wow fadeInLeftBig shortdescription" data-wow-duration="1.3s" data-wow-delay="0.5s">SHORTDESCRIPTION</p>
+                            data-wow-delay="0.2s">Bienvenido a <span class="townnamed">{{$dataoptions['townname']}}</span></h2>
+                        <p class="wow fadeInLeftBig shortdescriptiond" data-wow-duration="1.3s" data-wow-delay="0.5s">{{$dataoptions['shortdescription']}}</p>
                         <a href="/guide" class="main-btn wow fadeInLeftBig" data-wow-duration="1.3s"
                             data-wow-delay="0.8s">Guía Turística</a>
                     </div> <!-- slider content -->
@@ -26,7 +26,7 @@
 
  <section id="about" class="about_area pt-130 pb-50">
     <div class="about_wrapper">
-        <div class="about_image bg_cover coverpage2" style="background-image: url(assets/img/Estatuapurullena.jpeg)"></div>
+        <div class="about_image bg_cover coverpage2d" style="background-image: url({{$dataoptions['coverpage2']}})"></div>
         <!-- about image -->
         <div class="container">
             <div class="row justify-content-end">
