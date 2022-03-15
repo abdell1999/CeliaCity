@@ -285,7 +285,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '69',
             'title' => 'Restaurante Los Membrives.',
-            'route' => '\storage\macael\LosMenbrives.jpg',
+            'route' => '\storage\macael\LosMembrives.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -313,7 +313,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '71',
             'title' => 'Pizzeria Francis.',
-            'route' => '\storage\macael\PizzeriaFrancis.jpg',
+            'route' => '\storage\macael\PizzeriaFrancis.png',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -341,7 +341,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '73',
             'title' => 'Bocatería-Cafetería Calle Larga.',
-            'route' => '\storage\macael\BocateriaCalleLarga.jpg',
+            'route' => '\storage\macael\BocateriaCalleLarga.jpeg',
             'created_at' => now(),
             'updated_at' => now()
 
