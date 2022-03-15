@@ -18,8 +18,8 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '1',
             'name' => 'Cuesta del Negro',
-            'latitude' => '',
-            'longitude' => '',
+            'latitude' => '37.3360835',
+            'longitude' => '-3.2365397,56',
             'movilephone' => '',
             'text' => 'La Cuesta del Negro se sitúa entre cerros y laderas que se intercalan con barrancos y quebrados los cuales
             conforman una defensa natural estratégica. Además está próximo a recursos esenciales como agua,
@@ -85,7 +85,7 @@ class PointofviewSeeder extends Seeder
 
         DB::table('pointofinterests')->insert([
             'id' => '3',
-            'name' => 'Cueva-Museo <br>"La Inmaculada"',
+            'name' => 'Cueva-Museo "La Inmaculada"',
             'latitude' => '37.3165462',
             'longitude' => '-3.1859825',
             'movilephone' => '',
@@ -115,8 +115,7 @@ class PointofviewSeeder extends Seeder
             'latitude' => '37.3390065',
             'longitude' => '-3.2118038',
             'movilephone' => '',
-            'text' => 'MODIFICAR!
-            Las torres-atalayas que se encuentran en la comarca de Guadix forman parte del sistema defensivo que los árabes implementaron a partir del siglo XIV
+            'text' => 'Las torres-atalayas que se encuentran en la comarca de Guadix forman parte del sistema defensivo que los árabes implementaron a partir del siglo XIV
             ante el avance de las tropas cristianas y la pérdida de territorio.
             La planta de estas fortificaciones solía ser circular y su desarrollo troncónico, aunque aparecen también atalayas de planta cuadrada como la Torre de Culibre.
             En el ángulo suroeste de los llanos de Magrú, en Purullena, se encuentra la torre de Al-Magruz, que también tiene otras denominaciones como son Atalaya de Magrú, y Magruz.
@@ -211,27 +210,6 @@ class PointofviewSeeder extends Seeder
 
         DB::table('pointofinterests')->insert([
             'id' => '8',
-            'name' => 'Torre de Culibre',
-            'latitude' => '',
-            'longitude' => '',
-            'movilephone' => '',
-            'text' => 'Torre atalaya andalusí, de figura prismática y planta rectangular, de medidas 4.65 x 3.30 metros, estando los lados mayores orientados al Norte y Sur. Está construida con un muro perimetral de tapial calicastrado, de 65 centímetros de espesor, macizado interiormente con mampostería. Tiene una altura conservada de 3.40 metros, apreciándose intacto parte del enlucido superficial.',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-        DB::table('categories_pointofinterests')->insert([
-
-            'id_pointofinterest' => '8',
-            'id_categorie' => '1',
-        ]);
-        DB::table('categories_pointofinterests')->insert([
-
-            'id_pointofinterest' => '8',
-            'id_categorie' => '4',
-        ]);
-
-        DB::table('pointofinterests')->insert([
-            'id' => '9',
             'name' => 'Teatro Municipal',
             'latitude' => '37.3145765',
             'longitude' => '-3.1890351',
@@ -242,13 +220,13 @@ class PointofviewSeeder extends Seeder
         ]);
         DB::table('categories_pointofinterests')->insert([
 
-            'id_pointofinterest' => '9',
+            'id_pointofinterest' => '8',
             'id_categorie' => '3',
         ]);
 
 
         DB::table('pointofinterests')->insert([
-            'id' => '10',
+            'id' => '9',
             'name' => 'Piscina Municipal',
             'latitude' => '37.31913',
             'longitude' => '-3.18309',
@@ -260,7 +238,7 @@ class PointofviewSeeder extends Seeder
         ]);
         DB::table('categories_pointofinterests')->insert([
 
-            'id_pointofinterest' => '10',
+            'id_pointofinterest' => '9',
             'id_categorie' => '3',
         ]);
 
@@ -314,11 +292,6 @@ class PointofviewSeeder extends Seeder
             'id_pointofinterest' => '22',
             'id_categorie' => '2',
         ]);
-        DB::table('categories_pointofinterests')->insert([
-
-            'id_pointofinterest' => '22',
-            'id_categorie' => '3',
-        ]);
 
 
         DB::table('pointofinterests')->insert([
@@ -333,7 +306,7 @@ class PointofviewSeeder extends Seeder
         ]);
         DB::table('categories_pointofinterests')->insert([
 
-            'id_pointofinterest' => '100',
+            'id_pointofinterest' => '23',
             'id_categorie' => '2',
         ]);
 
@@ -350,7 +323,7 @@ class PointofviewSeeder extends Seeder
         ]);
         DB::table('categories_pointofinterests')->insert([
 
-            'id_pointofinterest' => '100',
+            'id_pointofinterest' => '24',
             'id_categorie' => '2',
         ]);
         DB::table('pointofinterests')->insert([
@@ -365,7 +338,7 @@ class PointofviewSeeder extends Seeder
         ]);
         DB::table('categories_pointofinterests')->insert([
 
-            'id_pointofinterest' => '100',
+            'id_pointofinterest' => '25',
             'id_categorie' => '2',
         ]);
 
@@ -381,7 +354,7 @@ class PointofviewSeeder extends Seeder
         ]);
         DB::table('categories_pointofinterests')->insert([
 
-            'id_pointofinterest' => '100',
+            'id_pointofinterest' => '26',
             'id_categorie' => '2',
         ]);
         DB::table('pointofinterests')->insert([
@@ -396,7 +369,7 @@ class PointofviewSeeder extends Seeder
         ]);
         DB::table('categories_pointofinterests')->insert([
 
-            'id_pointofinterest' => '100',
+            'id_pointofinterest' => '27',
             'id_categorie' => '2',
         ]);
     }
