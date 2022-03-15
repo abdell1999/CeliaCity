@@ -88,8 +88,9 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        $data['comments'] = Comment::find($id);
-        return view('comments.show',$data);
+        //$data['comments'] = Comment::findOrFail($id);
+        //return view('comments.show',$data);
+        return abort(404);
     }
 
     /**
@@ -100,10 +101,10 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        $comments = Comment::find($id);
-        $usuario = Comment::find($id)->users;
+        $comments = Comment::findOrFail($id);
+        $usuario = Comment::findOrFail($id)->users;
         $nombre = $usuario['name']." ".$usuario['surname1']." ".$usuario['surname2'];
-        $punto = Comment::find($id)->pointofinterests;
+        $punto = Comment::findOrFail($id)->pointofinterests;
         $pointofinterest = $punto['name'];
 
         if($comments)
@@ -167,7 +168,7 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        $comment = Comment::find($id);
+        $comment = Comment::findOrFail($id);
 
         if($comment)
         {
@@ -218,7 +219,7 @@ class CommentController extends Controller
 
     public function deletecomment($id)
     {
-        $comment = Comment::find($id);
+        $comment = Comment::findOrFail($id);
 
         if($comment)
         {
@@ -237,5 +238,7 @@ class CommentController extends Controller
         }
         return redirect()->route('comments.index');
     }
+
+
 
 }

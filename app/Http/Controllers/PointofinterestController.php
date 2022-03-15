@@ -54,8 +54,8 @@ class PointofinterestController extends Controller
 
     public function fetchonepoint($id)
     {
-        $pointofinterest = Pointofinterest::find($id);
-        $resources = Pointofinterest::find($id)->resources;
+        $pointofinterest = Pointofinterest::findOrFail($id);
+        $resources = Pointofinterest::findOrFail($id)->resources;
 
         return response()->json([
             'pointofinterest'=>$pointofinterest,
@@ -109,11 +109,11 @@ class PointofinterestController extends Controller
      */
     public function show($id)
     {
-        $data['pointofinterests'] = Pointofinterest::find($id);
+        $data['pointofinterests'] = Pointofinterest::findOrFail($id);
         $data['users'] = User::all();
         $data['comments'] = $data['pointofinterests']->comments;
-        if(Pointofinterest::find($id)->resources){
-            $data['resources'] = Pointofinterest::find($id)->resources;
+        if(Pointofinterest::findOrFail($id)->resources){
+            $data['resources'] = Pointofinterest::findOrFail($id)->resources;
         }
         //dd($data['resources']);
         //dd($data['comments']);
@@ -130,9 +130,9 @@ class PointofinterestController extends Controller
     public function edit($id)
     {
         //Punto de interes segun el id
-        $pointofinterests = Pointofinterest::find($id);
+        $pointofinterests = Pointofinterest::fifindOrFailnd($id);
         //Categorias relacionadas con el punto de interes
-        $categories = Pointofinterest::find($id)->categories;
+        $categories = Pointofinterest::findOrFail($id)->categories;
         //Todas las categorias
         $allcategories = Categorie::all();
 
@@ -199,7 +199,7 @@ class PointofinterestController extends Controller
                 'errors' => $validator->errors()->all()
             ]);
         }else{
-            $pointofinterest = Pointofinterest::find($id);
+            $pointofinterest = Pointofinterest::findOrFail($id);
             if($pointofinterest){
             $pointofinterest->name = $request->input('name');
             $pointofinterest->latitude = $request->input('latitude');
@@ -227,7 +227,7 @@ class PointofinterestController extends Controller
      */
     public function destroy($id)
     {
-        $pointofinterest = Pointofinterest::find($id);
+        $pointofinterest = Pointofinterest::findOrFail($id);
 
         if($pointofinterest)
         {

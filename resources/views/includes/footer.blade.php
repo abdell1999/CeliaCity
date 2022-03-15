@@ -25,11 +25,11 @@
                         <div class="footer_link mt-45">
                             <h4 class="footer_title">Enlaces de interés</h4>
                             <ul class="link">
-                                <li><a href="javascript:void(0)">Guía</a></li>
-                                <li><a href="javascript:void(0)">Monumentos</a></li>
-                                <li><a href="javascript:void(0)">Hosteleria</a></li>
-                                <li><a href="javascript:void(0)">Comercios</a></li>
-                                <li><a href="javascript:void(0)">Ocio</a></li>
+                                <li><a href="/guide)">Guía</a></li>
+                                <li><a href="/categories/1">Monumentos</a></li>
+                                <li><a href="/categories/2">Hosteleria</a></li>
+                                <li><a href="/categories/3">Comercios</a></li>
+                                <li><a href="/categories/4">Ocio</a></li>
                             </ul>
                         </div>
                         <!-- footer link -->

@@ -93,7 +93,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $data['users'] = User::find($id);
+        $data['users'] = User::findOrFail($id);
         return view('users.show',$data);
     }
 
@@ -105,7 +105,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $data['users'] = User::find($id);
+        $data['users'] = User::findOrFail($id);
         return view('users.edit',$data);
     }
 
@@ -136,7 +136,7 @@ class UserController extends Controller
 
 
 
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $user->name = $data['name'];
         $user->surname1 = $data['surname1'];
         $user->surname2 = $data['surname2'];
@@ -179,7 +179,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
         if($user)
         {
@@ -210,7 +210,7 @@ class UserController extends Controller
     }
 
     public function myprofile($id){
-        $data['user'] = User::find($id);
+        $data['user'] = User::findOrFail($id);
         return view('users.myprofile',$data);
 
     }

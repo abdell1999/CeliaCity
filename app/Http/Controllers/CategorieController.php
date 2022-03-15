@@ -56,9 +56,9 @@ class CategorieController extends Controller {
      */
     public function show($id) {
         //
-        $data['categorie'] = Categorie::find($id);
+        $data['categorie'] = Categorie::findOrFail($id);
 
-        $pointofinterest = Categorie::find($id)->pointofinterests;
+        $pointofinterest = Categorie::findOrFail($id)->pointofinterests;
 
         $data['recursospoints'] = DB::table('categories')
         ->select('pointofinterests.id','pointofinterests.name', 'resources.route', 'resources.title')
@@ -95,7 +95,7 @@ class CategorieController extends Controller {
      */
     public function edit($id) {
         //
-        $data['categories'] = Categorie::find($id);
+        $data['categories'] = Categorie::findOrFail($id);
         return view('categories.edit', $data);
     }
 
@@ -107,7 +107,7 @@ class CategorieController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        $categorie = Categorie::find($id);
+        $categorie = Categorie::findOrFail($id);
         //echo "Nombre original ".$categorie->name. " Nombre nuevo: ".$request->name;
         //dd($request);
 
@@ -129,7 +129,7 @@ class CategorieController extends Controller {
      */
     public function destroy($id) {
         //
-        $categorie = Categorie::find($id);
+        $categorie = Categorie::findOrFail($id);
         $categorie->delete();
         return redirect()->route('categories.index');
     }

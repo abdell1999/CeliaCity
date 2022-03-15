@@ -104,7 +104,7 @@ class ResourceController extends Controller
      */
     public function show($id)
     {
-        $data['resources'] = Resource::find($id);
+        $data['resources'] = Resource::findOrFail($id);
         return view('resources.show',$data);
     }
 
@@ -116,7 +116,7 @@ class ResourceController extends Controller
      */
     public function edit($id)
     {
-        $resource = Resource::find($id);
+        $resource = Resource::findOrFail($id);
         if($resource){
             return response()->json([
                 'status'=> 200,
@@ -149,7 +149,7 @@ class ResourceController extends Controller
                 'errors' => $validator->errors()->all(),
             ]);
         }else{
-            $resource = Resource::find($id);
+            $resource = Resource::findOrFail($id);
             if($resource){
                 $resource->title = $request->input('title');
                 $resource->update();
@@ -174,7 +174,7 @@ class ResourceController extends Controller
      */
     public function destroy($id)
     {
-        $resource = Resource::find($id);
+        $resource = Resource::findOrFail($id);
 
         if($resource)
         {
