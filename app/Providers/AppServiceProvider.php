@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
          */
 
         //Esta posicion de array controla la plantilla activa
-        $dataoptions['template'] = 1;
+        $dataoptions['template'] = 2;
 
         //dd($data);
 
