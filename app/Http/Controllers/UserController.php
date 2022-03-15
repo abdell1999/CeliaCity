@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Comment;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -179,11 +180,10 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        $comment = Comment::find($id);
 
         if($user)
         {
-            $user->comments()->detach();
+            DB::table('comments')->where('id_user','=',$id)->delete();
             $user->delete();
             return response()->json([
                 'status'=>200,
