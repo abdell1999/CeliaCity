@@ -25,6 +25,16 @@
 <div class="container w-full mx-auto pt-100">
         @yield('content')
 </div>
+
+
+@if ($dataoptions['template'] == 1)
 @include('includes.footer')
+@endif
+
+@if ($dataoptions['template'] == 2)
+@include('includes.footertemplate2')
+@endif
+
+
 </body>
 </html>
