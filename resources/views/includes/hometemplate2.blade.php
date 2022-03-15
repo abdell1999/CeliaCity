@@ -78,13 +78,7 @@
         </div>
 
     <!-- Scripts -->
-        <script src="/assets/plantilla2/js/jquery.min.js"></script>
-        <script src="/assets/plantilla2/js/jquery.scrollex.min.js"></script>
-        <script src="/assets/plantilla2/js/jquery.scrolly.min.js"></script>
-        <script src="/assets/plantilla2/js/browser.min.js"></script>
-        <script src="/assets/plantilla2/js/breakpoints.min.js"></script>
-        <script src="/assets/plantilla2/js/util.js"></script>
-        <script src="/assets/plantilla2/js/main.js"></script>
+
 
 </body>
 

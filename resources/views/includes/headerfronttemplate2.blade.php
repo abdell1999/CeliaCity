@@ -1,4 +1,6 @@
-	<!-- Header -->
+<link rel="stylesheet" href="/assets/plantilla2/css/main.css" />
+<noscript><link rel="stylesheet" href="/assets/plantilla2/css/noscript.css" /></noscript>
+    <!-- Header -->
     <header id="header" class="alt">
         <h1><a href="/" class="townname">...</a></h1>
         <nav id="nav">
@@ -21,3 +23,11 @@
             </ul>
         </nav>
     </header>
+
+    <script src="/assets/plantilla2/js/jquery.min.js"></script>
+    <script src="/assets/plantilla2/js/jquery.scrollex.min.js"></script>
+    <script src="/assets/plantilla2/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/plantilla2/js/browser.min.js"></script>
+    <script src="/assets/plantilla2/js/breakpoints.min.js"></script>
+    <script src="/assets/plantilla2/js/util.js"></script>
+    <script src="/assets/plantilla2/js/main.js"></script>
