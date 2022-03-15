@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorieSeeder::class);
         $this->call(OptionsSeeder::class);
         $this->call(MacaelSeeder::class);
+        $this->call(MacaelResourceSeeder::class);
     }
 }
