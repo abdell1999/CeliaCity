@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use DB;
+use App\Models\Option;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 
@@ -33,7 +34,10 @@ class AppServiceProvider extends ServiceProvider
          */
 
         //Esta posicion de array controla la plantilla activa
-        $dataoptions['template'] = 2;
+        //$dataoptions['template'] = Option::find(16)->value;
+        $dataoptions['template'] = 1;
+
+
 
         //dd($data);
 
