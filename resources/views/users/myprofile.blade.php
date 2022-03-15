@@ -43,46 +43,6 @@
                 <p class="text-muted mb-0">{{$user->email}}</p>
               </div>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Telf. Movil</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">{{$user->phone}}</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Telf. Fijo</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">{{$user->movilphone}}</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Fecha de Nacimiento</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">{{$user->borndate}}</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Dirección</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">{{$user->address}}</p>
-              </div>
-            </div>
-                <div class="d-flex justify-content-end mt-2">
-                    <button type="button" class="btn btn-primary">Editar</button>
-                    <button type="button" class="btn btn-danger ml-2">Borrar Usuario</button>
-                </div>
           </div>
         </div>
         </div>
