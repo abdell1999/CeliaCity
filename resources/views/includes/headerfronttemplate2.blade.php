@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="/assets/plantilla2/css/main.css" />
 <noscript><link rel="stylesheet" href="/assets/plantilla2/css/noscript.css" /></noscript>
     <!-- Header -->
+
+
     <header id="header" class="alt">
         <h1><a href="/" class="townname">...</a></h1>
         <nav id="nav">
@@ -19,6 +21,17 @@
                             <li><a href="#">Cerrar Sesión</a></li>
                         </ul>
                     </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <header id="header">
+        <h1><a href="/" class="townname">...</a></h1>
+        <nav id="nav">
+            <ul>
+                <li class="special">
+                    <a href="#menu" class="menuToggle"><span>Menu</span></a>
+
                 </li>
             </ul>
         </nav>
