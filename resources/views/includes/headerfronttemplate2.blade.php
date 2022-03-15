@@ -16,9 +16,13 @@
                             <li><a href="/categories/1">Monumentos</a></li>
                             <li><a href="/categories/2">Hostelería</a></li>
                             <li><a href="/categories/3">Servicios</a></li>
-                            <li><a href="#">Registrarse</a></li>
-                            <li><a href="#">Acceder</a></li>
-                            <li><a href="#">Cerrar Sesión</a></li>
+                            @if (Auth::guest())
+                            <li><a href="/register" >Registrarse</a></li>
+                            <li><a href="/login" >Acceder</a></li>
+                            @else
+                            <li><a href="/myprofile/{{Auth::user()->id}}">Mi perfil</a>
+                            <li><a href="#" id="logoutBtn">Cerrar Sesión</a></li>
+                            @endif
                         </ul>
                     </div>
                 </li>
