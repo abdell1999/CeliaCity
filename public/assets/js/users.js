@@ -18,6 +18,7 @@ $(document).ready(function () {
         $('#deleteing_id').val(user_id);
     });
 
+
     $(document).on('click', '.delete_user', function (e) {
         e.preventDefault();
 
