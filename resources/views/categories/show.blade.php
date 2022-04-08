@@ -10,9 +10,6 @@ wrap tarjeta pb-60">
     <div id="carouselExampleIndicators{{$point->id}}" class="carousel slide" data-ride="carousel">
       <a href="/pointofinterests/{{$point->id}}">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="/assets/img/Carreretapurullena.jpeg" alt="Second slide">
-              </div>
         @foreach ($recursospoints as $recurso)
             @if ($recurso->id == $point->id && isset($recurso->route))
             <div class="carousel-item">
@@ -35,4 +32,17 @@ wrap tarjeta pb-60">
   </div>
 @endforeach
 </div>
+<script type="text/javascript">
+
+    
+        const carouseles = document.querySelectorAll(".carousel-inner");
+        console.log(carouseles);
+    for(let i = 0; i<carouseles.length; i++){
+        carouseles[i].firstElementChild.classList.add('active');
+    }
+
+
+    
+    
+</script>
 @endsection

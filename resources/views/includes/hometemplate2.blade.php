@@ -39,21 +39,21 @@
             <!-- Two -->
                 <section id="two" class="wrapper alt style2">
                     <section class="spotlight">
-                        <div class="image point1image"><img src="/assets/plantilla2/images/pic01.jpg" alt="" /></div><div class="content">
+                        <div class="image"><img class="point1image" src="/assets/plantilla2/images/pic01.jpg" alt="" /></div><div class="content">
                             <h2 class="pointname1">Nombre del primer punto</h2>
                             <p class="pointshorttext1">Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
                             <a href="#" class="more pointlink1">Leer más</a>
                         </div>
                     </section>
                     <section class="spotlight">
-                        <div class="image point2image"><img src="/assets/plantilla2/images/pic02.jpg" alt="" /></div><div class="content">
+                        <div class="image"><img class="point2image" src="/assets/plantilla2/images/pic02.jpg" alt="" /></div><div class="content">
                             <h2 class="pointname2">Nombre del segundo elementum magna</h2>
                             <p class="pointshorttext2">Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
                             <a href="#" class="more pointlink2">Leer más</a>
                         </div>
                     </section>
                     <section class="spotlight">
-                        <div class="image point3image"><img src="/assets/plantilla2/images/pic03.jpg" alt="" /></div><div class="content">
+                        <div class="image"><img class="point3image" src="/assets/plantilla2/images/pic03.jpg" alt="" /></div><div class="content">
                             <h2 class="pointname3">Nombre del tercer punto</h2>
                             <p class="pointshorttext3">Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
                             <a href="#" class="more pointlink3">Leer más</a>

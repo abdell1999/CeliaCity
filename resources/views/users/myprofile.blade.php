@@ -2,6 +2,7 @@
 
 @section('scripts')
     <script src="/assets/js/comentarios.js"></script>
+        <script src="/assets/js/options.js"></script>
 @endsection
 
 @section('content')

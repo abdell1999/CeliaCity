@@ -130,7 +130,7 @@ class PointofinterestController extends Controller
     public function edit($id)
     {
         //Punto de interes segun el id
-        $pointofinterests = Pointofinterest::fifindOrFailnd($id);
+        $pointofinterests = Pointofinterest::findOrFail($id);
         //Categorias relacionadas con el punto de interes
         $categories = Pointofinterest::findOrFail($id)->categories;
         //Todas las categorias
