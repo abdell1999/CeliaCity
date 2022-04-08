@@ -19,6 +19,7 @@ $(document).ready(function () {
     });
 
 
+
     $(document).on('click', '.delete_user', function (e) {
         e.preventDefault();
 
