@@ -46,19 +46,18 @@ $(document).ready(function() {
             url: "/edit-pointofinterest/" + point_id,
             success: function(response) {
                 console.log(response);
-
+                let texto = response.pointofinterests.text;
                 if (response.status == 404) {
                     $('#success_message').addClass('inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out');
                     $('#success_message').text(response.message);
                     $('#editModal').modal('hide');
                 } else {
                     //console.log(response.pointofinterest.name);
-
                     $('#edit_name').val(response.pointofinterests.name);
                     $('#edit_latitude').val(response.pointofinterests.latitude);
                     $('#edit_longitude').val(response.pointofinterests.longitude);
                     $('#edit_movilephone').val(response.pointofinterests.movilephone);
-                    $('#edit_contenido').val(response.pointofinterests.text);
+                    CKEDITOR.instances.edit_contenido.setData(texto);
                     $('select').val('').text('');
                     $.each(response.categories, function(index, item) {
                         if (item.selected) {
@@ -84,6 +83,7 @@ $(document).ready(function() {
     $(document).on('click', '.update_pointofinterest', function(e) {
         e.preventDefault();
 
+        let texto = CKEDITOR.instances.edit_contenido.getData();
         $(this).text('Actualizando..');
         var id = $('#point_id').val();
         // alert(id);
@@ -93,7 +93,7 @@ $(document).ready(function() {
             'latitude': $('.edit_latitude').val(),
             'longitude': $('.edit_longitude').val(),
             'movilephone': $('.edit_movilephone').val(),
-            'text': $('.edit_contenido').val(),
+            'text': texto,
             'categoriespoint': $('.edit_categoriespoint').val(),
         }
 
@@ -134,13 +134,14 @@ $(document).ready(function() {
     $(document).on('click', '.add_pointofinterest', function(e) {
         e.preventDefault();
         //console.log('Hola');
-
+        let texto = CKEDITOR.instances.contenido.getData();
+        CKEDITOR.instances
         var data = {
             'name': $('.name').val(),
             'latitude': $('.latitude').val(),
             'longitude': $('.longitude').val(),
             'movilephone': $('.movilephone').val(),
-            'text': $('.contenido').val(),
+            'text': texto,
             'categoriespoint': $('.categoriespoint').val()
         }
         console.log(data);

@@ -41,7 +41,7 @@
                     <ul id="saveform_errList"></ul>
                     <form action="" class="formPoint" enctype="multipart/form-data" method="post">
                         @csrf
-                        <div class="w-full max-w-sm">
+                        <div class="w-full max-w-xl">
                             <div class="md:flex md:items-center mb-6">
                                 <div class="md:w-1/3">
                                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
@@ -56,10 +56,14 @@
                                 </div>
                             </div>
 
-                            <div class="md:flex md:items-center mb-6">
+                            <div class="md:flex md:items-center mb-6" align="right">
                                 <div class="md:w-1/3">
                                     <button data-bs-target="#modalMapa" class="showMapbtn shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-8 rounded ">Mapa</button>
-
+                                </div>
+                                <div class="md:w-2/3">
+                                    <input
+                                        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 latitude latitude2"
+                                        type="text" style="display: none !important;">
                                 </div>
                             </div>
 
@@ -113,8 +117,8 @@
                                 <div class="md:w-2/3">
                                     <textarea
                                         class="bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 contenido"
-                                        type="text" id="contenido" name="contenido" cols="65" rows="10"
-                                        placeholder="Nombre del nuevo contenido" name="text" required></textarea>
+                                        type="text" id="contenido" name="contenido" cols="65" rows="50"
+                                        placeholder="Nombre del nuevo contenido" name="text"></textarea>
                                 </div>
                             </div>
                             <div class="md:flex md:items-center mb-6">
@@ -137,7 +141,7 @@
                             </div>
                         </div>
 
-                        <div class="md:w-1/3">
+                        <div align="center">
                             <button
                                 class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded add_pointofinterest"
                                 type="submit">
@@ -210,7 +214,7 @@
                     <ul id="saveform_errList"></ul>
                     <form action="" class="editformPoint" enctype="multipart/form-data" method="post">
                         @csrf
-                        <div class="w-full max-w-sm">
+                        <div class="w-full max-w-xl">
                             <div class="md:flex md:items-center mb-6">
                                 <div class="md:w-1/3">
                                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
@@ -224,10 +228,9 @@
                                         name="edit_name" required>
                                 </div>
                             </div>
-                            <div class="md:flex md:items-center mb-6">
+                            <div class="md:flex md:items-center mb-6" align="right">
                                 <div class="md:w-1/3">
                                     <button data-bs-target="#modalMapa" class="showMapbtn shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-8 rounded">Mapa</button>
-
                                 </div>
                             </div>
                             <div class="md:flex md:items-center mb-6">
@@ -282,7 +285,7 @@
                                     <textarea
                                         class="bg-gray-200 appearance-none border-2 border-gray-200 rounded text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 edit_contenido"
                                         type="text" id="edit_contenido" name="edit_contenido" cols="65" rows="10"
-                                        placeholder="Nombre del nuevo contenido" name="text" required></textarea>
+                                        placeholder="Nombre del nuevo contenido" name="text"></textarea>
                                 </div>
                             </div>
                             <div class="md:flex md:items-center mb-6">
@@ -302,7 +305,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="md:w-1/3">
+                        <div align="center">
                             <button
                                 class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded update_pointofinterest"
                                 type="submit">
@@ -411,8 +414,14 @@
 </div>
 
 <!-- Fin Modal MAPA -->
-
-
+            <script>
+                        CKEDITOR.replace( 'contenido', {
+                            language: 'es',
+                        } );
+                        CKEDITOR.replace( 'edit_contenido', {
+                            language: 'es',
+                        }  );
+            </script>
 
 
 
