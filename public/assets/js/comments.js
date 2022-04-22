@@ -98,7 +98,7 @@ $(document).ready(function () {
                     $('#success_message').text(response.message);
                     $('#editModal').modal('hide');
                 } else {
-                    $('.edit_text').val(response.comment.text);
+                    CKEDITOR.instances.edit_text.setData(response.comment.text);
                     $('.edit_user').val(response.username);
                     $('.edit_point').val(response.pointofinterest);
                     $('#comment_id').val(comment_id);
@@ -117,8 +117,9 @@ $(document).ready(function () {
         var id = $('#comment_id').val();
         // alert(id);
 
+        var texto = CKEDITOR.instances.edit_text.getData();
         var data = {
-            'text': $('.edit_text').val(),
+            'text': texto,
         }
 
         $.ajax({
