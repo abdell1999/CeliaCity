@@ -41,7 +41,7 @@ $(document).ready(function() {
                             $('.dividir').append(`
                         <div class="imagetext">
                             <div class="w-full w-20 h-64 overflow-hidden">
-                                <video class="block object-cover object-center w-full h-full rounded-lg w-99" preload>
+                                <video muted controls class="block object-cover object-center w-full h-full rounded-lg w-99" preload>
                                     <source src="` + item.route + `" type="video/`+extension+`">
                                 </video>
                             </div>
