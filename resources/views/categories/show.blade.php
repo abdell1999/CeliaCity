@@ -13,7 +13,7 @@ wrap tarjeta pb-60">
         @foreach ($recursospoints as $recurso)
             @if ($recurso->id == $point->id && isset($recurso->route))
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{ $recurso->route }}" alt="Second slide">
+                <img class="d-block w-100" src="{{ url($recurso->route) }}" alt="Second slide">
               </div>
             @endif
         @endforeach
