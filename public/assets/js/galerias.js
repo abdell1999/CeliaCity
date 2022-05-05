@@ -15,23 +15,51 @@ $(document).ready(function() {
                 //console.log(response);
                 $('.dividir').html("");
                 $.each(response.resources, function(key, item) {
-                    $('.dividir').append(`
-                    <div class="imagetext">
-                        <div class="w-full w-20 h-64 overflow-hidden">
-                            <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg w-99" src="` + item.route + `">
-                        </div>
-                        <div class="flex justify-between">
-                        <!--Image Tittle-->
-                        <h1 class="flex justify-start">` + item.title + `</h1>
-                        <!--Edit button-->
-                        <button
-                            class="ml-auto editbtn" data-bs-toggle='modal' data-bs-target='#editModal' value="` + item.id + `">
-                            <i class="far fa-edit" style="color: black;"></i>
-                            </button>
-                        <!--Delete button-->
-                        <button class="ml-2 deletebtn" data-bs-toggle='modal' data-bs-target='#exampleModal' value="` + item.id + `"> <i class="far fa-trash-alt" style="color: black;"></i> </button>
-                        </div>
-                    </div>`);
+
+                    var ext = item.route;
+                    const extension = ext.split('.').pop();
+
+                    if(extension.toLowerCase() == 'png' || extension.toLowerCase() == 'jpg' || extension.toLowerCase() == 'jpeg'){
+                            $('.dividir').append(`
+                        <div class="imagetext">
+                            <div class="w-full w-20 h-64 overflow-hidden">
+                                <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg w-99" src="` + item.route + `">
+                            </div>
+                            <div class="flex justify-between">
+                            <!--Image Tittle-->
+                            <h1 class="flex justify-start">` + item.title + `</h1>
+                            <!--Edit button-->
+                            <button
+                                class="ml-auto editbtn" data-bs-toggle='modal' data-bs-target='#editModal' value="` + item.id + `">
+                                <i class="far fa-edit" style="color: black;"></i>
+                                </button>
+                            <!--Delete button-->
+                            <button class="ml-2 deletebtn" data-bs-toggle='modal' data-bs-target='#exampleModal' value="` + item.id + `"> <i class="far fa-trash-alt" style="color: black;"></i> </button>
+                            </div>
+                        </div>`);
+                    }else {
+                            $('.dividir').append(`
+                        <div class="imagetext">
+                            <div class="w-full w-20 h-64 overflow-hidden">
+                                <video class="block object-cover object-center w-full h-full rounded-lg w-99" preload>
+                                    <source src="` + item.route + `" type="video/`+extension+`">
+                                </video>
+                            </div>
+                            <div class="flex justify-between">
+                            <!--Image Tittle-->
+                            <h1 class="flex justify-start">` + item.title + `</h1>
+                            <!--Edit button-->
+                            <button
+                                class="ml-auto editbtn" data-bs-toggle='modal' data-bs-target='#editModal' value="` + item.id + `">
+                                <i class="far fa-edit" style="color: black;"></i>
+                                </button>
+                            <!--Delete button-->
+                            <button class="ml-2 deletebtn" data-bs-toggle='modal' data-bs-target='#exampleModal' value="` + item.id + `"> <i class="far fa-trash-alt" style="color: black;"></i> </button>
+                            </div>
+                        </div>`);
+                    }
+
+
                 });
             }
         });
@@ -143,7 +171,7 @@ $(document).ready(function() {
     /*MÉTODO PARA SUBIR IMÁGENES
     $(`#upManyImages`).submit(Element=> {
         Element.preventDefault();
-        
+
         var imagenes = FormData();
 
         imagenes.append("Pointofinterest", $('.form-select').val());
@@ -151,7 +179,7 @@ $(document).ready(function() {
         $('.form-select').for(function (resource){
             imagenes.append("Resources", $('.form-control').files[i]);
         })
-        
+
 
     })*/
 

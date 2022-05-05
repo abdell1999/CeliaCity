@@ -74,11 +74,10 @@ class ResourceController extends Controller
 
             foreach($images as $image) {
                 $name = Str::random(10).'.'.$image->getClientOriginalExtension();
-                $path = $image->storeAs('uploads', $name, 'public');
-
+                $path = $image->move('uploads', $name);
                 $resource= new Resource();
                 $resource -> title = $name;
-                $resource -> route = '/storage/'.$path;
+                $resource -> route = $path;
                 $resource -> save();
 
                 $resourceid= Resource::where('title',$name)->take(1)->get();

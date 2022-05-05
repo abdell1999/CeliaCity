@@ -27,8 +27,8 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-                type="file"name="images[]" accept="image/*" multiple>
+                <input class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                type="file" name="images[]" accept="image/*" multiple>
             </div>
         </div>
     </div>
@@ -41,6 +41,6 @@
     <input
         class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" id="upManyImages"
         value= "Enviar">
-    
+
 </div>
 @endsection
