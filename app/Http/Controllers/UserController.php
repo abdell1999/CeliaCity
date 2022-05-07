@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -105,8 +106,22 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $data['users'] = User::findOrFail($id);
-        return view('users.edit',$data);
+        $user = User::findOrFail($id);
+
+        if($user)
+        {
+            return response()->json([
+                'status'=>200,
+                'user'=> $user
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No se encuentra usuario'
+            ]);
+        }
     }
 
     /**
@@ -118,9 +133,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id){
 
-        //dd($request);
-
-        $data = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'surname1' => ['required', 'string', 'max:255'],
             'surname2' => ['nullable', 'string', 'max:255'],
@@ -130,35 +143,34 @@ class UserController extends Controller
             'borndate' => ['required'],
             'address' => ['required'],
             'photo' => ['nullable'],
-
-
         ]);
 
-
-
-        $user = User::findOrFail($id);
-        $user->name = $data['name'];
-        $user->surname1 = $data['surname1'];
-        $user->surname2 = $data['surname2'];
-        $user->email = $data['email'];
-        $user->phone = $data['phone'];
-        $user->movilphone = $data['movilphone'];
-        $user->borndate = $data['borndate'];
-
-
-        //$user->photo = "/storage/" . $data['photo']->store('users', 'public');
-
-        if(request('photo')){
-
-            //'photo' => "/storage/" . $data['photo']->store('users', 'public'),
-            $user->photo = "/storage/" . $request['photo']->store('users', 'public');
-
+        if($validator->fails()){
+            return response()->json([
+                'status' =>400,
+                'errors' => $validator->errors()->all()
+            ]);
+        }else{
+            $user = User::findOrFail($id);
+            if($user){
+            $user->name = $request->input('name');
+            $user->surname1 = $request->input('surname1');
+            $user->surname2 = $request->input('surname2');
+            $user->email = $request->input('email');
+            $user->address = $request->input('address');
+            $user->phone = $request->input('phone');
+            $user->movilphone = $request->input('movilphone');
+            $user->borndate = $request->input('borndate');
+            $user->save();
+            }
         }
 
-        $user->address = $data['address'];
-        //$user->rol = $data['rol'];
-        $user->save();
-        return redirect()->route('users.index');
+        return response()->json([
+            'status' =>200,
+            'message' =>'Punto de interes añadido correctamente',
+        ]);
+
+        return redirect()->route('index');
     }
 
     /**
@@ -215,7 +227,9 @@ class UserController extends Controller
 
     }
 
+    public function updateprofile($id){
 
+    }
 
 
 

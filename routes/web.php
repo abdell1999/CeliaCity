@@ -45,7 +45,9 @@ Route::delete('/delete-comments/{id_pointofinterest}', [App\Http\Controllers\Com
 Route::get('guide', [App\Http\Controllers\GuideController::class, 'guide']);
 Route::get('guide/{id}', [App\Http\Controllers\GuideController::class, 'showpoint']);
 Route::get('myprofile/{id}', [App\Http\Controllers\UserController::class, 'myprofile']);
-
+Route::delete('delete-profile/{id}', [App\Http\Controllers\UserController::class, 'destroy']);
+Route::get('edit-profile/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+Route::put('update-profile/{id}', [App\Http\Controllers\UserController::class, 'update']);
 
 Route::get('/options', [App\Http\Controllers\OptionController::class, 'index'])->name('options');
 Route::get('/options/get-option/{id}', [App\Http\Controllers\OptionController::class, 'getoption']);
