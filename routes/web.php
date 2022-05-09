@@ -18,6 +18,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Auth::routes();
 
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home2');
 Route::resource('/pointofinterests', 'PointofinterestController');
 Route::get('fetch-point', [App\Http\Controllers\PointofinterestController::class, 'fetchpoint']);
