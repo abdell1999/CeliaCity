@@ -10,13 +10,14 @@
                 <li class="special">
                     <a href="#menu" class="menuToggle"><span>Menu</span></a>
                     <div id="menu">
-                        <ul>
+                        <ul id="nav2">
                             <li><a href="/">Inicio</a></li>
-                            <li><a href="/guide">Guía Turística</a></li>
-                            <li><a href="/categories/1">Monumentos</a></li>
-                            <li><a href="/categories/2">Hostelería</a></li>
-                            <li><a href="/categories/3">Servicios</a></li>
-                            @if (Auth::guest())
+                          
+                          
+                        </ul>
+
+                        <ul>
+                        @if (Auth::guest())
                             <li><a href="/register" >Registrarse</a></li>
                             <li><a href="/login" >Acceder</a></li>
                             @else
@@ -48,6 +49,7 @@
     <script src="/assets/plantilla2/js/breakpoints.min.js"></script>
     <script src="/assets/plantilla2/js/util.js"></script>
     <script src="/assets/plantilla2/js/main.js"></script>
+    <script src="/assets/js/categoriesNavMenu.js"></script>
     <script>
 
         $.ajaxSetup({
