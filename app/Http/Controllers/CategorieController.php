@@ -9,8 +9,8 @@ use App\Models\Pointofinterest;
 class CategorieController extends Controller {
 
     public function __construct() {
-        $this->middleware("auth")->except("show");
-        $this->middleware("App\Http\Middleware\Administrate::class")->except("show");
+        $this->middleware("auth")->except("show","fetchAll");
+        $this->middleware("App\Http\Middleware\Administrate::class")->except("show","fetchAll");
     }
     /**
      * Display a listing of the resource.
@@ -133,4 +133,9 @@ class CategorieController extends Controller {
         $categorie->delete();
         return redirect()->route('categories.index');
     }
+
+    public function fetchAll(){
+        return Categorie::all();
+    }
+
 }

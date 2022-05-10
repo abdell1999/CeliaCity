@@ -18,24 +18,13 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="/home">Inicio</a>
+                                    <a class="page-scroll"  href="/home">Inicio</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="/guide">Guía</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="/categories/1">Monumentos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="/categories/2">Hostelería</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="/categories/3">Servicios</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="/team">Créditos</a>
-                                </li>
-                                @if (Auth::guest())
+                                
+                             
+                            </ul>
+                            <ul class="navbar-nav ml-auto">
+                                                        @if (Auth::guest())
                                 <li class="nav-item">
                                     <a class="page-scroll" href="#" data-toggle="modal" data-target="#registerModal">Registrarse</a>
                                 </li>
@@ -56,10 +45,12 @@
 
                                     @endif
                             </ul>
+
                         </div> <!-- navbar collapse -->
                     </nav> <!-- navbar -->
                 </div>
             </div> <!-- row -->
         </div> <!-- container -->
     </div> <!-- header navbar -->
+    <script src="/assets/js/categoriesNavMenu.js"></script>
 </section>

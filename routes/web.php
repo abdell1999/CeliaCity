@@ -35,6 +35,7 @@ Route::delete('delete-comment/{id}', [App\Http\Controllers\CommentController::cl
 Route::delete('delete-resource/{id}', [App\Http\Controllers\ResourceController::class, 'destroy']);
 Route::delete('delete-user/{id}', [App\Http\Controllers\UserController::class, 'destroy']);
 Route::resource('/categories', 'CategorieController');
+Route::get('fetch-categories',[App\Http\Controllers\CategorieController::class, 'fetchAll']);
 Route::resource('/users', 'UserController');
 Route::resource('/comments','CommentController');
 Route::resource('/resources','ResourceController');
