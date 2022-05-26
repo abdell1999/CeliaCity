@@ -8,6 +8,7 @@ use App\Models\Option;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -27,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        Schema::defaultStringLength(1000);
         /**
          * Es necesario controlar esto con una variable ya que si no siempre va a intentar acceder a la bd
          * lo cual imposibilita hacer migraciones y etc.

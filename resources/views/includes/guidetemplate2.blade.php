@@ -2,6 +2,13 @@
 <br>
 <div id="map" style="height: 40em; z-index: 1;">
 </div>
+
+
+
+
+
+
+
 <script type="text/javascript">
     //Cargando nuestro mapa
     var mapsipe = L.map('map').
