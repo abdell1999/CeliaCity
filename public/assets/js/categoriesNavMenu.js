@@ -32,12 +32,20 @@ $.ajax({
     dataType: "json",
 }).done(function (response) {
     console.log(response);
+    let route;
     response.forEach(element => {
-        nav2.append(`
+        if(element.name == "Guia"){
+            route = "/guide";
+        }else{
+            route = `/categories/${element.id}`;
+        }
         
-        <li><a href="/categories/${element.id}">${element.name}</a></li>
+        nav2.append(`<li><a href="${route}">${element.name}</a></li>
         
         `);
+        
+        
+        
     });
    
 
