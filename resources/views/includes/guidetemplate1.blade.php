@@ -12,6 +12,45 @@
 </style>
 
 <div class="container mt-100 pt-20">
+    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-center">Historia de Purullena</h2>
+    <br>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://www.rutasconhijos.es/wp-content/uploads/2015/09/trogloditas2.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://www.rutasconhijos.es/wp-content/uploads/2015/09/trogloditas3-800x420.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://www.rutasconhijos.es/wp-content/uploads/2015/09/trogloditas4-800x420.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
+
+<p>
+La historia de Purullena se remonta al año 1800 a.C. aproximadamente, según los estudios arqueológicos de la Cuesta del Negro. En este yacimiento se encuentra un recinto fortificado y una necrópolis con ajuar funerario, así como un asentamiento perteneciente a la Edad del Bronce.
+
+Del paso de los romanos y los árabes por la localidad no ha quedado más huella que unas epigrafías romanas con el nombre del pueblo. La zona contaba con unas torres defensivas que se construyeron en la época andalusí sobre el río Fardes para impedir la penetración de los caballeros cristianos acampados en Jaén. Esta frontera tuvo un especial protagonismo durante la última etapa islámica, la del Reino nazarí de Granada, hasta que cayó en manos de los Reyes Católicos en 1489 y fue cedida a ''Don'' Juan de Benavides.
+
+Poco después pasó a ser una pedanía perteneciente a Marchal. Ya en el siglo XVI recibió el título de Villa Real, que todavía luce en su título municipal. En 1627, S.M. el Rey Felipe IV concedería el título nobiliario de Marquesa de Villa Real de Purullena a ''Doña'' María de Benavides de la Cueva y Sandoval, hija del I Marqués de Jabalquinto.
+</p>
+<br>
+<br>
     <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-center">Guía Turística Purullena</h2>
     <div class="row mt-20 pb-20">
         <div class="col-md-4 text-center bg-dark">
