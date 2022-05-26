@@ -114,5 +114,11 @@ class OptionsSeeder extends Seeder
             'type' => 'template'
         ]);
 
+        DB::table('options')->insert([
+            'name' => 'history',
+            'value' => 'El Cid convoca a sus vasallos; éstos se destierran con él. Adiós del Cid a Vivar. (Envió a buscar a todos sus parientes y vasallos, y les dijo cómo el rey le mandaba salir de todas sus tierras y no le daba de plazo más que nueve días y que quería saber quiénes de ellos querían ir con él y quiénes quedarse. A los que conmigo vengan que Dios les dé muy buen pago; también a los que se quedan contentos quiero dejarlos. Habló entonces Álvar Fáñez, del Cid era primo hermano: "Con vos nos iremos, Cid, por yermos y por poblados; no os hemos de faltar mientras que salud tengamos, y gastaremos con vos nuestras mulas y caballos y todos nuestros dineros y los vestidos de paño, siempre querremos serviros como leales vasallos." Aprobación dieron todos a lo que ha dicho don Álvaro. Mucho que agradece el Cid aquello que ellos hablaron. El Cid sale de Vivar, a Burgos va encaminado, allí deja sus palacios yermos y desheredados. Los ojos de Mío Cid mucho llanto van llorando; hacia atrás vuelve la vista y se quedaba mirándolos. Vio como estaban las puertas abiertas y sin candados, vacías quedan las perchas ni con pieles ni con mantos, sin halcones de cazar y sin azores mudados. Y habló, como siempre habla, tan justo tan mesurado: "¡Bendito seas, Dios mío, Padre que estás en lo alto! Contra mí tramaron esto mis enemigos malvados". 2 Agüeros en el camino de Burgos Ya aguijan a los caballos, ya les soltaron las riendas. Cuando salen de Vivar ven la corneja a la diestra, pero al ir a entrar en Burgos la llevaban a su izquierda. Movió Mío Cid los hombros y sacudió la cabeza: "¡Ánimo, Állvar Fáñez, ánimo, de nuestra tierra nos echan, pero cargados de honra hemos de volver a ella! " 3 El Cid entra en Burgos Ya por la ciudad de Burgos el Cid Ruy Díaz entró. Sesenta pendones lleva detrás el Campeador. Todos salían a verle, niño, mujer y varón,',
+            'type' => 'text'
+        ]);
+
     }
 }

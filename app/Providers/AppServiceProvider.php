@@ -40,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
         $dataoptions['townname'] = Option::find(2)->value;
         $dataoptions['shortdescription'] = Option::find(9)->value;
         $dataoptions['longdescription'] = Option::find(10)->value;
+        $dataoptions['history'] = Option::find(17)->value;
 
         //$dataoptions['template'] = 2;
 
