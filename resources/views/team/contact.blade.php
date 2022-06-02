@@ -1,6 +1,7 @@
 @extends('layouts.frontpage')
 @section('content')
 
+<link rel="stylesheet" type="text/css" href="/assets/css/contact.css">
 
 
 
