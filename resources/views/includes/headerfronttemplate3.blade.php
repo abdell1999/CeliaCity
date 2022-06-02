@@ -9,7 +9,19 @@
             <!-- Custom Css -->
             <link href="/assets/plantilla3/css/style.min.css" rel="stylesheet" type="text/css" />
     
-  
+
+            <body data-bs-spy="scroll" data-bs-target="#navbar-navlist" data-bs-offset="20">
+        <!-- Loader Start -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader End -->
   
   
   <!-- Navbar Start -->
@@ -57,4 +69,5 @@
       <script src="/assets/plantilla3/js/contact.js"></script>
       <!-- Main Js -->
       <script src="/assets/plantilla3/js/app.js"></script>
-      <script>alert("hola mn")</script>
+
+     
