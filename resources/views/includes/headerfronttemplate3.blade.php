@@ -27,7 +27,7 @@
   <!-- Navbar Start -->
   <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
     		<div class="container">
-			    <a class="navbar-brand" href="#">Macael</a>
+			    <a class="navbar-brand townname" href="#">Macael</a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="mdi mdi-menu"></span>
 			    </button><!--end button-->

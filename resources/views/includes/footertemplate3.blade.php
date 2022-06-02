@@ -3,7 +3,7 @@
             <div class="container ">
                 <div class="row justify-content-around">
                     <div class="col-lg-4 col-md-12">
-                        <a class="footer-logo" href="#">Macael</a>
+                        <p class="footer-logo townname"></p>
                         <p class="text-foot mt-3">Guia desarrollada por CeliaCity un grupo de estudiantes del instituto Celia Viñas en el curso de Desarrollo de Aplicaciones Web.</p>
                         <ul class="list-unstyled social-icon social mb-0">
                         
