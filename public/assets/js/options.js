@@ -324,7 +324,7 @@ $(document).ready(function () {
                         $(".pointname" + index).text(
                             response.pointofinterest.name
                         );
-                        $(".pointshorttext" + index).text(
+                        $(".pointshorttext" + index).append(
                             response.pointofinterest.text.substr(0, limite) +
                                 " ..."
                         );

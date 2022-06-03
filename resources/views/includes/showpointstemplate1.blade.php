@@ -64,7 +64,7 @@
                                 <div class="about_content m-3">
                                     <div class="section_title">
                                         <h3 class="title"><span>{!!$pointofinterests->name !!}</span></h3>
-                                        <p>{{ $pointofinterests->text }}</p>
+                                        <p> {!! $pointofinterests->text !!} </p>
                                     </div> <!-- section title -->
                                 </div> <!-- about content -->
                                 <!-- about_counter -->

@@ -35,6 +35,10 @@
 @include('includes.footertemplate2')
 @endif
 
+@if ($dataoptions['template'] == 3)
+@include('includes.footertemplate3')
+@endif
+
 
 </body>
 </html>

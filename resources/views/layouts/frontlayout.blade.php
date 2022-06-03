@@ -12,7 +12,9 @@
 @if ($dataoptions['template'] == 2)
 @include('includes.headerfronttemplate2')
 @endif
-
+@if ($dataoptions['template'] == 3)
+@include('includes.headerfronttemplate3')
+@endif
 
 <body>
 @yield('content')
@@ -24,5 +26,10 @@
 @if ($dataoptions['template'] == 2)
 @include('includes.footertemplate2')
 @endif
+
+@if ($dataoptions['template'] == 3)
+@include('includes.footertemplate3')
+@endif
+
 </body>
 </html>
