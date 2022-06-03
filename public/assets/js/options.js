@@ -37,6 +37,7 @@ $(document).ready(function () {
                         <select id="${id_input}" name="templateOption" class="templateOption">
                         <option value="1">Plantilla 1 </option>
                         <option value="2">Plantilla 2 </option>
+                        <option value="3">Plantilla 3 </option>
                         </select>
                         `;
                     }
