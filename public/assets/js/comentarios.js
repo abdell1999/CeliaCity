@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("Script para gestionar comentarios cargado correctamente");
+
 
     //alert("HHOLA");
 
@@ -22,9 +22,8 @@ $(document).ready(function () {
             type: "GET",
             url: "/fetch-comment/" + id_pointofinterest,
             success: function (response) {
-                console.log(response);
-                var name = "pepe";
-                var photo = "photo";
+               var name = "pepe";
+               var photo = "photo";
 
                 $.each(response.comments, function (key, comment) {
                     $.each(response.users, function (key, user) {
@@ -80,8 +79,7 @@ $(document).ready(function () {
     function crearComentario() {
         text = $("#text").val();
 
-        console.log("Texto del comentario: " + text);
-        console.log("ID del punto: " + id_pointofinterest);
+
 
         $.ajax({
             url: "/comentar",
@@ -91,7 +89,7 @@ $(document).ready(function () {
                 text: text,
             },
             success: function (response) {
-                console.log("SE HA INSERTADO ALGO");
+
                 $("#text").val("");
 
                 fetchcomment(id_pointofinterest);
@@ -103,7 +101,6 @@ $(document).ready(function () {
                 }
             },
             error: function (response) {
-                alert("Ha ocurrido un error al crear el comentario");
                 console.log(response);
             },
         });
@@ -124,7 +121,7 @@ $(document).ready(function () {
             url: "/delete-comments/" + id,
             dataType: "json",
             success: function (response) {
-                console.log(response);
+
                 if (response.status == 404) {
                     $(".delete_comment").text("Borrado Correctamente");
                 } else {
@@ -142,7 +139,7 @@ $(document).ready(function () {
     $(document).on("click", ".editbtn", function (e) {
         e.preventDefault();
         var comment_id = $(this).val();
-        console.log(comment_id);
+
 
         $("#editModal").modal("show");
 
@@ -150,7 +147,7 @@ $(document).ready(function () {
             type: "GET",
             url: "/edit-comment/" + comment_id,
             success: function (response) {
-                console.log(response);
+
                 if (response.status == 404) {
                     $("#editModal").modal("hide");
                 } else {
@@ -181,7 +178,7 @@ $(document).ready(function () {
             data: data,
             dataType: "json",
             success: function (response) {
-                //console.log(response);
+
                 if (response.status == 400) {
                     $.each(response.errors, function (key, err_value) {
                         $("#update_msgList").append(

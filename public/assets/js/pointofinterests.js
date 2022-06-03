@@ -10,9 +10,9 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 $("tbody").html("");
-                //console.log(response);
+
                 $.each(response.pointofinterest, function (key, item) {
-                    //console.log(response);
+
                     $("tbody").append(
                         "<tr>\
                     <th>" +
@@ -51,7 +51,7 @@ $(document).ready(function () {
     $(document).on("click", ".editbtn", function (e) {
         e.preventDefault();
         var point_id = $(this).val();
-        //console.log(point_id);
+
 
         $("#editModal").modal("show");
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
             type: "GET",
             url: "/edit-pointofinterest/" + point_id,
             success: function (response) {
-                console.log(response);
+
                 let texto = response.pointofinterests.text;
                 if (response.status == 404) {
                     $("#success_message").addClass(
@@ -68,7 +68,7 @@ $(document).ready(function () {
                     $("#success_message").text(response.message);
                     $("#editModal").modal("hide");
                 } else {
-                    //console.log(response.pointofinterest.name);
+
                     $("#edit_name").val(response.pointofinterests.name);
                     $("#edit_latitude").val(response.pointofinterests.latitude);
                     $("#edit_longitude").val(
@@ -126,9 +126,8 @@ $(document).ready(function () {
             data: data,
             dataType: "json",
             success: function (response) {
-                console.log(response);
-                if (response.status == 400) {
-                    console.log(response);
+                                if (response.status == 400) {
+
                     $("#update_msgList").html("");
                     $("#update_msgList").addClass(
                         "inline-block px-6 py-2.5 bg-red-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-600 hover:shadow-lg focus:bg-red-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out"
@@ -140,7 +139,7 @@ $(document).ready(function () {
                     });
                     $(".update_pointofinterest").text("Actualizar");
                 } else {
-                    console.log(response);
+
                     $("#update_msgList").html("");
 
                     $("#success_message").addClass(
@@ -159,7 +158,7 @@ $(document).ready(function () {
 
     $(document).on("click", ".add_pointofinterest", function (e) {
         e.preventDefault();
-        //console.log('Hola');
+
         let texto = CKEDITOR.instances.contenido.getData();
         CKEDITOR.instances;
         var data = {
@@ -170,7 +169,7 @@ $(document).ready(function () {
             text: texto,
             categoriespoint: $(".categoriespoint").val(),
         };
-        console.log(data);
+
         $.ajax({
             type: "POST",
             url: "/pointofinterests",
@@ -216,7 +215,7 @@ $(document).ready(function () {
             url: "/delete-point/" + id,
             dataType: "json",
             success: function (response) {
-                console.log(response);
+
                 if (response.status == 404) {
                     $("#success_message").addClass(
                         "inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"

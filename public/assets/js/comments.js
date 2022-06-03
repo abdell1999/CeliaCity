@@ -10,7 +10,7 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 $("tbody").html("");
-                //console.log(response);
+
                 $.each(response.comments, function (key, comment) {
                     var name = "";
                     var punto = "";
@@ -74,7 +74,7 @@ $(document).ready(function () {
             url: "/delete-comment/" + id,
             dataType: "json",
             success: function (response) {
-                //console.log(response);
+
                 if (response.status == 404) {
                     $("#success_message").addClass(
                         "inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
@@ -101,7 +101,7 @@ $(document).ready(function () {
     $(document).on("click", ".editbtn", function (e) {
         e.preventDefault();
         var comment_id = $(this).val();
-        //console.log(point_id);
+
 
         $("#editModal").modal("show");
 
@@ -109,7 +109,7 @@ $(document).ready(function () {
             type: "GET",
             url: "/edit-comment/" + comment_id,
             success: function (response) {
-                //console.log(response);
+
                 if (response.status == 404) {
                     $("#success_message").addClass(
                         "inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
@@ -147,7 +147,7 @@ $(document).ready(function () {
             data: data,
             dataType: "json",
             success: function (response) {
-                //console.log(response);
+
                 if (response.status == 400) {
                     $("#update_msgList").html("");
                     $("#update_msgList").addClass(

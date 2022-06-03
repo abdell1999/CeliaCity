@@ -80,7 +80,7 @@ $(document).ready(function() {
                     $('#success_message').text(response.message);
                     $('#editModal').modal('hide');
                 } else {
-                    // console.log(response.student.name);
+
                     $('#edit_title').val(response.resource.title);
                     $('#resource_id').val(resource_id);
                 }
