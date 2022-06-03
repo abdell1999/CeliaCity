@@ -1,4 +1,4 @@
-console.log("Script para gestionar categorías cargado correctamente");
+
 $(document).ready(function() {
 
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
         editable(idInput);
         $('#'+idInput).focusout(function(){
             if ($(this).is('[readonly]')) {
-                console.log("Has seleccionado un input no editable :)");
+
             }else{
                 //$(this).attr("value", "PRUEBA");
 
