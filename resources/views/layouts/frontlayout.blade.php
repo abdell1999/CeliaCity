@@ -15,6 +15,9 @@
 @if ($dataoptions['template'] == 3)
 @include('includes.headerfronttemplate3')
 @endif
+@if ($dataoptions['template'] == 4)
+@include('includes.headerfronttemplate4')
+@endif
 
 <body>
 @yield('content')
@@ -29,6 +32,10 @@
 
 @if ($dataoptions['template'] == 3)
 @include('includes.footertemplate3')
+@endif
+
+@if ($dataoptions['template'] == 4)
+@include('includes.footertemplate4')
 @endif
 
 </body>

@@ -8,3 +8,6 @@
 @if ($dataoptions['template'] == 3)
 @include("includes.hometemplate3")
 @endif
+@if ($dataoptions['template'] == 4)
+@include("includes.hometemplate4")
+@endif

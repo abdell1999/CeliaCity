@@ -1,0 +1,1406 @@
+/* site responsive styles */
+/* query sm (576) styles */
+@media (min-width: 576px) {
+	.syOFcvBlock .featureBlock .fbtWrap {
+		padding: 28px 25px 15px 20px;
+	}
+	.syOFcvBlock .featureBlock .fbTxtBlock {
+		width: 280px;
+	}
+	.syOFcvBlock .lfbRow .col .mfIcon {
+		margin-right: 30px;
+	}
+	.syOFcvBlock .lfbRow .col .fbTxtBlock {
+		left: auto;
+		right: 95px;
+	}
+	.syOFcvBlock .lfbRow .col .featureBlock.hover .fbTxtBlock {
+		right: 118px;
+		left: auto;
+	}
+	.syOFcvBlock .rfbRow .col .mfIcon {
+		margin-left: 30px;
+	}
+	.syOFcvBlock .rfbRow .col .fbTxtBlock {
+		right: auto;
+		left: 100px;
+	}
+	.syOFcvBlock .rfbRow .col .featureBlock.hover .fbTxtBlock {
+		right: auto;
+		left: 120px;
+	}
+	.csList li {
+		width: 33.3333%;
+		margin-bottom: 0;
+	}
+	.csList li + li:before {
+		width: 2px;
+		height: 57px;
+		left: 0;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	.hyfRo .col:last-child .hyfCol {
+		margin-bottom: 30px;
+	}
+	.donationBoxHolder .ccLiveCounter li {
+		width: 31%;
+	}
+	.fsLarger {
+		font-size: 90px;
+		line-height: 90px;
+	}
+	.logo {
+		max-width: 115px;
+	}
+	h1,
+	.h1 {
+		font-size: 40px;
+		line-height: 50px;
+	}
+	.btn:before {
+		padding: .75rem .9375rem;
+	}
+	.btnText {
+		padding: .75rem .9375rem;
+	}
+	.bannerSec .btnHolder .btn {
+		min-width: 150px;
+	}
+	.bannerSec .hTitle {
+		font-size: 30px;
+		line-height: 30px;
+	}
+	.ccLiveCounter li {
+		min-width: 30%;
+	}
+	.featColumn {
+		font-size: 16px;
+	}
+	.accOpener {
+		padding: 18px 40px 18px 20px;
+	}
+	.accOpener:after,
+	.accOpener:before {
+		font-size: 14px;
+		right: 20px;
+	}
+	.bpCommentsList .bpChildCommentsList .cmntWrap {
+		padding-left: 60px;
+	}
+	.bpCommentsList .cmntWrap {
+		padding: 30px 15px;
+	}
+	.cgdOrgDetailList li {
+		width: 50%;
+	}
+	.gridFilterWrap .element-item {
+		width: 50%;
+	}
+	.cgspTabList .nav-link {
+		margin-right: 15px;
+	}
+	.profilePicWrap {
+		left: 40px;
+		opacity: 0;
+		visibility: hidden;
+		-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+		transform: scale(0);
+		-webkit-transform-origin: 50% 50% 0;
+		-ms-transform-origin: 50% 50% 0;
+		transform-origin: 50% 50% 0;
+		-webkit-transition: opacity .5s ease, visibility .5s ease, -webkit-transform .5s ease;
+		transition: opacity .5s ease, visibility .5s ease, -webkit-transform .5s ease;
+		transition: opacity .5s ease, visibility .5s ease, transform .5s ease;
+		transition: opacity .5s ease, visibility .5s ease, transform .5s ease, -webkit-transform .5s ease;
+		top: 30px;
+	}
+	.clientQuote q:before {
+		left: -57px;
+	}
+	.slick-current.slick-active .clientQuote .profilePicWrap {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+/* query md (768) styles */
+@media (min-width: 768px) {
+	.hdTopBar {
+		font-size: 13px;
+	}
+	.bannerSlider .bannerSec.bannerSecIII {
+		min-height: calc(100vh - 125px);
+	}
+	.searchOpener {
+		margin-right: 10px;
+		padding-right: 7px;
+		padding-left: 7px;
+	}
+	.dropdown-submenu:after {
+		font-size: 8px;
+	}
+	.pageMainNavigation .nav-item.dropdown {
+		-webkit-transition: background-color .35s ease;
+		transition: background-color .35s ease;
+	}
+	.pageMainNavigation .nav-item.dropdown:after {
+		top: 1px;
+		right: 0;
+		font-size: 8px;
+	}
+	.pageMainNavigation li.nav-item:nth-last-child(1) .navDropdownList .dropdown-submenu .dropdown-menu.mainNavDropdown,
+	.pageMainNavigation li.nav-item:nth-last-child(2) .navDropdownList .dropdown-submenu .dropdown-menu.mainNavDropdown,
+	.pageMainNavigation li.nav-item:nth-last-child(3) .navDropdownList .dropdown-submenu .dropdown-menu.mainNavDropdown {
+		left: -100% !important;
+	}
+	.pageMainNavigation.navbar-nav li.dropdown > .dropdown-menu:before {
+		content: "";
+		position: absolute;
+		top: -32px;
+		right: 0;
+		left: 0;
+		height: 32px;
+	}
+	.pageMainNavigation.navbar-nav li.dropdown > .dropdown-menu {
+		margin-top: 32px;
+	}
+	.pageMainNavigation.navbar-nav li.dropdown:hover > .dropdown-menu {
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+	.pageMainNavigation.navbar-nav li.dropdown-submenu:hover > .dropdown-menu {
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+	.headerII .pageMainNavigation li.nav-item:nth-last-child(3) .navDropdownList .dropdown-submenu .dropdown-menu.mainNavDropdown {
+		left: 100% !important;
+	}
+	.headerII .pageMainNavigation li.dropdown > .dropdown-menu {
+		margin-top: 21px;
+	}
+	.headerII .pageMainNavigation li.dropdown > .dropdown-menu:before {
+		top: -21px !important;
+		height: 21px !important;
+	}
+	.navDropdownList .dropdown-menu.mainNavDropdown {
+		left: 100%;
+		top: 0;
+		margin-left: 0;
+		position: absolute;
+	}
+	.mainNavDropdown.dropdown-menu {
+		display: block !important;
+		min-width: 1px;
+		-webkit-transform: translateY(5px);
+		-ms-transform: translateY(5px);
+		transform: translateY(5px);
+		opacity: 0;
+		visibility: hidden;
+		width: 150px;
+	}
+	.mainNavDropdown.dropdown-menu .dropdown-item {
+		color: #42516d;
+		font-size: 13px;
+		line-height: 1.28571;
+		padding: 12px 10px;
+	}
+	.mainNavDropdown.dropdown-menu .dropdown-item .dropdown-toggle {
+		left: 100%;
+		top: 0;
+		margin-left: 0;
+	}
+	.mainNavDropdown .dropdown-submenu .dropdown-menu .dropdown-item {
+		padding-left: 16px !important;
+	}
+	.navbar-expand-md .navbar-nav .dropdown-menu {
+		position: absolute;
+		box-shadow: 0 10px 20px rgba(23, 22, 49, .1);
+	}
+	.menuHolder .navCollapse {
+		position: static;
+		background-color: transparent;
+		min-width: auto;
+		font-size: 17px;
+		line-height: 15px;
+		padding-top: 32px;
+		padding-bottom: 32px;
+		border-top: 0;
+		box-shadow: none;
+		border-radius: 0;
+	}
+	.menuHolder .navCollapse .nav-item {
+		font-size: 13px;
+		margin-right: 0;
+	}
+	.menuHolder .navCollapse .nav-item.dropdown {
+		margin-right: 10px;
+	}
+	.menuHolder .navCollapse .nav-link {
+		color: #42516d;
+		padding: 0 10px;
+	}
+	.hdBtn {
+		min-width: 100px;
+		font-size: 14px;
+	}
+	.hdBtn:before,
+	.hdBtn .btnText {
+		padding: 9px 5px;
+	}
+	.logo {
+		max-width: 120px;
+	}
+	.headerII .searchOpener {
+		color: #fff;
+	}
+	.headerII .menuHolder .navCollapse .nav-link {
+		color: #fff;
+	}
+	.headerII .topBarContactList li + li:before {
+		left: -15px;
+	}
+	.headerII .topBarContactList .icn {
+		pointer-events: none;
+	}
+	.syOFcvBlock .featureBlock {
+		margin-bottom: 40px;
+	}
+	.syOFcvBlock .featureBlock .fbTxtBlock {
+		width: 255px;
+	}
+	.syOFcvBlock .featureBlock .fbtWrap {
+		padding: 18px 20px 22px 18px;
+	}
+	.syOFcvBlock .lfbRow .col .mfIcon {
+		margin-right: 0;
+	}
+	.syOFcvBlock .lfbRow .col .fbTxtBlock {
+		left: auto;
+		right: 60px;
+	}
+	.syOFcvBlock .lfbRow .col .featureBlock.hover .fbTxtBlock {
+		right: 85px;
+		left: auto;
+	}
+	.syOFcvBlock .rfbRow .col .mfIcon {
+		margin-left: 0;
+	}
+	.syOFcvBlock .rfbRow .col .fbTxtBlock {
+		right: auto;
+		left: 60px;
+	}
+	.syOFcvBlock .rfbRow .col .featureBlock.hover .fbTxtBlock {
+		right: auto;
+		left: 85px;
+	}
+}
+
+@media (min-width: 768px) and (min-width: 768px) {
+	.syOFcvBlock .lfbRow .col:last-child .featureBlock,
+	.syOFcvBlock .rfbRow .col:last-child .featureBlock {
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.pieWrapper .half-circle {
+		border-width: .4em;
+	}
+	.ourPromiseBlock .videoWrap {
+		height: 400px;
+	}
+	.shYoTiBlock .deliverSolutionWidget {
+		max-width: 623px;
+	}
+	.donationBoxHolder .ccLiveCounter li {
+		width: 100%;
+	}
+	.donationBoxHolder .ccLiveCounter li:last-child {
+		margin-bottom: 0;
+	}
+	body {
+		font-size: 20px;
+	}
+	.fsLarger {
+		font-size: 120px;
+		line-height: 120px;
+	}
+	.fsSmall {
+		font-size: 16px;
+	}
+	h2,
+	.h2 {
+		font-size: 30px;
+		line-height: 34px;
+	}
+	h3,
+	.h3 {
+		font-size: 30px;
+		line-height: 34px;
+	}
+	h4,
+	.h4 {
+		font-size: 21px;
+		line-height: 26px;
+	}
+	h5,
+	.h5 {
+		font-size: 22px;
+		line-height: 28px;
+	}
+	.bannerSec {
+		min-height: 100vh;
+	}
+	.bannerSec.bannerSecII {
+		min-height: 300px;
+	}
+	.bannerSec.bannerSecIII {
+		min-height: auto;
+	}
+	.featColumn {
+		font-size: 17px;
+	}
+	.hcStepList {
+		font-size: 16px;
+	}
+	.hcStepList li {
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 33.333%;
+		margin-bottom: 0;
+	}
+	.hcStepList li:after {
+		top: 62px;
+		right: -36px;
+		left: auto;
+		bottom: auto;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+	.hcStepList .hcsImgWrap {
+		width: 125px;
+		height: 125px;
+	}
+	.hcStepList .hcsImgWrap:before {
+		font-size: 28px;
+	}
+	.syfCol {
+		font-size: 16px;
+	}
+	.syfCol .descHolder {
+		margin-top: 194px;
+	}
+	.preAdvStep {
+		font-size: 17px;
+	}
+	.afColumn .btnText {
+		padding: .75rem .234rem;
+	}
+	.donStepList li {
+		margin-bottom: 25px;
+	}
+	.donStepList li:last-child {
+		margin-bottom: 0;
+	}
+	.widgetForm .widgetFormtHead .h4 {
+		font-size: 23px;
+	}
+	.ftLinksNav li {
+		margin-bottom: 10px;
+	}
+	.adrList li {
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		margin-bottom: 15px;
+	}
+	.flItemsList {
+		font-size: 18px;
+	}
+	.flItemsList li .icnWrap {
+		font-size: 15px;
+		line-height: 15px;
+		width: 25px;
+		height: 25px;
+	}
+	.cbbPageList {
+		font-size: 18px;
+	}
+	.cbbPageList > li {
+		margin-right: 30px;
+	}
+	.cbbPageList li + li:before {
+		left: -17px;
+	}
+	.causeGridCol .cgColTitle {
+		font-size: 22px;
+	}
+	.countdownList {
+		font-size: 17px;
+		margin-left: -40px;
+		margin-right: -40px;
+	}
+	.countdownList > li {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	.countdownList > li .h1 {
+		font-size: 60px;
+	}
+	.pagination.pagePagination {
+		padding-top: 12px;
+	}
+	.blogSidebar .widgetBlock {
+		margin-bottom: 50px;
+	}
+	.latNewsPost .lnPostTitle a {
+		height: 45px;
+	}
+	.tysdCol .tysdColTitle {
+		font-size: 23px;
+	}
+	.cgspTabList {
+		font-size: 17px;
+	}
+	.cuMapBlock .cuMapHolder {
+		min-height: 350px;
+	}
+	.nalWrap {
+		margin-top: -200px;
+	}
+	.covidLiveCounterMap .covlcWidget {
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	.covidLiveCounterMap .bgCover {
+		background-size: contain;
+	}
+	.covidLiveCounterMap .clcuList {
+		height: 220px;
+	}
+	.newsArticleList a {
+		font-size: 18px;
+		padding: 15px 20px;
+	}
+	.covidLiveCounterMap .covlcWidget {
+		width: 260px;
+	}
+	.helpAsideWidget .btn {
+		font-size: 18px;
+	}
+	.clientQuote q {
+		font-size: 22px;
+	}
+	.clientQuote .eWrap {
+		font-size: 20px;
+	}
+	.clientQuote .subtitle {
+		font-size: 17px;
+		line-height: 1.0588235294;
+	}
+	.profilePicWrap {
+		width: 143px;
+		height: 143px;
+	}
+}
+
+/* query lg (992) styles */
+@media (min-width: 992px) {
+	.searchOpener {
+		font-size: 15px;
+		margin-right: 13px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.mainNavDropdown.dropdown-menu {
+		width: 160px;
+	}
+	.mainNavDropdown.dropdown-menu .dropdown-item {
+		font-size: 14px;
+		padding: 13px;
+	}
+	.mainNavDropdown .dropdown-submenu:after {
+		right: 18px;
+		top: 15px;
+	}
+	.pageMainNavigation.navbar-nav li.dropdown > .dropdown-menu:before {
+		top: -37px;
+		height: 37px;
+	}
+	.pageMainNavigation.navbar-nav li.dropdown > .dropdown-menu {
+		margin-top: 37px;
+	}
+	.dropdown-submenu:after {
+		font-size: 10px;
+	}
+	.pageMainNavigation .nav-item.dropdown:after {
+		font-size: 10px;
+	}
+	.pageMainNavigation li.nav-item:nth-last-child(3) .navDropdownList .dropdown-submenu .dropdown-menu.mainNavDropdown {
+		left: 100% !important;
+	}
+	.menuHolder .navCollapse {
+		padding-top: 37px;
+		padding-bottom: 37px;
+	}
+	.menuHolder .navCollapse .nav-item {
+		font-size: 15px;
+	}
+	.menuHolder .navCollapse .nav-item.dropdown {
+		margin-right: 13px;
+	}
+	.menuHolder .navCollapse .nav-link {
+		padding: 0 15px;
+	}
+	.hdBtn {
+		min-width: 155px;
+		font-size: 18px;
+	}
+	.hdBtn:before,
+	.hdBtn .btnText {
+		padding: 10px 15px;
+	}
+	.headerII .pageMainNavigation li.nav-item:nth-last-child(2) .navDropdownList .dropdown-submenu .dropdown-menu.mainNavDropdown,
+	.headerII .pageMainNavigation li.nav-item:nth-last-child(1) .navDropdownList .dropdown-submenu .dropdown-menu.mainNavDropdown {
+		left: 100% !important;
+	}
+	.headerII .pageMainNavigation li.dropdown > .dropdown-menu {
+		margin-top: 21px;
+	}
+	.headerII .topBarContactList li {
+		margin-right: 60px;
+		font-size: 18px;
+	}
+	.headerII .topBarContactList li + li:before {
+		height: 40px;
+		left: -30px;
+	}
+	.headerII .topBarContactList .icn {
+		font-size: 20px;
+		margin-right: 15px;
+	}
+	.headerII .socialNetworks .icn {
+		font-size: 16px;
+	}
+	.headerII .customSelectWrap {
+		font-size: 14px;
+	}
+	.headerII .customSelectWrap:after {
+		font-size: 14px;
+	}
+	.syOFcvBlock .featureBlock {
+		margin-bottom: 68px;
+	}
+	.syOFcvBlock .featureBlock .fbTxtBlock {
+		width: 205px;
+	}
+	.syOFcvBlock .lfbRow .fbtWrap {
+		padding: 18px 12px 15px 8px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .mfIcon {
+		margin-right: -125px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .fbTxtBlock {
+		right: -65px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .featureBlock.hover .fbTxtBlock {
+		right: -40px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .mfIcon {
+		margin-right: -65px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .fbTxtBlock {
+		right: -5px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .featureBlock.hover .fbTxtBlock {
+		right: 20px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .mfIcon {
+		margin-right: -80px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .fbTxtBlock {
+		right: -20px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .featureBlock.hover .fbTxtBlock {
+		right: 5px;
+	}
+	.syOFcvBlock .rfbRow .fbtWrap {
+		padding: 18px 10px 15px 10px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .mfIcon {
+		margin-left: -125px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .fbTxtBlock {
+		right: auto;
+		left: -65px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .featureBlock.hover .fbTxtBlock {
+		right: auto;
+		left: -40px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .mfIcon {
+		margin-left: -55px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .fbTxtBlock {
+		left: 5px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .featureBlock.hover .fbTxtBlock {
+		left: 30px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .mfIcon {
+		margin-left: -55px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .fbTxtBlock {
+		left: 5px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .featureBlock.hover .fbTxtBlock {
+		left: 30px;
+	}
+	.syOFcvBlock .lfbRow,
+	.syOFcvBlock .rfbRow {
+		padding-top: 20px;
+	}
+	.syOFcvBlock .imgHolder {
+		width: 395px;
+		height: 415px;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+		position: absolute;
+		left: 50%;
+		bottom: 79px;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	.syOFcvBlock .imgHolder img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.cgVerII .cgSecRow .causeGridCol {
+		margin-bottom: 0 !important;
+	}
+	.donateNowForm .customInputWrap .input-group-text,
+	.donateNowForm .customInputWrap .form-control {
+		font-size: 18px;
+	}
+	.donateNowForm .customInputWrap .form-control::-webkit-input-placeholder {
+		font-size: 16px;
+	}
+	.donateNowForm .customInputWrap .form-control:-ms-input-placeholder {
+		font-size: 16px;
+	}
+	.donateNowForm .customInputWrap .form-control::-ms-input-placeholder {
+		font-size: 16px;
+	}
+	.donateNowForm .customInputWrap .form-control::-webkit-input-placeholder {
+		font-size: 16px;
+	}
+	.donateNowForm .customInputWrap .form-control:-ms-input-placeholder {
+		font-size: 16px;
+	}
+	.donateNowForm .customInputWrap .form-control::placeholder {
+		font-size: 16px;
+	}
+	.sendRequestFormWrapper.srfwVerII .customRadioTabBtnLabel .cuFakeLabel {
+		font-size: 18px;
+	}
+	.donationBoxHolder .ccLiveCounter li {
+		width: 48%;
+	}
+	.hmiRow .dslCol {
+		margin-bottom: 0;
+	}
+	.bannerSlider {
+		padding-top: 138px;
+		margin-top: -138px;
+	}
+	.bannerSlider .slick-arrow {
+		font-size: 20px;
+		width: 52px;
+		height: 52px;
+	}
+	.bannerSlider .slickPrev {
+		left: 30px;
+	}
+	.bannerSlider .slickNext {
+		right: 30px;
+	}
+	.bannerSlider .bannerSec.bannerSecIII {
+		min-height: calc(100vh - 135px);
+	}
+	.bannerSecIII .imageWrap .imgHolder {
+		max-width: 470px;
+	}
+	.htrtsoCovid-19 .imgWrap .imgHolder {
+		width: 350px;
+	}
+	.htrtsoCovid-19 .imgWrap .rwImg {
+		right: -15px;
+	}
+	.ourPromiseBlock .videoWrap {
+		position: absolute;
+		height: 100%;
+		width: 48%;
+		top: 0;
+		left: 0;
+	}
+	.ourPromiseBlock .videoWrap .btnPlayWrap {
+		right: -55px;
+		left: auto;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		padding: 23px 19px;
+	}
+	.ourPromiseBlock .contentBlock .btnMin {
+		min-width: 150px;
+	}
+	.shYoTiBlock .deliverSolutionWidget {
+		margin-right: 0;
+		margin-left: auto;
+	}
+	.fsLarger {
+		font-size: 150px;
+		line-height: 150px;
+	}
+	.logo {
+		max-width: 143px;
+	}
+	h1,
+	.h1 {
+		font-size: 44px;
+		line-height: 50px;
+	}
+	.searchPopup .frame {
+		padding: 0;
+	}
+	.searchPopup form {
+		width: 740px;
+	}
+	.bannerSec .btnHolder .btn {
+		min-width: 175px;
+	}
+	.bannerSec .hTitle {
+		font-size: 34px;
+		line-height: 34px;
+	}
+	.bannerSec.bannerSecIII .captionWrap {
+		margin-bottom: 50px;
+	}
+	.bannerSec.bannerSecIII {
+		min-height: 100vh;
+	}
+	.hcStepList {
+		font-size: 17px;
+	}
+	.hcStepList li {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.hcStepList li:after {
+		width: 98px;
+		top: 80px;
+		right: -45px;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+	.hcStepList .hcsImgWrap {
+		width: 158px;
+		height: 158px;
+	}
+	.hcStepList .hcsImgWrap:before {
+		font-size: 35px;
+	}
+	.syfCol {
+		font-size: 17px;
+		margin-bottom: 0;
+	}
+	.syfCol .descHolder {
+		margin-top: 180px;
+	}
+	.syfCol .icnWrap {
+		top: 36px;
+	}
+	.syfCol:hover .descHolder {
+		margin-top: 10px;
+	}
+	.btnPlayHolder .btnPlay {
+		width: 50px;
+		height: 50px;
+	}
+	.phnHolder {
+		width: 50px;
+		height: 50px;
+	}
+	.afColumn .btnText {
+		padding: .75rem .9375rem;
+	}
+	.emeContactAside .btn {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	.donStepList {
+		font-size: 17px;
+	}
+	.widgetForm {
+		font-size: 17px;
+		padding: 20px 25px 20px;
+	}
+	.widgetForm .widgetFormtHead {
+		margin-bottom: 30px;
+		padding: 15px 25px;
+	}
+	.widgetForm .wdFromLabel {
+		margin-bottom: 8px;
+	}
+	.customRadioTabBtnLabel .cuFakeLabel {
+		font-size: 16px;
+		width: 99px;
+		height: 44px;
+	}
+	.customRadioBtnLabel .cuFakeLabel:before {
+		top: 6px;
+	}
+	.customRadioBtnLabel .cuFakeLabel:after {
+		top: 10px;
+	}
+	.accOpener {
+		padding: 20px 40px 20px 15px;
+		font-size: 18px;
+	}
+	.accOpener:after,
+	.accOpener:before {
+		font-size: 15px;
+	}
+	.latNewsPost .lnPostTitle a {
+		height: 65px;
+	}
+	.causeGridCol.casueGridSinglePost .cgColTitle {
+		font-size: 26px;
+	}
+	.gridFilterWrap .element-item {
+		width: 33.333%;
+	}
+	.gridFilterWrap .element-item.item {
+		width: 66.666%;
+	}
+	.bpCommentsList .cmntWrap {
+		padding: 30px 25px;
+	}
+	.bpCommentsList .bpChildCommentsList .cmntWrap {
+		padding-left: 110px;
+	}
+	.cgspTabList .nav-link {
+		margin-right: 25px;
+	}
+	.causeGridCol .cgColDetail p {
+		margin-bottom: 40px;
+	}
+	.wcFormWrap .widgetContactForm {
+		width: 60%;
+	}
+	.wcFormWrap .contANDadreesCol {
+		width: 40%;
+	}
+	.cuMapBlock .cuMapHolder {
+		min-height: 400px;
+	}
+	.nalWrap {
+		margin-top: -170px;
+	}
+	.newsArticleList a {
+		font-size: 20px;
+		padding: 15px 25px;
+	}
+	.covidLiveCounterMap .covlcWidget {
+		width: 325px;
+	}
+	.covidLiveCounterMap .clcuList {
+		height: 335px;
+	}
+	.syfStyle2 .syfCol {
+		margin-bottom: 50px;
+		height: 300px;
+	}
+	.helpAsideWidget .btn {
+		font-size: 20px;
+	}
+	.clientQuote q {
+		font-size: 26px;
+	}
+	.clientQuote .eWrap {
+		font-size: 22px;
+	}
+}
+
+/* query lgwd (1025) styles */
+@media (min-width: 1025px) {
+	.headerII .socialNetworks .icn {
+		font-size: 17px;
+	}
+	.headerII .customSelect {
+		font-size: 14px;
+	}
+	.syOFcvBlock .featureBlock {
+		font-size: 15px;
+	}
+	.syOFcvBlock .featureBlock .fbTxtBlock {
+		width: 215px;
+	}
+	.syOFcvBlock .lfbRow .fbtWrap {
+		padding: 18px 14px 15px 6px;
+	}
+	.syOFcvBlock .rfbRow .fbtWrap {
+		padding: 18px 5px 15px 15px;
+	}
+	.mainNavDropdown.dropdown-menu {
+		width: 168px;
+	}
+	.mainNavDropdown.dropdown-menu .dropdown-item {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	.mainNavDropdown .dropdown-submenu:after {
+		right: 23px;
+	}
+	.mainNavDropdown .dropdown-submenu .dropdown-menu .dropdown-item {
+		padding-left: 24px !important;
+	}
+	.shYoTiBlock .deliverSolutionWidget {
+		font-size: 18px;
+	}
+	h2,
+	.h2 {
+		font-size: 40px;
+		line-height: 44px;
+	}
+	h4,
+	.h4 {
+		font-size: 23px;
+		line-height: 30px;
+	}
+	.fsSmall {
+		font-size: 17px;
+	}
+	.bannerSec.bannerSecII {
+		min-height: 350px;
+	}
+	.syfCol:hover .descHolder {
+		margin-top: 0;
+	}
+	.donStepList li {
+		margin-bottom: 35px;
+	}
+	.donationBoxHolder .widgetForm {
+		margin-top: -305px;
+	}
+	.donationBoxHolder .ccLiveCounter .h2 {
+		font-size: 36px;
+	}
+	.causeGridCol.casueGridSinglePost .cgColTitle {
+		font-size: 30px;
+	}
+	.tysdCol .tysdColTitle {
+		font-size: 26px;
+	}
+	.cgspTabList {
+		font-size: 20px;
+	}
+	.wcFormWrap .widgetContactForm {
+		width: 70%;
+	}
+	.wcFormWrap .contANDadreesCol {
+		width: 30%;
+	}
+	.cuMapBlock .cuMapHolder {
+		min-height: 450px;
+	}
+	.helpAsideWidget .btn {
+		font-size: 22px;
+	}
+	.syfStyle2 .syfCol {
+		margin-bottom: 50px;
+		height: 320px;
+	}
+}
+
+/* query xl (1230) styles */
+@media (min-width: 1200px) {
+	.headerII .socialNetworks .icn {
+		font-size: 18px;
+	}
+	.headerII .topBarContactList .icn {
+		font-size: 22px;
+		margin-right: 18px;
+	}
+	.headerII .customSelect {
+		font-size: 15spx;
+	}
+	.bannerSlider .bannerSec.bannerSecIII {
+		min-height: calc(100vh - 138px);
+	}
+	.hdTopBar {
+		font-size: 15px;
+	}
+	.searchOpener {
+		font-size: 17px;
+		margin-right: 16px;
+		padding-right: 13px;
+		padding-left: 13px;
+	}
+	.syOFcvBlock .imgHolder {
+		width: 475px;
+		height: 500px;
+	}
+	.syOFcvBlock .featureBlock .fbTxtBlock {
+		width: 245px;
+	}
+	.menuHolder .navCollapse .nav-item.dropdown,
+	.menuHolder .navCollapse .nav-item {
+		font-size: 17px;
+		margin-right: 16px;
+	}
+	.mainNavDropdown.dropdown-menu {
+		width: 175px;
+	}
+	.mainNavDropdown.dropdown-menu .dropdown-item {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		font-size: 15px;
+	}
+	.mainNavDropdown .dropdown-submenu:after {
+		top: 18px;
+	}
+	.bannerSecIII .imageWrap .imgHolder {
+		max-width: 563px;
+	}
+	.htrtsoCovid-19 .imgWrap .imgHolder {
+		width: 380px;
+	}
+	.htrtsoCovid-19 .imgWrap .rwImg {
+		right: 0;
+		top: 120px;
+	}
+	.ourPromiseBlock .contentBlock .btnMin {
+		min-width: 174px;
+	}
+	.fsLarger {
+		font-size: 200px;
+		line-height: 200px;
+	}
+	h1,
+	.h1 {
+		font-size: 50px;
+		line-height: 60px;
+	}
+	.navCollapse li + li {
+		margin-left: 12px;
+	}
+	.bannerSec .hTitle {
+		font-size: 40px;
+	}
+	.hcStepList li {
+		padding-left: 47px;
+		padding-right: 47px;
+	}
+	.extraPadding {
+		display: block;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.syfCol .descHolder {
+		margin-top: 210px;
+	}
+	.syfCol:hover .descHolder {
+		margin-top: 25px;
+	}
+	.donationBoxHolder .widgetForm {
+		margin-top: -325px;
+	}
+	.donationBoxHolder .widgetForm .widgetFormtHead .h4 {
+		font-size: 26px;
+	}
+	.donationBoxHolder .ccLiveCounter li {
+		width: 31%;
+		margin-bottom: 0;
+	}
+	.accOpener {
+		padding: 22px 40px 22px 20px;
+	}
+	.accOpener:after {
+		top: 26px;
+	}
+	.subsFormWrap .form-control {
+		height: 53px;
+	}
+	.subsFormWrap .btnText,
+	.subsFormWrap .btn:before {
+		font-size: 18px;
+	}
+	.footerAside .abTxt {
+		padding-right: 70px;
+	}
+	.adrList {
+		padding-right: 70px;
+	}
+	.cgSecRow .col .causeGridCol {
+		margin-bottom: 70px;
+	}
+	.sendRequestForm .form-control {
+		height: 53px;
+	}
+	.sendRequestForm .btnText,
+	.sendRequestForm .btn:before {
+		font-size: 18px;
+	}
+	.cgspTabList .nav-link {
+		margin-right: 40px;
+	}
+	.causeGridCol .cgColDetail p {
+		margin-bottom: 40px;
+	}
+	.cuMapBlock .cuMapHolder {
+		min-height: 500px;
+	}
+}
+
+/* query xlwd (1366) styles */
+@media (min-width: 1330px) {
+	.syOFcvBlock .mfIcon {
+		width: 72px;
+		height: 72px;
+	}
+	.syOFcvBlock .imgHolder {
+		width: 545px;
+		height: 570px;
+	}
+	.syOFcvBlock .featureBlock {
+		margin-bottom: 100px;
+		font-size: 16px;
+	}
+	.syOFcvBlock .featureBlock .fbTxtBlock {
+		width: 290px;
+	}
+	.syOFcvBlock .lfbRow .fbtWrap {
+		padding: 18px 25px 15px 15px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .mfIcon {
+		margin-right: -100px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .fbTxtBlock {
+		right: -33px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .featureBlock.hover .fbTxtBlock {
+		right: -8px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .mfIcon {
+		margin-right: -65px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .fbTxtBlock {
+		right: 2px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .featureBlock.hover .fbTxtBlock {
+		right: 27px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .mfIcon {
+		margin-right: -80px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .fbTxtBlock {
+		right: -13px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .featureBlock.hover .fbTxtBlock {
+		right: 12px;
+	}
+	.syOFcvBlock .rfbRow .fbtWrap {
+		padding: 18px 10px 15px 25px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .mfIcon {
+		margin-left: -100px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .fbTxtBlock {
+		left: -33px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .featureBlock.hover .fbTxtBlock {
+		left: -8px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .mfIcon {
+		margin-left: -53px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .fbTxtBlock {
+		left: 12px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .featureBlock.hover .fbTxtBlock {
+		left: 37px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .mfIcon {
+		margin-left: -50px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .fbTxtBlock {
+		left: 17px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .featureBlock.hover .fbTxtBlock {
+		left: 42px;
+	}
+	.syfCol:hover .descHolder {
+		margin-top: 35px;
+	}
+	.bannerSlider .bannerSecIII .captionWrap .h1 {
+		font-size: 60px;
+	}
+	.htrtsoCovid-19 .imgWrap .imgHolder {
+		width: 420px;
+	}
+	.bannerSecIII .imageWrap .imgHolder {
+		max-width: 613px;
+	}
+}
+
+/* query xxl (1920) styles */
+@media (min-width: 1920px) {
+	.bannerSecIII .imageWrap .imgHolder {
+		max-width: 863px;
+	}
+}
+
+/* query others (down & between) styles */
+@media (max-width: 991.98px) {
+	.donateNowForm .customInputWrap .input-group-text,
+	.donateNowForm .customInputWrap .form-control {
+		height: 38px;
+	}
+	.syfCol {
+		min-height: 285px;
+	}
+	.headerII .navCollapse {
+		top: 72px;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.searchOpener {
+		display: none;
+	}
+	.menuHolder .navCollapse {
+		max-height: 450px;
+		overflow-y: auto;
+	}
+	.bannerSec .btnHolder .btn {
+		font-size: 16px;
+	}
+	.syfCol {
+		min-height: 265px;
+		max-width: 290px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.cgSecRow .col:last-child .causeGridCol {
+		margin-bottom: 0;
+	}
+	.headerII .topBarContactList li:last-child .icn {
+		margin-right: 5px;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.featColumn {
+		min-height: 210px;
+		max-width: 290px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+@media (min-width: 1550px) {
+	.bannerSecIII .imageWrap .imgHolder {
+		max-width: 820px;
+	}
+	h4,
+	.h4 {
+		font-size: 24px;
+	}
+	.syOFcvBlock .imgHolder {
+		width: 623px;
+		height: 647px;
+	}
+	.syOFcvBlock .mfIcon {
+		width: 80px;
+		height: 80px;
+	}
+	.syOFcvBlock .featureBlock .fbTxtBlock {
+		width: 325px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .mfIcon {
+		margin-right: -100px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .fbTxtBlock {
+		right: -25px;
+	}
+	.syOFcvBlock .lfbRow .col:first-child .featureBlock.hover .fbTxtBlock {
+		right: 0;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .mfIcon {
+		margin-right: -5px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .fbTxtBlock {
+		right: 70px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(2) .featureBlock.hover .fbTxtBlock {
+		right: 95px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .mfIcon {
+		margin-right: -30px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .fbTxtBlock {
+		right: 43px;
+	}
+	.syOFcvBlock .lfbRow .col:nth-child(3) .featureBlock.hover .fbTxtBlock {
+		right: 70px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .mfIcon {
+		margin-left: -100px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .fbTxtBlock {
+		left: -25px;
+	}
+	.syOFcvBlock .rfbRow .col:first-child .featureBlock.hover .fbTxtBlock {
+		left: 0;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .mfIcon {
+		margin-left: 9px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .fbTxtBlock {
+		left: 84px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(2) .featureBlock.hover .fbTxtBlock {
+		left: 109px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .mfIcon {
+		margin-left: -10px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .fbTxtBlock {
+		left: 65px;
+	}
+	.syOFcvBlock .rfbRow .col:nth-child(3) .featureBlock.hover .fbTxtBlock {
+		left: 90px;
+	}
+	.mainNavDropdown.dropdown-menu {
+		width: 200px;
+	}
+}

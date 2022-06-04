@@ -46,6 +46,7 @@ $(document).ready(function () {
                         <option value="1">Plantilla 1 </option>
                         <option value="2">Plantilla 2 </option>
                         <option value="3">Plantilla 3 </option>
+                        <option value="4">Plantilla 4 </option>
                         </select>
                         `;
                     }
@@ -268,7 +269,7 @@ $(document).ready(function () {
                 point3 = response.options[13].value;
                 coverpage = response.options[4].value;
                 coverpage2 = response.options[14].value;
-
+                console.log("llega");
                 $(".coverpage").css(
                     "background-image",
                     "url(" + coverpage + ")"
@@ -318,7 +319,7 @@ $(document).ready(function () {
                         );
                         $(".pointshorttext" + index).append(
                             response.pointofinterest.text.substr(0, limite) +
-                                " ..."
+                            " ..."
                         );
                         $(".pointlink" + index).attr(
                             "href",
