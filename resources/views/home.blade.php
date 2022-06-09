@@ -5,3 +5,4 @@
 @if ($dataoptions['template'] == 2)
 @include("includes.hometemplate2")
 @endif
+@include('cookie-consent::index')
