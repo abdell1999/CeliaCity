@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         /**
          * Es necesario controlar esto con una variable ya que si no siempre va a intentar acceder a la bd
          * lo cual imposibilita hacer migraciones y etc.
-         */
+        */
 
         //Esta posicion de array controla la plantilla activa y demás datos que igual se han pesados de cargar por ajax actualmente
 

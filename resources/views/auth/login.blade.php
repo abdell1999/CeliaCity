@@ -29,7 +29,7 @@
           </div>
         </form>
         <p class="text-center text-gray-500 text-xs">
-          &copy;2021 Celia Viñas. All rights reserved.
+          &copy;2022 Celia Viñas. All rights reserved.
         </p>
       </div>
 

@@ -120,5 +120,20 @@ class OptionsSeeder extends Seeder
             'type' => 'text'
         ]);
 
+
+
+
+        /**
+         * 0->Sin moderación, los comentarios se publican automáticamente.
+         * 1->Moderados, los comentarios deben ser aprobados por un administrador.
+         * 2->Moderados con reputación, los usuarios que tengan más de 5 comentarios aprobados ya no requieren aprobación para los nuevos.
+         */
+
+        DB::table('options')->insert([
+            'name' => 'comments',
+            'value' => '0',
+            'type' => 'comments'
+        ]);
+
     }
 }
