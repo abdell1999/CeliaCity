@@ -24,6 +24,13 @@
 
 @endif
 
+@if ($dataoptions['template'] == 4)
+
+
+    @include("includes.guidetemplate4")
+
+@endif
+
 
 
 @endsection

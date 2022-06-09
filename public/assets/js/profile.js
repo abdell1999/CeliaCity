@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log("Script para gestionar miperfil cargado correctamente");
 
     var user_id = $("#user_id").val();
 
@@ -19,7 +18,7 @@ $(document).ready(function () {
             url: "/delete-profile/" + id,
             dataType: "json",
             success: function (response) {
-                console.log(response);
+
                 if (response.status == 404) {
                     $(".delete_profile").text("Error");
                 } else {
@@ -38,7 +37,7 @@ $(document).ready(function () {
     $(document).on("click", ".editbtn", function (e) {
         e.preventDefault();
         var user_id = $(this).val();
-        console.log(user_id);
+
 
         $("#editModal").modal("show");
 
@@ -46,7 +45,7 @@ $(document).ready(function () {
             type: "GET",
             url: "/edit-profile/" + user_id,
             success: function (response) {
-                console.log(response);
+
                 $(".edit_name").val(response.user.name);
                 $(".edit_surname1").val(response.user.surname1);
                 $(".edit_surname2").val(response.user.surname2);
@@ -71,7 +70,7 @@ $(document).ready(function () {
 
         $(this).text("Actualizando..");
         var id = $("#user_id").val();
-        //alert(id);
+
 
         var data = {
             name: $(".edit_name").val(),
@@ -90,7 +89,7 @@ $(document).ready(function () {
             data: data,
             dataType: "json",
             success: function (response) {
-                //console.log(response);
+
                 if (response.status == 400) {
                     $.each(response.errors, function (key, err_value) {
                         $("#update_msgList").append(

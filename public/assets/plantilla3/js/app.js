@@ -6,12 +6,12 @@
 */
 
 // Preloader
-window.onload = function loader() { 
+window.onload = function loader() {
     setTimeout(() => {
         document.getElementById('preloader').style.visibility = 'hidden';
         document.getElementById('preloader').style.opacity = '0';
     }, 350);
-} 
+}
 
 
 // Menu sticky
@@ -39,7 +39,7 @@ window.onscroll = function () {
 };
 function scrollFunction() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        console.log(document.body.scrollTop);
+
         mybutton.style.display = "block";
     } else {
         mybutton.style.display = "none";

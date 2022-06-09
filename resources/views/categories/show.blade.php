@@ -34,15 +34,15 @@ wrap tarjeta pb-60">
 </div>
 <script type="text/javascript">
 
-    
+
         const carouseles = document.querySelectorAll(".carousel-inner");
-        console.log(carouseles);
+
     for(let i = 0; i<carouseles.length; i++){
         carouseles[i].firstElementChild.classList.add('active');
     }
 
 
-    
-    
+
+
 </script>
 @endsection

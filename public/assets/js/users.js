@@ -48,7 +48,7 @@ $(document).ready(function () {
     });
     /*FIN EVENTO BORRAR */
 
-    console.log("Script para gestionar usuarios cargado correctamente!!");
+
     fetchuser();
 
     function fetchuser() {
@@ -58,7 +58,7 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 $("tbody").html("");
-                console.log("Hay respuesta por parte del servidor");
+
                 $.each(response.user, function (key, item) {
                     rol = "Error";
                     if (item.rol == 0) {
@@ -122,10 +122,10 @@ $(document).ready(function () {
                     );
                 });
 
-                console.log(response);
+
             },
             error: function (response) {
-                console.log("ERROR");
+
                 console.log(response);
             },
         });

@@ -1,27 +1,35 @@
 $(document).ready(function () {
-    console.log("Script para gestionar las opciones cargado correctamente");
 
     id_option = 999;
     getAll();
 
+    /**
+     * Esta función se encarga de cargar el id de opción seleccionado al abrir el modal,
+     * a partir de este id se llama a otra función que carga la opción en cuestión.
+     */
     $(document).on("click", ".optionEdit", function () {
-        console.log("El modal esta abierto");
         id_option = $(this).parent().parent().attr("id");
         loadOption(id_option);
     });
 
+
+
+    /**
+     * Esta función se trae la opción seleccionada y se carga en el modal en función del tipo, no es lo mismo un desplegable de puntos
+     * que una imagen o que un texto. Lo que aparece en el modal es la opción de editar.
+     * @param {*} id_option de la tabla options (esto viene del seeder, no es algo que el usuario pueda crear o cambiar)
+     */
     function loadOption(id_option) {
         $.ajax({
             type: "GET",
             url: "/options/get-option/" + id_option,
             success: function (response) {
-                console.log(response);
+
                 let valor = response.option.value;
                 let tipo = response.option.type;
                 let id_input = "input" + id_option;
 
-                console.log(tipo);
-                console.log("id: " + id_option);
+
 
                 function campoEditar(value, type) {
                     let insertar = "";
@@ -37,6 +45,8 @@ $(document).ready(function () {
                         <select id="${id_input}" name="templateOption" class="templateOption">
                         <option value="1">Plantilla 1 </option>
                         <option value="2">Plantilla 2 </option>
+                        <option value="3">Plantilla 3 </option>
+                        <option value="4">Plantilla 4 </option>
                         </select>
                         `;
                     }
@@ -61,7 +71,7 @@ $(document).ready(function () {
                     }).done(function (response) {
                         $(".pointOption").html("");
                         $.each(response.pointofinterest, function (key, item) {
-                            //console.log(response);
+
                             selected = "";
 
                             if (item.id == value) {
@@ -77,6 +87,10 @@ $(document).ready(function () {
                     return insertar;
                 }
 
+                /**
+                 * Esta función se encarga de cargar la opción en el modal, según el tipo de opción. Muestra una previsualización de la opción tanto
+                 * para saber que hay previamente en la base de datos o para comprobar que se haya modificado correctamente.
+                 */
                 function campoMostrar(value, type) {
                     let insertar = "";
                     if (type === "text") {
@@ -99,7 +113,7 @@ $(document).ready(function () {
                             dataType: "json",
                         }).done(function (response) {
                             $(".pointparra").html("");
-                            //console.log(response);
+
 
                             $(".pointparra").text(
                                 response.pointofinterest.name
@@ -113,9 +127,18 @@ $(document).ready(function () {
                     return insertar;
                 }
 
+
+
+                /**
+                 * Se vacia la parte de previsualización y se carga el elemento seleccionado.
+                 */
                 $("#originalContent").html("");
                 $("#originalContent").append(campoMostrar(valor, tipo));
 
+
+                /**
+                 * Se vacia la parte de edición y se carga el elemento seleccionado.
+                 */
                 $("#modifiedContent").html("");
                 $("#modifiedContent").append(
                     `<form method="post" enctype="multipart/form-data id="formulario">`
@@ -141,6 +164,13 @@ $(document).ready(function () {
         });
     }
 
+
+
+
+    /**
+     * Esta función se dispara cuando se pulsa el botón de guardar cambios. En función del tipo de dato en cuestión se tiene que guardar de una forma
+     * o de otra. El tipo text, point o template se guardan como simple texto, lo más complejo es guardar imagenes que requiere un
+     */
     $(document).on("click", ".guardar", function (e) {
         e.preventDefault();
 
@@ -152,10 +182,7 @@ $(document).ready(function () {
         let newValue;
         let formData = new FormData();
 
-        console.log("Función update de options.js");
-        console.log("id: " + id);
-        //console.log("newValue: "+newValue);
-        console.log("type: " + type);
+
 
         if (type === "text" || type === "point" || type === "template") {
             newValue = $("#" + idInput).val();
@@ -163,46 +190,16 @@ $(document).ready(function () {
         }
 
         if (type === "image") {
-            console.log("image, el input es una imagen !!!");
-            //alert(idInput);
-            console.log($("#" + idInput)[0].files[0]);
-            //alert($('#'+idInput)[0].files[0]);
-            //filename = $('#image_file')[0].files[0]
-            //newValue = $('#'+idInput).prop("files")[0];
 
-            //newValue = new FormData();
-            //newValue.append('value', $('#'+idInput).prop("files")[0]);
-            //newValue = $('#'+idInput).prop("files")[0];
-
-            //var files = $('#'+idInput)[0].files[0];
-            //console.log("FILES: "+files[0]);
-            //newValue = files;
-            //newValue.append('value', files[0]);
-
-            //console.log("newVALUEEEEEE "+newValue);
-
-            //var formData = new FormData($('#formulario').eq(0)[0]);
 
             formData.append("type", type);
             formData.append("value", $("#" + idInput)[0].files[0]);
             formData.append("_method", "put");
 
-            //formData.append('hola', 'hola');
-            console.log("Después de crear el formdata");
-            for (var value of formData.values()) {
-                console.log(value);
-            }
-            console.log("MIRA ARRIBA");
         }
 
-        //Modificar con AJAX
-        console.log("AQUI -- ESTO ES LO QUE SE INSERTARA");
-        console.log("id en bd: " + id);
-        console.log("valor a insertar: " + newValue);
-        console.log("tipo a insertar: " + type);
-        console.log("FIN -- SUERTEEE!!!");
+
         if (type == "image") {
-            console.log("HOLA");
 
             $.ajax({
                 method: "POST",
@@ -218,7 +215,7 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     loadOption(id);
-                    console.log(data);
+
                 },
             });
         } else {
@@ -262,9 +259,7 @@ $(document).ready(function () {
             type: "GET",
             url: "/options/get-all",
             success: function (response) {
-                //alert("MIRA AQUÏ");
-                console.log(response);
-                console.log(response.options[1].value); //accedo al value de townname
+
 
                 townname = response.options[1].value;
                 shortdescription = response.options[8].value;
@@ -274,7 +269,7 @@ $(document).ready(function () {
                 point3 = response.options[13].value;
                 coverpage = response.options[4].value;
                 coverpage2 = response.options[14].value;
-
+                console.log("llega");
                 $(".coverpage").css(
                     "background-image",
                     "url(" + coverpage + ")"
@@ -293,7 +288,6 @@ $(document).ready(function () {
                 $(".longdescription").html("");
                 $(".longdescription").text(longdescription);
 
-                console.log("Aquí empieza lo de editar puntos destacados");
                 id_inicial = point1;
                 limite = 235;
 
@@ -318,15 +312,14 @@ $(document).ready(function () {
                         url: "/fetch-onepoint/" + id_inicial,
                         dataType: "json",
                     }).done(function (response) {
-                        console.log("PUNTO:");
-                        console.log(response.pointofinterest);
+
                         //alert(response.pointofinterest.name);
                         $(".pointname" + index).text(
                             response.pointofinterest.name
                         );
                         $(".pointshorttext" + index).append(
                             response.pointofinterest.text.substr(0, limite) +
-                                " ..."
+                            " ..."
                         );
                         $(".pointlink" + index).attr(
                             "href",
@@ -340,7 +333,6 @@ $(document).ready(function () {
                 }
             },
             error: function (response) {
-                console.log(response);
             },
         });
     }

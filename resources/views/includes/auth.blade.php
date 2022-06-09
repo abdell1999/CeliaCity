@@ -166,7 +166,6 @@
     article h4,
     article p {
         padding: 14px;
-        color: #333;
     }
 
     article p {

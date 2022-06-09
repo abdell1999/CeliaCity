@@ -11,9 +11,6 @@ $(document).ready(function () {
             type: "GET",
             url: "/guide/" + point_id,
             success: function (response) {
-                console.log(response);
-                console.log("SEPARADOR");
-                console.log(response.pointofinterests.latitude);
                 mapsipe.panTo(new L.LatLng(response.pointofinterests.latitude, response.pointofinterests.longitude));
                 mapsipe.setZoom(18);
                 //cambiado el nombre a new_section porque daba conflico con css
@@ -23,14 +20,7 @@ $(document).ready(function () {
                 $('.new_section').append(`<h3 class="title"> <span>${response.pointofinterests.name}</span> </h3>`);
                 $('.new_section').append(`<p class="text-left">${response.pointofinterests.text}</p>`);
 
-                /*
-                var mapsipe = L.map('map').
-                setView([response.pointofinterests.latitude, response.pointofinterests.longitude], 16); //[38.6202, -0.5731] es la latitud y longitud de la zona que queremos mostrar
-                L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                    maxZoom: 18
-                }).addTo(mapsipe);
-                */
+
 
 
                 //RESOURCES

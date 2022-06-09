@@ -1,0 +1,135 @@
+.menuHolder .navCollapse .nav-item .nav-link:hover,
+.menuHolder .navCollapse .nav-item .nav-link:active,
+.menuHolder .navCollapse .nav-item .nav-link:focus,
+.menuHolder .navCollapse .nav-item.active .nav-link,
+.searchOpener:hover,
+.hTitle,
+.callAdoctorAside .telLink:hover,
+.btnPlayHolder:hover .txtLink,
+.lnPostAuthor a:hover,
+.socialNetworks a:hover .icn,
+.copyrightWrap a:hover,
+.cbbPageList > li a:hover,
+.blogSearchBar .bSearchbarBtn:hover,
+.postBlock .postTitle a:hover,
+.cgspTabList .nav-link:hover,
+.cgspTabList .nav-link.active,
+.conatctFormSection .fLinkRow a:hover,
+.latNewsPost .pComments:hover,
+.bannerSlider .slick-arrow:hover,
+.telLinkHolder .telLnk:hover,
+.syOFcvBlock .featureBlock .h5,
+.clientQuote q:before,
+.mainNavDropdown.dropdown-menu .dropdown-item.dropdown-toggle:hover,
+.dropdown-submenu:hover:after,
+.pageMainNavigation .nav-item.dropdown:hover:after,
+.langSelectionForm .customSelectWrap:hover:after {
+    color: #f9bc60;
+}
+
+.btnPrimary .btnText,
+.btnPrimary:before,
+.wynkBlock:before,
+.preAdvStep:hover,
+.volunteerCol .volunteerSocialShareHolder .vssOpener,
+.vssDropdownHolder,
+.vssDropdownList li,
+.customRadioTabBtnLabel .cuFakeLabel:hover,
+.customRadioTabBtnLabel .customRadioInput:checked + .cuFakeLabel,
+.filterNav li a.is-checked,
+.filterNav li a:hover,
+.faqTabList .nav-link.active,
+.faqTabList .nav-link:hover,
+.lineBottom:before,
+.newsArticleList li a:hover,
+.ourPromiseBlock .btnPlayHolder:hover .btnPlay,
+.ourPromiseBlock .videoWrap .btnPlayWrap,
+.mainNavDropdown.dropdown-menu .dropdown-item:hover {
+    background-color: #004643;
+}
+
+.btnPrimary .btnText,
+.btnPrimary:before,
+.customRadioTabBtnLabel .cuFakeLabel:hover,
+.customRadioTabBtnLabel .customRadioInput:checked + .cuFakeLabel,
+.faqTabList .nav-link:hover,
+.cgspTabList .nav-link.active,
+.headerII .navOpener:active,
+.headerII .navOpener:hover {
+    border-color: #004643;
+}
+
+.txtLink,
+.accOpener:hover,
+.accOpener:hover:after,
+.accOpener[aria-expanded="true"],
+.accOpener[aria-expanded="true"]:before,
+.latNewsPost:hover .lnPostTitle a,
+.causeGridCol .cgColTitle a:hover,
+.blogTagSec .cuTagBtn:hover,
+.blogTagSec .cuTagBtn.active,
+.widgetProfilerInfo .h4:hover,
+.gridFilterWrap .element-item .overbgBTxt .icnSearch,
+.conatctFormSection .fLinkRow a,
+.covidCaseUpdateTable th,
+.phnHolder .icn,
+.headerII .topBarContactList li a:hover,
+.headerII .topBarContactList .icn,
+.telLinkHolder .telLnk,
+.sendRequestFormWrapper.srfwVerII
+    .customRadioTabBtnLabel
+    .customRadioInput:checked
+    + .cuFakeLabel,
+.sendRequestFormWrapper.srfwVerII .customRadioTabBtnLabel .cuFakeLabel:hover,
+.shYoTiBlock .deliverSolutionWidget .btnWhite .btnText,
+.shYoTiBlock .deliverSolutionWidget .btnWhite:before,
+.hdTopBar a:hover,
+.hdTopBar .socialNetworks a:hover .icn,
+.topBarContactList .icn,
+.hdtQuickLinks .icn,
+.btnWhite.btnWhiteII .btnText,
+.btnWhite.btnWhiteII:before {
+    color: #f9bc60;
+}
+
+.btnSecondary .btnText,
+.btnSecondary:before,
+.featColumn .hoverArrow,
+.btnPlayHolder:hover .btnPlay,
+.widgetForm .widgetFormtHead,
+.customRadioBtnLabel .cuFakeLabel:after,
+.causeGridCol .progressBar .percentageProgBar .pbCountNumber,
+.pagination.pagePagination .page-item.active .page-link,
+.pagination.pagePagination .page-item:hover .page-link {
+    background-color: #f9bc60;
+}
+
+.btnSecondary .btnText,
+.btnSecondary:before,
+.btnPlayHolder .btnPlay,
+.phnHolder {
+    border-color: #f9bc60;
+}
+
+.faqSection,
+.wynkBlock,
+.callAdoctorAside .icnWrap,
+.hcsBlock.abCov_19hcsBlock,
+.tysddBlock,
+.wwnyhWidget,
+.conatctFormSection:before,
+.historyBlock {
+    background-color: #f9bc60;
+}
+
+@media (min-width: 992px) {
+    .pageMainNavigation.navbar-nav li.dropdown-submenu:hover > .dropdown-item {
+        color: #f9bc60;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .headerII .topBarContactList .icn:hover {
+        color: #f9bc60;
+    }
+}
