@@ -74,7 +74,7 @@
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/creditos">Creditos</a>
+                                                    aria-expanded="false" href="/team">Creditos</a>
                                             </li>
                                             @if (Auth::guest())
                                             <li class="nav-item">

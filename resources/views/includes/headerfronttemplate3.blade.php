@@ -35,26 +35,38 @@
 			    <div class="collapse navbar-collapse" id="navbarCollapse">
 			        <ul id="navbar-navlist" class="navbar-nav ms-auto">
 			            <li class="nav-item">
-			                <a class="nav-link active" href="#home">Inicio</a>
+			                <a class="nav-link active" href="/home">Inicio</a>
 			            </li><!--end nav item-->
 			            <li class="nav-item">
-			                <a class="nav-link" href="#services">Guia</a>
+			                <a class="nav-link" href="/guide">Guia</a>
 			            </li><!--end nav item-->
 			            <li class="nav-item">
-			                <a class="nav-link" href="#team">Momumentos</a>
+			                <a class="nav-link" href="/categories/1">Momumentos</a>
 			            </li><!--end nav item-->
 			            <li class="nav-item">
-			                <a class="nav-link" href="#price">Servicios</a>
+			                <a class="nav-link" href="/categories/2">Servicios</a>
+			            </li><!--end nav item-->
+                        <li class="nav-item">
+			                <a class="nav-link" href="/categories/3">Servicios</a>
 			            </li><!--end nav item-->
 			            <li class="nav-item">
-			                <a class="nav-link" href="#testimonial">Creditos</a>
+			                <a class="nav-link" href="/team">Creditos</a>
+			            </li><!--end nav item-->
+                        @if (Auth::guest())
+			            <li class="nav-item">
+			                <a class="nav-link" href="/login">Login</a>
 			            </li><!--end nav item-->
 			            <li class="nav-item">
-			                <a class="nav-link" href="#blog">Login</a>
+			                <a class="nav-link" href="/register">Registro</a>
+			            </li><!--end nav item-->
+                        @else
+                        <li class="nav-item">
+			                <a class="nav-link" href="/myprofile/{{Auth::user()->id}}">Mi perfil</a>
 			            </li><!--end nav item-->
 			            <li class="nav-item">
-			                <a class="nav-link" href="#contact">Registro</a>
+			                <a class="nav-link" href="#" id="logoutBtn">Cerrar Sesión</a>
 			            </li><!--end nav item-->
+                        @endif
 			        </ul><!--end navbar nav-->
 			    </div><!--end collapse-->
 		    </div><!--end container-->
