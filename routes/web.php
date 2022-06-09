@@ -56,9 +56,9 @@ Route::get('/options/get-option/{id}', [App\Http\Controllers\OptionController::c
 Route::get('/team', function(){
     return view("team.show" );
 });
-Route::get('/contact', function(){
-    return view("team.contact" );
-});
+
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
 Route::put('/options/{id}', [App\Http\Controllers\OptionController::class, 'update'])->name('options.update');
 Route::get('/options/get-all/', [App\Http\Controllers\OptionController::class, 'getall']);
 
