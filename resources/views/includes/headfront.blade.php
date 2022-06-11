@@ -94,7 +94,7 @@
 
 
 @if ($dataoptions['template'] == 2)
-
+<script src="/assets/plantilla1/js/bootstrap.4.5.2.min.js"></script>
         <link rel="stylesheet" href="/assets/plantilla2/css/main.css" />
 		<noscript><link rel="stylesheet" href="/assets/plantilla2/css/noscript.css" /></noscript>
         <script src="/assets/plantilla2/js/jquery.min.js"></script>

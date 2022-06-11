@@ -30,6 +30,7 @@
                                 <li><a href="/categories/2">Hosteleria</a></li>
                                 <li><a href="/categories/3">Comercios</a></li>
                                 <li><a href="/categories/4">Ocio</a></li>
+                                <li><a href="/team">Creditos</a></li>
                             </ul>
                         </div>
                         <!-- footer link -->

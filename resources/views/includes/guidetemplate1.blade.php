@@ -12,42 +12,66 @@
 </style>
 
 <div class="container mt-100 pt-20">
-    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-center">Historia de Purullena</h2>
+    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-center">Historia de {{$dataoptions['townname']}}</h2>
     <br>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://www.rutasconhijos.es/wp-content/uploads/2015/09/trogloditas2.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://www.rutasconhijos.es/wp-content/uploads/2015/09/trogloditas3-800x420.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://www.rutasconhijos.es/wp-content/uploads/2015/09/trogloditas4-800x420.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<br>
+    @if($resources->isNotEmpty())
+            <div class="slider">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper4 ">
+                    <div class="swiper-wrapper">
+                        @foreach ($resources as $resource)
+                            @if (substr($resource->route, strpos($resource->route, ".") + 1) === 'png' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpg' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpeg')
 
-<p>
-{!! $dataoptions['history'] !!}
-</p>
-<br>
-<br>
-    <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-center">Guía Turística Purullena</h2>
+                                    <div class="swiper-slide shadow-lg rounded">
+
+                                        <img src="{{ url($resource->route) }}" style="width: 100%; height: 100%;">
+
+                                    </div>
+                                @else
+                                    <div class="swiper-slide shadow-lg rounded">
+
+                                        <video muted controls preload disablepictureinpicture style="width: 100%; height: 100%;">
+                                            <source src="{{ url($resource->route) }}" type="video/{{substr($resource->route, strpos($resource->route, ".") + 1)}}">
+                                        </video>
+                                    </div>
+
+                                @endif
+                            @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper3">
+                    <div class="swiper-wrapper">
+                        @foreach ($resources as $resource)
+                            @if (substr($resource->route, strpos($resource->route, ".") + 1) === 'png' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpg' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpeg')
+
+                                    <div class="swiper-slide">
+
+                                        <img src="{{ url($resource->route) }}" style="width: 100%; height: 100%;">
+
+                                    </div>
+                                @else
+                                    <div class="swiper-slide">
+
+                                        <video muted disablepictureinpicture style="width: 100%; height: 100%;">
+                                            <source src="{{ url($resource->route) }}" type="video/{{substr($resource->route, strpos($resource->route, ".") + 1)}}">
+                                        </video>
+                                    </div>
+
+                                @endif
+                            @endforeach
+                    </div>
+                </div>
+                <!-- Imagen grande-->
+            </div>
+            @endif
+        <div class="mt-10">
+        <p class="mt-5">
+        {!! $dataoptions['history'] !!}
+        </p>
+        </div>
+</div>
+<div class="container pt-50">
     <div class="row mt-20 pb-20">
         <div class="col-md-4 text-center bg-dark">
             <h3 class="text-white pt-20 pb-20">Lugares para visitar</h3>
@@ -67,8 +91,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
 
@@ -87,14 +109,14 @@
         <div class="col-md-6 pt-50">
             <div class="slider">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper slider-guide">
                         <!--Aquí entra AJAX-->
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
                 <div thumbsSlider="" class="swiper mySwiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper slider-guide">
                         <!--Aquí entra AJAX-->
                     </div>
                 </div>
@@ -140,6 +162,24 @@
             watchSlidesProgress: true,
         });
         var swiper2 = new Swiper(".mySwiper2", {
+            loop: true,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+        var swiper3 = new Swiper(".mySwiper3", {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+        var swiper4 = new Swiper(".mySwiper4", {
             loop: true,
             spaceBetween: 10,
             navigation: {

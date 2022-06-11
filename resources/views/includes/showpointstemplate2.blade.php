@@ -6,6 +6,58 @@
 
             <h2>{!! $pointofinterests->name !!}</h2>
 
+            @if($resources->isNotEmpty())
+            <div class="slider">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 ">
+                    <div class="swiper-wrapper">
+                        @foreach ($resources as $resource)
+                            @if (substr($resource->route, strpos($resource->route, ".") + 1) === 'png' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpg' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpeg')
+
+                                    <div class="swiper-slide shadow-lg rounded">
+
+                                        <img src="{{ url($resource->route) }}" style="width: 100%; height: 100%;">
+
+                                    </div>
+                                @else
+                                    <div class="swiper-slide shadow-lg rounded">
+
+                                        <video muted controls preload disablepictureinpicture style="width: 100%; height: 100%;">
+                                            <source src="{{ url($resource->route) }}" type="video/{{substr($resource->route, strpos($resource->route, ".") + 1)}}">
+                                        </video>
+                                    </div>
+
+                                @endif
+                            @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($resources as $resource)
+                            @if (substr($resource->route, strpos($resource->route, ".") + 1) === 'png' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpg' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpeg')
+
+                                    <div class="swiper-slide">
+
+                                        <img src="{{ url($resource->route) }}" style="width: 100%; height: 100%;">
+
+                                    </div>
+                                @else
+                                    <div class="swiper-slide">
+
+                                        <video muted disablepictureinpicture style="width: 100%; height: 100%;">
+                                            <source src="{{ url($resource->route) }}" type="video/{{substr($resource->route, strpos($resource->route, ".") + 1)}}">
+                                        </video>
+                                    </div>
+
+                                @endif
+                            @endforeach
+                    </div>
+                </div>
+                <!-- Imagen grande-->
+            </div>
+            @endif
+
             <p>{{ $pointofinterests->text }}</p>
             <hr />
 
@@ -140,4 +192,27 @@
 
         </div>
     </section>
+    @if ($resources)
+
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                spaceBetween: 10,
+                slidesPerView: 4,
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
+            var swiper2 = new Swiper(".mySwiper2", {
+                loop: true,
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+        </script>
+@endif
 </article>

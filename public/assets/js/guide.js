@@ -24,13 +24,25 @@ $(document).ready(function () {
 
 
                 //RESOURCES
-                $('.swiper-wrapper').empty();
+                $('.slider-guide').empty();
                 response.resources.forEach(function (resource) {
-                    var image = `
-                            <div class="swiper-slide shadow-lg rounded">
-                                <img src="${resource.route}" />
-                            </div>`;
-                    $('.swiper-wrapper').append(image);
+                    // get extension of file
+                    var ext = resource.route.split('.').pop();
+                    if (ext == 'jpg' || ext == 'png' || ext == 'jpeg') {
+                        var image = `
+                        <div class="swiper-slide shadow-lg rounded">
+                            <img src="${resource.route}" />
+                        </div>`;
+                    } else {
+                        var image = `
+                        <div class="swiper-slide">
+                            <video muted controls preload style="width: 100%; height: 100%;">
+                                <source src="${resource.route}" type="video/${ext}">
+                            </video>
+                        </div>`;
+                    }
+
+                    $('.slider-guide').append(image);
                 })
 
 

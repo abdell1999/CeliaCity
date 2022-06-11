@@ -91,8 +91,8 @@
                                 @else
                                     <div class="swiper-slide shadow-lg rounded">
 
-                                        <video muted controls preload style="width: 100%; height: 100%;">
-                                            <source src="{{ url($resource->route) }}" type="video/{{strtok($resource->route,'.')}}`">
+                                        <video muted controls preload disablepictureinpicture style="width: 100%; height: 100%;">
+                                            <source src="{{ url($resource->route) }}" type="video/{{substr($resource->route, strpos($resource->route, ".") + 1)}}">
                                         </video>
                                     </div>
 
@@ -115,8 +115,8 @@
                                 @else
                                     <div class="swiper-slide">
 
-                                        <video muted controls preload style="width: 100%; height: 100%;">
-                                            <source src="{{ url($resource->route) }}" type="video/{{strtok($resource->route,'.')}}`">
+                                        <video muted disablepictureinpicture style="width: 100%; height: 100%;">
+                                            <source src="{{ url($resource->route) }}" type="video/{{substr($resource->route, strpos($resource->route, ".") + 1)}}">
                                         </video>
                                     </div>
 
@@ -192,21 +192,21 @@
         <div class="slider zoom" style="position:fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff;" class="swiper mySwiper2">
                 <button class="btn-closeModal border-0 bg-transparent d-flex flex-row-reverse w-100" id="btn-closeModal"><i class="far fa-times-circle text-warning btn-lg m-0 p-0" id="eeee"></i></button>
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper slider-guide">
 
                         @foreach ($resources as $resource)
                             @if (substr($resource->route, strpos($resource->route, ".") + 1) === 'png' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpg' || substr($resource->route, strpos($resource->route, ".") + 1) === 'jpeg')
 
-                                <div class="swiper-slide shadow-lg rounded">
+                                <div class="swiper-slide shadow-lg rounded slider-guide">
 
                                     <img src="{{ url($resource->route) }}" style="width: 100%; height: 100%;">
 
                                 </div>
                             @else
-                                <div class="swiper-slide shadow-lg rounded">
+                                <div class="swiper-slide shadow-lg rounded slider-guide">
 
                                     <video muted controls preload>
-                                        <source src="{{ url($resource->route) }}" type="video/{{strtok($resource->route,'.')}}`">
+                                        <source src="video" >
                                     </video>
                                 </div>
 

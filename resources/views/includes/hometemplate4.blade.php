@@ -27,12 +27,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 d-none d-md-block imageWrap">
-                        <!-- imgHolder -->
-                        <div class="imgHolder pl-md-5 pl-xl-12 mb-md-n10 mb-lg-0 position-relative">
-                            <img src="http://placehold.it/650x740" class="img-fluid" alt="image description">
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

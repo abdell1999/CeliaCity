@@ -91,8 +91,8 @@
                                 @else
                                     <div class="swiper-slide shadow-lg rounded">
 
-                                        <video muted controls preload style="width: 100%; height: 100%;">
-                                            <source src="{{ url($resource->route) }}" type="video/{{strtok($resource->route,'.')}}`">
+                                        <video muted controls preload disablepictureinpicture style="width: 100%; height: 100%;">
+                                            <source src="{{ url($resource->route) }}" type="video/{{substr($resource->route, strpos($resource->route, ".") + 1)}}">
                                         </video>
                                     </div>
 
@@ -115,8 +115,8 @@
                                 @else
                                     <div class="swiper-slide">
 
-                                        <video muted controls preload style="width: 100%; height: 100%;">
-                                            <source src="{{ url($resource->route) }}" type="video/{{strtok($resource->route,'.')}}`">
+                                        <video muted disablepictureinpicture style="width: 100%; height: 100%;">
+                                            <source src="{{ url($resource->route) }}" type="video/{{substr($resource->route, strpos($resource->route, ".") + 1)}}">
                                         </video>
                                     </div>
 

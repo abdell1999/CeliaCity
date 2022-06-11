@@ -76,12 +76,16 @@
                 <p class="mb-0">Dirección</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{$user->address}}</p>
+                <p class="text-muted mb-0">{{$user->address}} {{$user->rol}}</p>
               </div>
             </div>
                 <div class="d-flex justify-content-end mt-2">
+                    @if (($user['rol']) == 0)
+                    <a href="/users/" class="main-btn wow fadeInLeftBig">Modo Administrador</a>
+                    @else
                     <button data-toggle='modal' data-target='#editProfile' type="button" class="btn btn-primary editbtn" value='{{$user->id}}' >Editar</button>
                     <button data-toggle='modal' data-target='#deleteProfile' type="button" class="btn btn-danger ml-2 deletebtn" value="{{$user->id}}">Borrar Mi Perfil</button>
+                    @endif
                 </div>
           </div>
         </div>
