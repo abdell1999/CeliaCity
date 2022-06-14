@@ -16,33 +16,13 @@
     @if ($dataoptions['template'] == 2)
         @include('includes.plantilla2.guidetemplate2')
     @endif
-
-
-@if ($dataoptions['template'] == 1)
-
-    @include("includes.guidetemplate1")
-
-@endif
-@if ($dataoptions['template'] == 2)
-
-
-    @include("includes.guidetemplate2")
-
-@endif
-
-@if ($dataoptions['template'] == 3)
-
-
-    @include("includes.guidetemplate1")
-
-@endif
-@if ($dataoptions['template'] == 4)
-
-
-    @include("includes.guidetemplate4")
-
-@endif
-
-
-
+    @if ($dataoptions['template'] == 3)
+        @include('includes.guidetemplate1')
+    @endif
+    @if ($dataoptions['template'] == 4)
+        @include('includes.plantilla4.guidetemplate4')
+    @endif
+    @if ($dataoptions['template'] == 5)
+        @include('includes.plantilla5.guidetemplate5')
+    @endif
 @endsection
