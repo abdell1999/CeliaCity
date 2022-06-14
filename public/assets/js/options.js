@@ -47,6 +47,7 @@ $(document).ready(function () {
                         <option value="2">Plantilla 2 </option>
                         <option value="3">Plantilla 3 </option>
                         <option value="4">Plantilla 4 </option>
+                        <option value="5">Plantilla 5 </option>
                         </select>
                         `;
                     }

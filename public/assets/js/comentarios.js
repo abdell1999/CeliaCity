@@ -22,9 +22,9 @@ $(document).ready(function () {
             type: "GET",
             url: "/fetch-comment/" + id_pointofinterest,
             success: function (response) {
-               var name = "pepe";
-               var photo = "photo";
-
+                var name = "pepe";
+                var photo = "photo";
+                /*
                 $.each(response.comments, function (key, comment) {
                     $.each(response.users, function (key, user) {
                         if (user.id == comment.id_user) {
@@ -65,6 +65,7 @@ $(document).ready(function () {
                         height="60"></span>${name}</br>${comment.text}</p>`;
                     }
                 });
+                */
             },
             error: function (response) {
                 console.log(response);

@@ -19,7 +19,7 @@
                             <p style="color: white;">{{$dataoptions['shortdescription']}}
                             </p>
                             <div class="btnHolder d-flex mt-lg-1">
-                                <a href="javascript:void(0);"
+                                <a href="/guide"
                                     class="btn btnPrimary btnMin align-top mt-2 mt-lg-5 mt-md-6 p-0 border-0 position-relative"
                                     data-hover="Guia Turistica">
                                     <span class="d-block btnText">Guia Turistica</span>
