@@ -8,6 +8,12 @@
 
 
 @section('content')
+    @if ($dataoptions['template'] == 1)
+        @include('includes.showpointstemplate1')
+    @endif
+    @if ($dataoptions['template'] == 2)
+        @include('includes.plantilla2.showpointstemplate2')
+    @endif
 
 @if ($dataoptions['template'] == 1)
 

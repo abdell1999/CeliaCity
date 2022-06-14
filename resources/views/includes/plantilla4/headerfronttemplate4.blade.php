@@ -28,6 +28,16 @@
 	<script src="/assets/plantilla4/js/jqueryCustom.js"></script>
 	<!-- isotope JavaScript -->
 	<script src='https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
+    <script>
+
+        $.ajaxSetup({
+             headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             }
+         });
+
+
+        </script>
 </head>
 <div class="phTopWrap">
     <!-- pageHeader -->
@@ -71,10 +81,6 @@
                                             <li class="nav-item">
                                                 <a class="nav-link" role="button" aria-haspopup="true"
                                                     aria-expanded="false" href="/categories/3">Servicios</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/team">Creditos</a>
                                             </li>
                                             @if (Auth::guest())
                                             <li class="nav-item">

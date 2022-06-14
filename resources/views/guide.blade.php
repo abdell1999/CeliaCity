@@ -10,6 +10,12 @@
 
 
 @section('content')
+    @if ($dataoptions['template'] == 1)
+        @include('includes.guidetemplate1')
+    @endif
+    @if ($dataoptions['template'] == 2)
+        @include('includes.plantilla2.guidetemplate2')
+    @endif
 
 
 @if ($dataoptions['template'] == 1)
