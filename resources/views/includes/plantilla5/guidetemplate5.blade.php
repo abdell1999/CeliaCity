@@ -99,7 +99,7 @@
  </div>
 
 
- <div class="container pt-5">
+ <div class="container">
      <div class="row justify-content-center mt-5">
          <!--Cambiado slider y texto de sitio para que se vea antes texto que slider -->
          <div class="col-md-6 text-center">
@@ -129,71 +129,71 @@
              </div>
          </div>
      </div>
+ </div>
 
 
 
+ <script type="text/javascript">
+     //Cargando nuestro mapa
+     var mapsipe = L.map('map').
+     setView([37.330355, -2.302759],
+         12); //[] es la latitud y longitud de la zona que queremos mostrar
+     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
 
-     <script type="text/javascript">
-         //Cargando nuestro mapa
-         var mapsipe = L.map('map').
-         setView([37.330355, -2.302759],
-             12); //[] es la latitud y longitud de la zona que queremos mostrar
-         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+     }).addTo(mapsipe);
+ </script>
+ @foreach ($pointofinterests as $point)
+     <ul class="">
+         <script>
+             var marker = L.marker([{{ $point->latitude }}, {{ $point->longitude }}]).addTo(mapsipe);
+             marker.bindPopup(
+                     '<a target="_blank" href="/pointofinterests/{{ $point->id }}"><b>{{ $point->name }}</b></a>')
+                 .openPopup();
+         </script>
 
-         }).addTo(mapsipe);
-     </script>
-     @foreach ($pointofinterests as $point)
-         <ul class="">
-             <script>
-                 var marker = L.marker([{{ $point->latitude }}, {{ $point->longitude }}]).addTo(mapsipe);
-                 marker.bindPopup(
-                         '<a target="_blank" href="/pointofinterests/{{ $point->id }}"><b>{{ $point->name }}</b></a>')
-                     .openPopup();
-             </script>
+     </ul>
+ @endforeach
 
-         </ul>
-     @endforeach
+ <script>
+     var popup = L.popup();
+ </script>
 
-     <script>
-         var popup = L.popup();
-     </script>
-
-     <script type="text/javascript">
-         var swiper = new Swiper(".mySwiper", {
-             loop: true,
-             spaceBetween: 10,
-             slidesPerView: 4,
-             freeMode: true,
-             watchSlidesProgress: true,
-         });
-         var swiper2 = new Swiper(".mySwiper2", {
-             loop: true,
-             spaceBetween: 10,
-             navigation: {
-                 nextEl: ".swiper-button-next",
-                 prevEl: ".swiper-button-prev",
-             },
-             thumbs: {
-                 swiper: swiper,
-             },
-         });
-         var swiper3 = new Swiper(".mySwiper3", {
-             loop: true,
-             spaceBetween: 10,
-             slidesPerView: 4,
-             freeMode: true,
-             watchSlidesProgress: true,
-         });
-         var swiper4 = new Swiper(".mySwiper4", {
-             loop: true,
-             spaceBetween: 10,
-             navigation: {
-                 nextEl: ".swiper-button-next",
-                 prevEl: ".swiper-button-prev",
-             },
-             thumbs: {
-                 swiper: swiper,
-             },
-         });
-     </script>
+ <script type="text/javascript">
+     var swiper = new Swiper(".mySwiper", {
+         loop: true,
+         spaceBetween: 10,
+         slidesPerView: 4,
+         freeMode: true,
+         watchSlidesProgress: true,
+     });
+     var swiper2 = new Swiper(".mySwiper2", {
+         loop: true,
+         spaceBetween: 10,
+         navigation: {
+             nextEl: ".swiper-button-next",
+             prevEl: ".swiper-button-prev",
+         },
+         thumbs: {
+             swiper: swiper,
+         },
+     });
+     var swiper3 = new Swiper(".mySwiper3", {
+         loop: true,
+         spaceBetween: 10,
+         slidesPerView: 4,
+         freeMode: true,
+         watchSlidesProgress: true,
+     });
+     var swiper4 = new Swiper(".mySwiper4", {
+         loop: true,
+         spaceBetween: 10,
+         navigation: {
+             nextEl: ".swiper-button-next",
+             prevEl: ".swiper-button-prev",
+         },
+         thumbs: {
+             swiper: swiper,
+         },
+     });
+ </script>
