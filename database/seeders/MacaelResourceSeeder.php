@@ -19,7 +19,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '50',
             'title' => 'Fuentes de los leones - Plaza de la Constitución.',
-            'route' => '\storage\macael\FuenteLeones01.jpg',
+            'route' => 'storage/macael/FuenteLeones01.jpg',
             'created_at' => now(),
             'updated_at' => now()
 

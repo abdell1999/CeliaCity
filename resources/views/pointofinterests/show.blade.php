@@ -21,6 +21,13 @@
 
 @endif
 
+@if ($dataoptions['template'] == 3)
+
+
+    @include("includes.showpointstemplate2")
+
+@endif
+
 @if ($dataoptions['template'] == 4)
 
 
