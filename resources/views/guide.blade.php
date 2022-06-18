@@ -17,7 +17,7 @@
         @include('includes.plantilla2.guidetemplate2')
     @endif
     @if ($dataoptions['template'] == 3)
-        @include('includes.guidetemplate1')
+        @include('includes.plantilla3.guidetemplate1')
     @endif
     @if ($dataoptions['template'] == 4)
         @include('includes.plantilla4.guidetemplate4')

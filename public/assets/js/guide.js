@@ -6,7 +6,7 @@ $(document).ready(function () {
     $(document).on('click', '.point', function (e) {
         e.preventDefault();
         var point_id = $(this).data('guide');
-        console.log(point_id);
+        //console.log(point_id);
         $.ajax({
             type: "GET",
             url: "/guide/" + point_id,

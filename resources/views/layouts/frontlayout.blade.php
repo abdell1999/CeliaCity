@@ -14,7 +14,7 @@
     @include('includes.plantilla2.headerfronttemplate2')
 @endif
 @if ($dataoptions['template'] == 3)
-    @include('includes.headerfronttemplate3')
+    @include('includes.plantilla3.headerfronttemplate3')
 @endif
 @if ($dataoptions['template'] == 4)
     @include('includes.plantilla4.headerfronttemplate4')
@@ -35,7 +35,7 @@
     @endif
 
     @if ($dataoptions['template'] == 3)
-        @include('includes.footertemplate3')
+        @include('includes.plantilla3.footertemplate3')
     @endif
 
     @if ($dataoptions['template'] == 4)

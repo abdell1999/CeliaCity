@@ -6,7 +6,7 @@ $(document).ready(function () {
         var profile_id = $(this).val();
         $("#deleteProfile").modal("show");
         $("#deleteing_id").val(profile_id);
-        console.log(profile_id);
+        //console.log(profile_id);
     });
 
     $(document).on("click", ".delete_profile", function (e) {

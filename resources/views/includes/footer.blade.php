@@ -6,15 +6,20 @@
                 <div class="col-lg-4 col-md-12 order-md-1 order-lg-1">
                     <div class="footer_about mt-50">
                         <a href="#"><img src="/assets/img/logo.svg" alt="logo"></a>
-                        <p>Guia desarrollada por CeliaCity un grupo de estudiantes del instituto Celia Viñas en el curso de Desarrollo de Aplicaciones Web.</p>
+                        <p>Guia desarrollada por CeliaCity un grupo de estudiantes del instituto Celia Viñas en el curso
+                            de Desarrollo de Aplicaciones Web.</p>
                         <ul class="social">
-                            <li><a href="https://www.linkedin.com/in/abdellah-bukad-duh-rappani/" target="_blank" class="social_1" href="javascript:void(0)"><i
-                                        class="fab fa-linkedin fa-lg"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/cristian-rosca-b444251b8/" target="_blank" class="social_2" href="javascript:void(0)"><i
-                                        class="fab fa-linkedin fa-lg"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/francisco-javier-j-309a7611a/" target="_blank" class="social_3" href="javascript:void(0)"><i
-                                        class="fab fa-linkedin fa-lg"></i></a></li>
-                            <li><a  href="https://www.linkedin.com/in/jos%C3%A9-david-mart%C3%ADnez-ruiz-574430119/" target="_blank" class="social_4" href="javascript:void(0)"><i
+                            <li><a href="https://www.linkedin.com/in/abdellah-bukad-duh-rappani/" target="_blank"
+                                    class="social_1" href="javascript:void(0)"><i class="fab fa-linkedin fa-lg"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/cristian-rosca-b444251b8/" target="_blank"
+                                    class="social_2" href="javascript:void(0)"><i class="fab fa-linkedin fa-lg"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/francisco-javier-j-309a7611a/" target="_blank"
+                                    class="social_3" href="javascript:void(0)"><i class="fab fa-linkedin fa-lg"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/jos%C3%A9-david-mart%C3%ADnez-ruiz-574430119/"
+                                    target="_blank" class="social_4" href="javascript:void(0)"><i
                                         class="fab fa-linkedin fa-lg"></i></a></li>
                         </ul>
                     </div> <!-- footer about -->
@@ -25,12 +30,12 @@
                         <div class="footer_link mt-45">
                             <h4 class="footer_title">Enlaces de interés</h4>
                             <ul class="link">
-                                <li><a href="/guide)">Guía</a></li>
+                                <li><a href="/guide)">Historia</a></li>
                                 <li><a href="/categories/1">Monumentos</a></li>
                                 <li><a href="/categories/2">Hosteleria</a></li>
                                 <li><a href="/categories/3">Comercios</a></li>
                                 <li><a href="/categories/4">Ocio</a></li>
-                                <li><a href="/team">Creditos</a></li>
+                                <li><a href="/contact">Contacto</a></li>
                             </ul>
                         </div>
                         <!-- footer link -->
@@ -40,10 +45,10 @@
 
             </div> <!-- row -->
         </div>
-         <!-- container -->
+        <!-- container -->
 
         <p class="text-center mt-30" style="color: #eec41e;">Desarrollado por el equipo de CeliaCity</a></p>
 
     </div> <!-- footer widget -->
-<!-- FOOTER END -->
+    <!-- FOOTER END -->
 </section>

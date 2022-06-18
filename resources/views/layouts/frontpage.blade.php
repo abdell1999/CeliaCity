@@ -6,6 +6,7 @@
     @yield('styles')
     @yield('scripts')
     <header>
+        @include('includes.auth')
         @if ($dataoptions['template'] == 1)
             @include('includes.headerfront')
             <script>
@@ -16,7 +17,7 @@
             @include('includes.plantilla2.headerfronttemplate2')
         @endif
         @if ($dataoptions['template'] == 3)
-            @include('includes.headerfronttemplate3')
+            @include('includes.plantilla3.headerfronttemplate3')
         @endif
         @if ($dataoptions['template'] == 4)
             @include('includes.plantilla4.headerfronttemplate4')
@@ -24,7 +25,6 @@
         @if ($dataoptions['template'] == 5)
             @include('includes.plantilla5.headerfronttemplate5')
         @endif
-        @include('includes.auth')
 
 
     </header>
@@ -45,7 +45,7 @@
     @endif
 
     @if ($dataoptions['template'] == 3)
-        @include('includes.footertemplate3')
+        @include('includes.plantilla3.footertemplate3')
     @endif
 
     @if ($dataoptions['template'] == 4)

@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top sticky" id="navbar" style="background-color: white;">
         <div class="container">
             <a href="/" class="navbar-brand me-5">
-                <img src="/assets/img/logo.svg" class="logo-light" alt="" height="40" />
+                <img src="/assets/img/logo.svg" class="logo-light" alt="" height="30" />
             </a>
             <a href="javascript:void(0)" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,14 +48,16 @@
                 </ul>
                 <div class="mb-4 mb-lg-0">
                     @if (Auth::guest())
-                        <a href="/register" class="btn btn-sm nav-btn btn-primary mb-4 mb-lg-0 ms-auto">Iniciar
+                        <a data-toggle="modal" data-target="#loginModal"
+                            class="btn btn-sm nav-btn btn-primary mb-4 mb-lg-0 ms-auto">Iniciar
                             Sesion</a>
-                        <a href="/login" class="btn btn-sm nav-btn btn-primary mb-4 mb-lg-0 ms-auto">Registrarse</a>
+                        <a href="#" data-toggle="modal" data-target="#registerModal" href="#"
+                            class="btn btn-sm nav-btn btn-primary mb-4 mb-lg-0 ms-auto">Registrarse</a>
                     @else
                         <a href="/myprofile/{{ Auth::user()->id }}"
                             class="btn btn-sm nav-btn btn-primary mb-4 mb-lg-0 ms-auto">Mi Perfil</a>
-                        <a href="#" role="button"
-                            class="btn btn-sm nav-btn btn-primary mb-4 mb-lg-0 ms-auto logoutBtn">Cerrar Sesión</a>
+                        <a href="#" role="button" class="btn btn-sm nav-btn btn-primary mb-4 mb-lg-0 ms-auto"
+                            id="logoutBtn">Cerrar Sesión</a>
                     @endif
                 </div>
             </div>

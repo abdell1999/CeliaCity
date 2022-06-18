@@ -28,32 +28,32 @@ $(document).ready(function () {
                     $("tbody").append(
                         "<tr>\
                     <th>" +
-                            comment.date +
-                            "</th>\
+                        comment.date +
+                        "</th>\
                     <th>" +
-                            comment.valoration +
-                            "</th>\
+                        comment.valoration +
+                        "</th>\
                     <th>" +
-                            comment.text +
-                            "</th>\
+                        comment.text +
+                        "</th>\
                     <th>" +
-                            name +
-                            "</th>\
+                        name +
+                        "</th>\
                     <th>" +
-                            punto +
-                            "</th>\
+                        punto +
+                        "</th>\
                     <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4'><button data-bs-toggle='modal' data-bs-target='#editModal' class='editbtn' value=" +
-                            comment.id +
-                            "><i class='far fa-edit' style='color: blue;'></i></button></th>\
+                        comment.id +
+                        "><i class='far fa-edit' style='color: blue;'></i></button></th>\
                     <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 '><button data-bs-toggle='modal' data-bs-target='#exampleModal' class='deletebtn' value=" +
-                            comment.id +
-                            "><i class='far fa-trash-alt' style='color: blue;'></i></button></th>\
+                        comment.id +
+                        "><i class='far fa-trash-alt' style='color: blue;'></i></button></th>\
                     </tr>"
                     );
                 });
             },
             error: function (response) {
-                console.log(response);
+                //console.log(response);
             },
         });
     }
@@ -93,7 +93,7 @@ $(document).ready(function () {
                 }
             },
             error: function (response) {
-                console.log(response);
+                //console.log(response);
             },
         });
     });

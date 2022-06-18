@@ -20,24 +20,21 @@
     <link rel="stylesheet" href="/assets/plantilla4/css/colors.css">
     <!-- include the site responsive stylesheet -->
     <link rel="stylesheet" href="/assets/plantilla4/css/responsive.css">
-	<!-- include bootstrap popper JavaScript -->
-	<script src="/assets/plantilla4/js/popper.min.js"></script>
-	<!-- include bootstrap JavaScript -->
-	<script src="/assets/plantilla4/js/bootstrap.min.js"></script>
-	<!-- include custom JavaScript -->
-	<script src="/assets/plantilla4/js/jqueryCustom.js"></script>
-	<!-- isotope JavaScript -->
-	<script src='https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
+    <!-- include bootstrap popper JavaScript -->
+    <script src="/assets/plantilla4/js/popper.min.js"></script>
+    <!-- include bootstrap JavaScript -->
+    <script src="/assets/plantilla4/js/bootstrap.min.js"></script>
+    <!-- include custom JavaScript -->
+    <script src="/assets/plantilla4/js/jqueryCustom.js"></script>
+    <!-- isotope JavaScript -->
+    <script src='https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js'></script>
     <script>
-
         $.ajaxSetup({
-             headers: {
-                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-             }
-         });
-
-
-        </script>
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 </head>
 <div class="phTopWrap">
     <!-- pageHeader -->
@@ -51,7 +48,9 @@
                             <!-- mainLogo -->
                             <div class="logo mt-md-n2 mt-xl-n1">
                                 <a href="/">
-                                    <img src="/assets/img/logo.svg" style="max-width: 150% !important; width: 100% !important; height: 150% !important;" type="image/svg" alt="Logo">
+                                    <img src="/assets/img/logo.svg"
+                                        style="max-width: 150% !important; width: 100% !important; height: 150% !important;"
+                                        type="image/svg" alt="Logo">
                                 </a>
                             </div>
                             <!-- menuHolder -->
@@ -83,24 +82,27 @@
                                                     aria-expanded="false" href="/categories/3">Servicios</a>
                                             </li>
                                             @if (Auth::guest())
-                                            <li class="nav-item">
-                                                <a class="nav-link" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/register">Registrarse</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/login">Iniciar
-                                                    Sesion</a>
-                                            </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" role="button" href="#"
+                                                        data-toggle="modal" data-target="#registerModal">Registrarse</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" role="button" aria-haspopup="true"
+                                                        aria-expanded="false" href="#" data-toggle="modal"
+                                                        data-target="#loginModal">Iniciar
+                                                        Sesion</a>
+                                                </li>
                                             @else
-                                            <li class="nav-item">
-                                                <a class="nav-link " role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/myprofile/{{Auth::user()->id}}">Mi Perfil</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link logoutBtn" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="#">Cerrar Sesion</a>
-                                            </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link " role="button" aria-haspopup="true"
+                                                        aria-expanded="false"
+                                                        href="/myprofile/{{ Auth::user()->id }}">Mi Perfil</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" role="button" aria-haspopup="true"
+                                                        aria-expanded="false" id="logoutBtn" href="#">Cerrar
+                                                        Sesion</a>
+                                                </li>
                                             @endif
                                         </ul>
                                     </div>

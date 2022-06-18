@@ -6,7 +6,7 @@
     @include('includes.plantilla2.hometemplate2')
 @endif
 @if ($dataoptions['template'] == 3)
-    @include('includes.hometemplate3')
+    @include('includes.plantilla3.hometemplate3')
 @endif
 @if ($dataoptions['template'] == 4)
     @include('includes.plantilla4.hometemplate4')
