@@ -35,30 +35,24 @@
 
               <div class="collapse navbar-collapse" id="navbarCollapse">
                   <ul id="navbar-navlist" class="navbar-nav ms-auto">
-                      <li class="nav-item">
-                          <a class="nav-link active" href="/home">Inicio</a>
-                      </li>
-                      <!--end nav item-->
-                      <li class="nav-item">
-                          <a class="nav-link" href="/guide">Guia</a>
-                      </li>
-                      <!--end nav item-->
-                      <li class="nav-item">
-                          <a class="nav-link" href="/categories/1">Momumentos</a>
-                      </li>
-                      <!--end nav item-->
-                      <li class="nav-item">
-                          <a class="nav-link" href="/categories/2">Servicios</a>
-                      </li>
-                      <!--end nav item-->
-                      <li class="nav-item">
-                          <a class="nav-link" href="/categories/3">Servicios</a>
-                      </li>
-                      <!--end nav item-->
-                      <li class="nav-item">
-                          <a class="nav-link" href="/team">Creditos</a>
-                      </li>
-                      <!--end nav item-->
+                    <li class="nav-item"><a class="nav-link active" href="/home">Inicio </a></li>
+                    @foreach ($dataoptions['categories'] as $category)
+
+                                @if ($category->id == 4)
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/guide">{{$category->name}} </a>
+                                </li>
+
+                                @else
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/categories/{{$category->id}}">{{$category->name}} </a>
+                                </li>
+                                @endif
+                        @endforeach
+
+
+
                       @if (Auth::guest())
                           <li class="nav-item">
                               <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
