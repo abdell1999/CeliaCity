@@ -18,6 +18,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '1',
             'name' => 'Cuesta del Negro',
+            'slug' => 'cuesta-del-negro',
             'latitude' => '37.3360835',
             'longitude' => '-3.236539756',
             'movilephone' => '',
@@ -62,6 +63,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '2',
             'name' => 'Iglesia Parroquial de San Martín',
+            'slug' => 'iglesia-parroquial-de-san-martin',
             'latitude' => '37.317653',
             'longitude' => '-3.1896225',
             'movilephone' => '',
@@ -86,6 +88,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '3',
             'name' => 'Cueva-Museo "La Inmaculada"',
+            'slug' => 'cueva-museo-la-inmaculada',
             'latitude' => '37.3165462',
             'longitude' => '-3.1859825',
             'movilephone' => '',
@@ -112,6 +115,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '4',
             'name' => 'Torre Al-Magruz',
+            'slug' => 'torre-al-magruz',
             'latitude' => '37.3390065',
             'longitude' => '-3.2118038',
             'movilephone' => '',
@@ -139,6 +143,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '5',
             'name' => 'Cuevas Al-Magruz',
+            'slug' => 'cuevas-al-magruz',
             'latitude' => '37.3335643',
             'longitude' => '-3.2259956',
             'movilephone' => '',
@@ -165,6 +170,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '6',
             'name' => 'Campo de tiro con Arco',
+            'slug' => 'campo-de-tiro-con-arco',
             'latitude' => '37.3213288',
             'longitude' => '-3.1866393',
             'movilephone' => '',
@@ -184,6 +190,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '7',
             'name' => 'Castillo de Luchena',
+            'slug' => 'castillo-de-luchena',
             'latitude' => '37.3519176',
             'longitude' => '-3.2000891',
             'movilephone' => '',
@@ -211,6 +218,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '8',
             'name' => 'Teatro Municipal',
+            'slug' => 'treatro-municipal',
             'latitude' => '37.3145765',
             'longitude' => '-3.1890351',
             'movilephone' => '',
@@ -228,6 +236,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '9',
             'name' => 'Piscina Municipal',
+            'slug' => 'piscina-municipal',
             'latitude' => '37.31913',
             'longitude' => '-3.18309',
             'movilephone' => '',
@@ -247,6 +256,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '20',
             'name' => 'El Royo Café & Copas',
+            'slug' => 'el-royo-cafe-y-copas',
             'latitude' => '37.3175707',
             'longitude' => '-3.1943277',
             'movilephone' => '',
@@ -264,6 +274,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '21',
             'name' => 'Restaurante Mesón la Taberna',
+            'slug' => 'restaurante-meson-la-taberna',
             'latitude' => '37.317406',
             'longitude' => '-3.1929099',
             'movilephone' => '',
@@ -280,6 +291,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '22',
             'name' => 'Hostal-Restaurante Ruta del Sur',
+            'slug' => 'hostal-restaurante-ruta-del-sur',
             'latitude' => '37.3180833',
             'longitude' => '-3.1943175',
             'movilephone' => '',
@@ -297,6 +309,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '23',
             'name' => 'Café Bar Parada',
+            'slug' => 'cafe-bar-parada',
             'latitude' => '37.3180833',
             'longitude' => '-3.1943175',
             'movilephone' => '',
@@ -314,6 +327,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '24',
             'name' => 'Las Cuatro Hermanas',
+            'slug' => 'las-cuatro-hermanas',
             'latitude' => '37.3177648',
             'longitude' => '-3.1938992',
             'movilephone' => '',
@@ -329,6 +343,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '25',
             'name' => 'Cafetería Fabiola',
+            'slug' => 'cafeteria-fabiola',
             'latitude' => '37.3166406',
             'longitude' => '-3.1908579',
             'movilephone' => '',
@@ -345,6 +360,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '26',
             'name' => 'Brothers Café Bar Pub',
+            'slug' => 'brothers-cafe-bar-public',
             'latitude' => '37.3173007',
             'longitude' => '-3.1905241',
             'movilephone' => '',
@@ -360,6 +376,7 @@ class PointofviewSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '27',
             'name' => 'Pizzería Eclipse',
+            'slug' => 'pizzeria-eclipse',
             'latitude' => '37.3168394',
             'longitude' => '-3.1895305',
             'movilephone' => '',

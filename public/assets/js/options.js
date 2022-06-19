@@ -336,7 +336,7 @@ $(document).ready(function () {
                         );
                         $(".pointlink" + index).attr(
                             "href",
-                            "/pointofinterests/" + response.pointofinterest.id
+                            "/pointofinterest/" + response.pointofinterest.slug
                         );
                         $(".point" + index + "image").attr(
                             "src",
