@@ -41,6 +41,7 @@ Route::resource('/comments','CommentController');
 Route::resource('/resources','ResourceController');
 Route::get('fetch-user', [App\Http\Controllers\UserController::class, 'fetchuser']);
 Route::post('comentar', [App\Http\Controllers\CommentController::class, 'comentar'])->name('comentar');
+Route::post('approveComment/{id}', [App\Http\Controllers\CommentController::class, 'approveComment']);
 Route::get('/fetch-comment/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'fetchcomment']);
 Route::get('/update-comments/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'updatecomment']);
 Route::delete('/delete-comments/{id_pointofinterest}', [App\Http\Controllers\CommentController::class, 'deletecomment']);
@@ -63,3 +64,4 @@ Route::put('/options/{id}', [App\Http\Controllers\OptionController::class, 'upda
 Route::get('/options/get-all/', [App\Http\Controllers\OptionController::class, 'getall']);
 
 Route::get('fetch-onepoint/{id}', [App\Http\Controllers\PointofinterestController::class, 'fetchonepoint']);
+

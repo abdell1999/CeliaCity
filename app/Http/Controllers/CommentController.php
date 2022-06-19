@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Option;
 class CommentController extends Controller
 {
 
@@ -202,10 +203,17 @@ class CommentController extends Controller
 
     public function fetchcomment($id_pointofinterest)
     {
+            $moderate = Option::find(18);
+            //return $moderate;
+            if($moderate->value == 0){
+                $comments = Comment::where('id_pointofinterest', '=', $id_pointofinterest)->orderBy('created_at', 'desc')->get();
+            }else{
+            $comments = Comment::where('id_pointofinterest', '=', $id_pointofinterest)->where('approved','=', 1)->orderBy('created_at', 'desc')->get();
+        }
 
-        $comments = Comment::where('id_pointofinterest', '=', $id_pointofinterest)->orderBy('created_at', 'desc')->get();
-        //$comments = Comment::all();
-        //dd($comments);
+
+
+
 
         $users = User::all();
 
@@ -237,6 +245,15 @@ class CommentController extends Controller
             ]);
         }
         return redirect()->route('comments.index');
+    }
+
+    public function approveComment($id){
+        $comment = Comment::findOrFail($id);
+        $comment->approved = 1;
+        $comment->save();
+        return "OKEY";
+
+
     }
 
 

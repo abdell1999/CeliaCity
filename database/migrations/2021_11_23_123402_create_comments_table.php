@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             $table->date('date');
             $table->unsignedSmallInteger('valoration');
             $table->string('text');
-            $table->boolean('approved')->default(true);
+            $table->boolean('approved')->default(0);
             $table->timestamps();
 
             //$table->foreign('id_user')->references('id')->on('users');

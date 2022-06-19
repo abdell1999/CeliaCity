@@ -25,29 +25,38 @@ $(document).ready(function () {
                         }
                     });
 
+                    let moderacion;
+                    if(comment.approved == 0){
+                        moderacion = "<button comment_id="+comment.id+" class='moderateComment'>Aprobar comentario</button>";
+
+                    }else{
+                        moderacion = "El comentario esta aprobado";
+                    }
+
                     $("tbody").append(
                         "<tr>\
                     <th>" +
-                        comment.date +
-                        "</th>\
+                            comment.date +
+                            "</th>\
                     <th>" +
-                        comment.valoration +
-                        "</th>\
+                            comment.valoration +
+                            "</th>\
                     <th>" +
-                        comment.text +
-                        "</th>\
+                            comment.text +
+                            "</th>\
                     <th>" +
-                        name +
-                        "</th>\
+                            name +
+                            "</th>\
                     <th>" +
-                        punto +
-                        "</th>\
-                    <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4'><button data-bs-toggle='modal' data-bs-target='#editModal' class='editbtn' value=" +
-                        comment.id +
-                        "><i class='far fa-edit' style='color: blue;'></i></button></th>\
+                            punto +
+                            "</th><th>"+
+                            moderacion
+                             +"</th><th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4'><button data-bs-toggle='modal' data-bs-target='#editModal' class='editbtn' value=" +
+                            comment.id +
+                            "><i class='far fa-edit' style='color: blue;'></i></button></th>\
                     <th class='border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 '><button data-bs-toggle='modal' data-bs-target='#exampleModal' class='deletebtn' value=" +
-                        comment.id +
-                        "><i class='far fa-trash-alt' style='color: blue;'></i></button></th>\
+                            comment.id +
+                            "><i class='far fa-trash-alt' style='color: blue;'></i></button></th>\
                     </tr>"
                     );
                 });
@@ -64,6 +73,29 @@ $(document).ready(function () {
         $("#deleteing_id").val(comment_id);
     });
 
+
+    $(document).on("click", ".moderateComment", function () {
+        let comment_id = $(this).attr("comment_id");
+        console.log(comment_id);
+
+        $.ajax({
+            url: "/approveComment/"+comment_id,
+            method: "POST",
+            dataType: "json",
+        }).done(function (response) {
+            fetchcomments();
+            console.log("REFRESH");
+
+
+
+        });
+
+
+
+
+
+    });
+
     $(document).on("click", ".delete_comment", function (e) {
         e.preventDefault();
 
@@ -74,7 +106,6 @@ $(document).ready(function () {
             url: "/delete-comment/" + id,
             dataType: "json",
             success: function (response) {
-
                 if (response.status == 404) {
                     $("#success_message").addClass(
                         "inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
@@ -102,14 +133,12 @@ $(document).ready(function () {
         e.preventDefault();
         var comment_id = $(this).val();
 
-
         $("#editModal").modal("show");
 
         $.ajax({
             type: "GET",
             url: "/edit-comment/" + comment_id,
             success: function (response) {
-
                 if (response.status == 404) {
                     $("#success_message").addClass(
                         "inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
@@ -147,7 +176,6 @@ $(document).ready(function () {
             data: data,
             dataType: "json",
             success: function (response) {
-
                 if (response.status == 400) {
                     $("#update_msgList").html("");
                     $("#update_msgList").addClass(

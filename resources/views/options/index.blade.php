@@ -64,6 +64,10 @@
                                     Plantilla
                                     @endif
 
+                                    @if ($option['type'] == "comments")
+                                    Comentarios
+                                    @endif
+
 
                                 </th>
                                 <th>

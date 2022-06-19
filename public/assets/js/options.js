@@ -51,6 +51,15 @@ $(document).ready(function () {
                         </select>
                         `;
                     }
+                    if (type === "comments") {
+                        insertar = `
+                        <label for="commentOption">Desea que se puedan moderar los comentarios:</label>
+                        <select id="${id_input}" name="commentOption" class="commentOption">
+                        <option value="0">Sin moderación</option>
+                        <option value="1">Requerir aprobación de un administrador</option>
+                        </select>
+                        `;
+                    }
                     if (type === "image") {
                         insertar = `<label for="imageOption">Selecciona un archivo:</label>
                         <input id="${id_input}"
@@ -100,6 +109,9 @@ $(document).ready(function () {
 
                     if (type === "template") {
                         insertar = `<p> Plantilla ${value} </p>`;
+                    }
+                    if (type === "comments") {
+                        insertar = `<p> 0->Sin moderación <br>1->Los comentarios requieren aprobación<br>Actual=> ${value} </p>`;
                     }
 
                     if (type === "image") {
@@ -185,7 +197,7 @@ $(document).ready(function () {
 
 
 
-        if (type === "text" || type === "point" || type === "template") {
+        if (type === "text" || type === "point" || type === "template" || type==="comments") {
             newValue = $("#" + idInput).val();
             //console.log(newValue);
         }
