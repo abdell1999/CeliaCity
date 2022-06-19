@@ -17,6 +17,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '100',
             'name' => 'Fuentes de los leones - Plaza de la Constitución.',
+            'slug' => 'fuentes-de-los-leones-plaza-de-la-constitucion',
             'latitude' => '37.332719',
             'longitude' => '-2.304780',
             'text' => 'Es la plaza más destacada de la Villa de Macael, construida en 1980 y reformada en 2015, se
@@ -43,6 +44,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '101',
             'name' => 'Centro de interpretación del mármol.',
+            'slug' => 'centro-de-interpretacion-del-marmol',
             'latitude' => '37.333676',
             'longitude' => '-2.303050',
             'movilephone' => '950128916',
@@ -82,6 +84,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '102',
             'name' => 'El mortero más grande del mundo.',
+            'slug' => 'el-mortero-mas-grande-del-mundo',
             'latitude' => '37.335494',
             'longitude' => '-2.301543',
             'text' => 'El mortero de mármol Blanco Macael más grande del mundo
@@ -113,6 +116,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '103',
             'name' => 'Monumento a la Virgen del Rosario',
+            'slug' => 'monumento-a-la-virgen-del-rosario',
             'latitude' => '37.332527',
             'longitude' => '-2.304583',
             'text' => 'Precioso monumento a la Virgen del Rosario, patrona de Macael, realizado en azulejos
@@ -135,6 +139,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '104',
             'name' => 'Monumento Cantera Alma.',
+            'slug' => 'monumento-cantera-alma',
             'latitude' => '37.332579',
             'longitude' => '-2.304061',
             'text' => 'Monumento modernista realizado en mármol Blanco, Gris y Amarillo Macael por artesanos del
@@ -160,6 +165,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '105',
             'name' => 'Monumento entrada de Macael.',
+            'slug' => 'monumento-entrada-de-macael',
             'latitude' => '37.340184',
             'longitude' => '-2.296529',
             'text' => 'Monumento de grandes dimensiones con el nombre y escudo del municipio con el objetivo de
@@ -182,6 +188,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '106',
             'name' => 'Monumento al cantero.',
+            'slug' => 'monumento-al-cantero',
             'latitude' => '37.334551',
             'longitude' => '-2.301881',
             'text' => 'Ascendiendo por la calle García Lorca y tras dejar la plaza Almería, con su airosa y original
@@ -204,6 +211,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '107',
             'name' => 'Mirador de la Virgen del Rosario.',
+            'slug' => 'mirador-de-la-virgen-del-rosario',
             'latitude' => '37.335575',
             'longitude' => '-2.299744',
             'text' => 'Se sitúa en la cima de un pequeño montículo coronado por la Virgen del Rosario; escultura de
@@ -235,6 +243,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '108',
             'name' => 'Mirador de las canteras.',
+            'slug' => 'mirador-de-las-canteras',
             'latitude' => '37.305460',
             'longitude' => '-2.285266',
             'text' => 'Mirador de las Canteras realizado por el Ayuntamiento de Macael y la Mancomunidad de
@@ -260,6 +269,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '109',
             'name' => 'Calles y porches.',
+            'slug' => 'calles-y-porches',
             'latitude' => '37.333228',
             'longitude' => '-2.305022',
             'text' => 'Las calles dan identidad a un pueblo, por ellas fluyen transeúntes y son un devenir de gentes
@@ -289,6 +299,7 @@ class MacaelSeeder extends Seeder
 
             'id' => '110',
             'name' => 'Iglesia Parroquial Santa Maria Del Rosario.',
+            'slug' => 'iglesia-parroquial-santa-maria-del-rosario',
             'latitude' => '37.332591',
             'longitude' => '-2.304357',
             'movilephone' => '950445211',
@@ -330,6 +341,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '111',
             'name' => 'Las Canteras.',
+            'slug' => 'las-canteras',
             'latitude' => '37.305466',
             'longitude' => '-2.279304',
             'text' => 'Macael y su zona de influencia en el corazón de la Sierra de los Filares, aporta el principal
@@ -358,6 +370,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '112',
             'name' => 'Bar la Plaza.',
+            'slug' => 'bar-la-plaza',
             'latitude' => '37.332412',
             'longitude' => '-2.304413',
             'movilephone' => '622159919',
@@ -410,6 +423,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '114',
             'name' => 'Taberna McCoy.',
+            'slug' => 'taberna-mccoy',
             'latitude' => '37.333968',
             'longitude' => '-2.302276',
             'movilephone' => '610768472',
@@ -431,6 +445,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '115',
             'name' => 'Bar la Bodeguilla.',
+            'slug' => 'bar-la-bodeguilla',
             'latitude' => '37.329849',
             'longitude' => '-2.303281',
             'movilephone' => '654843244',
@@ -450,6 +465,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '116',
             'name' => 'Cafetería Bulevar',
+            'slug' => 'cafeteria-bulevar',
             'latitude' => '37.330221',
             'longitude' => '-2.307045',
             'movilephone' => '647 85 02 61',
@@ -474,6 +490,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '117',
             'name' => 'Heladería Martinez.',
+            'slug' => 'heladeria-martinez',
             'latitude' => '37.33294309152797',
             'longitude' => '-2.30426940959901',
             'movilephone' => '950128177',
@@ -491,6 +508,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '118',
             'name' => 'Hotel Cero Ocho.',
+            'slug' => 'hotel-cero-ocho',
             'latitude' => '37.338353803728786',
             'longitude' => '-2.3014489699622116',
             'movilephone' => '619199640',
@@ -510,6 +528,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '119',
             'name' => 'Restaurante Los Membrives.',
+            'slug' => 'restaurante-los-membrives',
             'latitude' => '37.336444439324424',
             'longitude' => '-2.300612631335737',
             'movilephone' => '950128491',
@@ -543,6 +562,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '120',
             'name' => 'Bar Restaurante las Piscinas.',
+            'slug' => 'bar-restaurante-las-piscinas',
             'latitude' => '37.33838309843461',
             'longitude' => '-2.301214739843711',
             'movilephone' => '681664790',
@@ -561,6 +581,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '121',
             'name' => 'Pizzeria Francis.',
+            'slug' => 'pizzeria-francis',
             'latitude' => '37.326985',
             'longitude' => '-2.304592',
             'movilephone' => '608079093',
@@ -585,6 +606,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '122',
             'name' => 'Restaurante las Carmelas.',
+            'slug' => 'restaurante-las-carmelas',
             'latitude' => '37.335723',
             'longitude' => '-2.291574',
             'movilephone' => '649818708',
@@ -604,6 +626,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '123',
             'name' => 'Bocatería-Cafetería Calle Larga.',
+            'slug' => 'bocateria-cafeteria-calle-larga',
             'latitude' => '37.333699',
             'longitude' => '-2.303320',
             'movilephone' => '649251011',
@@ -625,6 +648,7 @@ class MacaelSeeder extends Seeder
             'id' => '124',
             'name' => '
             Escuela Restaurante las Canteras.',
+            'slug' => 'escuela-restaurante-las-canteras',
             'latitude' => '37.30245390396827',
             'longitude' => '-2.2802426693132496',
             'movilephone' => '655026784',
@@ -646,6 +670,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '125',
             'name' => 'Restaurante El Torero.',
+            'slug' => 'restaurante-el-torero',
             'latitude' => '37.33463827771849',
             'longitude' => '-2.287754263224406',
             'movilephone' => '950128916',
@@ -676,6 +701,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '126',
             'name' => 'Consigliere.',
+            'slug' => 'consigliere',
             'latitude' => '37.334932615828265',
             'longitude' => '-2.3014499178433407',
             'movilephone' => '680782244',
@@ -696,6 +722,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '127',
             'name' => 'Autoreparaciones Juan Aranega Pastor.',
+            'slug' => 'autoreparaciones-juan-aranega-pastor',
             'latitude' => '37.33174104360633',
             'longitude' => '-2.3004400000068577',
             'movilephone' => '680782243',
@@ -717,6 +744,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '128',
             'name' => 'Salon de estetica peluquería Asmae.',
+            'slug' => 'salon-de-estetica-peluqueria-asmae',
             'latitude' => '37.33240849654674',
             'longitude' => '-2.3046745768237082',
             'movilephone' => '673857700',
@@ -739,6 +767,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '129',
             'name' => 'Admon. de Loterías Nº 2 Ntra. Sra. del Rosario.',
+            'slug' => 'admon-de-loterias-no-2-ntra-sra-del-rosario',
             'latitude' => '37.33240849654674',
             'longitude' => '-2.3046745768237082',
             'movilephone' => '673857733',
@@ -761,6 +790,7 @@ class MacaelSeeder extends Seeder
         DB::table('pointofinterests')->insert([
             'id' => '130',
             'name' => 'Estación de Servicio Ntra Sra. del Rosario.',
+            'slug' => 'estacion-de-servicio-ntra-sra-del-rosario',
             'latitude' => '37.33321999499964',
             'longitude' => '-2.2988719006491176',
             'movilephone' => '673857756',

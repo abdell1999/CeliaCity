@@ -7,15 +7,31 @@ use App\Models\Categorie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class PointofinterestController extends Controller
 {
 
 
     public function __construct(){
-        $this->middleware("auth")->except("show","fetchonepoint");
-        $this->middleware("App\Http\Middleware\Administrate::class")->except("show", "fetchonepoint");
+        $this->middleware("auth")->except("show","fetchonepoint","slugs");
+        $this->middleware("App\Http\Middleware\Administrate::class")->except("show", "fetchonepoint","slugs");
     }
+
+
+
+    public function slugs($slug){
+        $data['pointofinterests'] = Pointofinterest::where('slug','=', $slug)->firstOrFail();
+        $data['users'] = User::all();
+        $data['comments'] = $data['pointofinterests']->comments;
+        if(Pointofinterest::findOrFail($data['pointofinterests']->id)->resources){
+            $data['resources'] = Pointofinterest::findOrFail($data['pointofinterests']->id)->resources;
+        }
+        return view('pointofinterests.show',$data);
+    }
+
+
+
 
 
     /**
@@ -88,6 +104,7 @@ class PointofinterestController extends Controller
             $pointofinterest->longitude = $request->input('longitude');
             $pointofinterest->movilephone = $request->input('movilephone');
             $pointofinterest->text = $request->input('text');
+            $pointofinterest->slug = Str::slug($request->input('name'),'-');
             $pointofinterest->save();
             $pointofinterest->categories()->sync($request->categoriespoint);
 

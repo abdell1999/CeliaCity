@@ -64,4 +64,5 @@ Route::put('/options/{id}', [App\Http\Controllers\OptionController::class, 'upda
 Route::get('/options/get-all/', [App\Http\Controllers\OptionController::class, 'getall']);
 
 Route::get('fetch-onepoint/{id}', [App\Http\Controllers\PointofinterestController::class, 'fetchonepoint']);
+Route::get('pointofinterest/{slug}', [App\Http\Controllers\PointofinterestController::class, 'slugs']);
 
