@@ -14,7 +14,20 @@
                 <div id="menu">
                     <ul id="nav2">
                         <li><a href="/">Inicio</a></li>
+                        @foreach ($dataoptions['categories'] as $category)
 
+                                @if ($category->id == 4)
+                                <li class="nav-item">
+                                    <a href="/guide">{{$category->name}} </a>
+                                </li>
+
+                                @else
+
+                                <li class="nav-item">
+                                    <a href="/categories/{{$category->id}}">{{$category->name}} </a>
+                                </li>
+                                @endif
+                        @endforeach
 
                     </ul>
 
@@ -51,7 +64,6 @@
 <script src="/assets/plantilla2/js/breakpoints.min.js"></script>
 <script src="/assets/plantilla2/js/util.js"></script>
 <script src="/assets/plantilla2/js/main.js"></script>
-<script src="/assets/js/categoriesNavMenu.js"></script>
 <script>
     $.ajaxSetup({
         headers: {
