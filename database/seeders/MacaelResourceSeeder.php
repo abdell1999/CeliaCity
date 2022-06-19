@@ -33,7 +33,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '51',
             'title' => 'Centro de interpretación del mármol',
-            'route' => '\storage\macael\CentrodeInterpretacion.jpg',
+            'route' => 'storage\macael\CentrodeInterpretacion.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -47,7 +47,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '52',
             'title' => 'El mortero más grande del mundo.',
-            'route' => '\storage\macael\Mortero.jpg',
+            'route' => 'storage\macael\Mortero.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -61,7 +61,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '53',
             'title' => 'Monumento a la Virgen del Rosario',
-            'route' => '\storage\macael\MonumentoVirgen.jpg',
+            'route' => 'storage\macael\MonumentoVirgen.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -75,7 +75,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '54',
             'title' => 'Monumento Cantera Alma.',
-            'route' => '\storage\macael\CanteraAlma.jpg',
+            'route' => 'storage\macael\CanteraAlma.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -89,7 +89,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '55',
             'title' => 'Monumento entrada de Macael.',
-            'route' => '\storage\macael\EntradaMacael.jpg',
+            'route' => 'storage\macael\EntradaMacael.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -103,7 +103,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '56',
             'title' => 'Monumento al cantero.',
-            'route' => '\storage\macael\MonumentoCantero.jpg',
+            'route' => 'storage\macael\MonumentoCantero.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -117,7 +117,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '57',
             'title' => 'Mirador de la Virgen del Rosario.',
-            'route' => '\storage\macael\MiradorVR.jpg',
+            'route' => 'storage\macael\MiradorVR.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -131,7 +131,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '58',
             'title' => 'Mirador de las Canteras.',
-            'route' => '\storage\macael\MiradorCanteras.jpg',
+            'route' => 'storage\macael\MiradorCanteras.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -145,7 +145,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '59',
             'title' => 'Calles y porches.',
-            'route' => '\storage\macael\Porchesycalles.jpg',
+            'route' => 'storage\macael\Porchesycalles.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -159,7 +159,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '60',
             'title' => 'Iglesia Parroquial Santa Maria Del Rosario.',
-            'route' => '\storage\macael\IglesiaParroquial.jpg',
+            'route' => 'storage\macael\IglesiaParroquial.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -173,7 +173,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '61',
             'title' => 'Las Canteras.',
-            'route' => '\storage\macael\LasCanteras.jpg',
+            'route' => 'storage\macael\LasCanteras.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -187,7 +187,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '62',
             'title' => 'Bar la Plaza.',
-            'route' => '\storage\macael\BarLaPlaza.jpg',
+            'route' => 'storage\macael\BarLaPlaza.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -201,7 +201,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '63',
             'title' => 'Bar la Higuera.',
-            'route' => '\storage\macael\BarLaHiguera.png',
+            'route' => 'storage\macael\BarLaHiguera.png',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -215,7 +215,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '64',
             'title' => 'Taberna McCoy.',
-            'route' => '\storage\macael\TabernaMcCoy.jpg',
+            'route' => 'storage\macael\TabernaMcCoy.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -229,7 +229,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '65',
             'title' => 'Bar la Bodeguilla.',
-            'route' => '\storage\macael\BarLaPlaza.jpg',
+            'route' => 'storage\macael\BarLaPlaza.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -243,7 +243,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '66',
             'title' => 'Cafetería Bulevar',
-            'route' => '\storage\macael\CafeteriaBulevar.jpg',
+            'route' => 'storage\macael\CafeteriaBulevar.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -257,7 +257,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '67',
             'title' => 'Heladería Martinez.',
-            'route' => '\storage\macael\HeladeriaMartin.jpg',
+            'route' => 'storage\macael\HeladeriaMartin.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -271,7 +271,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '68',
             'title' => 'Hotel Cero Ocho.',
-            'route' => '\storage\macael\HotelCero.jpg',
+            'route' => 'storage\macael\HotelCero.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -285,7 +285,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '69',
             'title' => 'Restaurante Los Membrives.',
-            'route' => '\storage\macael\LosMembrives.jpg',
+            'route' => 'storage\macael\LosMembrives.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -299,7 +299,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '70',
             'title' => 'Bar Restaurante las Piscinas.',
-            'route' => '\storage\macael\RestauranteLasPiscinas.jpg',
+            'route' => 'storage\macael\RestauranteLasPiscinas.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -313,7 +313,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '71',
             'title' => 'Pizzeria Francis.',
-            'route' => '\storage\macael\PizzeriaFrancis.png',
+            'route' => 'storage\macael\PizzeriaFrancis.png',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -327,7 +327,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '72',
             'title' => 'Restaurante las Carmelas.',
-            'route' => '\storage\macael\RestauranteLasCarmelas.jpg',
+            'route' => 'storage\macael\RestauranteLasCarmelas.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -341,7 +341,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '73',
             'title' => 'Bocatería-Cafetería Calle Larga.',
-            'route' => '\storage\macael\BocateriaCalleLarga.jpeg',
+            'route' => 'storage\macael\BocateriaCalleLarga.jpeg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -355,7 +355,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '74',
             'title' => 'Escuela Restaurante las Canteras.',
-            'route' => '\storage\macael\EscuelaLasCanteras.jpeg',
+            'route' => 'storage\macael\EscuelaLasCanteras.jpeg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -369,7 +369,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '75',
             'title' => 'Restaurante El Torero.',
-            'route' => '\storage\macael\RestauranteElTorero.jpg',
+            'route' => 'storage\macael\RestauranteElTorero.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -383,7 +383,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '76',
             'title' => 'Consigliere.',
-            'route' => '\storage\macael\Consigliere.jfif',
+            'route' => 'storage\macael\Consigliere.jfif',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -397,7 +397,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '77',
             'title' => 'Autoreparaciones Juan Aranega Pastor.',
-            'route' => '\storage\macael\Juan aranega.jpg',
+            'route' => 'storage\macael\Juan aranega.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -411,7 +411,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '78',
             'title' => 'Salon de estetica peluquería Asmae.',
-            'route' => '\storage\macael\Asmaepeluqueria.jpg',
+            'route' => 'storage\macael\Asmaepeluqueria.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -425,7 +425,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '79',
             'title' => 'Admon. de Loterías Nº 2 Ntra. Sra. del Rosario.',
-            'route' => '\storage\macael\loteria.jpg',
+            'route' => 'storage\macael\loteria.jpg',
             'created_at' => now(),
             'updated_at' => now()
 
@@ -439,7 +439,7 @@ class MacaelResourceSeeder extends Seeder
         DB::table('resources')->insert([
             'id' => '80',
             'title' => 'Estación de Servicio Ntra Sra. del Rosario.',
-            'route' => '\storage\macael\gasolinera.jfif',
+            'route' => 'storage\macael\gasolinera.jfif',
             'created_at' => now(),
             'updated_at' => now()
 
