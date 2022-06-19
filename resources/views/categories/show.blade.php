@@ -9,7 +9,7 @@
         @foreach ($categorie->pointofinterests as $point)
             <div class="card m-2 postion-relative" style="width:30%;">
                 <div id="carouselExampleIndicators{{ $point->id }}" class="carousel slide" data-ride="carousel">
-                    <a href="/pointofinterests/{{ $point->id }}">
+                    <a href="/pointofinterest/{{ $point->slug }}">
                         <div class="carousel-inner">
                             @foreach ($recursospoints as $recurso)
                                 @if ($recurso->id == $point->id && isset($recurso->route))
@@ -31,7 +31,7 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <h5 class="card-title position-absolute text-light"><a href="/pointofinterests/{{ $point->id }}"
+                <h5 class="card-title position-absolute text-light"><a href="/pointofinterest/{{ $point->slug }}"
                         style="color:white !important;">{{ $point->name }}</a></h5>
             </div>
         @endforeach
