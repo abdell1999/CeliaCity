@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use DB;
 use App\Models\Option;
+use App\Models\Categorie;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 
@@ -47,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
         //$dataoptions['template'] = 2;
 
 
-
+        $dataoptions['categories'] = Categorie::all();
         //dd($data);
 
 

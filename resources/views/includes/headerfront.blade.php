@@ -20,8 +20,23 @@
                                 <li class="nav-item">
                                     <a class="page-scroll"  href="/home">Inicio</a>
                                 </li>
-                                
-                             
+
+                                @foreach ($dataoptions['categories'] as $category)
+
+                                @if ($category->id == 4)
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="/guide">{{$category->name}} </a>
+                                </li>
+
+                                @else
+
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="/categories/{{$category->id}}">{{$category->name}} </a>
+                                </li>
+                                @endif
+                                @endforeach
+
+
                             </ul>
                             <ul class="navbar-nav ml-auto">
                                                         @if (Auth::guest())
@@ -52,5 +67,4 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </div> <!-- header navbar -->
-    <script src="/assets/js/categoriesNavMenu.js"></script>
 </section>
