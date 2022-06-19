@@ -33,18 +33,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/guide">Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/categories/1">Monumentos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/categories/2">Hosteleria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/categories/3">Servicios</a>
-                    </li>
+
+
+                    @foreach ($dataoptions['categories'] as $category)
+
+                                @if ($category->id == 4)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/guide">{{$category->name}} </a>
+                                </li>
+
+                                @else
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/categories/{{$category->id}}">{{$category->name}} </a>
+                                </li>
+                                @endif
+                        @endforeach
+
+
+
+
                 </ul>
                 <div class="mb-4 mb-lg-0">
                     @if (Auth::guest())
