@@ -65,22 +65,31 @@
                                                 <a class="nav-link" role="button" aria-haspopup="true"
                                                     aria-expanded="false" href="/home">Inicio</a>
                                             </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/guide">Historia</a>
-                                            </li>
-                                            <li class="nav-item ">
-                                                <a class="nav-link" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/categories/1">Monumentos</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/categories/2">Hosteleria</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" role="button" aria-haspopup="true"
-                                                    aria-expanded="false" href="/categories/3">Servicios</a>
-                                            </li>
+
+
+                                            @foreach ($dataoptions['categories'] as $category)
+
+                                @if ($category->id == 4)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/guide">{{$category->name}} </a>
+                                </li>
+
+                                @else
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/categories/{{$category->id}}">{{$category->name}} </a>
+                                </li>
+                                @endif
+                        @endforeach
+
+
+
+
+
+
+
+
+
                                             @if (Auth::guest())
                                                 <li class="nav-item">
                                                     <a class="nav-link" role="button" href="#"
