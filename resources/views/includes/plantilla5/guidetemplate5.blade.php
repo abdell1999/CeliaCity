@@ -78,7 +78,8 @@
  <br>
  <br>
  <div class="container">
-     <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-center">Guía Turística Purullena</h2>
+     <h2 class="text-5xl font-bold leading-tight mt-0 mb-2 text-center">Guía Turística {{ $dataoptions['townname'] }}
+     </h2>
      <div class="row mt-20 pb-20">
          <div class="col-md-4 text-center bg-dark">
              <h3 class="text-white pt-5 pb-5">Lugares para visitar</h3>

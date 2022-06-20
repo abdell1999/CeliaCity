@@ -30,11 +30,14 @@
                         <div class="footer_link mt-45">
                             <h4 class="footer_title">Enlaces de interés</h4>
                             <ul class="link">
-                                <li><a href="/guide)">Historia</a></li>
-                                <li><a href="/categories/1">Monumentos</a></li>
-                                <li><a href="/categories/2">Hosteleria</a></li>
-                                <li><a href="/categories/3">Comercios</a></li>
-                                <li><a href="/categories/4">Ocio</a></li>
+                                @foreach ($dataoptions['categories'] as $category)
+                                    @if ($category->id == 4)
+                                        <li><a href="/guide)">{{ $category->name }}</a></li>
+                                    @else
+                                        <li><a href="/categories/{{ $category->id }}">{{ $category->name }}</a></li>
+                                    @endif
+                                @endforeach
+                                <li><a href="/team">Créditos</a></li>
                                 <li><a href="/contact">Contacto</a></li>
                             </ul>
                         </div>

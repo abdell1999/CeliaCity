@@ -20,8 +20,11 @@
     <!-- start navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top sticky" id="navbar" style="background-color: white;">
         <div class="container">
-            <a href="/" class="navbar-brand me-5">
-                <img src="/assets/img/logo.svg" class="logo-light" alt="" height="30" />
+            <a class="navbar-brand" href="/" style="display: flex; align-items: center; padding-right: 5%;">
+                <img src="https://img.icons8.com/external-wanicon-two-tone-wanicon/64/undefined/external-maps-adventure-wanicon-two-tone-wanicon.png"
+                    style="width: 80%; height: 80%;" type="image/svg" alt="Logo">
+
+                <h4 style="padding-left:5%; color: #50C594;">{{ $dataoptions['townname'] }}</h4>
             </a>
             <a href="javascript:void(0)" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,19 +39,17 @@
 
 
                     @foreach ($dataoptions['categories'] as $category)
-
-                                @if ($category->id == 4)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/guide">{{$category->name}} </a>
-                                </li>
-
-                                @else
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/categories/{{$category->id}}">{{$category->name}} </a>
-                                </li>
-                                @endif
-                        @endforeach
+                        @if ($category->id == 4)
+                            <li class="nav-item">
+                                <a class="nav-link" href="/guide">{{ $category->name }} </a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/{{ $category->id }}">{{ $category->name }}
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
 
 
 

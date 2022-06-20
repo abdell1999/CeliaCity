@@ -46,13 +46,14 @@
                     <div class="row">
                         <div class="col-12 d-flex align-items-center py-3 py-md-0">
                             <!-- mainLogo -->
-                            <div class="logo mt-md-n2 mt-xl-n1">
-                                <a href="/">
-                                    <img src="/assets/img/logo.svg"
-                                        style="max-width: 150% !important; width: 100% !important; height: 150% !important;"
-                                        type="image/svg" alt="Logo">
-                                </a>
-                            </div>
+                            <a class="navbar-brand" href="/"
+                                style="display: flex; align-items: center; padding-right: 5%;">
+                                <img src="https://img.icons8.com/external-wanicon-two-tone-wanicon/64/undefined/external-maps-adventure-wanicon-two-tone-wanicon.png"
+                                    style="width: 80%; height: 80%;" type="image/svg" alt="Logo">
+
+                                <h4 style="padding-left:5%; color: #50C594; padding-top:15%;">
+                                    {{ $dataoptions['townname'] }}</h4>
+                            </a>
                             <!-- menuHolder -->
                             <div class="d-flex menuHolder justify-content-end align-items-center flex-grow-1">
                                 <!-- navbar -->
@@ -68,19 +69,18 @@
 
 
                                             @foreach ($dataoptions['categories'] as $category)
-
-                                @if ($category->id == 4)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/guide">{{$category->name}} </a>
-                                </li>
-
-                                @else
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/categories/{{$category->id}}">{{$category->name}} </a>
-                                </li>
-                                @endif
-                        @endforeach
+                                                @if ($category->id == 4)
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/guide">{{ $category->name }} </a>
+                                                    </li>
+                                                @else
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"
+                                                            href="/categories/{{ $category->id }}">{{ $category->name }}
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                            @endforeach
 
 
 

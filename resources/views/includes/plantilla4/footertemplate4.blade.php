@@ -33,10 +33,16 @@
                             <div class="col-12 col-sm-6">
                                 <h6 class="h5 fwSemibold mb-2 mb-md-3 mb-lg-4">Enlaces de Interés</h6>
                                 <ul class="list-unstyled">
-                                    <li><a href="/guide)">Historia</a></li>
-                                <li><a href="/categories/1">Monumentos</a></li>
-                                <li><a href="/categories/2">Hosteleria</a></li>
-                                <li><a href="/categories/3">Servicios</a></li>
+                                    @foreach ($dataoptions['categories'] as $category)
+                                        @if ($category->id == 4)
+                                            <li><a href="/guide)">{{ $category->name }}</a></li>
+                                        @else
+                                            <li><a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                    <li><a href="/team">Créditos</a></li>
+                                    <li><a href="/contact">Contacto</a></li>
                                 </ul>
                             </div>
                         </div>
