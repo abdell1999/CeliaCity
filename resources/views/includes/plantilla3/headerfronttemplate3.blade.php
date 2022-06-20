@@ -55,11 +55,11 @@
 
                       @if (Auth::guest())
                           <li class="nav-item">
-                              <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                              <a class="nav-link" href="/login" data-toggle="modal" data-target="#loginModal">Login</a>
                           </li>
                           <!--end nav item-->
                           <li class="nav-item">
-                              <a class="nav-link" href="#" data-toggle="modal"
+                              <a class="nav-link" href="/register" data-toggle="modal"
                                   data-target="#registerModal">Registro</a>
                           </li>
                           <!--end nav item-->

@@ -85,7 +85,7 @@
     <ul class="pt-10">
         <script>
             var marker = L.marker([{{ $point->latitude }}, {{ $point->longitude }}]).addTo(mapsipe);
-            marker.bindPopup('<a target="_blank" href="/pointofinterests/{{ $point->id }}">{{ $point->name }}</a>')
+            marker.bindPopup('<a target="_blank" href="/pointofinterest/{{ $point->slug }}">{{ $point->name }}</a>')
                 .openPopup();
         </script>
 
