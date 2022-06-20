@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head></head>
+<head>
+    <link rel="shortcut icon" href="{{$dataoptions['favicon']}}" type="image/x-icon">
+</head>
 
 
 @yield('scripts')
