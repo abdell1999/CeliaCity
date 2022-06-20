@@ -16,7 +16,7 @@ class Administrate
      */
     public function handle(Request $request, Closure $next)
     {
-        if (isset($request->user()->rol) && $request->user()->rol === 0)
+        if (isset($request->user()->rol) && $request->user()->rol == 0)
             return $next($request);
         else abort(404);
     }
