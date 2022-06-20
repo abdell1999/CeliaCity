@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <link rel="shortcut icon" href="{{$dataoptions['favicon']}}" type="image/x-icon">
+    <meta name="author" content="{{$dataoptions['pageowner']}}">
+    <meta name="description" content="{{$dataoptions['metadescription']}">
 @include('includes.headback')
 
 @yield('scripts')

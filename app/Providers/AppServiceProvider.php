@@ -46,6 +46,9 @@ class AppServiceProvider extends ServiceProvider
         $dataoptions['history'] = Option::find(17)->value;
         $dataoptions['favicon'] = Option::find(1)->value;
 
+        $dataoptions['pageowner'] = Option::find(8)->value;
+        $dataoptions['metadescription'] = Option::find(7)->value;
+
         //$dataoptions['template'] = 2;
 
 
