@@ -66,3 +66,8 @@ Route::get('/options/get-all/', [App\Http\Controllers\OptionController::class, '
 Route::get('fetch-onepoint/{id}', [App\Http\Controllers\PointofinterestController::class, 'fetchonepoint']);
 Route::get('pointofinterest/{slug}', [App\Http\Controllers\PointofinterestController::class, 'slugs']);
 
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
+
