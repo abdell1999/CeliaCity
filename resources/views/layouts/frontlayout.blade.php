@@ -4,7 +4,8 @@
 <head>
     <link rel="shortcut icon" href="{{$dataoptions['favicon']}}" type="image/x-icon">
     <meta name="author" content="{{$dataoptions['pageowner']}}">
-    <meta name="description" content="{{$dataoptions['metadescription']}">
+    <meta name="description" content="{{$dataoptions['metadescription']}}">
+    <title>{{$dataoptions['townname']}}</title>
 </head>
 
 
