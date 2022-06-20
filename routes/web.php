@@ -65,6 +65,8 @@ Route::get('/options/get-all/', [App\Http\Controllers\OptionController::class, '
 
 Route::get('fetch-onepoint/{id}', [App\Http\Controllers\PointofinterestController::class, 'fetchonepoint']);
 Route::get('pointofinterest/{slug}', [App\Http\Controllers\PointofinterestController::class, 'slugs']);
+Route::get('points', [App\Http\Controllers\PointofinterestController::class, 'index']);
+
 
 // Clear application cache:
 Route::get('/clear-cache', function() {
