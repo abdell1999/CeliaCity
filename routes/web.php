@@ -92,3 +92,4 @@ Route::get('/view-clear', function() {
     return 'View cache has been cleared';
 });
 
+//Esto es una prueba
