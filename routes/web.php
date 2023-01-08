@@ -93,3 +93,7 @@ Route::get('/view-clear', function() {
 });
 
 //Esto es una prueba
+
+
+
+//esto no es un juego
